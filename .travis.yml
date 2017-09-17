@@ -1,0 +1,76 @@
+language: objective-c
+osx_image: xcode8.3
+
+git:
+  submodules: false
+
+env:
+  global:
+    - LC_CTYPE=en_US.UTF-8
+    - LANG=en_US.UTF-8
+    - WORKSPACE=SwiftInstagram.xcworkspace
+    - IOS_FRAMEWORK_SCHEME="SwiftInstagram-iOS"
+    - IOS_SDK=iphonesimulator10.3
+    - EXAMPLE_SCHEME="Example"
+  matrix:
+    - DESTINATION="OS=10.3.1,name=iPhone 7 Plus"            SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"  BUILD_EXAMPLE="YES" RELEASE_READY="YES" POD_LINT="YES"
+    - DESTINATION="OS=9.0,name=iPhone 6s"                   SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"  BUILD_EXAMPLE="YES" RELEASE_READY="NO"  POD_LINT="NO"
+
+before_install:
+  - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
+  - brew update
+  - brew outdated carthage || brew upgrade carthage
+
+before_script:
+  - sh scripts/bootstrap
+
+script:
+  - set -o pipefail
+  - xcodebuild -version
+  - xcodebuild -showsdks
+
+  # Build Framework in Debug and Run Tests if specified
+  - if [ $RUN_TESTS == "YES" ]; then
+      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty -c;
+    else
+      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
+    fi
+
+  # Build Framework in Release and Run Tests if specified
+  - if [ $RUN_TESTS == "YES" ]; then
+      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty -c;
+    else
+      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
+    fi
+
+  # Build Example in Debug if specified
+  - if [ $BUILD_EXAMPLE == "YES" ]; then
+     xcodebuild -workspace "$WORKSPACE" -scheme "$EXAMPLE_SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
+   fi
+
+  # Run `pod lib lint` if specified
+  - if [ $POD_LINT == "YES" ]; then
+     pod lib lint;
+   fi
+
+before_deploy:
+  - carthage build --no-skip-current
+  - carthage archive SwiftInstagram
+
+deploy:
+  - provider: releases
+    api_key:
+      secure:
+    file:
+      - SwiftInstagram.framework.zip
+    skip_cleanup: true
+    overwrite: true
+    on:
+      repo: AnderGoig/SwiftInstagram
+      tags: true
+      condition: $RELEASE_READY = YES
+  - provider: script
+    script: pod trunk push
+    on:
+      tags: true
+      condition: $RELEASE_READY = YES

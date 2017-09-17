@@ -1,0 +1,51 @@
+disabled_rules:
+  - line_length
+  - file_length
+  - nesting
+opt_in_rules:
+  - attributes
+  - closure_end_indentation
+  - closure_spacing
+  - conditional_returns_on_newline
+  - contains_over_first_not_nil
+  - explicit_init
+  - fatal_error_message
+  - file_header
+  - first_where
+  - implicit_return
+  - joined_default_parameter
+  - let_var_whitespace
+  - number_separator
+  - operator_usage_whitespace
+  - overridden_super_call
+  - pattern_matching_keywords
+  - private_outlet
+  - prohibited_super_call
+  - redundant_nil_coalescing
+  - statement_position
+  - switch_case_on_newline
+  - unneeded_parentheses_in_closure_argument
+  - vertical_parameter_alignment
+  - vertical_parameter_alignment_on_call
+included:
+  - Sources
+  - Tests
+excluded:
+  - Carthage
+  - Sources/Helpers/KeychainSwiftDistrib.swift
+
+file_header:
+  required_pattern: |
+                    \/\/
+                    \/\/  .*?\.swift
+                    \/\/  SwiftInstagram
+                    \/\/
+                    \/\/  Created by .*? on \d{1,2}\/\d{1,2}\/\d{2}\.
+                    \/\/  Copyright © \d{4} Ander Goig\. All rights reserved\.
+                    \/\/
+
+identifier_name:
+  excluded:
+    - x
+    - y
+    - id
