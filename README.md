@@ -175,7 +175,9 @@ api.login(navController: ..., authScope: "likes+comments", redirectURI: ... ) { 
 
 ### Data retrieval
 
-See the endpoints docs for more on these methods: http://instagr.am/developer/endpoints/
+See the endpoints docs for more on these methods: http://instagr.am/developer/endpoints/.
+
+Also, a **more detailed documentation** of all the functions can be found [here](https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html).
 
 All of the following functions are very similar and straightforward, here's an example of retrieving recent media:
 
