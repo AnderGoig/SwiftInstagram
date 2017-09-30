@@ -25,7 +25,7 @@ A Swift wrapper for the Instagram API.
 ## Requirements
 
 - iOS 9.0+
-- Xcode 8.0+
+- Xcode 9.0+
 
 ## Installation
 
