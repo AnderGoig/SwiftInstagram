@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/Images/SwiftInstagram-logo.png" alt="SwiftInstagram Logo" width="850" height="250">
+    <img src="https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/Images/SwiftInstagram-logo.png" alt="SwiftInstagram Logo" width="850" height="190">
 </p>
 
 [![Platforms](https://img.shields.io/cocoapods/p/SwiftInstagram.svg)](https://cocoapods.org/pods/SwiftInstagram)
