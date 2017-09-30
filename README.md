@@ -144,10 +144,11 @@ Also, copy the **Client ID** from your client and paste it inside your `Info.pli
 
 ### Authentication
 
-#### Login
-
 ```swift
-Instagram.shared.login(navController: navigationController!, redirectURI: "YOUR REDIRECTION URI GOES HERE") { (error) in
+let api = Instagram.shared
+
+// Login
+api.login(navController: navigationController!, redirectURI: "YOUR REDIRECTION URI GOES HERE") { (error) in
     if let error = error {
         print(error)
     }
@@ -158,28 +159,18 @@ Instagram.shared.login(navController: navigationController!, redirectURI: "YOUR 
         // Do your stuff here ...
     }
 }
+
+// Returns whether a session is currently available or not
+let _ = api.isSessionValid()
+
+// Logout
+let _ = api.logout()
 ```
 
 You can also specify the [login permissions](https://www.instagram.com/developer/authorization/) with the optional parameter `authScope`, by default, it is set to basic access. To request multiple scopes at once, simply separate the scopes by a "+".
 
 ```swift
-Instagram.shared.login(navController: ..., authScope: "likes+comments", redirectURI: ... ) { }
-```
-
-#### Current session
-
-Returns whether a session is currently available or not.
-
-```swift
-let _ = Instagram.shared.isSessionValid()
-```
-
-#### Logout
-
-Returns `true` if the user was successfully logged out, `false` otherwise.
-
-```swift
-let _ = Instagram.shared.logout()
+api.login(navController: ..., authScope: "likes+comments", redirectURI: ... ) { }
 ```
 
 ### Data retrieval
