@@ -139,7 +139,7 @@ SwiftInstagram uses client side (implicit) authentication, so you must **uncheck
 Also, copy the **Client ID** from your client and paste it inside your `Info.plist` file with `InstagramClientId` as the key.
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/Images/Info.plist-file.png" alt="Info.plist" width="585" height="23">
+    <img src="https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/Images/Info.plist-file.png" alt="Info.plist" width="585" height="21">
 </p>
 
 ### Authentication
