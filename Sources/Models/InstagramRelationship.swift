@@ -6,6 +6,7 @@
 //  Copyright © 2017 Ander Goig. All rights reserved.
 //
 
+/// The struct containing an Instagram relationship.
 public struct InstagramRelationship: Decodable {
     public let outgoingStatus: String
     public let incomingStatus: String?

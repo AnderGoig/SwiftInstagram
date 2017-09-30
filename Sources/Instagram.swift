@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// A set of helper functions to make the Instagram API easier to use.
 public class Instagram {
 
     // MARK: - Constants

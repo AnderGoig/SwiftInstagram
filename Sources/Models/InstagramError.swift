@@ -6,6 +6,7 @@
 //  Copyright © 2017 Ander Goig. All rights reserved.
 //
 
+/// The struct containing an Instagram error.
 public struct InstagramError: Error {
     public enum ErrorKind {
         case errorDecodingJSON

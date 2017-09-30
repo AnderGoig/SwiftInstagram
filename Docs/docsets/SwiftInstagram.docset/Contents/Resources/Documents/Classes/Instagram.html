@@ -1,0 +1,2836 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Instagram Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Class/Instagram" class="dashAnchor"></a>
+
+    <a title="Instagram Class Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          SwiftInstagram Docs
+        </a>
+         (43% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/AnderGoig/SwiftInstagram">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">SwiftInstagram Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      Instagram Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Instagram.html">Instagram</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs.html#/s:14SwiftInstagram0B7CommentV">InstagramComment</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs.html#/s:14SwiftInstagram0B8LocationV">InstagramLocation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs.html#/s:14SwiftInstagram0B3TagV">InstagramTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>Instagram</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Instagram</span></code></pre>
+
+                </div>
+              </div>
+            <p>A set of helper functions to make the Instagram API easier to use.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Authentication"></a>
+                <a name="//apple_ref/swift/Section/Authentication" class="dashAnchor"></a>
+                <a href="#/Authentication">
+                  <h3 class="section-name">Authentication</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C5loginySo22UINavigationControllerC03navE0_SS9authScopeSS11redirectURIyAA0B5ErrorVSgc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/login(navController:authScope:redirectURI:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C5loginySo22UINavigationControllerC03navE0_SS9authScopeSS11redirectURIyAA0B5ErrorVSgc10completiontF">login(navController:authScope:redirectURI:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Starts an authentication process.</p>
+
+<p>Shows a custom <code>UIViewController</code> with Intagram&rsquo;s login page.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>More information about the login permissions (scope)
+<a href="https://www.instagram.com/developer/authorization/">here</a>.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">login</span><span class="p">(</span><span class="nv">navController</span><span class="p">:</span> <span class="kt">UINavigationController</span><span class="p">,</span> <span class="nv">authScope</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"basic"</span><span class="p">,</span> <span class="nv">redirectURI</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>navController</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Your current <code>UINavigationController</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>authScope</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The scope of the access you are requesting from the user. Basic access by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>redirectURI</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Your Instagram API client redirection URI.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C14isSessionValidSbyF"></a>
+                    <a name="//apple_ref/swift/Method/isSessionValid()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C14isSessionValidSbyF">isSessionValid()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns whether a session is currently available or not.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">isSessionValid</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>True if a session is currently available, false otherwise.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C6logoutSbyF"></a>
+                    <a name="//apple_ref/swift/Method/logout()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C6logoutSbyF">logout()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Ends the current session.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">logout</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>True if the user was successfully logged out, false otherwise.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/User%20Endpoints"></a>
+                <a name="//apple_ref/swift/Section/User Endpoints" class="dashAnchor"></a>
+                <a href="#/User%20Endpoints">
+                  <h3 class="section-name">User Endpoints</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C4userySS_yAA0B4UserVSg_AA0B5ErrorVSgtc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/user(_:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C4userySS_yAA0B4UserVSg_AA0B5ErrorVSgtc10completiontF">user(_:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get information about a user.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>public_content</em> scope when getting information about a user other than yours.</p>
+
+</div>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>Use <code>&quot;self&quot;</code> in the <code>userId</code> parameter in order to get information about your own user.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">user</span><span class="p">(</span><span class="n">_</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">user</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>userId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>User identifier or <code>&quot;self&quot;</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>user</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></code> after a correct retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C11recentMediaySS8fromUser_SS5maxIdSS03minH0Si5countySayAA0bD0VGSg_AA0B5ErrorVSgtc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/recentMedia(fromUser:maxId:minId:count:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C11recentMediaySS8fromUser_SS5maxIdSS03minH0Si5countySayAA0bD0VGSg_AA0B5ErrorVSgtc10completiontF">recentMedia(fromUser:maxId:minId:count:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get the most recent media published by a user.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>public_content</em> scope when getting recent media published by a user other than yours.</p>
+
+</div>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>Use <em><q>self</q></em> in the <em>userId</em> parameter in order to get the most recent media published by your own user.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">recentMedia</span><span class="p">(</span><span class="n">fromUser</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">maxId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">minId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">mediaSet</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>userId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>User identifier.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>maxId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Return media earlier than this <code>maxId</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>minId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Return media later than this <code>minId</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>count</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Count of media to return.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mediaSet</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></code> after a correct retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C14userLikedMediaySS9maxLikeId_Si5countySayAA0bE0VGSg_AA0B5ErrorVSgtc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/userLikedMedia(maxLikeId:count:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C14userLikedMediaySS9maxLikeId_Si5countySayAA0bE0VGSg_AA0B5ErrorVSgtc10completiontF">userLikedMedia(maxLikeId:count:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get the list of recent media liked by your own user.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>public_content</em> scope.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userLikedMedia</span><span class="p">(</span><span class="nv">maxLikeId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">mediaSet</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>maxLikeId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Return media liked before this id.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>count</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Count of media to return.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mediaSet</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></code> after a correct retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C6searchySS4user_Si5countySayAA0B4UserVGSg_AA0B5ErrorVSgtc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/search(user:count:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C6searchySS4user_Si5countySayAA0B4UserVGSg_AA0B5ErrorVSgtc10completiontF">search(user:count:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get a list of users matching the query.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>public_content</em> scope.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">search</span><span class="p">(</span><span class="n">user</span> <span class="nv">query</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">userSet</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>query</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A query string.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>count</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Number of users to return.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>userSet</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></code> objects after a correct retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Relationship%20Endpoints"></a>
+                <a name="//apple_ref/swift/Section/Relationship Endpoints" class="dashAnchor"></a>
+                <a href="#/Relationship%20Endpoints">
+                  <h3 class="section-name">Relationship Endpoints</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C11userFollowsyySayAA0B4UserVGSg_AA0B5ErrorVSgtc10completion_tF"></a>
+                    <a name="//apple_ref/swift/Method/userFollows(completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C11userFollowsyySayAA0B4UserVGSg_AA0B5ErrorVSgtc10completion_tF">userFollows(completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get the list of users this user follows.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>follower_list</em> scope.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userFollows</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">userSet</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>userSet</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></code> objects after a correct retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C13userFollowersyySayAA0B4UserVGSg_AA0B5ErrorVSgtc10completion_tF"></a>
+                    <a name="//apple_ref/swift/Method/userFollowers(completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C13userFollowersyySayAA0B4UserVGSg_AA0B5ErrorVSgtc10completion_tF">userFollowers(completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get the list of users this user is followed by.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>follower_list</em> scope.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userFollowers</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">userSet</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>userSet</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></code> objects after a correct retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C15userRequestedByyySayAA0B4UserVGSg_AA0B5ErrorVSgtc10completion_tF"></a>
+                    <a name="//apple_ref/swift/Method/userRequestedBy(completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C15userRequestedByyySayAA0B4UserVGSg_AA0B5ErrorVSgtc10completion_tF">userRequestedBy(completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>List the users who have requested this user&rsquo;s permission to follow.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>follower_list</em> scope.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userRequestedBy</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">userSet</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>userSet</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></code> objects after a correct retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C16userRelationshipySS8withUser_yAA0bD0VSg_AA0B5ErrorVSgtc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/userRelationship(withUser:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C16userRelationshipySS8withUser_yAA0bD0VSg_AA0B5ErrorVSgtc10completiontF">userRelationship(withUser:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get information about a relationship to another user.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>follower_list</em> scope.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userRelationship</span><span class="p">(</span><span class="n">withUser</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">relationship</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>userId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>User identifier.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>relationship</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A <code><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></code> object after a correct retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C6followySS4user_yAA0B12RelationshipVSg_AA0B5ErrorVSgtc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/follow(user:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C6followySS4user_yAA0B12RelationshipVSg_AA0B5ErrorVSgtc10completiontF">follow(user:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Follows the target user.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>relationships</em> scope.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">follow</span><span class="p">(</span><span class="n">user</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">relationship</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>userId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>User identifier.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>relationship</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A <code><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></code> object after a correct retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C8unfollowySS4user_yAA0B12RelationshipVSg_AA0B5ErrorVSgtc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/unfollow(user:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C8unfollowySS4user_yAA0B12RelationshipVSg_AA0B5ErrorVSgtc10completiontF">unfollow(user:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unfollows the target user.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>relationships</em> scope.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">unfollow</span><span class="p">(</span><span class="n">user</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">relationship</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>userId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>User identifier.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>relationship</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A <code><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></code> object after a correct retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C14approveRequestySS8fromUser_yAA0B12RelationshipVSg_AA0B5ErrorVSgtc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/approveRequest(fromUser:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C14approveRequestySS8fromUser_yAA0B12RelationshipVSg_AA0B5ErrorVSgtc10completiontF">approveRequest(fromUser:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Approve the target user&rsquo;s request.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>relationships</em> scope.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">approveRequest</span><span class="p">(</span><span class="n">fromUser</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">relationship</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>userId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>User identifier.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>relationship</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A <code><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></code> object after a correct retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C13ignoreRequestySS8fromUser_yAA0B12RelationshipVSg_AA0B5ErrorVSgtc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/ignoreRequest(fromUser:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C13ignoreRequestySS8fromUser_yAA0B12RelationshipVSg_AA0B5ErrorVSgtc10completiontF">ignoreRequest(fromUser:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Ignore the target user&rsquo;s request.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>relationships</em> scope.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">ignoreRequest</span><span class="p">(</span><span class="n">fromUser</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">relationship</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>userId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>User identifier.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>relationship</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A <code><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></code> object after a correct retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Media%20Endpoints"></a>
+                <a name="//apple_ref/swift/Section/Media Endpoints" class="dashAnchor"></a>
+                <a href="#/Media%20Endpoints">
+                  <h3 class="section-name">Media Endpoints</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C5mediaySS6withId_yAA0B5MediaVSg_AA0B5ErrorVSgtc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/media(withId:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C5mediaySS6withId_yAA0B5MediaVSg_AA0B5ErrorVSgtc10completiontF">media(withId:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get information about a media object.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>public_content</em> scope.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">media</span><span class="p">(</span><span class="n">withId</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">media</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>id</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Media identifier.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>media</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A <code><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></code> object after a correct retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C5mediaySS13withShortcode_yAA0B5MediaVSg_AA0B5ErrorVSgtc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/media(withShortcode:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C5mediaySS13withShortcode_yAA0B5MediaVSg_AA0B5ErrorVSgtc10completiontF">media(withShortcode:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get information about a media object.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>public_content</em> scope.</p>
+
+</div>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>A media object&rsquo;s shortcode can be found in its shortlink URL.
+An example shortlink is <a href="http://instagram.com/p/tsxp1hhQTG/">http://instagram.com/p/tsxp1hhQTG/</a>. Its corresponding shortcode is tsxp1hhQTG.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">media</span><span class="p">(</span><span class="n">withShortcode</span> <span class="nv">shortcode</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">media</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>shortcode</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Media shortcode.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>media</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A <code><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></code> object after a correct retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C11searchMediaySd3lat_Sd3lngSi8distanceySayAA0bD0VGSg_AA0B5ErrorVSgtc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/searchMedia(lat:lng:distance:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C11searchMediaySd3lat_Sd3lngSi8distanceySayAA0bD0VGSg_AA0B5ErrorVSgtc10completiontF">searchMedia(lat:lng:distance:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Search for recent media in a given area.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>public_content</em> scope.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">searchMedia</span><span class="p">(</span><span class="nv">lat</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">lng</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">distance</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">mediaSet</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lat</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Latitude of the center search coordinate. If used, <code>lng</code> is required.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lng</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Longitude of the center search coordinate. If used, <code>lat</code> is required.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>distance</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Default is 1km (1000m), max distance is 5km.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mediaSet</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></code> after a correct retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Comment%20Endpoints"></a>
+                <a name="//apple_ref/swift/Section/Comment Endpoints" class="dashAnchor"></a>
+                <a href="#/Comment%20Endpoints">
+                  <h3 class="section-name">Comment Endpoints</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C8commentsySS9fromMedia_ySayAA0B7CommentVGSg_AA0B5ErrorVSgtc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/comments(fromMedia:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C8commentsySS9fromMedia_ySayAA0B7CommentVGSg_AA0B5ErrorVSgtc10completiontF">comments(fromMedia:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get a list of recent comments on a media object.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>public_content</em> scope for media that does not belong to your own user.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">comments</span><span class="p">(</span><span class="n">fromMedia</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">comments</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B7CommentV">InstagramComment</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>comments</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B7CommentV">InstagramComment</a></code> objects after a correct retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C13createCommentySS7onMedia_SS4textyAA0B5ErrorVSgc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/createComment(onMedia:text:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C13createCommentySS7onMedia_SS4textyAA0B5ErrorVSgc10completiontF">createComment(onMedia:text:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a comment on a media object.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>comments</em> scope. Also, <em>public_content</em> scope is required for media that does not
+belong to your own user.</p>
+
+</div>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>Note:</p>
+
+<ul>
+<li>The total length of the comment cannot exceed 300 characters.</li>
+<li>The comment cannot contain more than 4 hashtags.</li>
+<li>The comment cannot contain more than 1 URL.</li>
+<li>The comment cannot consist of all capital letters.</li>
+</ul>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">createComment</span><span class="p">(</span><span class="n">onMedia</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mediaId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Media identifier.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>text</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Text to post as a comment on the media object as specified in <code>mediaId</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C13deleteCommentySS_SS7onMediayAA0B5ErrorVSgc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/deleteComment(_:onMedia:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C13deleteCommentySS_SS7onMediayAA0B5ErrorVSgc10completiontF">deleteComment(_:onMedia:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Remove a comment either on the authenticated user&rsquo;s media object or authored by the authenticated user.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>comments</em> scope. Also, <em>public_content</em> scope is required for media that does not
+belong to your own user.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">deleteComment</span><span class="p">(</span><span class="n">_</span> <span class="nv">commentId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">onMedia</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mediaId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Media identifier.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>commentId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Comment identifier.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Like%20Endpoints"></a>
+                <a name="//apple_ref/swift/Section/Like Endpoints" class="dashAnchor"></a>
+                <a href="#/Like%20Endpoints">
+                  <h3 class="section-name">Like Endpoints</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C5likesySS7inMedia_ySayAA0B4UserVGSg_AA0B5ErrorVSgtc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/likes(inMedia:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C5likesySS7inMedia_ySayAA0B4UserVGSg_AA0B5ErrorVSgtc10completiontF">likes(inMedia:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get a list of users who have liked this media.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>public_content</em> scope for media that does not belong to your own user.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">likes</span><span class="p">(</span><span class="n">inMedia</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">users</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mediaId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Media identifier.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>users</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></code> objects after a correct retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C4likeySS5media_yAA0B5ErrorVSgc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/like(media:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C4likeySS5media_yAA0B5ErrorVSgc10completiontF">like(media:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set a like on this media by the currently authenticated user.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>likes</em> scope. Also, <em>public_content</em> scope is required for media that does not belong
+to your own user.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">like</span><span class="p">(</span><span class="n">media</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mediaId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Media identifier.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C6unlikeySS5media_yAA0B5ErrorVSgc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/unlike(media:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C6unlikeySS5media_yAA0B5ErrorVSgc10completiontF">unlike(media:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Remove a like on this media by the currently authenticated user.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>likes</em> scope. Also, <em>public_content</em> scope is required for media that does not belong
+to your own user.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">unlike</span><span class="p">(</span><span class="n">media</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Tag%20Endpoints"></a>
+                <a name="//apple_ref/swift/Section/Tag Endpoints" class="dashAnchor"></a>
+                <a href="#/Tag%20Endpoints">
+                  <h3 class="section-name">Tag Endpoints</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C3tagySS_yAA0B3TagVSg_AA0B5ErrorVSgtc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/tag(_:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C3tagySS_yAA0B3TagVSg_AA0B5ErrorVSgtc10completiontF">tag(_:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get information about a tag object.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>public_content</em> scope.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">tag</span><span class="p">(</span><span class="n">_</span> <span class="nv">tagName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">tag</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B3TagV">InstagramTag</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tagName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Tag name.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tag</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B3TagV">InstagramTag</a></code> after a correct retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C11recentMediaySS7withTag_SS03maxF2IdSS03minfH0Si5countySayAA0bD0VGSg_AA0B5ErrorVSgtc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/recentMedia(withTag:maxTagId:minTagId:count:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C11recentMediaySS7withTag_SS03maxF2IdSS03minfH0Si5countySayAA0bD0VGSg_AA0B5ErrorVSgtc10completiontF">recentMedia(withTag:maxTagId:minTagId:count:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get a list of recently tagged media.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>public_content</em> scope.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">recentMedia</span><span class="p">(</span><span class="n">withTag</span> <span class="nv">tagName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">maxTagId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">minTagId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">mediaSet</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tagName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Tag name.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>maxTagId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Return media after this <code>maxTagId</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>minTagId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Return media before this <code>minTagId</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>count</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Count of tagged media to return.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mediaSet</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></code> objects after a correct retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C6searchySS3tag_ySayAA0B3TagVGSg_AA0B5ErrorVSgtc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/search(tag:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C6searchySS3tag_ySayAA0B3TagVGSg_AA0B5ErrorVSgtc10completiontF">search(tag:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Search for tags by name.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>public_content</em> scope.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">search</span><span class="p">(</span><span class="n">tag</span> <span class="nv">query</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">tags</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B3TagV">InstagramTag</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>query</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A valid tag name without a leading #. (eg. snowy, nofilter)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tags</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B3TagV">InstagramTag</a></code> objects after a correct retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Location%20Endpoints"></a>
+                <a name="//apple_ref/swift/Section/Location Endpoints" class="dashAnchor"></a>
+                <a href="#/Location%20Endpoints">
+                  <h3 class="section-name">Location Endpoints</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C8locationySS_yAA0B8LocationVSg_AA0B5ErrorVSgtc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/location(_:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C8locationySS_yAA0B8LocationVSg_AA0B5ErrorVSgtc10completiontF">location(_:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get information about a location.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>public_content</em> scope.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">location</span><span class="p">(</span><span class="n">_</span> <span class="nv">locationId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">location</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B8LocationV">InstagramLocation</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>location</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B8LocationV">InstagramLocation</a></code> after a correct retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C11recentMediaySS11forLocation_SS5maxIdSS03minH0ySayAA0bD0VGSg_AA0B5ErrorVSgtc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/recentMedia(forLocation:maxId:minId:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C11recentMediaySS11forLocation_SS5maxIdSS03minH0ySayAA0bD0VGSg_AA0B5ErrorVSgtc10completiontF">recentMedia(forLocation:maxId:minId:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get a list of recent media objects from a given location.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>public_content</em> scope.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">recentMedia</span><span class="p">(</span><span class="n">forLocation</span> <span class="nv">locationId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">maxId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">minId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">mediaSet</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>locationId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Location identifier.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>maxId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Return media after this <code>maxId</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>minId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Return media before this <code>mindId</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mediaSet</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></code> objects after a correct retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C14searchLocationySd3lat_Sd3lngSi8distanceSS16facebookPlacesIdySayAA0bD0VGSg_AA0B5ErrorVSgtc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/searchLocation(lat:lng:distance:facebookPlacesId:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C14searchLocationySd3lat_Sd3lngSi8distanceSS16facebookPlacesIdySayAA0bD0VGSg_AA0B5ErrorVSgtc10completiontF">searchLocation(lat:lng:distance:facebookPlacesId:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Search for a location by geographic coordinate.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>public_content</em> scope.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">searchLocation</span><span class="p">(</span><span class="nv">lat</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">lng</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">distance</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">facebookPlacesId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">locations</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B8LocationV">InstagramLocation</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lat</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Latitude of the center search coordinate. If used, <code>lng</code> is required.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lng</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Longitude of the center search coordinate. If used, <code>lat</code> is required.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>distance</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Default is 500m, max distance is 750.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>facebookPlacesId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Returns a location mapped off of a Facebook places id.
+If used, <code>lat</code> and <code>lng</code> are not required.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>locations</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B3TagV">InstagramTag</a></code> objects after a correct retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2017 <a class="link" href="https://github.com/AnderGoig/SwiftInstagram" target="_blank" rel="external">Ander Goig</a>. All rights reserved. (Last updated: 2017-10-01)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

@@ -6,6 +6,7 @@
 //  Copyright © 2017 Ander Goig. All rights reserved.
 //
 
+/// The struct containing an Instagram comment.
 public struct InstagramComment: Decodable {
     public let id: String
     public let text: String

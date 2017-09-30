@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SwiftInstagram  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+
+    <a title="SwiftInstagram  Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+          SwiftInstagram Docs
+        </a>
+         (43% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/AnderGoig/SwiftInstagram">
+            <img class="header-icon" src="img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html">SwiftInstagram Reference</a>
+      <img class="carat" src="img/carat.png" />
+      SwiftInstagram  Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/Instagram.html">Instagram</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs.html#/s:14SwiftInstagram0B7CommentV">InstagramComment</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs.html#/s:14SwiftInstagram0B8LocationV">InstagramLocation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs.html#/s:14SwiftInstagram0B3TagV">InstagramTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            
+            <p align="center">
+    <img src="https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/Images/SwiftInstagram-logo.png" alt="SwiftInstagram Logo" width="850" height="190">
+</p>
+
+<p><a href="https://cocoapods.org/pods/SwiftInstagram"><img src="https://img.shields.io/cocoapods/p/SwiftInstagram.svg" alt="Platforms"></a>
+<a href="https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/LICENSE"><img src="https://img.shields.io/cocoapods/l/SwiftInstagram.svg" alt="License"></a></p>
+
+<p><a href="https://github.com/apple/swift-package-manager"><img src="https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg" alt="Swift Package Manager"></a>
+<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible"></a>
+<a href="https://cocoapods.org/pods/SwiftInstagram"><img src="https://img.shields.io/cocoapods/v/SwiftInstagram.svg" alt="CocoaPods compatible"></a></p>
+
+<p><a href="https://travis-ci.org/AnderGoig/SwiftInstagram/branches"><img src="https://img.shields.io/travis/AnderGoig/SwiftInstagram/master.svg" alt="Travis"></a>
+<a href="http://github.com/JetpackSwift/Framework"><img src="https://img.shields.io/badge/JetpackSwift-framework-red.svg" alt="JetpackSwift"></a></p>
+
+<p>A Swift wrapper for the Instagram API.</p>
+
+<ul>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#credits">Credits</a></li>
+<li><a href="#license">License</a></li>
+<li><a href="#author">Author</a></li>
+</ul>
+<h2 id='requirements' class='heading'>Requirements</h2>
+
+<ul>
+<li>iOS 9.0+</li>
+<li>Xcode 9.0+</li>
+</ul>
+<h2 id='installation' class='heading'>Installation</h2>
+<h3 id='cocoapods' class='heading'>CocoaPods</h3>
+
+<p><a href="http://cocoapods.org">CocoaPods</a> is a dependency manager for Cocoa projects. You can install it with the following command:</p>
+<pre class="highlight shell"><code><span class="gp">$ </span>gem install cocoapods
+</code></pre>
+
+<blockquote>
+<p>CocoaPods 1.1.0+ is required to build SwiftInstagram 1.0.0+.</p>
+</blockquote>
+
+<p>To integrate SwiftInstagram into your Xcode project using CocoaPods, specify it in your <code>Podfile</code>:</p>
+<pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://github.com/CocoaPods/Specs.git'</span>
+<span class="n">platform</span> <span class="ss">:ios</span><span class="p">,</span> <span class="s1">'9.0'</span>
+<span class="n">use_frameworks!</span>
+
+<span class="n">pod</span> <span class="s1">'SwiftInstagram'</span><span class="p">,</span> <span class="s1">'~&gt; 1.0.0'</span>
+</code></pre>
+
+<p>Then, run the following command:</p>
+<pre class="highlight shell"><code><span class="gp">$ </span>pod install
+</code></pre>
+<h3 id='carthage' class='heading'>Carthage</h3>
+
+<p><a href="https://github.com/Carthage/Carthage">Carthage</a> is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.</p>
+
+<p>You can install Carthage with <a href="http://brew.sh/">Homebrew</a> using the following command:</p>
+<pre class="highlight shell"><code><span class="gp">$ </span>brew update
+<span class="gp">$ </span>brew install carthage
+</code></pre>
+
+<p>To integrate SwiftInstagram into your Xcode project using Carthage, specify it in your <code>Cartfile</code>:</p>
+<pre class="highlight plaintext"><code>github "SwiftInstagram/SwiftInstagram" ~&gt; 1.0.0
+</code></pre>
+<h3 id='swift-package-manager' class='heading'>Swift Package Manager</h3>
+
+<p>To use SwiftInstagram as a <a href="https://swift.org/package-manager/">Swift Package Manager</a> package just add the following in your Package.swift file.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">PackageDescription</span>
+
+<span class="k">let</span> <span class="nv">package</span> <span class="o">=</span> <span class="kt">Package</span><span class="p">(</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="s">"HelloSwiftInstagram"</span><span class="p">,</span>
+    <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
+        <span class="o">.</span><span class="kt">Package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/AnderGoig/SwiftInstagram.git"</span><span class="p">,</span> <span class="s">"1.0.0"</span><span class="p">)</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</code></pre>
+<h3 id='manually' class='heading'>Manually</h3>
+
+<p>If you prefer not to use either of the aforementioned dependency managers, you can integrate SwiftInstagram into your project manually.</p>
+<h4 id='git-submodules' class='heading'>Git Submodules</h4>
+
+<ul>
+<li>Open up Terminal, <code>cd</code> into your top-level project directory, and run the following command <q>if</q> your project is not initialized as a git repository:</li>
+</ul>
+<pre class="highlight shell"><code><span class="gp">$ </span>git init
+</code></pre>
+
+<ul>
+<li>Add SwiftInstagram as a git <a href="http://git-scm.com/docs/git-submodule">submodule</a> by running the following command:</li>
+</ul>
+<pre class="highlight shell"><code><span class="gp">$ </span>git submodule add https://github.com/AnderGoig/SwiftInstagram.git
+<span class="gp">$ </span>git submodule update --init --recursive
+</code></pre>
+
+<ul>
+<li><p>Open the new <code>SwiftInstagram</code> folder, and drag the <code>SwiftInstagram.xcodeproj</code> into the Project Navigator of your application&rsquo;s Xcode project.</p>
+
+<blockquote>
+<p>It should appear nested underneath your application&rsquo;s blue project icon. Whether it is above or below all the other Xcode groups does not matter.</p>
+</blockquote></li>
+<li><p>Select the <code>SwiftInstagram.xcodeproj</code> in the Project Navigator and verify the deployment target matches that of your application target.</p></li>
+<li><p>Next, select your application project in the Project Navigator (blue project icon) to navigate to the target configuration window and select the application target under the <q>Targets</q> heading in the sidebar.</p></li>
+<li><p>In the tab bar at the top of that window, open the <q>General</q> panel.</p></li>
+<li><p>Click on the <code>+</code> button under the <q>Embedded Binaries</q> section.</p></li>
+<li><p>You will see two different <code>SwiftInstagram.xcodeproj</code> folders each with two different versions of the <code>SwiftInstagram.framework</code> nested inside a <code>Products</code> folder.</p>
+
+<blockquote>
+<p>It does not matter which <code>Products</code> folder you choose from.</p>
+</blockquote></li>
+<li><p>Select the <code>SwiftInstagram.framework</code>.</p></li>
+<li><p>And that&rsquo;s it!</p></li>
+</ul>
+
+<blockquote>
+<p>The <code>SwiftInstagram.framework</code> is automagically added as a target dependency, linked framework and embedded framework in a copy files build phase which is all you need to build on the simulator and a device.</p>
+</blockquote>
+<h4 id='embeded-binaries' class='heading'>Embeded Binaries</h4>
+
+<ul>
+<li>Download the latest release from <a href="https://github.com/AnderGoig/SwiftInstagram/releases">https://github.com/AnderGoig/SwiftInstagram/releases</a></li>
+<li>Next, select your application project in the Project Navigator (blue project icon) to navigate to the target configuration window and select the application target under the <q>Targets</q> heading in the sidebar.</li>
+<li>In the tab bar at the top of that window, open the <q>General</q> panel.</li>
+<li>Click on the <code>+</code> button under the <q>Embedded Binaries</q> section.</li>
+<li>Add the downloaded <code>SwiftInstagram.framework</code>.</li>
+<li>And that&rsquo;s it!</li>
+</ul>
+<h2 id='usage' class='heading'>Usage</h2>
+
+<p>SwiftInstagram uses client side (implicit) authentication, so you must <strong>uncheck</strong> the option <q>**Disable implicit OAuth**</q> from the <em>Security</em> tab of your <a href="https://www.instagr.am/developer/clients/manage/">Instagram client</a>.</p>
+
+<p>Also, copy the <strong>Client ID</strong> from your client and paste it inside your <code>Info.plist</code> file with <code>InstagramClientId</code> as the key.</p>
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/Images/Info.plist-file.png" alt="Info.plist" width="585" height="21">
+</p>
+<h3 id='authentication' class='heading'>Authentication</h3>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">api</span> <span class="o">=</span> <span class="kt">Instagram</span><span class="o">.</span><span class="n">shared</span>
+
+<span class="c1">// Login</span>
+<span class="n">api</span><span class="o">.</span><span class="nf">login</span><span class="p">(</span><span class="nv">navController</span><span class="p">:</span> <span class="n">navigationController</span><span class="o">!</span><span class="p">,</span> <span class="nv">redirectURI</span><span class="p">:</span> <span class="s">"YOUR REDIRECTION URI GOES HERE"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">error</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">async</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">navigationController</span><span class="p">?</span><span class="o">.</span><span class="nf">popViewController</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+
+        <span class="c1">// Do your stuff here ...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Returns whether a session is currently available or not</span>
+<span class="k">let</span> <span class="nv">_</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="nf">isSessionValid</span><span class="p">()</span>
+
+<span class="c1">// Logout</span>
+<span class="k">let</span> <span class="nv">_</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="nf">logout</span><span class="p">()</span>
+</code></pre>
+
+<p>You can also specify the <a href="https://www.instagram.com/developer/authorization/">login permissions</a> with the optional parameter <code>authScope</code>, by default, it is set to basic access. To request multiple scopes at once, simply separate the scopes by a <q>+</q>.</p>
+<pre class="highlight swift"><code><span class="n">api</span><span class="o">.</span><span class="nf">login</span><span class="p">(</span><span class="nv">navController</span><span class="p">:</span> <span class="o">...</span><span class="p">,</span> <span class="nv">authScope</span><span class="p">:</span> <span class="s">"likes+comments"</span><span class="p">,</span> <span class="nv">redirectURI</span><span class="p">:</span> <span class="o">...</span> <span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre>
+<h3 id='data-retrieval' class='heading'>Data retrieval</h3>
+
+<p>See the endpoints docs for more on these methods: <a href="http://instagr.am/developer/endpoints/">http://instagr.am/developer/endpoints/</a></p>
+
+<p>All of the following functions are very similar and straightforward, here&rsquo;s an example of retrieving recent media:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">api</span> <span class="o">=</span> <span class="kt">Instagram</span><span class="o">.</span><span class="n">shared</span>
+
+<span class="n">api</span><span class="o">.</span><span class="nf">recentMedia</span><span class="p">(</span><span class="nv">fromUser</span><span class="p">:</span> <span class="s">"self"</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">mediaSet</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">mediaSet</span> <span class="o">=</span> <span class="n">mediaSet</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="o">!.</span><span class="n">message</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Do your stuff here ...</span>
+<span class="p">})</span>
+</code></pre>
+<h4 id='users-a-href-http-instagr-am-developer-endpoints-users-http-instagr-am-developer-endpoints-users-a' class='heading'>Users - <a href="http://instagr.am/developer/endpoints/users/">http://instagr.am/developer/endpoints/users/</a></h4>
+<pre class="highlight swift"><code><span class="n">api</span><span class="o">.</span><span class="nf">user</span><span class="p">(</span><span class="n">_</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">user</span><span class="p">:</span> <span class="kt">InstagramUser</span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="nf">recentMedia</span><span class="p">(</span><span class="n">fromUser</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">maxId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">default</span><span class="p">,</span> <span class="nv">minId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">default</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="k">default</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">mediaSet</span><span class="p">:</span> <span class="p">[</span><span class="kt">InstagramMedia</span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="nf">userLikedMedia</span><span class="p">(</span><span class="nv">maxLikeId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">default</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="k">default</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">mediaSet</span><span class="p">:</span> <span class="p">[</span><span class="kt">InstagramMedia</span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="nf">search</span><span class="p">(</span><span class="n">user</span> <span class="nv">query</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="k">default</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">userSet</span><span class="p">:</span> <span class="p">[</span><span class="kt">InstagramUser</span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+</code></pre>
+<h4 id='relationships-a-href-http-instagr-am-developer-endpoints-relationships-http-instagr-am-developer-endpoints-relationships-a' class='heading'>Relationships - <a href="http://instagr.am/developer/endpoints/relationships/">http://instagr.am/developer/endpoints/relationships/</a></h4>
+<pre class="highlight swift"><code><span class="n">api</span><span class="o">.</span><span class="nf">userFollows</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">userSet</span><span class="p">:</span> <span class="p">[</span><span class="kt">InstagramUser</span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="nf">userFollowers</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">userSet</span><span class="p">:</span> <span class="p">[</span><span class="kt">InstagramUser</span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="nf">userRequestedBy</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">userSet</span><span class="p">:</span> <span class="p">[</span><span class="kt">InstagramUser</span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="nf">userRelationship</span><span class="p">(</span><span class="n">withUser</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">relationship</span><span class="p">:</span> <span class="kt">InstagramRelationship</span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="nf">follow</span><span class="p">(</span><span class="n">user</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">relationship</span><span class="p">:</span> <span class="kt">InstagramRelationship</span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="nf">unfollow</span><span class="p">(</span><span class="n">user</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">relationship</span><span class="p">:</span> <span class="kt">InstagramRelationship</span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="nf">approveRequest</span><span class="p">(</span><span class="n">fromUser</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">relationship</span><span class="p">:</span> <span class="kt">InstagramRelationship</span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="nf">ignoreRequest</span><span class="p">(</span><span class="n">fromUser</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">relationship</span><span class="p">:</span> <span class="kt">InstagramRelationship</span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+</code></pre>
+<h4 id='media-a-href-http-instagr-am-developer-endpoints-media-http-instagr-am-developer-endpoints-media-a' class='heading'>Media - <a href="http://instagr.am/developer/endpoints/media/">http://instagr.am/developer/endpoints/media/</a></h4>
+<pre class="highlight swift"><code><span class="n">api</span><span class="o">.</span><span class="nf">media</span><span class="p">(</span><span class="n">withId</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">media</span><span class="p">:</span> <span class="kt">InstagramMedia</span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="nf">media</span><span class="p">(</span><span class="n">withShortcode</span> <span class="nv">shortcode</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">media</span><span class="p">:</span> <span class="kt">InstagramMedia</span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="nf">searchMedia</span><span class="p">(</span><span class="nv">lat</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="k">default</span><span class="p">,</span> <span class="nv">lng</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="k">default</span><span class="p">,</span> <span class="nv">distance</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="k">default</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">mediaSet</span><span class="p">:</span> <span class="p">[</span><span class="kt">InstagramMedia</span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+</code></pre>
+<h4 id='comments-a-href-http-instagr-am-developer-endpoints-comments-http-instagr-am-developer-endpoints-comments-a' class='heading'>Comments - <a href="http://instagr.am/developer/endpoints/comments/">http://instagr.am/developer/endpoints/comments/</a></h4>
+<pre class="highlight swift"><code><span class="n">api</span><span class="o">.</span><span class="nf">comments</span><span class="p">(</span><span class="n">fromMedia</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">comments</span><span class="p">:</span> <span class="p">[</span><span class="kt">InstagramComment</span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="nf">createComment</span><span class="p">(</span><span class="n">onMedia</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="nf">deleteComment</span><span class="p">(</span><span class="n">_</span> <span class="nv">commentId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">onMedia</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+</code></pre>
+<h4 id='likes-a-href-http-instagr-am-developer-endpoints-likes-http-instagr-am-developer-endpoints-likes-a' class='heading'>Likes - <a href="http://instagr.am/developer/endpoints/likes/">http://instagr.am/developer/endpoints/likes/</a></h4>
+<pre class="highlight swift"><code><span class="n">api</span><span class="o">.</span><span class="nf">likes</span><span class="p">(</span><span class="n">inMedia</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">users</span><span class="p">:</span> <span class="p">[</span><span class="kt">InstagramUser</span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="nf">like</span><span class="p">(</span><span class="n">media</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="nf">unlike</span><span class="p">(</span><span class="n">media</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+</code></pre>
+<h4 id='tags-a-href-http-instagr-am-developer-endpoints-tags-http-instagr-am-developer-endpoints-tags-a' class='heading'>Tags - <a href="http://instagr.am/developer/endpoints/tags/">http://instagr.am/developer/endpoints/tags/</a></h4>
+<pre class="highlight swift"><code><span class="n">api</span><span class="o">.</span><span class="nf">tag</span><span class="p">(</span><span class="n">_</span> <span class="nv">tagName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">tag</span><span class="p">:</span> <span class="kt">InstagramTag</span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="nf">recentMedia</span><span class="p">(</span><span class="n">withTag</span> <span class="nv">tagName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">maxTagId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">default</span><span class="p">,</span> <span class="nv">minTagId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">default</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="k">default</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">mediaSet</span><span class="p">:</span> <span class="p">[</span><span class="kt">InstagramMedia</span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="nf">search</span><span class="p">(</span><span class="n">tag</span> <span class="nv">query</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">tags</span><span class="p">:</span> <span class="p">[</span><span class="kt">InstagramTag</span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+</code></pre>
+<h3 id='locations-a-href-http-instagr-am-developer-endpoints-locations-http-instagr-am-developer-endpoints-locations-a' class='heading'>Locations - <a href="http://instagr.am/developer/endpoints/locations/">http://instagr.am/developer/endpoints/locations/</a></h3>
+<pre class="highlight swift"><code><span class="n">api</span><span class="o">.</span><span class="nf">location</span><span class="p">(</span><span class="n">_</span> <span class="nv">locationId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">location</span><span class="p">:</span> <span class="kt">InstagramLocation</span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="nf">recentMedia</span><span class="p">(</span><span class="n">forLocation</span> <span class="nv">locationId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">maxId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">default</span><span class="p">,</span> <span class="nv">minId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">default</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">mediaSet</span><span class="p">:</span> <span class="p">[</span><span class="kt">InstagramMedia</span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="nf">searchLocation</span><span class="p">(</span><span class="nv">lat</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="k">default</span><span class="p">,</span> <span class="nv">lng</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="k">default</span><span class="p">,</span> <span class="nv">distance</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="k">default</span><span class="p">,</span> <span class="nv">facebookPlacesId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">default</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">locations</span><span class="p">:</span> <span class="p">[</span><span class="kt">InstagramLocation</span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">InstagramError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+</code></pre>
+<h2 id='contributing' class='heading'>Contributing</h2>
+
+<p>If you have feature requests or bug reports, feel free to help out by sending pull requests or by <a href="https://github.com/AnderGoig/IGAuth/issues/new">creating new issues</a>. Please take a moment to
+review the guidelines written by <a href="https://github.com/necolas">Nicolas Gallagher</a>:</p>
+
+<ul>
+<li><a href="https://github.com/necolas/issue-guidelines/blob/master/CONTRIBUTING.md#bugs">Bug reports</a></li>
+<li><a href="https://github.com/necolas/issue-guidelines/blob/master/CONTRIBUTING.md#features">Feature requests</a></li>
+<li><a href="https://github.com/necolas/issue-guidelines/blob/master/CONTRIBUTING.md#pull-requests">Pull requests</a></li>
+</ul>
+<h2 id='credits' class='heading'>Credits</h2>
+
+<p>SwiftInstagram is brought to you by <a href="https://github.com/AnderGoig">Ander Goig</a> and <a href="https://github.com/AnderGoig/SwiftInstagram/contributors">contributors to the project</a>. If you&rsquo;re using SwiftInstagram in your project, attribution would be very appreciated.</p>
+<h2 id='license' class='heading'>License</h2>
+
+<p>SwiftInstagram is released under the MIT license. See <a href="https://github.com/AnderGoig/SwiftInstagram/blob/master/LICENSE">LICENSE</a> for details.</p>
+<h3 id='companion-libraries' class='heading'>Companion libraries</h3>
+
+<p>SwiftInstagram uses <a href="https://github.com/evgenyneu/keychain-swift">keychain-swift</a> by <a href="https://github.com/evgenyneu">@evgenyneu</a> to safely store the access token retrieved by the authentication process.</p>
+<h2 id='author' class='heading'>Author</h2>
+
+<p>Ander Goig, <a href="mailto:goig.ander@gmail.com">goig.ander@gmail.com</a></p>
+
+<p><a href="https://github.com/AnderGoig/SwiftInstagram">https://github.com/AnderGoig/SwiftInstagram</a></p>
+
+          </div>
+        </section>
+
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2017 <a class="link" href="https://github.com/AnderGoig/SwiftInstagram" target="_blank" rel="external">Ander Goig</a>. All rights reserved. (Last updated: 2017-10-01)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>
