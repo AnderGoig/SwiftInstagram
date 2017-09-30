@@ -142,7 +142,7 @@ Also, copy the **Client ID** from your client and paste it inside your `Info.pli
     <img src="https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/Images/Info.plist-file.png" alt="Info.plist" width="585" height="21">
 </p>
 
-### Authentication
+### Authentication - [SwiftInstagram docs](https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html#/Authentication)
 
 ```swift
 let api = Instagram.shared
@@ -175,10 +175,6 @@ api.login(navController: ..., authScope: "likes+comments", redirectURI: ... ) { 
 
 ### Data retrieval
 
-See the endpoints docs for more on these methods: http://instagr.am/developer/endpoints/.
-
-Also, a **more detailed documentation** of all the functions can be found [here](https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html).
-
 All of the following functions are very similar and straightforward, here's an example of retrieving recent media:
 
 ```swift
@@ -194,7 +190,7 @@ api.recentMedia(fromUser: "self", count: 3, completion: { (mediaSet, error) in
 })
 ```
 
-#### Users - http://instagr.am/developer/endpoints/users/
+#### Users - [SwiftInstagram docs](https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html#/User%20Endpoints) - [Official docs](http://instagr.am/developer/endpoints/users/)
 
 ```swift
 api.user(_ userId: String, completion: @escaping (_ user: InstagramUser?, _ error: InstagramError?) -> Void)
@@ -203,7 +199,7 @@ api.userLikedMedia(maxLikeId: String = default, count: Int = default, completion
 api.search(user query: String, count: Int = default, completion: @escaping (_ userSet: [InstagramUser]?, _ error: InstagramError?) -> Void)
 ```
 
-#### Relationships - http://instagr.am/developer/endpoints/relationships/
+#### Relationships - [SwiftInstagram docs](https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html#/Relationship%20Endpoints) - [Official docs](http://instagr.am/developer/endpoints/relationships/)
 
 ```swift
 api.userFollows(completion: @escaping (_ userSet: [InstagramUser]?, _ error: InstagramError?) -> Void)
@@ -216,7 +212,7 @@ api.approveRequest(fromUser userId: String, completion: @escaping (_ relationshi
 api.ignoreRequest(fromUser userId: String, completion: @escaping (_ relationship: InstagramRelationship?, _ error: InstagramError?) -> Void)
 ```
 
-#### Media - http://instagr.am/developer/endpoints/media/
+#### Media - [SwiftInstagram docs](https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html#/Media%20Endpoints) - [Official docs](http://instagr.am/developer/endpoints/media/)
 
 ```swift
 api.media(withId id: String, completion: @escaping (_ media: InstagramMedia?, _ error: InstagramError?) -> Void)
@@ -224,7 +220,7 @@ api.media(withShortcode shortcode: String, completion: @escaping (_ media: Insta
 api.searchMedia(lat: Double = default, lng: Double = default, distance: Int = default, completion: @escaping (_ mediaSet: [InstagramMedia]?, _ error: InstagramError?) -> Void)
 ```
 
-#### Comments - http://instagr.am/developer/endpoints/comments/
+#### Comments - [SwiftInstagram docs](https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html#/Comment%20Endpoints) - [Official docs](http://instagr.am/developer/endpoints/comments/)
 
 ```swift
 api.comments(fromMedia mediaId: String, completion: @escaping (_ comments: [InstagramComment]?, _ error: InstagramError?) -> Void)
@@ -232,7 +228,7 @@ api.createComment(onMedia mediaId: String, text: String, completion: @escaping (
 api.deleteComment(_ commentId: String, onMedia mediaId: String, completion: @escaping (_ error: InstagramError?) -> Void)
 ```
 
-#### Likes - http://instagr.am/developer/endpoints/likes/
+#### Likes - [SwiftInstagram docs](https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html#/Like%20Endpoints) - [Official docs](http://instagr.am/developer/endpoints/likes/)
 
 ```swift
 api.likes(inMedia mediaId: String, completion: @escaping (_ users: [InstagramUser]?, _ error: InstagramError?) -> Void)
@@ -240,7 +236,7 @@ api.like(media mediaId: String, completion: @escaping (_ error: InstagramError?)
 api.unlike(media mediaId: String, completion: @escaping (_ error: InstagramError?) -> Void)
 ```
 
-#### Tags - http://instagr.am/developer/endpoints/tags/
+#### Tags - [SwiftInstagram docs](https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html#/Tag%20Endpoints) - [Official docs](http://instagr.am/developer/endpoints/tags/)
 
 ```swift
 api.tag(_ tagName: String, completion: @escaping (_ tag: InstagramTag?, _ error: InstagramError?) -> Void)
@@ -248,7 +244,7 @@ api.recentMedia(withTag tagName: String, maxTagId: String = default, minTagId: S
 api.search(tag query: String, completion: @escaping (_ tags: [InstagramTag]?, _ error: InstagramError?) -> Void)
 ```
 
-### Locations - http://instagr.am/developer/endpoints/locations/
+#### Locations - [SwiftInstagram docs](https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html#/Location%20Endpoints) - [Official docs](http://instagr.am/developer/endpoints/locations/)
 
 ```swift
 api.location(_ locationId: String, completion: @escaping (_ location: InstagramLocation?, _ error: InstagramError?) -> Void)
