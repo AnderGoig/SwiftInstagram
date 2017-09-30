@@ -10,7 +10,7 @@ env:
     - LANG=en_US.UTF-8
     - WORKSPACE=SwiftInstagram.xcworkspace
     - IOS_FRAMEWORK_SCHEME="SwiftInstagram-iOS"
-    - IOS_SDK=iphonesimulator11
+    - IOS_SDK=iphonesimulator11.0
     - EXAMPLE_SCHEME="Example"
   matrix:
     - DESTINATION="OS=11.0,name=iPhone 7 Plus"  SCHEME="$IOS_FRAMEWORK_SCHEME"      SDK="$IOS_SDK"      RUN_TESTS="YES"     BUILD_EXAMPLE="YES"     RELEASE_READY="YES"     POD_LINT="YES"
