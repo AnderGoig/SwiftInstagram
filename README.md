@@ -5,9 +5,9 @@
 [![Platforms](https://img.shields.io/cocoapods/p/SwiftInstagram.svg)](https://cocoapods.org/pods/SwiftInstagram)
 [![License](https://img.shields.io/cocoapods/l/SwiftInstagram.svg)](https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/LICENSE)
 
-[![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/SwiftInstagram.svg)](https://cocoapods.org/pods/SwiftInstagram)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 
 [![Travis](https://img.shields.io/travis/AnderGoig/SwiftInstagram/master.svg)](https://travis-ci.org/AnderGoig/SwiftInstagram/branches)
 [![JetpackSwift](https://img.shields.io/badge/JetpackSwift-framework-red.svg)](http://github.com/JetpackSwift/Framework)
@@ -16,7 +16,13 @@ A Swift wrapper for the Instagram API.
 
 - [Requirements](#requirements)
 - [Installation](#installation)
+    - [CocoaPods](#cocoapods)
+    - [Carthage](#carthage)
+    - [Swift Package Manager](#swift-package-manager)
+    - [Manually](#manually)
 - [Usage](#usage)
+    - [Authentication](#authentication)
+    - [Data retrieval](#data-retrieval)
 - [Contributing](#contributing)
 - [Credits](#credits)
 - [License](#license)
@@ -265,13 +271,13 @@ review the guidelines written by [Nicolas Gallagher](https://github.com/necolas)
 
 SwiftInstagram is brought to you by [Ander Goig](https://github.com/AnderGoig) and [contributors to the project](https://github.com/AnderGoig/SwiftInstagram/contributors). If you're using SwiftInstagram in your project, attribution would be very appreciated.
 
+#### Companion libraries
+
+SwiftInstagram uses [keychain-swift](https://github.com/evgenyneu/keychain-swift) by [@evgenyneu](https://github.com/evgenyneu) to safely store the access token retrieved by the authentication process.
+
 ## License
 
 SwiftInstagram is released under the MIT license. See [LICENSE](https://github.com/AnderGoig/SwiftInstagram/blob/master/LICENSE) for details.
-
-### Companion libraries
-
-SwiftInstagram uses [keychain-swift](https://github.com/evgenyneu/keychain-swift) by [@evgenyneu](https://github.com/evgenyneu) to safely store the access token retrieved by the authentication process.
 
 ## Author
 
