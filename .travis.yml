@@ -45,7 +45,7 @@ script:
 
   # Run `pod lib lint` if specified
   - if [ $POD_LINT == "YES" ]; then
-     pod lib lint --verbose;
+     pod lib lint --verbose --no-clean;
    fi
 
 before_deploy:
