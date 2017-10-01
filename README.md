@@ -2,15 +2,19 @@
     <img src="https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/Images/SwiftInstagram-logo.png" alt="SwiftInstagram Logo" width="578" height="190">
 </p>
 
-[![Platforms](https://img.shields.io/cocoapods/p/SwiftInstagram.svg)](https://cocoapods.org/pods/SwiftInstagram)
-[![License](https://img.shields.io/cocoapods/l/SwiftInstagram.svg)](https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/LICENSE)
+<p align="center">
+    [![Platforms](https://img.shields.io/cocoapods/p/SwiftInstagram.svg)](https://cocoapods.org/pods/SwiftInstagram)
+    [![License](https://img.shields.io/cocoapods/l/SwiftInstagram.svg)](https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/LICENSE)
 
-[![CocoaPods compatible](https://img.shields.io/cocoapods/v/SwiftInstagram.svg)](https://cocoapods.org/pods/SwiftInstagram)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
+    [![CocoaPods compatible](https://img.shields.io/cocoapods/v/SwiftInstagram.svg)](https://cocoapods.org/pods/SwiftInstagram)
+    [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+    [![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 
-[![Travis](https://img.shields.io/travis/AnderGoig/SwiftInstagram/master.svg)](https://travis-ci.org/AnderGoig/SwiftInstagram/branches)
-[![JetpackSwift](https://img.shields.io/badge/JetpackSwift-framework-red.svg)](http://github.com/JetpackSwift/Framework)
+    [![Travis](https://img.shields.io/travis/AnderGoig/SwiftInstagram/master.svg)](https://travis-ci.org/AnderGoig/SwiftInstagram/branches)
+    [![JetpackSwift](https://img.shields.io/badge/JetpackSwift-framework-red.svg)](http://github.com/JetpackSwift/Framework)
+</p>
+
+---
 
 A Swift wrapper for the Instagram API.
 
