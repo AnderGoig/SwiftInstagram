@@ -1,5 +1,7 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/Images/SwiftInstagram-logo.png" alt="SwiftInstagram Logo" width="578" height="190">
+    <a href="https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html">
+        <img src="https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/Images/SwiftInstagram-logo.png" alt="SwiftInstagram Logo" width="578" height="190">
+    </a>
 </p>
 
 <p align="center">
