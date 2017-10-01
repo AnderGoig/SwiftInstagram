@@ -3,15 +3,34 @@
 </p>
 
 <p align="center">
-    [![Platforms](https://img.shields.io/cocoapods/p/SwiftInstagram.svg)](https://cocoapods.org/pods/SwiftInstagram)
-    [![License](https://img.shields.io/cocoapods/l/SwiftInstagram.svg)](https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/LICENSE)
-
-    [![CocoaPods compatible](https://img.shields.io/cocoapods/v/SwiftInstagram.svg)](https://cocoapods.org/pods/SwiftInstagram)
-    [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-    [![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
-
-    [![Travis](https://img.shields.io/travis/AnderGoig/SwiftInstagram/master.svg)](https://travis-ci.org/AnderGoig/SwiftInstagram/branches)
-    [![JetpackSwift](https://img.shields.io/badge/JetpackSwift-framework-red.svg)](http://github.com/JetpackSwift/Framework)
+    <a href="https://cocoapods.org/pods/SwiftInstagram">
+        <img src="https://img.shields.io/cocoapods/p/SwiftInstagram.svg"
+             alt="Platforms">
+    </a>
+    <a href="https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/LICENSE">
+        <img src="https://img.shields.io/cocoapods/l/SwiftInstagram.svg"
+             alt="License">
+    </a>
+    <a href="https://cocoapods.org/pods/SwiftInstagram">
+        <img src="https://img.shields.io/cocoapods/v/SwiftInstagram.svg"
+             alt="CocoaPods compatible">
+    </a>
+    <a href="https://github.com/Carthage/Carthage">
+        <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"
+             alt="Carthage compatible">
+    </a>
+    <a href="https://github.com/apple/swift-package-manager">
+        <img src="https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg"
+             alt="Swift Package Manager">
+    </a>
+    <a href="https://travis-ci.org/AnderGoig/SwiftInstagram/branches">
+        <img src="https://img.shields.io/travis/AnderGoig/SwiftInstagram/master.svg"
+             alt="Travis">
+    </a>
+    <a href="http://github.com/JetpackSwift/Framework">
+        <img src="https://img.shields.io/badge/JetpackSwift-framework-red.svg"
+             alt="JetpackSwift">
+    </a>
 </p>
 
 ---
