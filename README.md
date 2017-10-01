@@ -21,7 +21,7 @@ A Swift wrapper for the Instagram API.
     - [Swift Package Manager](#swift-package-manager)
     - [Manually](#manually)
 - [Usage](#usage)
-    - [Authentication](#authentication)
+    - [Authentication](#authentication---swiftinstagram-docs)
     - [Data retrieval](#data-retrieval)
 - [Contributing](#contributing)
 - [Credits](#credits)
