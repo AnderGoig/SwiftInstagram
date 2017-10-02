@@ -33,5 +33,5 @@ struct InstagramResponse<T>: Decodable where T: Decodable {
             case nextMaxId = "next_max_id"
         }
     }
-    
+
 }

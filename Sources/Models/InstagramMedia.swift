@@ -90,5 +90,5 @@ public struct InstagramMedia: Decodable {
         case usersInPhoto = "users_in_photo"
         case carouselMedia = "carousel_media"
     }
-    
+
 }

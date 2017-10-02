@@ -16,5 +16,5 @@ public struct InstagramTag: Decodable {
         case mediaCount = "media_count"
         case name
     }
-    
+
 }

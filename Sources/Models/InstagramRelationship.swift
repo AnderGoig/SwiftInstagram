@@ -16,5 +16,5 @@ public struct InstagramRelationship: Decodable {
         case outgoingStatus = "outgoing_status"
         case incomingStatus = "incoming_status"
     }
-    
+
 }

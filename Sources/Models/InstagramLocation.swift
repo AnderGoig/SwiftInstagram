@@ -10,7 +10,7 @@ import CoreLocation
 
 /// The struct containing an Instagram location.
 public struct InstagramLocation: Codable {
-    
+
     let latitude: Double
     let longitude: Double
     public let id: String

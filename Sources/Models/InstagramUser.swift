@@ -35,5 +35,5 @@ public struct InstagramUser: Decodable {
         case fullName = "full_name"
         case isBusiness = "is_business"
     }
-    
+
 }

@@ -18,5 +18,5 @@ public struct InstagramComment: Decodable {
         case id, text, from
         case createdTime = "created_time"
     }
-    
+
 }
