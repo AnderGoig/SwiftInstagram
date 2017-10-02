@@ -8,6 +8,7 @@
 
 /// The struct containing an Instagram relationship.
 public struct InstagramRelationship: Decodable {
+
     public let outgoingStatus: String
     public let incomingStatus: String?
 
@@ -15,4 +16,5 @@ public struct InstagramRelationship: Decodable {
         case outgoingStatus = "outgoing_status"
         case incomingStatus = "incoming_status"
     }
+    
 }

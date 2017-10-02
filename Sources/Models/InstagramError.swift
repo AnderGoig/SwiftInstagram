@@ -8,6 +8,7 @@
 
 /// The struct containing an Instagram error.
 public struct InstagramError: Error {
+    
     public enum ErrorKind: CustomStringConvertible {
         case invalidRequest
         case jsonParseError
@@ -31,4 +32,5 @@ public struct InstagramError: Error {
     public var localizedDescription: String {
         return "[\(kind.description)] - \(message)"
     }
+
 }

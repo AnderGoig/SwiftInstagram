@@ -8,6 +8,7 @@
 
 /// The struct containing an Instagram user.
 public struct InstagramUser: Decodable {
+
     public let id: String
     public let username: String
     public let profilePicture: String
@@ -34,4 +35,5 @@ public struct InstagramUser: Decodable {
         case fullName = "full_name"
         case isBusiness = "is_business"
     }
+    
 }

@@ -8,6 +8,7 @@
 
 /// The struct containing an Instagram comment.
 public struct InstagramComment: Decodable {
+
     public let id: String
     public let text: String
     public let createdTime: String
@@ -17,4 +18,5 @@ public struct InstagramComment: Decodable {
         case id, text, from
         case createdTime = "created_time"
     }
+    
 }

@@ -7,6 +7,7 @@
 //
 
 struct InstagramResponse<T>: Decodable where T: Decodable {
+
     let data: T?
     let meta: Meta
     let pagination: Pagination?
@@ -32,4 +33,5 @@ struct InstagramResponse<T>: Decodable where T: Decodable {
             case nextMaxId = "next_max_id"
         }
     }
+    
 }

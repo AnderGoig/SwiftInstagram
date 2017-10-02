@@ -8,6 +8,7 @@
 
 /// The struct containing an Instagram media.
 public struct InstagramMedia: Decodable {
+
     public let id: String
     public let user: InstagramUser
     public let images: Images
@@ -89,4 +90,5 @@ public struct InstagramMedia: Decodable {
         case usersInPhoto = "users_in_photo"
         case carouselMedia = "carousel_media"
     }
+    
 }

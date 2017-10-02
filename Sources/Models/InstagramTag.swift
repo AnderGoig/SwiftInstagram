@@ -8,6 +8,7 @@
 
 /// The struct containing an Instagram tag.
 public struct InstagramTag: Decodable {
+
     public let mediaCount: Int
     public let name: String
 
@@ -15,4 +16,5 @@ public struct InstagramTag: Decodable {
         case mediaCount = "media_count"
         case name
     }
+    
 }
