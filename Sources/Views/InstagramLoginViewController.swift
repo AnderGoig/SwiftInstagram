@@ -11,10 +11,6 @@ import WebKit
 
 class InstagramLoginViewController: UIViewController {
 
-    // MARK: - Constants
-
-    private final let observerKeyPath = "estimatedProgress"
-
     // MARK: - Properties
 
     private var api = Instagram.shared
@@ -39,8 +35,7 @@ class InstagramLoginViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public init(clientId: String, authScope: String, redirectURI: String,
-                completion: @escaping (String?, InstagramError?) -> Void) {
+    public init(clientId: String, authScope: String, redirectURI: String, completion: @escaping (String?, InstagramError?) -> Void) {
         self.clientId = clientId
         self.authScope = authScope
         self.redirectURI = redirectURI
@@ -144,8 +139,7 @@ extension InstagramLoginViewController: WKNavigationDelegate {
         }
     }
 
-    public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction,
-                        decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+    public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         let urlString = navigationAction.request.url!.absoluteString
 
         if let range = urlString.range(of: "#access_token=") {
