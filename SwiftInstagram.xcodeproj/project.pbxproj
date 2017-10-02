@@ -12,6 +12,7 @@
 		3549BB8B1DA38C0A00C63030 /* SwiftInstagramSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3549BB8A1DA38C0A00C63030 /* SwiftInstagramSpec.swift */; };
 		35CA2AC61E12925700147290 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CA2A971E12920400147290 /* Nimble.framework */; };
 		35CA2AC71E12925700147290 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35CA2AB31E12920400147290 /* Quick.framework */; };
+		773667D91F82DE52002DF461 /* InstagramURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773667D81F82DE52002DF461 /* InstagramURL.swift */; };
 		778744581F772D2700FDE161 /* KeychainSwiftDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778744571F772D2700FDE161 /* KeychainSwiftDistrib.swift */; };
 		778AF5BF1F6E7D10005AC284 /* InstagramLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778AF5BB1F6E7D0F005AC284 /* InstagramLoginViewController.swift */; };
 		778AF5C01F6E7D10005AC284 /* Instagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778AF5BC1F6E7D0F005AC284 /* Instagram.swift */; };
@@ -196,6 +197,7 @@
 		35CD65051E60192300AF060B /* iOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
 		35CD65061E60192300AF060B /* iOS-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Framework.xcconfig"; sourceTree = "<group>"; };
 		35CD65071E60192300AF060B /* iOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		773667D81F82DE52002DF461 /* InstagramURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramURL.swift; sourceTree = "<group>"; };
 		778744411F771AB700FDE161 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
 		778744571F772D2700FDE161 /* KeychainSwiftDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftDistrib.swift; sourceTree = "<group>"; };
 		778AF5BB1F6E7D0F005AC284 /* InstagramLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramLoginViewController.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				778AF5BC1F6E7D0F005AC284 /* Instagram.swift */,
+				773667D81F82DE52002DF461 /* InstagramURL.swift */,
 				77EF1C451F7FCA8F00C90E32 /* Views */,
 				778AF5FD1F6E7F3F005AC284 /* Models */,
 				77EF1C331F7FCA3700C90E32 /* Helpers */,
@@ -708,6 +711,7 @@
 				778AF5E21F6E7F35005AC284 /* InstagramComment.swift in Sources */,
 				778AF5DE1F6E7F35005AC284 /* InstagramError.swift in Sources */,
 				778AF5FA1F6E7F35005AC284 /* InstagramMedia.swift in Sources */,
+				773667D91F82DE52002DF461 /* InstagramURL.swift in Sources */,
 				778AF5F21F6E7F35005AC284 /* InstagramUser.swift in Sources */,
 				778744581F772D2700FDE161 /* KeychainSwiftDistrib.swift in Sources */,
 				778AF5C01F6E7D10005AC284 /* Instagram.swift in Sources */,

@@ -13,7 +13,6 @@ class InstagramLoginViewController: UIViewController {
 
     // MARK: - Constants
 
-    private final let baseURL = "https://api.instagram.com"
     private final let observerKeyPath = "estimatedProgress"
 
     // MARK: - Properties
@@ -116,7 +115,7 @@ class InstagramLoginViewController: UIViewController {
     // MARK: -
 
     private func loadAuthorizationURL() {
-        let authorizationURL = URL(string: baseURL + "/oauth/authorize/")
+        let authorizationURL = URL(string: InstagramURL.oauth + "/oauth/authorize/")
         var components = URLComponents(url: authorizationURL!, resolvingAgainstBaseURL: false)!
         components.queryItems = [
             URLQueryItem(name: "client_id", value: self.clientId),

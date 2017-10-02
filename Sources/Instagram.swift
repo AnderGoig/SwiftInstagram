@@ -11,10 +11,6 @@ import UIKit
 /// A set of helper functions to make the Instagram API easier to use.
 public class Instagram {
 
-    // MARK: - Constants
-
-    private final let baseURL = "https://api.instagram.com/v1"
-
     // MARK: - Properties
 
     private let keychain = KeychainSwift()
@@ -117,7 +113,7 @@ public class Instagram {
     }
 
     private func buildURL(for endpoint: String, withParams params: [String: String] = [String: String]()) -> URL {
-        var urlComps = URLComponents(string: baseURL + endpoint)
+        var urlComps = URLComponents(string: InstagramURL.api + endpoint)
 
         var items = [URLQueryItem]()
 
