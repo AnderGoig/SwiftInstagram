@@ -57,7 +57,7 @@ public class Instagram {
             if self.keychain.set(accessToken!, forKey: "accessToken") {
                 completion(nil)
             } else {
-                completion(InstagramError(kind: .errorStoringAccessToken, message: "Error storing access token into keychain."))
+                completion(InstagramError(kind: .keychainError(code: self.keychain.lastResultCode), message: "Error storing access token into keychain."))
             }
         }
 
@@ -98,7 +98,7 @@ public class Instagram {
                         completion(object.data, nil)
                     }
                 } catch {
-                    completion(nil, InstagramError(kind: .errorDecodingJSON, message: error.localizedDescription))
+                    completion(nil, InstagramError(kind: .jsonParseError, message: error.localizedDescription))
                 }
             }
         }.resume()
