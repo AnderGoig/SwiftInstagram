@@ -7,19 +7,9 @@
 //
 
 struct InstagramResponse<T>: Decodable where T: Decodable {
-    let pagination: Pagination?
     let data: T?
     let meta: Meta
-
-    struct Pagination: Decodable {
-        let nextURL: String?
-        let nextMaxId: String?
-
-        private enum CodingKeys: String, CodingKey {
-            case nextURL = "next_url"
-            case nextMaxId = "next_max_id"
-        }
-    }
+    let pagination: Pagination?
 
     struct Meta: Decodable {
         let code: Int
@@ -30,6 +20,16 @@ struct InstagramResponse<T>: Decodable where T: Decodable {
             case code
             case errorType = "error_type"
             case errorMessage = "error_message"
+        }
+    }
+
+    struct Pagination: Decodable {
+        let nextURL: String?
+        let nextMaxId: String?
+
+        private enum CodingKeys: String, CodingKey {
+            case nextURL = "next_url"
+            case nextMaxId = "next_max_id"
         }
     }
 }
