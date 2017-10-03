@@ -148,9 +148,7 @@ extension InstagramLoginViewController: WKNavigationDelegate {
         if let range = urlString.range(of: "#access_token=") {
             let location = range.upperBound
             let accessToken = urlString[location...]
-            DispatchQueue.main.async {
-                self.success?(String(accessToken))
-            }
+            self.success?(String(accessToken))
             decisionHandler(.cancel)
             return
         }
