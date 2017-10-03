@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.0.1] - 2017-10-03
 ### Added
-- Use of DispatchQueue for parsing JSON and calling callback functions.
+- Use of `DispatchQueue` for parsing JSON and calling callback functions.
 ### Changed
 - The source code is now a little simpler thanks to the use of `typealias`.
 - The structure of the functions has changed, there are two callbacks now (`success` and `failure`) instead of just one.
