@@ -2,7 +2,7 @@
   "warnings": [
     {
       "file": "/Users/AnderGoig/Downloads/Xcode/SwiftInstagram/Sources/Instagram.swift",
-      "line": 27,
+      "line": 28,
       "symbol": "Instagram.shared",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
