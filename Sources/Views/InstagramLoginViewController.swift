@@ -87,6 +87,7 @@ class InstagramLoginViewController: UIViewController {
         let webConfiguration = WKWebViewConfiguration()
         webConfiguration.websiteDataStore = .nonPersistent()
         webView = WKWebView(frame: self.view.frame, configuration: webConfiguration)
+        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         webView.navigationDelegate = self
 
         webViewObservation = webView.observe(\.estimatedProgress) { (view, _ change) in
