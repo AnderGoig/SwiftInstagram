@@ -49,17 +49,12 @@ public class Instagram {
     /// - Note: More information about the login permissions (scope)
     ///   [here](https://www.instagram.com/developer/authorization/).
 
-    public func login(navController: UINavigationController, authScope: String = "basic", redirectURI: String, failure: FailureHandler? = nil) {
-        let vc = InstagramLoginViewController(clientId: self.clientId!, authScope: authScope, redirectURI: redirectURI) { accessToken, error in
-            if let error = error {
-                failure?(error)
-                return
-            }
-
-            if !self.keychain.set(accessToken!, forKey: "accessToken") {
+    public func login(navController: UINavigationController, authScope: String = "basic", redirectURI: String, success: () -> Void, failure: FailureHandler? = nil) {
+        let vc = InstagramLoginViewController(clientId: self.clientId!, authScope: authScope, redirectURI: redirectURI, success: { (accessToken) in
+            if !self.keychain.set(accessToken, forKey: "accessToken") {
                 failure?(InstagramError(kind: .keychainError(code: self.keychain.lastResultCode), message: "Error storing access token into keychain."))
             }
-        }
+        }, failure: failure)
 
         navController.show(vc, sender: nil)
     }

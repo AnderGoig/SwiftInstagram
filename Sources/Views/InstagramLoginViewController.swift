@@ -11,6 +11,11 @@ import WebKit
 
 class InstagramLoginViewController: UIViewController {
 
+    // MARK: - Types
+
+    public typealias SuccessHandler = (_ accesToken: String) -> Void
+    public typealias FailureHandler = (_ error: Error) -> Void
+
     // MARK: - Properties
 
     private var api = Instagram.shared
@@ -18,13 +23,14 @@ class InstagramLoginViewController: UIViewController {
     private var clientId: String
     private var authScope: String
     private var redirectURI: String
-    private var completion: (String?, InstagramError?) -> Void
+    private var success: SuccessHandler?
+    private var failure: FailureHandler?
 
     private var webView: WKWebView!
     private var progressView: UIProgressView!
     private var webViewObservation: NSKeyValueObservation!
 
-    // MARK: - Custom Properties
+    // MARK: - Customizable Properties
 
     public var customTitle: String?
     public var progressViewTintColor = UIColor(red: 0.88, green: 0.19, blue: 0.42, alpha: 1.0)
@@ -35,11 +41,12 @@ class InstagramLoginViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public init(clientId: String, authScope: String, redirectURI: String, completion: @escaping (String?, InstagramError?) -> Void) {
+    public init(clientId: String, authScope: String, redirectURI: String, success: SuccessHandler? = nil, failure: FailureHandler? = nil) {
         self.clientId = clientId
         self.authScope = authScope
         self.redirectURI = redirectURI
-        self.completion = completion
+        self.success = success
+        self.failure = failure
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -59,7 +66,7 @@ class InstagramLoginViewController: UIViewController {
 
         let navBar = navigationController!.navigationBar
 
-        // Initialize progress view
+        // Initializes progress view
         progressView = UIProgressView(progressViewStyle: .bar)
         progressView.progress = 0.0
         progressView.tintColor = self.progressViewTintColor
@@ -76,7 +83,7 @@ class InstagramLoginViewController: UIViewController {
 
         navigationController!.view.addConstraints([bottomConstraint, leftConstraint, rightConstraint])
 
-        // Initialize web view
+        // Initializes web view
         let webConfiguration = WKWebViewConfiguration()
         webConfiguration.websiteDataStore = .nonPersistent()
         webView = WKWebView(frame: self.view.frame, configuration: webConfiguration)
@@ -123,10 +130,6 @@ class InstagramLoginViewController: UIViewController {
         webView.load(request)
     }
 
-    func endAuthentication(accessToken: String?, error: InstagramError?) {
-        self.completion(accessToken, error)
-    }
-
 }
 
 // MARK: - WKNavigationDelegate
@@ -145,7 +148,7 @@ extension InstagramLoginViewController: WKNavigationDelegate {
         if let range = urlString.range(of: "#access_token=") {
             let location = range.upperBound
             let accessToken = urlString[location...]
-            endAuthentication(accessToken: String(accessToken), error: nil)
+            self.success?(String(accessToken))
             decisionHandler(.cancel)
             return
         }
