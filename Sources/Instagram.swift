@@ -51,7 +51,7 @@ public class Instagram {
     ///   [here](https://www.instagram.com/developer/authorization/).
 
     public func login(navController: UINavigationController, authScope: String = "basic", redirectURI: String, success: () -> Void, failure: FailureHandler? = nil) {
-        let vc = InstagramLoginViewController(clientId: self.clientId!, authScope: authScope, redirectURI: redirectURI, success: { (accessToken) in
+        let vc = InstagramLoginViewController(clientId: self.clientId!, authScope: authScope, redirectURI: redirectURI, success: { accessToken in
             if !self.keychain.set(accessToken, forKey: "accessToken") {
                 failure?(InstagramError(kind: .keychainError(code: self.keychain.lastResultCode), message: "Error storing access token into keychain."))
             }
@@ -88,15 +88,23 @@ public class Instagram {
 
         session.dataTask(with: request) { (data, _ response, error) in
             if let data = data {
-                do {
-                    let object = try self.decoder.decode(InstagramResponse<T>.self, from: data)
-                    if let errorMessage = object.meta.errorMessage {
-                        failure?(InstagramError(kind: .invalidRequest, message: errorMessage))
-                    } else {
-                        success?(object.data!)
+                DispatchQueue.global(qos: .utility).async {
+                    do {
+                        let object = try self.decoder.decode(InstagramResponse<T>.self, from: data)
+                        if let errorMessage = object.meta.errorMessage {
+                            DispatchQueue.main.async {
+                                failure?(InstagramError(kind: .invalidRequest, message: errorMessage))
+                            }
+                        } else {
+                            DispatchQueue.main.async {
+                                success?(object.data!)
+                            }
+                        }
+                    } catch {
+                        DispatchQueue.main.async {
+                            failure?(InstagramError(kind: .jsonParseError, message: error.localizedDescription))
+                        }
                     }
-                } catch {
-                    failure?(InstagramError(kind: .jsonParseError, message: error.localizedDescription))
                 }
             }
         }.resume()
