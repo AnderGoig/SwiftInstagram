@@ -116,9 +116,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C5loginySo22UINavigationControllerC03navE0_SS9authScopeSS11redirectURIyAA0B5ErrorVSgc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/login(navController:authScope:redirectURI:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C5loginySo22UINavigationControllerC03navE0_SS9authScopeSS11redirectURIyAA0B5ErrorVSgc10completiontF">login(navController:authScope:redirectURI:completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C5loginySo22UINavigationControllerC03navE0_SS9authScopeSS11redirectURIys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/login(navController:authScope:redirectURI:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C5loginySo22UINavigationControllerC03navE0_SS9authScopeSS11redirectURIys5Error_pcSg7failuretF">login(navController:authScope:redirectURI:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -141,7 +141,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">login</span><span class="p">(</span><span class="nv">navController</span><span class="p">:</span> <span class="kt">UINavigationController</span><span class="p">,</span> <span class="nv">authScope</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"basic"</span><span class="p">,</span> <span class="nv">redirectURI</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">login</span><span class="p">(</span><span class="nv">navController</span><span class="p">:</span> <span class="kt">UINavigationController</span><span class="p">,</span> <span class="nv">authScope</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"basic"</span><span class="p">,</span> <span class="nv">redirectURI</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -188,24 +188,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect retrieval.</p>
                                 </div>
                               </td>
                             </tr>
@@ -291,9 +279,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C4userySS_yAA0B4UserVSg_AA0B5ErrorVSgtc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/user(_:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C4userySS_yAA0B4UserVSg_AA0B5ErrorVSgtc10completiontF">user(_:completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C4userySS_yAA0B4UserVcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/user(_:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C4userySS_yAA0B4UserVcSg7successys5Error_pcSg7failuretF">user(_:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -318,7 +306,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">user</span><span class="p">(</span><span class="n">_</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">user</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">user</span><span class="p">(</span><span class="n">_</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -341,36 +329,24 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>success</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
+                                  <p>The callback called after a correct retrieval.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>user</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></code> after a correct retrieval, <code>nil</code> otherwise.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect retrieval.</p>
                                 </div>
                               </td>
                             </tr>
@@ -383,9 +359,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C11recentMediaySS8fromUser_SS5maxIdSS03minH0Si5countySayAA0bD0VGSg_AA0B5ErrorVSgtc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/recentMedia(fromUser:maxId:minId:count:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C11recentMediaySS8fromUser_SS5maxIdSS03minH0Si5countySayAA0bD0VGSg_AA0B5ErrorVSgtc10completiontF">recentMedia(fromUser:maxId:minId:count:completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C11recentMediaySS8fromUser_SS5maxIdSS03minH0Si5countySayAA0bD0VGcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/recentMedia(fromUser:maxId:minId:count:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C11recentMediaySS8fromUser_SS5maxIdSS03minH0Si5countySayAA0bD0VGcSg7successys5Error_pcSg7failuretF">recentMedia(fromUser:maxId:minId:count:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -410,7 +386,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">recentMedia</span><span class="p">(</span><span class="n">fromUser</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">maxId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">minId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">mediaSet</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">recentMedia</span><span class="p">(</span><span class="n">fromUser</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">maxId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">minId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -469,36 +445,24 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>success</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
+                                  <p>The callback called after a correct retrieval.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>mediaSet</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></code> after a correct retrieval, <code>nil</code> otherwise.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect retrieval.</p>
                                 </div>
                               </td>
                             </tr>
@@ -511,9 +475,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C14userLikedMediaySS9maxLikeId_Si5countySayAA0bE0VGSg_AA0B5ErrorVSgtc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/userLikedMedia(maxLikeId:count:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C14userLikedMediaySS9maxLikeId_Si5countySayAA0bE0VGSg_AA0B5ErrorVSgtc10completiontF">userLikedMedia(maxLikeId:count:completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C14userLikedMediaySS9maxLikeId_Si5countySayAA0bE0VGcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/userLikedMedia(maxLikeId:count:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C14userLikedMediaySS9maxLikeId_Si5countySayAA0bE0VGcSg7successys5Error_pcSg7failuretF">userLikedMedia(maxLikeId:count:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -533,7 +497,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userLikedMedia</span><span class="p">(</span><span class="nv">maxLikeId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">mediaSet</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userLikedMedia</span><span class="p">(</span><span class="nv">maxLikeId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -568,36 +532,24 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>success</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
+                                  <p>The callback called after a correct retrieval.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>mediaSet</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></code> after a correct retrieval, <code>nil</code> otherwise.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect retrieval.</p>
                                 </div>
                               </td>
                             </tr>
@@ -610,9 +562,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C6searchySS4user_Si5countySayAA0B4UserVGSg_AA0B5ErrorVSgtc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/search(user:count:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C6searchySS4user_Si5countySayAA0B4UserVGSg_AA0B5ErrorVSgtc10completiontF">search(user:count:completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C6searchySS4user_Si5countySayAA0B4UserVGcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/search(user:count:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C6searchySS4user_Si5countySayAA0B4UserVGcSg7successys5Error_pcSg7failuretF">search(user:count:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -632,7 +584,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">search</span><span class="p">(</span><span class="n">user</span> <span class="nv">query</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">userSet</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">search</span><span class="p">(</span><span class="n">user</span> <span class="nv">query</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -667,36 +619,24 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>success</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
+                                  <p>The callback called after a correct retrieval.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>userSet</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></code> objects after a correct retrieval, <code>nil</code> otherwise.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect retrieval.</p>
                                 </div>
                               </td>
                             </tr>
@@ -720,9 +660,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C11userFollowsyySayAA0B4UserVGSg_AA0B5ErrorVSgtc10completion_tF"></a>
-                    <a name="//apple_ref/swift/Method/userFollows(completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C11userFollowsyySayAA0B4UserVGSg_AA0B5ErrorVSgtc10completion_tF">userFollows(completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C11userFollowsyySayAA0B4UserVGcSg7success_ys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/userFollows(success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C11userFollowsyySayAA0B4UserVGcSg7success_ys5Error_pcSg7failuretF">userFollows(success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -742,7 +682,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userFollows</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">userSet</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userFollows</span><span class="p">(</span><span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -753,36 +693,24 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>success</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
+                                  <p>The callback called after a correct retrieval.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>userSet</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></code> objects after a correct retrieval, <code>nil</code> otherwise.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect retrieval.</p>
                                 </div>
                               </td>
                             </tr>
@@ -795,9 +723,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C13userFollowersyySayAA0B4UserVGSg_AA0B5ErrorVSgtc10completion_tF"></a>
-                    <a name="//apple_ref/swift/Method/userFollowers(completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C13userFollowersyySayAA0B4UserVGSg_AA0B5ErrorVSgtc10completion_tF">userFollowers(completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C13userFollowersyySayAA0B4UserVGcSg7success_ys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/userFollowers(success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C13userFollowersyySayAA0B4UserVGcSg7success_ys5Error_pcSg7failuretF">userFollowers(success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -817,7 +745,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userFollowers</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">userSet</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userFollowers</span><span class="p">(</span><span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -828,36 +756,24 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>success</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
+                                  <p>The callback called after a correct retrieval.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>userSet</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></code> objects after a correct retrieval, <code>nil</code> otherwise.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect retrieval.</p>
                                 </div>
                               </td>
                             </tr>
@@ -870,9 +786,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C15userRequestedByyySayAA0B4UserVGSg_AA0B5ErrorVSgtc10completion_tF"></a>
-                    <a name="//apple_ref/swift/Method/userRequestedBy(completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C15userRequestedByyySayAA0B4UserVGSg_AA0B5ErrorVSgtc10completion_tF">userRequestedBy(completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C15userRequestedByyySayAA0B4UserVGcSg7success_ys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/userRequestedBy(success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C15userRequestedByyySayAA0B4UserVGcSg7success_ys5Error_pcSg7failuretF">userRequestedBy(success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -892,7 +808,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userRequestedBy</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">userSet</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userRequestedBy</span><span class="p">(</span><span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -903,36 +819,24 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>success</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
+                                  <p>The callback called after a correct retrieval.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>userSet</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></code> objects after a correct retrieval, <code>nil</code> otherwise.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect retrieval.</p>
                                 </div>
                               </td>
                             </tr>
@@ -945,9 +849,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C16userRelationshipySS8withUser_yAA0bD0VSg_AA0B5ErrorVSgtc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/userRelationship(withUser:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C16userRelationshipySS8withUser_yAA0bD0VSg_AA0B5ErrorVSgtc10completiontF">userRelationship(withUser:completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C16userRelationshipySS8withUser_yAA0bD0VcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/userRelationship(withUser:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C16userRelationshipySS8withUser_yAA0bD0VcSg7successys5Error_pcSg7failuretF">userRelationship(withUser:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -967,7 +871,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userRelationship</span><span class="p">(</span><span class="n">withUser</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">relationship</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userRelationship</span><span class="p">(</span><span class="n">withUser</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -990,36 +894,24 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>success</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
+                                  <p>The callback called after a correct retrieval.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>relationship</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>A <code><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></code> object after a correct retrieval, <code>nil</code> otherwise.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect retrieval.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1032,9 +924,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C6followySS4user_yAA0B12RelationshipVSg_AA0B5ErrorVSgtc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/follow(user:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C6followySS4user_yAA0B12RelationshipVSg_AA0B5ErrorVSgtc10completiontF">follow(user:completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C6followySS4user_yAA0B12RelationshipVcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/follow(user:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C6followySS4user_yAA0B12RelationshipVcSg7successys5Error_pcSg7failuretF">follow(user:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1054,7 +946,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">follow</span><span class="p">(</span><span class="n">user</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">relationship</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">follow</span><span class="p">(</span><span class="n">user</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1077,36 +969,24 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>success</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
+                                  <p>The callback called after a correct follow.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>relationship</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>A <code><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></code> object after a correct retrieval, <code>nil</code> otherwise.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect follow.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1119,9 +999,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C8unfollowySS4user_yAA0B12RelationshipVSg_AA0B5ErrorVSgtc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/unfollow(user:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C8unfollowySS4user_yAA0B12RelationshipVSg_AA0B5ErrorVSgtc10completiontF">unfollow(user:completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C8unfollowySS4user_yAA0B12RelationshipVcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/unfollow(user:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C8unfollowySS4user_yAA0B12RelationshipVcSg7successys5Error_pcSg7failuretF">unfollow(user:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1141,7 +1021,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">unfollow</span><span class="p">(</span><span class="n">user</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">relationship</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">unfollow</span><span class="p">(</span><span class="n">user</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1164,36 +1044,24 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>success</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
+                                  <p>The callback called after a correct unfollow.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>relationship</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>A <code><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></code> object after a correct retrieval, <code>nil</code> otherwise.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect unfollow.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1206,9 +1074,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C14approveRequestySS8fromUser_yAA0B12RelationshipVSg_AA0B5ErrorVSgtc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/approveRequest(fromUser:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C14approveRequestySS8fromUser_yAA0B12RelationshipVSg_AA0B5ErrorVSgtc10completiontF">approveRequest(fromUser:completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C14approveRequestySS8fromUser_yAA0B12RelationshipVcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/approveRequest(fromUser:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C14approveRequestySS8fromUser_yAA0B12RelationshipVcSg7successys5Error_pcSg7failuretF">approveRequest(fromUser:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1228,7 +1096,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">approveRequest</span><span class="p">(</span><span class="n">fromUser</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">relationship</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">approveRequest</span><span class="p">(</span><span class="n">fromUser</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1251,36 +1119,24 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>success</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
+                                  <p>The callback called after a correct approve.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>relationship</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>A <code><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></code> object after a correct retrieval, <code>nil</code> otherwise.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect approve.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1293,9 +1149,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C13ignoreRequestySS8fromUser_yAA0B12RelationshipVSg_AA0B5ErrorVSgtc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/ignoreRequest(fromUser:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C13ignoreRequestySS8fromUser_yAA0B12RelationshipVSg_AA0B5ErrorVSgtc10completiontF">ignoreRequest(fromUser:completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C13ignoreRequestySS8fromUser_yAA0B12RelationshipVcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/ignoreRequest(fromUser:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C13ignoreRequestySS8fromUser_yAA0B12RelationshipVcSg7successys5Error_pcSg7failuretF">ignoreRequest(fromUser:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1315,7 +1171,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">ignoreRequest</span><span class="p">(</span><span class="n">fromUser</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">relationship</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">ignoreRequest</span><span class="p">(</span><span class="n">fromUser</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1338,36 +1194,24 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>success</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
+                                  <p>The callback called after a correct ignore.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>relationship</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>A <code><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></code> object after a correct retrieval, <code>nil</code> otherwise.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect ignore.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1391,9 +1235,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C5mediaySS6withId_yAA0B5MediaVSg_AA0B5ErrorVSgtc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/media(withId:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C5mediaySS6withId_yAA0B5MediaVSg_AA0B5ErrorVSgtc10completiontF">media(withId:completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C5mediaySS6withId_yAA0B5MediaVcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/media(withId:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C5mediaySS6withId_yAA0B5MediaVcSg7successys5Error_pcSg7failuretF">media(withId:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1413,7 +1257,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">media</span><span class="p">(</span><span class="n">withId</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">media</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">media</span><span class="p">(</span><span class="n">withId</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1436,36 +1280,24 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>success</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
+                                  <p>The callback called after a correct retrieval.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>media</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>A <code><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></code> object after a correct retrieval, <code>nil</code> otherwise.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect retrieval.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1478,9 +1310,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C5mediaySS13withShortcode_yAA0B5MediaVSg_AA0B5ErrorVSgtc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/media(withShortcode:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C5mediaySS13withShortcode_yAA0B5MediaVSg_AA0B5ErrorVSgtc10completiontF">media(withShortcode:completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C5mediaySS13withShortcode_yAA0B5MediaVcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/media(withShortcode:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C5mediaySS13withShortcode_yAA0B5MediaVcSg7successys5Error_pcSg7failuretF">media(withShortcode:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1506,7 +1338,7 @@ An example shortlink is <a href="http://instagram.com/p/tsxp1hhQTG/">http://inst
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">media</span><span class="p">(</span><span class="n">withShortcode</span> <span class="nv">shortcode</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">media</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">media</span><span class="p">(</span><span class="n">withShortcode</span> <span class="nv">shortcode</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1529,36 +1361,24 @@ An example shortlink is <a href="http://instagram.com/p/tsxp1hhQTG/">http://inst
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>success</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
+                                  <p>The callback called after a correct retrieval.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>media</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>A <code><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></code> object after a correct retrieval, <code>nil</code> otherwise.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect retrieval.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1571,9 +1391,9 @@ An example shortlink is <a href="http://instagram.com/p/tsxp1hhQTG/">http://inst
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C11searchMediaySd3lat_Sd3lngSi8distanceySayAA0bD0VGSg_AA0B5ErrorVSgtc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/searchMedia(lat:lng:distance:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C11searchMediaySd3lat_Sd3lngSi8distanceySayAA0bD0VGSg_AA0B5ErrorVSgtc10completiontF">searchMedia(lat:lng:distance:completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C11searchMediaySd3lat_Sd3lngSi8distanceySayAA0bD0VGcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/searchMedia(lat:lng:distance:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C11searchMediaySd3lat_Sd3lngSi8distanceySayAA0bD0VGcSg7successys5Error_pcSg7failuretF">searchMedia(lat:lng:distance:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1593,7 +1413,7 @@ An example shortlink is <a href="http://instagram.com/p/tsxp1hhQTG/">http://inst
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">searchMedia</span><span class="p">(</span><span class="nv">lat</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">lng</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">distance</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">mediaSet</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">searchMedia</span><span class="p">(</span><span class="nv">lat</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">lng</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">distance</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1640,36 +1460,24 @@ An example shortlink is <a href="http://instagram.com/p/tsxp1hhQTG/">http://inst
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>success</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
+                                  <p>The callback called after a correct retrieval.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>mediaSet</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></code> after a correct retrieval, <code>nil</code> otherwise.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect retrieval.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1693,9 +1501,9 @@ An example shortlink is <a href="http://instagram.com/p/tsxp1hhQTG/">http://inst
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C8commentsySS9fromMedia_ySayAA0B7CommentVGSg_AA0B5ErrorVSgtc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/comments(fromMedia:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C8commentsySS9fromMedia_ySayAA0B7CommentVGSg_AA0B5ErrorVSgtc10completiontF">comments(fromMedia:completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C8commentsySS9fromMedia_ySayAA0B7CommentVGcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/comments(fromMedia:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C8commentsySS9fromMedia_ySayAA0B7CommentVGcSg7successys5Error_pcSg7failuretF">comments(fromMedia:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1715,7 +1523,7 @@ An example shortlink is <a href="http://instagram.com/p/tsxp1hhQTG/">http://inst
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">comments</span><span class="p">(</span><span class="n">fromMedia</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">comments</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B7CommentV">InstagramComment</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">comments</span><span class="p">(</span><span class="n">fromMedia</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B7CommentV">InstagramComment</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1726,36 +1534,24 @@ An example shortlink is <a href="http://instagram.com/p/tsxp1hhQTG/">http://inst
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>success</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
+                                  <p>The callback called after a correct retrieval.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>comments</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B7CommentV">InstagramComment</a></code> objects after a correct retrieval, <code>nil</code> otherwise.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect retrieval.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1768,9 +1564,9 @@ An example shortlink is <a href="http://instagram.com/p/tsxp1hhQTG/">http://inst
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C13createCommentySS7onMedia_SS4textyAA0B5ErrorVSgc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/createComment(onMedia:text:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C13createCommentySS7onMedia_SS4textyAA0B5ErrorVSgc10completiontF">createComment(onMedia:text:completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C13createCommentySS7onMedia_SS4textys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/createComment(onMedia:text:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C13createCommentySS7onMedia_SS4textys5Error_pcSg7failuretF">createComment(onMedia:text:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1803,7 +1599,7 @@ belong to your own user.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">createComment</span><span class="p">(</span><span class="n">onMedia</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">createComment</span><span class="p">(</span><span class="n">onMedia</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1838,24 +1634,12 @@ belong to your own user.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect creation.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1868,9 +1652,9 @@ belong to your own user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C13deleteCommentySS_SS7onMediayAA0B5ErrorVSgc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/deleteComment(_:onMedia:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C13deleteCommentySS_SS7onMediayAA0B5ErrorVSgc10completiontF">deleteComment(_:onMedia:completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C13deleteCommentySS_SS7onMediays5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/deleteComment(_:onMedia:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C13deleteCommentySS_SS7onMediays5Error_pcSg7failuretF">deleteComment(_:onMedia:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1891,7 +1675,7 @@ belong to your own user.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">deleteComment</span><span class="p">(</span><span class="n">_</span> <span class="nv">commentId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">onMedia</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">deleteComment</span><span class="p">(</span><span class="n">_</span> <span class="nv">commentId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">onMedia</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1899,18 +1683,6 @@ belong to your own user.</p>
                         <h4>Parameters</h4>
                         <table class="graybox">
                           <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>mediaId</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Media identifier.</p>
-                                </div>
-                              </td>
-                            </tr>
                             <tr>
                               <td>
                                 <code>
@@ -1926,24 +1698,24 @@ belong to your own user.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>mediaId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
+                                  <p>Media identifier.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>error</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect deletion.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1967,9 +1739,9 @@ belong to your own user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C5likesySS7inMedia_ySayAA0B4UserVGSg_AA0B5ErrorVSgtc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/likes(inMedia:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C5likesySS7inMedia_ySayAA0B4UserVGSg_AA0B5ErrorVSgtc10completiontF">likes(inMedia:completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C5likesySS7inMedia_ySayAA0B4UserVGcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/likes(inMedia:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C5likesySS7inMedia_ySayAA0B4UserVGcSg7successys5Error_pcSg7failuretF">likes(inMedia:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1989,7 +1761,7 @@ belong to your own user.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">likes</span><span class="p">(</span><span class="n">inMedia</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">users</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">likes</span><span class="p">(</span><span class="n">inMedia</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -2012,36 +1784,24 @@ belong to your own user.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>success</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
+                                  <p>The callback called after a correct retrieval.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>users</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a></code> objects after a correct retrieval, <code>nil</code> otherwise.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect retrieval.</p>
                                 </div>
                               </td>
                             </tr>
@@ -2054,9 +1814,9 @@ belong to your own user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C4likeySS5media_yAA0B5ErrorVSgc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/like(media:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C4likeySS5media_yAA0B5ErrorVSgc10completiontF">like(media:completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C4likeySS5media_ys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/like(media:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C4likeySS5media_ys5Error_pcSg7failuretF">like(media:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -2077,7 +1837,7 @@ to your own user.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">like</span><span class="p">(</span><span class="n">media</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">like</span><span class="p">(</span><span class="n">media</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -2100,24 +1860,12 @@ to your own user.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect like.</p>
                                 </div>
                               </td>
                             </tr>
@@ -2130,9 +1878,9 @@ to your own user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C6unlikeySS5media_yAA0B5ErrorVSgc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/unlike(media:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C6unlikeySS5media_yAA0B5ErrorVSgc10completiontF">unlike(media:completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C6unlikeySS5media_ys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/unlike(media:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C6unlikeySS5media_ys5Error_pcSg7failuretF">unlike(media:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -2153,7 +1901,7 @@ to your own user.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">unlike</span><span class="p">(</span><span class="n">media</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">unlike</span><span class="p">(</span><span class="n">media</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -2164,24 +1912,12 @@ to your own user.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect deletion.</p>
                                 </div>
                               </td>
                             </tr>
@@ -2205,9 +1941,9 @@ to your own user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C3tagySS_yAA0B3TagVSg_AA0B5ErrorVSgtc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/tag(_:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C3tagySS_yAA0B3TagVSg_AA0B5ErrorVSgtc10completiontF">tag(_:completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C3tagySS_yAA0B3TagVcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/tag(_:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C3tagySS_yAA0B3TagVcSg7successys5Error_pcSg7failuretF">tag(_:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -2227,7 +1963,7 @@ to your own user.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">tag</span><span class="p">(</span><span class="n">_</span> <span class="nv">tagName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">tag</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B3TagV">InstagramTag</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">tag</span><span class="p">(</span><span class="n">_</span> <span class="nv">tagName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B3TagV">InstagramTag</a></span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -2250,36 +1986,24 @@ to your own user.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>success</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
+                                  <p>The callback called after a correct retrieval.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>tag</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B3TagV">InstagramTag</a></code> after a correct retrieval, <code>nil</code> otherwise.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect retrieval.</p>
                                 </div>
                               </td>
                             </tr>
@@ -2292,9 +2016,9 @@ to your own user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C11recentMediaySS7withTag_SS03maxF2IdSS03minfH0Si5countySayAA0bD0VGSg_AA0B5ErrorVSgtc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/recentMedia(withTag:maxTagId:minTagId:count:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C11recentMediaySS7withTag_SS03maxF2IdSS03minfH0Si5countySayAA0bD0VGSg_AA0B5ErrorVSgtc10completiontF">recentMedia(withTag:maxTagId:minTagId:count:completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C11recentMediaySS7withTag_SS03maxF2IdSS03minfH0Si5countySayAA0bD0VGcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/recentMedia(withTag:maxTagId:minTagId:count:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C11recentMediaySS7withTag_SS03maxF2IdSS03minfH0Si5countySayAA0bD0VGcSg7successys5Error_pcSg7failuretF">recentMedia(withTag:maxTagId:minTagId:count:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -2314,7 +2038,7 @@ to your own user.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">recentMedia</span><span class="p">(</span><span class="n">withTag</span> <span class="nv">tagName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">maxTagId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">minTagId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">mediaSet</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">recentMedia</span><span class="p">(</span><span class="n">withTag</span> <span class="nv">tagName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">maxTagId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">minTagId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -2373,36 +2097,24 @@ to your own user.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>success</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
+                                  <p>The callback called after a correct retrieval.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>mediaSet</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></code> objects after a correct retrieval, <code>nil</code> otherwise.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect retrieval.</p>
                                 </div>
                               </td>
                             </tr>
@@ -2415,9 +2127,9 @@ to your own user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C6searchySS3tag_ySayAA0B3TagVGSg_AA0B5ErrorVSgtc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/search(tag:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C6searchySS3tag_ySayAA0B3TagVGSg_AA0B5ErrorVSgtc10completiontF">search(tag:completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C6searchySS3tag_ySayAA0B3TagVGcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/search(tag:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C6searchySS3tag_ySayAA0B3TagVGcSg7successys5Error_pcSg7failuretF">search(tag:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -2437,7 +2149,7 @@ to your own user.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">search</span><span class="p">(</span><span class="n">tag</span> <span class="nv">query</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">tags</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B3TagV">InstagramTag</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">search</span><span class="p">(</span><span class="n">tag</span> <span class="nv">query</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B3TagV">InstagramTag</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -2460,36 +2172,24 @@ to your own user.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>success</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
+                                  <p>The callback called after a correct retrieval.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>tags</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B3TagV">InstagramTag</a></code> objects after a correct retrieval, <code>nil</code> otherwise.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect retrieval.</p>
                                 </div>
                               </td>
                             </tr>
@@ -2513,9 +2213,9 @@ to your own user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C8locationySS_yAA0B8LocationVSg_AA0B5ErrorVSgtc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/location(_:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C8locationySS_yAA0B8LocationVSg_AA0B5ErrorVSgtc10completiontF">location(_:completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C8locationySS_yAA0B8LocationVcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/location(_:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C8locationySS_yAA0B8LocationVcSg7successys5Error_pcSg7failuretF">location(_:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -2535,7 +2235,7 @@ to your own user.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">location</span><span class="p">(</span><span class="n">_</span> <span class="nv">locationId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">location</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B8LocationV">InstagramLocation</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">location</span><span class="p">(</span><span class="n">_</span> <span class="nv">locationId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B8LocationV">InstagramLocation</a></span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -2546,36 +2246,24 @@ to your own user.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>success</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
+                                  <p>The callback called after a correct retrieval.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>location</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B8LocationV">InstagramLocation</a></code> after a correct retrieval, <code>nil</code> otherwise.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect retrieval.</p>
                                 </div>
                               </td>
                             </tr>
@@ -2588,9 +2276,9 @@ to your own user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C11recentMediaySS11forLocation_SS5maxIdSS03minH0ySayAA0bD0VGSg_AA0B5ErrorVSgtc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/recentMedia(forLocation:maxId:minId:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C11recentMediaySS11forLocation_SS5maxIdSS03minH0ySayAA0bD0VGSg_AA0B5ErrorVSgtc10completiontF">recentMedia(forLocation:maxId:minId:completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C11recentMediaySS11forLocation_SS5maxIdSS03minH0ySayAA0bD0VGcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/recentMedia(forLocation:maxId:minId:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C11recentMediaySS11forLocation_SS5maxIdSS03minH0ySayAA0bD0VGcSg7successys5Error_pcSg7failuretF">recentMedia(forLocation:maxId:minId:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -2610,7 +2298,7 @@ to your own user.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">recentMedia</span><span class="p">(</span><span class="n">forLocation</span> <span class="nv">locationId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">maxId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">minId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">mediaSet</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">recentMedia</span><span class="p">(</span><span class="n">forLocation</span> <span class="nv">locationId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">maxId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">minId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -2657,36 +2345,24 @@ to your own user.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>success</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
+                                  <p>The callback called after a correct retrieval.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>mediaSet</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a></code> objects after a correct retrieval, <code>nil</code> otherwise.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect retrieval.</p>
                                 </div>
                               </td>
                             </tr>
@@ -2699,9 +2375,9 @@ to your own user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C14searchLocationySd3lat_Sd3lngSi8distanceSS16facebookPlacesIdySayAA0bD0VGSg_AA0B5ErrorVSgtc10completiontF"></a>
-                    <a name="//apple_ref/swift/Method/searchLocation(lat:lng:distance:facebookPlacesId:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C14searchLocationySd3lat_Sd3lngSi8distanceSS16facebookPlacesIdySayAA0bD0VGSg_AA0B5ErrorVSgtc10completiontF">searchLocation(lat:lng:distance:facebookPlacesId:completion:)</a>
+                    <a name="/s:14SwiftInstagram0B0C14searchLocationySd3lat_Sd3lngSi8distanceSS16facebookPlacesIdySayAA0bD0VGcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/searchLocation(lat:lng:distance:facebookPlacesId:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C14searchLocationySd3lat_Sd3lngSi8distanceSS16facebookPlacesIdySayAA0bD0VGcSg7successys5Error_pcSg7failuretF">searchLocation(lat:lng:distance:facebookPlacesId:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -2721,7 +2397,7 @@ to your own user.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">searchLocation</span><span class="p">(</span><span class="nv">lat</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">lng</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">distance</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">facebookPlacesId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">locations</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B8LocationV">InstagramLocation</a></span><span class="p">]?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">searchLocation</span><span class="p">(</span><span class="nv">lat</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">lng</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">distance</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">facebookPlacesId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B8LocationV">InstagramLocation</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -2781,36 +2457,24 @@ If used, <code>lat</code> and <code>lng</code> are not required.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>completion</em>
+                                <em>success</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The callback called after retrieval.</p>
+                                  <p>The callback called after a correct retrieval.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>locations</em>
+                                <em>failure</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>A set of <code><a href="../Structs.html#/s:14SwiftInstagram0B3TagV">InstagramTag</a></code> objects after a correct retrieval, <code>nil</code> otherwise.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>error</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An <code><a href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a></code> after an incorrect retrieval, <code>nil</code> otherwise.</p>
+                                  <p>The callback called after an incorrect retrieval.</p>
                                 </div>
                               </td>
                             </tr>
@@ -2828,7 +2492,7 @@ If used, <code>lat</code> and <code>lng</code> are not required.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2017 <a class="link" href="https://github.com/AnderGoig/SwiftInstagram" target="_blank" rel="external">Ander Goig</a>. All rights reserved. (Last updated: 2017-10-01)</p>
+      <p>&copy; 2017 <a class="link" href="https://github.com/AnderGoig/SwiftInstagram" target="_blank" rel="external">Ander Goig</a>. All rights reserved. (Last updated: 2017-10-03)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

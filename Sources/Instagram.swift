@@ -44,8 +44,7 @@ public class Instagram {
     /// - Parameter navController: Your current `UINavigationController`.
     /// - Parameter authScope: The scope of the access you are requesting from the user. Basic access by default.
     /// - Parameter redirectURI: Your Instagram API client redirection URI.
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - Note: More information about the login permissions (scope)
     ///   [here](https://www.instagram.com/developer/authorization/).
@@ -141,9 +140,8 @@ public class Instagram {
     /// Get information about a user.
     ///
     /// - Parameter userId: User identifier or `"self"`.
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter user: An `InstagramUser` after a correct retrieval, `nil` otherwise.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter success: The callback called after a correct retrieval.
+    /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - Important: It requires *public_content* scope when getting information about a user other than yours.
     ///
@@ -161,9 +159,8 @@ public class Instagram {
     /// - Parameter maxId: Return media earlier than this `maxId`.
     /// - Parameter minId: Return media later than this `minId`.
     /// - Parameter count: Count of media to return.
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter mediaSet: A set of `InstagramMedia` after a correct retrieval, `nil` otherwise.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter success: The callback called after a correct retrieval.
+    /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - Important: It requires *public_content* scope when getting recent media published by a user other than yours.
     ///
@@ -185,9 +182,8 @@ public class Instagram {
     ///
     /// - Parameter maxLikeId: Return media liked before this id.
     /// - Parameter count: Count of media to return.
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter mediaSet: A set of `InstagramMedia` after a correct retrieval, `nil` otherwise.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter success: The callback called after a correct retrieval.
+    /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - Important: It requires *public_content* scope.
 
@@ -206,9 +202,8 @@ public class Instagram {
     ///
     /// - Parameter query: A query string.
     /// - Parameter count: Number of users to return.
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter userSet: A set of `InstagramUser` objects after a correct retrieval, `nil` otherwise.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter success: The callback called after a correct retrieval.
+    /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - Important: It requires *public_content* scope.
 
@@ -227,9 +222,8 @@ public class Instagram {
 
     /// Get the list of users this user follows.
     ///
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter userSet: A set of `InstagramUser` objects after a correct retrieval, `nil` otherwise.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter success: The callback called after a correct retrieval.
+    /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - Important: It requires *follower_list* scope.
 
@@ -241,9 +235,8 @@ public class Instagram {
 
     /// Get the list of users this user is followed by.
     ///
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter userSet: A set of `InstagramUser` objects after a correct retrieval, `nil` otherwise.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter success: The callback called after a correct retrieval.
+    /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - Important: It requires *follower_list* scope.
 
@@ -255,9 +248,8 @@ public class Instagram {
 
     /// List the users who have requested this user's permission to follow.
     ///
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter userSet: A set of `InstagramUser` objects after a correct retrieval, `nil` otherwise.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter success: The callback called after a correct retrieval.
+    /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - Important: It requires *follower_list* scope.
 
@@ -270,9 +262,8 @@ public class Instagram {
     /// Get information about a relationship to another user.
     ///
     /// - Parameter userId: User identifier.
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter relationship: A `InstagramRelationship` object after a correct retrieval, `nil` otherwise.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter success: The callback called after a correct retrieval.
+    /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - Important: It requires *follower_list* scope.
 
@@ -286,9 +277,8 @@ public class Instagram {
     ///
     /// - Parameter userId: User identifier.
     /// - Parameter action: follow | unfollow | approve | ignore
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter relationship: A `InstagramRelationship` object after a correct retrieval, `nil` otherwise.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter success: The callback called after a correct modification.
+    /// - Parameter failure: The callback called after an incorrect modification.
     ///
     /// - Important: It requires *relationships* scope.
 
@@ -305,9 +295,8 @@ public class Instagram {
     /// Follows the target user.
     ///
     /// - Parameter userId: User identifier.
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter relationship: A `InstagramRelationship` object after a correct retrieval, `nil` otherwise.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter success: The callback called after a correct follow.
+    /// - Parameter failure: The callback called after an incorrect follow.
     ///
     /// - Important: It requires *relationships* scope.
 
@@ -318,9 +307,8 @@ public class Instagram {
     /// Unfollows the target user.
     ///
     /// - Parameter userId: User identifier.
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter relationship: A `InstagramRelationship` object after a correct retrieval, `nil` otherwise.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter success: The callback called after a correct unfollow.
+    /// - Parameter failure: The callback called after an incorrect unfollow.
     ///
     /// - Important: It requires *relationships* scope.
 
@@ -331,9 +319,8 @@ public class Instagram {
     /// Approve the target user's request.
     ///
     /// - Parameter userId: User identifier.
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter relationship: A `InstagramRelationship` object after a correct retrieval, `nil` otherwise.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter success: The callback called after a correct approve.
+    /// - Parameter failure: The callback called after an incorrect approve.
     ///
     /// - Important: It requires *relationships* scope.
 
@@ -344,9 +331,8 @@ public class Instagram {
     /// Ignore the target user's request.
     ///
     /// - Parameter userId: User identifier.
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter relationship: A `InstagramRelationship` object after a correct retrieval, `nil` otherwise.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter success: The callback called after a correct ignore.
+    /// - Parameter failure: The callback called after an incorrect ignore.
     ///
     /// - Important: It requires *relationships* scope.
 
@@ -359,9 +345,8 @@ public class Instagram {
     /// Get information about a media object.
     ///
     /// - Parameter id: Media identifier.
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter media: A `InstagramMedia` object after a correct retrieval, `nil` otherwise.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter success: The callback called after a correct retrieval.
+    /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - Important: It requires *public_content* scope.
 
@@ -374,9 +359,8 @@ public class Instagram {
     /// Get information about a media object.
     ///
     /// - Parameter shortcode: Media shortcode.
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter media: A `InstagramMedia` object after a correct retrieval, `nil` otherwise.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter success: The callback called after a correct retrieval.
+    /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - Important: It requires *public_content* scope.
     ///
@@ -394,9 +378,8 @@ public class Instagram {
     /// - Parameter lat: Latitude of the center search coordinate. If used, `lng` is required.
     /// - Parameter lng: Longitude of the center search coordinate. If used, `lat` is required.
     /// - Parameter distance: Default is 1km (1000m), max distance is 5km.
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter mediaSet: A set of `InstagramMedia` after a correct retrieval, `nil` otherwise.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter success: The callback called after a correct retrieval.
+    /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - Important: It requires *public_content* scope.
 
@@ -417,9 +400,8 @@ public class Instagram {
     /// Get a list of recent comments on a media object.
     ///
     /// - Parameter Parameter mediaId: Media identifier.
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter comments: A set of `InstagramComment` objects after a correct retrieval, `nil` otherwise.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter success: The callback called after a correct retrieval.
+    /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - Important: It requires *public_content* scope for media that does not belong to your own user.
 
@@ -433,8 +415,7 @@ public class Instagram {
     ///
     /// - Parameter mediaId: Media identifier.
     /// - Parameter text: Text to post as a comment on the media object as specified in `mediaId`.
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter failure: The callback called after an incorrect creation.
     ///
     /// - Important: It requires *comments* scope. Also, *public_content* scope is required for media that does not
     ///   belong to your own user.
@@ -457,10 +438,9 @@ public class Instagram {
 
     /// Remove a comment either on the authenticated user's media object or authored by the authenticated user.
     ///
-    /// - Parameter mediaId: Media identifier.
     /// - Parameter commentId: Comment identifier.
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter mediaId: Media identifier.
+    /// - Parameter failure: The callback called after an incorrect deletion.
     ///
     /// - Important: It requires *comments* scope. Also, *public_content* scope is required for media that does not
     ///   belong to your own user.
@@ -476,9 +456,8 @@ public class Instagram {
     /// Get a list of users who have liked this media.
     ///
     /// - Parameter mediaId: Media identifier.
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter users: A set of `InstagramUser` objects after a correct retrieval, `nil` otherwise.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter success: The callback called after a correct retrieval.
+    /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - Important: It requires *public_content* scope for media that does not belong to your own user.
 
@@ -491,8 +470,7 @@ public class Instagram {
     /// Set a like on this media by the currently authenticated user.
     ///
     /// - Parameter mediaId: Media identifier.
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter failure: The callback called after an incorrect like.
     ///
     /// - Important: It requires *likes* scope. Also, *public_content* scope is required for media that does not belong
     ///   to your own user.
@@ -506,8 +484,7 @@ public class Instagram {
     /// Remove a like on this media by the currently authenticated user.
     ///
     /// - Parameter Parameter mediaId: Media identifier.
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter failure: The callback called after an incorrect deletion.
     ///
     /// - Important: It requires *likes* scope. Also, *public_content* scope is required for media that does not belong
     ///   to your own user.
@@ -523,9 +500,8 @@ public class Instagram {
     /// Get information about a tag object.
     ///
     /// - Parameter tagName: Tag name.
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter tag: An `InstagramTag` after a correct retrieval, `nil` otherwise.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter success: The callback called after a correct retrieval.
+    /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - Important: It requires *public_content* scope.
 
@@ -541,9 +517,8 @@ public class Instagram {
     /// - Parameter maxTagId: Return media after this `maxTagId`.
     /// - Parameter minTagId: Return media before this `minTagId`.
     /// - Parameter count: Count of tagged media to return.
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter mediaSet: A set of `InstagramMedia` objects after a correct retrieval, `nil` otherwise.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter success: The callback called after a correct retrieval.
+    /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - Important: It requires *public_content* scope.
 
@@ -562,9 +537,8 @@ public class Instagram {
     /// Search for tags by name.
     ///
     /// - Parameter query: A valid tag name without a leading #. (eg. snowy, nofilter)
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter tags: A set of `InstagramTag` objects after a correct retrieval, `nil` otherwise.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter success: The callback called after a correct retrieval.
+    /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - Important: It requires *public_content* scope.
 
@@ -583,9 +557,8 @@ public class Instagram {
     /// Get information about a location.
     ///
     /// - Parameter Parameter locationId: Location identifier.
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter location: An `InstagramLocation` after a correct retrieval, `nil` otherwise.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter success: The callback called after a correct retrieval.
+    /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - Important: It requires *public_content* scope.
 
@@ -600,9 +573,8 @@ public class Instagram {
     /// - Parameter locationId: Location identifier.
     /// - Parameter maxId: Return media after this `maxId`.
     /// - Parameter minId: Return media before this `mindId`.
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter mediaSet: A set of `InstagramMedia` objects after a correct retrieval, `nil` otherwise.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter success: The callback called after a correct retrieval.
+    /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - Important: It requires *public_content* scope.
 
@@ -624,9 +596,8 @@ public class Instagram {
     /// - Parameter distance: Default is 500m, max distance is 750.
     /// - Parameter facebookPlacesId: Returns a location mapped off of a Facebook places id.
     ///   If used, `lat` and `lng` are not required.
-    /// - Parameter completion: The callback called after retrieval.
-    /// - Parameter locations: A set of `InstagramTag` objects after a correct retrieval, `nil` otherwise.
-    /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
+    /// - Parameter success: The callback called after a correct retrieval.
+    /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - Important: It requires *public_content* scope.
 
