@@ -44,7 +44,8 @@ public class Instagram {
     /// - Parameter navController: Your current `UINavigationController`.
     /// - Parameter authScope: The scope of the access you are requesting from the user. Basic access by default.
     /// - Parameter redirectURI: Your Instagram API client redirection URI.
-    /// - Parameter failure: The callback called after an incorrect retrieval.
+    /// - Parameter success: The callback called after a correct login.
+    /// - Parameter failure: The callback called after an incorrect login.
     ///
     /// - Note: More information about the login permissions (scope)
     ///   [here](https://www.instagram.com/developer/authorization/).
