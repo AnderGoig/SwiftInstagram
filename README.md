@@ -100,7 +100,7 @@ $ brew install carthage
 To integrate SwiftInstagram into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "SwiftInstagram/SwiftInstagram" ~> 1.0.0
+github "AnderGoig/SwiftInstagram" ~> 1.0.0
 ```
 ### Swift Package Manager
 
