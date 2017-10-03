@@ -77,7 +77,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '9.0'
 use_frameworks!
 
-pod 'SwiftInstagram', '~> 1.0.0'
+pod 'SwiftInstagram', '~> 1.0.1'
 ```
 
 Then, run the following command:
@@ -100,7 +100,7 @@ $ brew install carthage
 To integrate SwiftInstagram into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "AnderGoig/SwiftInstagram" ~> 1.0.0
+github "AnderGoig/SwiftInstagram" ~> 1.0.1
 ```
 ### Swift Package Manager
 
@@ -112,7 +112,7 @@ import PackageDescription
 let package = Package(
     name: "HelloSwiftInstagram",
     dependencies: [
-        .Package(url: "https://github.com/AnderGoig/SwiftInstagram.git", "1.0.0")
+        .Package(url: "https://github.com/AnderGoig/SwiftInstagram.git", "1.0.1")
     ]
 )
 ```
