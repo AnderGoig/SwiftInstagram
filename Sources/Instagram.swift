@@ -14,6 +14,7 @@ public class Instagram {
 
     // MARK: - Types
 
+    public typealias EmptySuccessHandler = () -> Void
     public typealias SuccessHandler<T> = (_ data: T) -> Void
     public typealias FailureHandler = (_ error: Error) -> Void
 
@@ -50,10 +51,12 @@ public class Instagram {
     /// - Note: More information about the login permissions (scope)
     ///   [here](https://www.instagram.com/developer/authorization/).
 
-    public func login(navController: UINavigationController, authScope: String = "basic", redirectURI: String, success: () -> Void, failure: FailureHandler? = nil) {
+    public func login(navController: UINavigationController, authScope: String = "basic", redirectURI: String, success: EmptySuccessHandler? = nil, failure: FailureHandler? = nil) {
         let vc = InstagramLoginViewController(clientId: self.clientId!, authScope: authScope, redirectURI: redirectURI, success: { accessToken in
             if !self.keychain.set(accessToken, forKey: "accessToken") {
                 failure?(InstagramError(kind: .keychainError(code: self.keychain.lastResultCode), message: "Error storing access token into keychain."))
+            } else {
+                success?()
             }
         }, failure: failure)
 
