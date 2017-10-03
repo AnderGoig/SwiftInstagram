@@ -9,7 +9,13 @@
 import UIKit
 
 /// A set of helper functions to make the Instagram API easier to use.
+
 public class Instagram {
+
+    // MARK: - Types
+
+    public typealias SuccessHandler<T> = (_ data: T) -> Void
+    public typealias FailureHandler = (_ error: Error) -> Void
 
     // MARK: - Properties
 
@@ -43,17 +49,16 @@ public class Instagram {
     ///
     /// - Note: More information about the login permissions (scope)
     ///   [here](https://www.instagram.com/developer/authorization/).
-    public func login(navController: UINavigationController, authScope: String = "basic", redirectURI: String, completion: @escaping (_ error: InstagramError?) -> Void) {
+
+    public func login(navController: UINavigationController, authScope: String = "basic", redirectURI: String, failure: FailureHandler? = nil) {
         let vc = InstagramLoginViewController(clientId: self.clientId!, authScope: authScope, redirectURI: redirectURI) { accessToken, error in
             if let error = error {
-                completion(error)
+                failure?(error)
                 return
             }
 
-            if self.keychain.set(accessToken!, forKey: "accessToken") {
-                completion(nil)
-            } else {
-                completion(InstagramError(kind: .keychainError(code: self.keychain.lastResultCode), message: "Error storing access token into keychain."))
+            if !self.keychain.set(accessToken!, forKey: "accessToken") {
+                failure?(InstagramError(kind: .keychainError(code: self.keychain.lastResultCode), message: "Error storing access token into keychain."))
             }
         }
 
@@ -63,6 +68,7 @@ public class Instagram {
     /// Returns whether a session is currently available or not.
     ///
     /// - Returns: True if a session is currently available, false otherwise.
+
     public func isSessionValid() -> Bool {
         return self.keychain.get("accessToken") != nil
     }
@@ -70,6 +76,7 @@ public class Instagram {
     /// Ends the current session.
     ///
     /// - Returns: True if the user was successfully logged out, false otherwise.
+
     public func logout() -> Bool {
         return self.keychain.delete("accessToken")
     }
@@ -78,7 +85,7 @@ public class Instagram {
 
     private let decoder = JSONDecoder()
 
-    private func dataTask<T>(url: URL, method: String, completion: @escaping (T?, InstagramError?) -> Void) where T: Decodable {
+    private func dataTask<T: Decodable>(url: URL, method: String, success: SuccessHandler<T>? = nil, failure: FailureHandler? = nil) {
         var request = URLRequest(url: url)
         request.httpMethod = method
 
@@ -89,27 +96,27 @@ public class Instagram {
                 do {
                     let object = try self.decoder.decode(InstagramResponse<T>.self, from: data)
                     if let errorMessage = object.meta.errorMessage {
-                        completion(nil, InstagramError(kind: .invalidRequest, message: errorMessage))
+                        failure?(InstagramError(kind: .invalidRequest, message: errorMessage))
                     } else {
-                        completion(object.data, nil)
+                        success?(object.data!)
                     }
                 } catch {
-                    completion(nil, InstagramError(kind: .jsonParseError, message: error.localizedDescription))
+                    failure?(InstagramError(kind: .jsonParseError, message: error.localizedDescription))
                 }
             }
         }.resume()
     }
 
-    private func get<T>(_ url: URL, completion: @escaping (T?, InstagramError?) -> Void) where T: Decodable {
-        dataTask(url: url, method: "GET", completion: completion)
+    private func get<T: Decodable>(_ url: URL, success: SuccessHandler<T>? = nil, failure: FailureHandler? = nil) {
+        dataTask(url: url, method: "GET", success: success, failure: failure)
     }
 
-    private func post<T>(_ url: URL, completion: @escaping (T?, InstagramError?) -> Void) where T: Decodable {
-        dataTask(url: url, method: "POST", completion: completion)
+    private func post<T: Decodable>(_ url: URL, success: SuccessHandler<T>? = nil, failure: FailureHandler? = nil) {
+        dataTask(url: url, method: "POST", success: success, failure: failure)
     }
 
-    private func delete<T>(_ url: URL, completion: @escaping (T?, InstagramError?) -> Void) where T: Decodable {
-        dataTask(url: url, method: "DELETE", completion: completion)
+    private func delete<T: Decodable>(_ url: URL, success: SuccessHandler<T>? = nil, failure: FailureHandler? = nil) {
+        dataTask(url: url, method: "DELETE", success: success, failure: failure)
     }
 
     private func buildURL(for endpoint: String, withParams params: [String: String] = [String: String]()) -> URL {
@@ -141,12 +148,11 @@ public class Instagram {
     /// - Important: It requires *public_content* scope when getting information about a user other than yours.
     ///
     /// - Note: Use `"self"` in the `userId` parameter in order to get information about your own user.
-    public func user(_ userId: String, completion: @escaping (_ user: InstagramUser?, _ error: InstagramError?) -> Void) {
+
+    public func user(_ userId: String, success: SuccessHandler<InstagramUser>? = nil, failure: FailureHandler? = nil) {
         let url = buildURL(for: "/users/\(userId)")
 
-        get(url) { (object: InstagramUser?, error) in
-            completion(object, error)
-        }
+        get(url, success: success, failure: failure)
     }
 
     /// Get the most recent media published by a user.
@@ -162,7 +168,8 @@ public class Instagram {
     /// - Important: It requires *public_content* scope when getting recent media published by a user other than yours.
     ///
     /// - Note: Use *"self"* in the *userId* parameter in order to get the most recent media published by your own user.
-    public func recentMedia(fromUser userId: String, maxId: String = "", minId: String = "", count: Int = 0, completion: @escaping (_ mediaSet: [InstagramMedia]?, _ error: InstagramError?) -> Void) {
+
+    public func recentMedia(fromUser userId: String, maxId: String = "", minId: String = "", count: Int = 0, success: SuccessHandler<[InstagramMedia]>? = nil, failure: FailureHandler? = nil) {
         var params = [String: String]()
 
         if !maxId.isEmpty { params["max_id"] = maxId }
@@ -171,9 +178,7 @@ public class Instagram {
 
         let url = buildURL(for: "/users/\(userId)/media/recent", withParams: params)
 
-        get(url) { (object: [InstagramMedia]?, error) in
-            completion(object, error)
-        }
+        get(url, success: success, failure: failure)
     }
 
     /// Get the list of recent media liked by your own user.
@@ -185,7 +190,8 @@ public class Instagram {
     /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
     ///
     /// - Important: It requires *public_content* scope.
-    public func userLikedMedia(maxLikeId: String = "", count: Int = 0, completion: @escaping (_ mediaSet: [InstagramMedia]?, _ error: InstagramError?) -> Void) {
+
+    public func userLikedMedia(maxLikeId: String = "", count: Int = 0, success: SuccessHandler<[InstagramMedia]>? = nil, failure: FailureHandler? = nil) {
         var params = [String: String]()
 
         if !maxLikeId.isEmpty { params["max_like_id"] = maxLikeId }
@@ -193,9 +199,7 @@ public class Instagram {
 
         let url = buildURL(for: "/users/self/media/liked", withParams: params)
 
-        get(url) { (object: [InstagramMedia]?, error) in
-            completion(object, error)
-        }
+        get(url, success: success, failure: failure)
     }
 
     /// Get a list of users matching the query.
@@ -207,7 +211,8 @@ public class Instagram {
     /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
     ///
     /// - Important: It requires *public_content* scope.
-    public func search(user query: String, count: Int = 0, completion: @escaping (_ userSet: [InstagramUser]?, _ error: InstagramError?) -> Void) {
+
+    public func search(user query: String, count: Int = 0, success: SuccessHandler<[InstagramUser]>? = nil, failure: FailureHandler? = nil) {
         var params = [String: String]()
 
         params["q"] = query
@@ -215,9 +220,7 @@ public class Instagram {
 
         let url = buildURL(for: "/users/search", withParams: params)
 
-        get(url) { (object: [InstagramUser]?, error) in
-            completion(object, error)
-        }
+        get(url, success: success, failure: failure)
     }
 
     // MARK: - Relationship Endpoints
@@ -229,12 +232,11 @@ public class Instagram {
     /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
     ///
     /// - Important: It requires *follower_list* scope.
-    public func userFollows(completion: @escaping (_ userSet: [InstagramUser]?, _ error: InstagramError?) -> Void) {
+
+    public func userFollows(success: SuccessHandler<[InstagramUser]>? = nil, failure: FailureHandler? = nil) {
         let url = buildURL(for: "/users/self/follows")
 
-        get(url) { (object: [InstagramUser]?, error) in
-            completion(object, error)
-        }
+        get(url, success: success, failure: failure)
     }
 
     /// Get the list of users this user is followed by.
@@ -244,12 +246,11 @@ public class Instagram {
     /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
     ///
     /// - Important: It requires *follower_list* scope.
-    public func userFollowers(completion: @escaping (_ userSet: [InstagramUser]?, _ error: InstagramError?) -> Void) {
+
+    public func userFollowers(success: SuccessHandler<[InstagramUser]>? = nil, failure: FailureHandler? = nil) {
         let url = buildURL(for: "/users/self/followed-by")
 
-        get(url) { (object: [InstagramUser]?, error) in
-            completion(object, error)
-        }
+        get(url, success: success, failure: failure)
     }
 
     /// List the users who have requested this user's permission to follow.
@@ -259,12 +260,11 @@ public class Instagram {
     /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
     ///
     /// - Important: It requires *follower_list* scope.
-    public func userRequestedBy(completion: @escaping (_ userSet: [InstagramUser]?, _ error: InstagramError?) -> Void) {
+
+    public func userRequestedBy(success: SuccessHandler<[InstagramUser]>? = nil, failure: FailureHandler? = nil) {
         let url = buildURL(for: "/users/self/requested-by")
 
-        get(url) { (object: [InstagramUser]?, error) in
-            completion(object, error)
-        }
+        get(url, success: success, failure: failure)
     }
 
     /// Get information about a relationship to another user.
@@ -275,12 +275,11 @@ public class Instagram {
     /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
     ///
     /// - Important: It requires *follower_list* scope.
-    public func userRelationship(withUser userId: String, completion: @escaping (_ relationship: InstagramRelationship?, _ error: InstagramError?) -> Void) {
+
+    public func userRelationship(withUser userId: String, success: SuccessHandler<InstagramRelationship>? = nil, failure: FailureHandler? = nil) {
         let url = buildURL(for: "/users/\(userId)/relationship")
 
-        get(url) { (object: InstagramRelationship?, error) in
-            completion(object, error)
-        }
+        get(url, success: success, failure: failure)
     }
 
     /// Modify the relationship between the current user and the target user.
@@ -292,16 +291,15 @@ public class Instagram {
     /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
     ///
     /// - Important: It requires *relationships* scope.
-    private func modifyUserRelationship(withUser userId: String, action: String, completion: @escaping (_ relationship: InstagramRelationship?, _ error: InstagramError?) -> Void) {
+
+    private func modifyUserRelationship(withUser userId: String, action: String, success: SuccessHandler<InstagramRelationship>? = nil, failure: FailureHandler? = nil) {
         var params = [String: String]()
 
         params["action"] = action
 
         let url = buildURL(for: "/users/\(userId)/relationship", withParams: params)
 
-        post(url) { (object: InstagramRelationship?, error) in
-            completion(object, error)
-        }
+        post(url, success: success, failure: failure)
     }
 
     /// Follows the target user.
@@ -312,8 +310,9 @@ public class Instagram {
     /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
     ///
     /// - Important: It requires *relationships* scope.
-    public func follow(user userId: String, completion: @escaping (_ relationship: InstagramRelationship?, _ error: InstagramError?) -> Void) {
-        modifyUserRelationship(withUser: userId, action: "follow", completion: completion)
+
+    public func follow(user userId: String, success: SuccessHandler<InstagramRelationship>? = nil, failure: FailureHandler? = nil) {
+        modifyUserRelationship(withUser: userId, action: "follow", success: success, failure: failure)
     }
 
     /// Unfollows the target user.
@@ -324,8 +323,9 @@ public class Instagram {
     /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
     ///
     /// - Important: It requires *relationships* scope.
-    public func unfollow(user userId: String, completion: @escaping (_ relationship: InstagramRelationship?, _ error: InstagramError?) -> Void) {
-        modifyUserRelationship(withUser: userId, action: "unfollow", completion: completion)
+
+    public func unfollow(user userId: String, success: SuccessHandler<InstagramRelationship>? = nil, failure: FailureHandler? = nil) {
+        modifyUserRelationship(withUser: userId, action: "unfollow", success: success, failure: failure)
     }
 
     /// Approve the target user's request.
@@ -336,8 +336,9 @@ public class Instagram {
     /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
     ///
     /// - Important: It requires *relationships* scope.
-    public func approveRequest(fromUser userId: String, completion: @escaping (_ relationship: InstagramRelationship?, _ error: InstagramError?) -> Void) {
-        modifyUserRelationship(withUser: userId, action: "approve", completion: completion)
+
+    public func approveRequest(fromUser userId: String, success: SuccessHandler<InstagramRelationship>? = nil, failure: FailureHandler? = nil) {
+        modifyUserRelationship(withUser: userId, action: "approve", success: success, failure: failure)
     }
 
     /// Ignore the target user's request.
@@ -348,8 +349,9 @@ public class Instagram {
     /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
     ///
     /// - Important: It requires *relationships* scope.
-    public func ignoreRequest(fromUser userId: String, completion: @escaping (_ relationship: InstagramRelationship?, _ error: InstagramError?) -> Void) {
-        modifyUserRelationship(withUser: userId, action: "ignore", completion: completion)
+
+    public func ignoreRequest(fromUser userId: String, success: SuccessHandler<InstagramRelationship>? = nil, failure: FailureHandler? = nil) {
+        modifyUserRelationship(withUser: userId, action: "ignore", success: success, failure: failure)
     }
 
     // MARK: - Media Endpoints
@@ -362,12 +364,11 @@ public class Instagram {
     /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
     ///
     /// - Important: It requires *public_content* scope.
-    public func media(withId id: String, completion: @escaping (_ media: InstagramMedia?, _ error: InstagramError?) -> Void) {
+
+    public func media(withId id: String, success: SuccessHandler<InstagramMedia>? = nil, failure: FailureHandler? = nil) {
         let url = buildURL(for: "/media/\(id)")
 
-        get(url) { (object: InstagramMedia?, error) in
-            completion(object, error)
-        }
+        get(url, success: success, failure: failure)
     }
 
     /// Get information about a media object.
@@ -381,12 +382,11 @@ public class Instagram {
     ///
     /// - Note: A media object's shortcode can be found in its shortlink URL.
     ///   An example shortlink is http://instagram.com/p/tsxp1hhQTG/. Its corresponding shortcode is tsxp1hhQTG.
-    public func media(withShortcode shortcode: String, completion: @escaping (_ media: InstagramMedia?, _ error: InstagramError?) -> Void) {
+
+    public func media(withShortcode shortcode: String, success: SuccessHandler<InstagramMedia>? = nil, failure: FailureHandler? = nil) {
         let url = buildURL(for: "/media/shortcode/\(shortcode)")
 
-        get(url) { (object: InstagramMedia?, error) in
-            completion(object, error)
-        }
+        get(url, success: success, failure: failure)
     }
 
     /// Search for recent media in a given area.
@@ -399,7 +399,8 @@ public class Instagram {
     /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
     ///
     /// - Important: It requires *public_content* scope.
-    public func searchMedia(lat: Double = 0, lng: Double = 0, distance: Int = 0, completion: @escaping (_ mediaSet: [InstagramMedia]?, _ error: InstagramError?) -> Void) {
+
+    public func searchMedia(lat: Double = 0, lng: Double = 0, distance: Int = 0, success: SuccessHandler<[InstagramMedia]>? = nil, failure: FailureHandler? = nil) {
         var params = [String: String]()
 
         if lat != 0 { params["lat"] = String(lat) }
@@ -408,9 +409,7 @@ public class Instagram {
 
         let url = buildURL(for: "/media/search", withParams: params)
 
-        get(url) { (object: [InstagramMedia]?, error) in
-            completion(object, error)
-        }
+        get(url, success: success, failure: failure)
     }
 
     // MARK: - Comment Endpoints
@@ -423,12 +422,11 @@ public class Instagram {
     /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
     ///
     /// - Important: It requires *public_content* scope for media that does not belong to your own user.
-    public func comments(fromMedia mediaId: String, completion: @escaping (_ comments: [InstagramComment]?, _ error: InstagramError?) -> Void) {
+
+    public func comments(fromMedia mediaId: String, success: SuccessHandler<[InstagramComment]>? = nil, failure: FailureHandler? = nil) {
         let url = buildURL(for: "/media/\(mediaId)/comments")
 
-        get(url) { (object: [InstagramComment]?, error) in
-            completion(object, error)
-        }
+        get(url, success: success, failure: failure)
     }
 
     /// Create a comment on a media object.
@@ -446,16 +444,15 @@ public class Instagram {
     ///     - The comment cannot contain more than 4 hashtags.
     ///     - The comment cannot contain more than 1 URL.
     ///     - The comment cannot consist of all capital letters.
-    public func createComment(onMedia mediaId: String, text: String, completion: @escaping (_ error: InstagramError?) -> Void) {
+
+    public func createComment(onMedia mediaId: String, text: String, failure: FailureHandler? = nil) {
         var params = [String: String]()
 
         params["text"] = text
 
         let url = buildURL(for: "/media/\(mediaId)/comments", withParams: params)
 
-        post(url) { (_ object: InstagramResponse<String>?, error) in
-            completion(error)
-        }
+        post(url, success: { (_: InstagramResponse<Any?>) in return }, failure: failure)
     }
 
     /// Remove a comment either on the authenticated user's media object or authored by the authenticated user.
@@ -467,12 +464,11 @@ public class Instagram {
     ///
     /// - Important: It requires *comments* scope. Also, *public_content* scope is required for media that does not
     ///   belong to your own user.
-    public func deleteComment(_ commentId: String, onMedia mediaId: String, completion: @escaping (_ error: InstagramError?) -> Void) {
+
+    public func deleteComment(_ commentId: String, onMedia mediaId: String, failure: FailureHandler? = nil) {
         let url = buildURL(for: "/media/\(mediaId)/comments/\(commentId)")
 
-        delete(url) { (_ object: InstagramResponse<String>?, error) in
-            completion(error)
-        }
+        delete(url, success: { (_: InstagramResponse<Any?>) in return }, failure: failure)
     }
 
     // MARK: - Like Endpoints
@@ -485,12 +481,11 @@ public class Instagram {
     /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
     ///
     /// - Important: It requires *public_content* scope for media that does not belong to your own user.
-    public func likes(inMedia mediaId: String, completion: @escaping (_ users: [InstagramUser]?, _ error: InstagramError?) -> Void) {
+
+    public func likes(inMedia mediaId: String, success: SuccessHandler<[InstagramUser]>? = nil, failure: FailureHandler? = nil) {
         let url = buildURL(for: "/media/\(mediaId)/likes")
 
-        get(url) { (object: [InstagramUser]?, error) in
-            completion(object, error)
-        }
+        get(url, success: success, failure: failure)
     }
 
     /// Set a like on this media by the currently authenticated user.
@@ -501,12 +496,11 @@ public class Instagram {
     ///
     /// - Important: It requires *likes* scope. Also, *public_content* scope is required for media that does not belong
     ///   to your own user.
-    public func like(media mediaId: String, completion: @escaping (_ error: InstagramError?) -> Void) {
+
+    public func like(media mediaId: String, failure: FailureHandler? = nil) {
         let url = buildURL(for: "/media/\(mediaId)/likes")
 
-        post(url) { (_ object: InstagramResponse<String>?, error) in
-            completion(error)
-        }
+        post(url, success: { (_: InstagramResponse<Any?>) in return }, failure: failure)
     }
 
     /// Remove a like on this media by the currently authenticated user.
@@ -517,12 +511,11 @@ public class Instagram {
     ///
     /// - Important: It requires *likes* scope. Also, *public_content* scope is required for media that does not belong
     ///   to your own user.
-    public func unlike(media mediaId: String, completion: @escaping (_ error: InstagramError?) -> Void) {
+
+    public func unlike(media mediaId: String, failure: FailureHandler? = nil) {
         let url = buildURL(for: "/media/\(mediaId)/likes")
 
-        delete(url) { (_ object: InstagramResponse<String>?, error) in
-            completion(error)
-        }
+        delete(url, success: { (_: InstagramResponse<Any?>) in return }, failure: failure)
     }
 
     // MARK: - Tag Endpoints
@@ -535,12 +528,11 @@ public class Instagram {
     /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
     ///
     /// - Important: It requires *public_content* scope.
-    public func tag(_ tagName: String, completion: @escaping (_ tag: InstagramTag?, _ error: InstagramError?) -> Void) {
+
+    public func tag(_ tagName: String, success: SuccessHandler<InstagramTag>? = nil, failure: FailureHandler? = nil) {
         let url = buildURL(for: "/tags/\(tagName)")
 
-        get(url) { (object: InstagramTag?, error) in
-            completion(object, error)
-        }
+        get(url, success: success, failure: failure)
     }
 
     /// Get a list of recently tagged media.
@@ -554,7 +546,8 @@ public class Instagram {
     /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
     ///
     /// - Important: It requires *public_content* scope.
-    public func recentMedia(withTag tagName: String, maxTagId: String = "", minTagId: String = "", count: Int = 0, completion: @escaping (_ mediaSet: [InstagramMedia]?, _ error: InstagramError?) -> Void) {
+
+    public func recentMedia(withTag tagName: String, maxTagId: String = "", minTagId: String = "", count: Int = 0, success: SuccessHandler<[InstagramMedia]>? = nil, failure: FailureHandler? = nil) {
         var params = [String: String]()
 
         if !maxTagId.isEmpty { params["max_tag_id"] = maxTagId }
@@ -563,9 +556,7 @@ public class Instagram {
 
         let url = buildURL(for: "/tags/\(tagName)/media/recent", withParams: params)
 
-        get(url) { (object: [InstagramMedia]?, error) in
-            completion(object, error)
-        }
+        get(url, success: success, failure: failure)
     }
 
     /// Search for tags by name.
@@ -576,16 +567,15 @@ public class Instagram {
     /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
     ///
     /// - Important: It requires *public_content* scope.
-    public func search(tag query: String, completion: @escaping (_ tags: [InstagramTag]?, _ error: InstagramError?) -> Void) {
+
+    public func search(tag query: String, success: SuccessHandler<[InstagramTag]>? = nil, failure: FailureHandler? = nil) {
         var params = [String: String]()
 
         params["q"] = query
 
         let url = buildURL(for: "/tags/search", withParams: params)
 
-        get(url) { (object: [InstagramTag]?, error) in
-            completion(object, error)
-        }
+        get(url, success: success, failure: failure)
     }
 
     // MARK: - Location Endpoints
@@ -598,12 +588,11 @@ public class Instagram {
     /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
     ///
     /// - Important: It requires *public_content* scope.
-    public func location(_ locationId: String, completion: @escaping (_ location: InstagramLocation?, _ error: InstagramError?) -> Void) {
+
+    public func location(_ locationId: String, success: SuccessHandler<InstagramLocation>? = nil, failure: FailureHandler? = nil) {
         let url = buildURL(for: "/locations/\(locationId)")
 
-        get(url) { (object: InstagramLocation?, error) in
-            completion(object, error)
-        }
+        get(url, success: success, failure: failure)
     }
 
     /// Get a list of recent media objects from a given location.
@@ -616,7 +605,8 @@ public class Instagram {
     /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
     ///
     /// - Important: It requires *public_content* scope.
-    public func recentMedia(forLocation locationId: String, maxId: String = "", minId: String = "", completion: @escaping (_ mediaSet: [InstagramMedia]?, _ error: InstagramError?) -> Void) {
+
+    public func recentMedia(forLocation locationId: String, maxId: String = "", minId: String = "", success: SuccessHandler<[InstagramMedia]>? = nil, failure: FailureHandler? = nil) {
         var params = [String: String]()
 
         if !maxId.isEmpty { params["max_id"] = maxId }
@@ -624,9 +614,7 @@ public class Instagram {
 
         let url = buildURL(for: "/locations/\(locationId)/media/recent", withParams: params)
 
-        get(url) { (object: [InstagramMedia]?, error) in
-            completion(object, error)
-        }
+        get(url, success: success, failure: failure)
     }
 
     /// Search for a location by geographic coordinate.
@@ -641,7 +629,8 @@ public class Instagram {
     /// - Parameter error: An `InstagramError` after an incorrect retrieval, `nil` otherwise.
     ///
     /// - Important: It requires *public_content* scope.
-    public func searchLocation(lat: Double = 0, lng: Double = 0, distance: Int = 0, facebookPlacesId: String = "", completion: @escaping (_ locations: [InstagramLocation]?, _ error: InstagramError?) -> Void) {
+
+    public func searchLocation(lat: Double = 0, lng: Double = 0, distance: Int = 0, facebookPlacesId: String = "", success: SuccessHandler<[InstagramLocation]>? = nil, failure: FailureHandler? = nil) {
         var params = [String: String]()
 
         if lat != 0 { params["lat"] = String(lat) }
@@ -651,9 +640,7 @@ public class Instagram {
 
         let url = buildURL(for: "/locations/search", withParams: params)
 
-        get(url) { (object: [InstagramLocation]?, error) in
-            completion(object, error)
-        }
+        get(url, success: success, failure: failure)
     }
 
 }

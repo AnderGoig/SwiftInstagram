@@ -6,7 +6,7 @@
 //  Copyright © 2017 Ander Goig. All rights reserved.
 //
 
-struct InstagramResponse<T>: Decodable where T: Decodable {
+struct InstagramResponse<T: Decodable>: Decodable {
 
     let data: T?
     let meta: Meta

@@ -7,6 +7,7 @@
 //
 
 /// The struct containing an Instagram comment.
+
 public struct InstagramComment: Decodable {
 
     public let id: String

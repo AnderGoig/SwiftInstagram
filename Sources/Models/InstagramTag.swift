@@ -7,6 +7,7 @@
 //
 
 /// The struct containing an Instagram tag.
+
 public struct InstagramTag: Decodable {
 
     public let mediaCount: Int

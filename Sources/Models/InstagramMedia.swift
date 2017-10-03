@@ -7,6 +7,7 @@
 //
 
 /// The struct containing an Instagram media.
+
 public struct InstagramMedia: Decodable {
 
     public let id: String

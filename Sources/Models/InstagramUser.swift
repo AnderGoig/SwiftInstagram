@@ -7,6 +7,7 @@
 //
 
 /// The struct containing an Instagram user.
+
 public struct InstagramUser: Decodable {
 
     public let id: String

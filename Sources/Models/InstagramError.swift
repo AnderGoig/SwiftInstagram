@@ -7,6 +7,7 @@
 //
 
 /// The struct containing an Instagram error.
+
 public struct InstagramError: Error {
 
     public enum ErrorKind: CustomStringConvertible {

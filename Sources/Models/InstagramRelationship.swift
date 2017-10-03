@@ -7,6 +7,7 @@
 //
 
 /// The struct containing an Instagram relationship.
+
 public struct InstagramRelationship: Decodable {
 
     public let outgoingStatus: String
