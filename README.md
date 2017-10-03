@@ -179,17 +179,12 @@ Also, copy the **Client ID** from your client and paste it inside your `Info.pli
 let api = Instagram.shared
 
 // Login
-api.login(navController: navigationController!, redirectURI: "YOUR REDIRECTION URI GOES HERE") { (error) in
-    if let error = error {
-        print(error)
-    }
-
-    DispatchQueue.main.async {
-        self.navigationController?.popViewController(animated: true)
-
-        // Do your stuff here ...
-    }
-}
+api.login(navController: navigationController!, redirectURI: "YOUR REDIRECTION URI GOES HERE", success: {
+    self.navigationController?.popViewController(animated: true)
+    // Do your stuff here ...
+}, failure: { error in
+    print(error)
+})
 
 // Returns whether a session is currently available or not
 let _ = api.isSessionValid()
@@ -201,7 +196,7 @@ let _ = api.logout()
 You can also specify the [login permissions](https://www.instagram.com/developer/authorization/) with the optional parameter `authScope`, by default, it is set to basic access. To request multiple scopes at once, simply separate the scopes by a "+".
 
 ```swift
-api.login(navController: ..., authScope: "likes+comments", redirectURI: ... ) { }
+api.login(navController: ..., authScope: "likes+comments", redirectURI: ... )
 ```
 
 ### Data retrieval
@@ -211,76 +206,73 @@ All of the following functions are very similar and straightforward, here's an e
 ```swift
 let api = Instagram.shared
 
-api.recentMedia(fromUser: "self", count: 3, completion: { (mediaSet, error) in
-    guard let mediaSet = mediaSet else {
-        print(error!.message)
-        return
-    }
-
+api.recentMedia(fromUser: "self", count: 5, success: { (mediaSet) in
     // Do your stuff here ...
+}, failure: { (error) in
+    print(error.localizedDescription)
 })
 ```
 
 #### Users - [SwiftInstagram docs](https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html#/User%20Endpoints) - [Official docs](http://instagr.am/developer/endpoints/users/)
 
 ```swift
-api.user(_ userId: String, completion: @escaping (_ user: InstagramUser?, _ error: InstagramError?) -> Void)
-api.recentMedia(fromUser userId: String, maxId: String = default, minId: String = default, count: Int = default, completion: @escaping (_ mediaSet: [InstagramMedia]?, _ error: InstagramError?) -> Void)
-api.userLikedMedia(maxLikeId: String = default, count: Int = default, completion: @escaping (_ mediaSet: [InstagramMedia]?, _ error: InstagramError?) -> Void)
-api.search(user query: String, count: Int = default, completion: @escaping (_ userSet: [InstagramUser]?, _ error: InstagramError?) -> Void)
+api.user(_ userId: String, success: SuccessHandler<InstagramUser>? = default, failure: FailureHandler? = default)
+api.recentMedia(fromUser userId: String, maxId: String = default, minId: String = default, count: Int = default, success: SuccessHandler<[InstagramMedia]>? = default, failure: FailureHandler? = default)
+api.userLikedMedia(maxLikeId: String = default, count: Int = default, success: SuccessHandler<[InstagramMedia]>? = default, failure: FailureHandler? = default)
+api.search(user query: String, count: Int = default, success: SuccessHandler<[InstagramUser]>? = default, failure: FailureHandler? = default)
 ```
 
 #### Relationships - [SwiftInstagram docs](https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html#/Relationship%20Endpoints) - [Official docs](http://instagr.am/developer/endpoints/relationships/)
 
 ```swift
-api.userFollows(completion: @escaping (_ userSet: [InstagramUser]?, _ error: InstagramError?) -> Void)
-api.userFollowers(completion: @escaping (_ userSet: [InstagramUser]?, _ error: InstagramError?) -> Void)
-api.userRequestedBy(completion: @escaping (_ userSet: [InstagramUser]?, _ error: InstagramError?) -> Void)
-api.userRelationship(withUser userId: String, completion: @escaping (_ relationship: InstagramRelationship?, _ error: InstagramError?) -> Void)
-api.follow(user userId: String, completion: @escaping (_ relationship: InstagramRelationship?, _ error: InstagramError?) -> Void)
-api.unfollow(user userId: String, completion: @escaping (_ relationship: InstagramRelationship?, _ error: InstagramError?) -> Void)
-api.approveRequest(fromUser userId: String, completion: @escaping (_ relationship: InstagramRelationship?, _ error: InstagramError?) -> Void)
-api.ignoreRequest(fromUser userId: String, completion: @escaping (_ relationship: InstagramRelationship?, _ error: InstagramError?) -> Void)
+api.userFollows(success: SuccessHandler<[InstagramUser]>? = default, failure: FailureHandler? = default)
+api.userFollowers(success: SuccessHandler<[InstagramUser]>? = default, failure: FailureHandler? = default)
+api.userRequestedBy(success: SuccessHandler<[InstagramUser]>? = default, failure: FailureHandler? = default)
+api.userRelationship(withUser userId: String, success: SuccessHandler<InstagramRelationship>? = default, failure: FailureHandler? = default)
+api.follow(user userId: String, success: SuccessHandler<InstagramRelationship>? = default, failure: FailureHandler? = default)
+api.unfollow(user userId: String, success: SuccessHandler<InstagramRelationship>? = default, failure: FailureHandler? = default)
+api.approveRequest(fromUser userId: String, success: SuccessHandler<InstagramRelationship>? = default, failure: FailureHandler? = default)
+api.ignoreRequest(fromUser userId: String, success: SuccessHandler<InstagramRelationship>? = default, failure: FailureHandler? = default)
 ```
 
 #### Media - [SwiftInstagram docs](https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html#/Media%20Endpoints) - [Official docs](http://instagr.am/developer/endpoints/media/)
 
 ```swift
-api.media(withId id: String, completion: @escaping (_ media: InstagramMedia?, _ error: InstagramError?) -> Void)
-api.media(withShortcode shortcode: String, completion: @escaping (_ media: InstagramMedia?, _ error: InstagramError?) -> Void)
-api.searchMedia(lat: Double = default, lng: Double = default, distance: Int = default, completion: @escaping (_ mediaSet: [InstagramMedia]?, _ error: InstagramError?) -> Void)
+api.media(withId id: String, success: SuccessHandler<InstagramMedia>? = default, failure: FailureHandler? = default)
+api.media(withShortcode shortcode: String, success: SuccessHandler<InstagramMedia>? = default, failure: FailureHandler? = default)
+api.searchMedia(lat: Double = default, lng: Double = default, distance: Int = default, success: SuccessHandler<[InstagramMedia]>? = default, failure: FailureHandler? = default)
 ```
 
 #### Comments - [SwiftInstagram docs](https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html#/Comment%20Endpoints) - [Official docs](http://instagr.am/developer/endpoints/comments/)
 
 ```swift
-api.comments(fromMedia mediaId: String, completion: @escaping (_ comments: [InstagramComment]?, _ error: InstagramError?) -> Void)
-api.createComment(onMedia mediaId: String, text: String, completion: @escaping (_ error: InstagramError?) -> Void)
-api.deleteComment(_ commentId: String, onMedia mediaId: String, completion: @escaping (_ error: InstagramError?) -> Void)
+api.comments(fromMedia mediaId: String, success: SuccessHandler<[InstagramComment]>? = default, failure: FailureHandler? = default)
+api.createComment(onMedia mediaId: String, text: String, failure: FailureHandler? = default)
+api.deleteComment(_ commentId: String, onMedia mediaId: String, failure: FailureHandler? = default)
 ```
 
 #### Likes - [SwiftInstagram docs](https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html#/Like%20Endpoints) - [Official docs](http://instagr.am/developer/endpoints/likes/)
 
 ```swift
-api.likes(inMedia mediaId: String, completion: @escaping (_ users: [InstagramUser]?, _ error: InstagramError?) -> Void)
-api.like(media mediaId: String, completion: @escaping (_ error: InstagramError?) -> Void)
-api.unlike(media mediaId: String, completion: @escaping (_ error: InstagramError?) -> Void)
+api.likes(inMedia mediaId: String, success: SuccessHandler<[InstagramUser]>? = default, failure: FailureHandler? = default)
+api.like(media mediaId: String, failure: FailureHandler? = default)
+api.unlike(media mediaId: String, failure: FailureHandler? = default)
 ```
 
 #### Tags - [SwiftInstagram docs](https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html#/Tag%20Endpoints) - [Official docs](http://instagr.am/developer/endpoints/tags/)
 
 ```swift
-api.tag(_ tagName: String, completion: @escaping (_ tag: InstagramTag?, _ error: InstagramError?) -> Void)
-api.recentMedia(withTag tagName: String, maxTagId: String = default, minTagId: String = default, count: Int = default, completion: @escaping (_ mediaSet: [InstagramMedia]?, _ error: InstagramError?) -> Void)
-api.search(tag query: String, completion: @escaping (_ tags: [InstagramTag]?, _ error: InstagramError?) -> Void)
+api.tag(_ tagName: String, success: SuccessHandler<InstagramTag>? = default, failure: FailureHandler? = default)
+api.recentMedia(withTag tagName: String, maxTagId: String = default, minTagId: String = default, count: Int = default, success: SuccessHandler<[InstagramMedia]>? = default, failure: FailureHandler? = default)
+api.search(tag query: String, success: SuccessHandler<[InstagramTag]>? = default, failure: FailureHandler? = default)
 ```
 
 #### Locations - [SwiftInstagram docs](https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html#/Location%20Endpoints) - [Official docs](http://instagr.am/developer/endpoints/locations/)
 
 ```swift
-api.location(_ locationId: String, completion: @escaping (_ location: InstagramLocation?, _ error: InstagramError?) -> Void)
-api.recentMedia(forLocation locationId: String, maxId: String = default, minId: String = default, completion: @escaping (_ mediaSet: [InstagramMedia]?, _ error: InstagramError?) -> Void)
-api.searchLocation(lat: Double = default, lng: Double = default, distance: Int = default, facebookPlacesId: String = default, completion: @escaping (_ locations: [InstagramLocation]?, _ error: InstagramError?) -> Void)
+api.location(_ locationId: String, success: SuccessHandler<InstagramLocation>? = default, failure: FailureHandler? = default)
+api.recentMedia(forLocation locationId: String, maxId: String = default, minId: String = default, success: SuccessHandler<[InstagramMedia]>? = default, failure: FailureHandler? = default)
+api.searchLocation(lat: Double = default, lng: Double = default, distance: Int = default, facebookPlacesId: String = default, success: SuccessHandler<[InstagramLocation]>? = default, failure: FailureHandler? = default)
 ```
 
 ## Contributing
