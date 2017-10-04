@@ -283,16 +283,16 @@ public class Instagram {
     /// Modify the relationship between the current user and the target user.
     ///
     /// - Parameter userId: User identifier.
-    /// - Parameter action: follow | unfollow | approve | ignore
+    /// - Parameter action: Follow, unfollow, approve or ignore.
     /// - Parameter success: The callback called after a correct modification.
     /// - Parameter failure: The callback called after an incorrect modification.
     ///
     /// - Important: It requires *relationships* scope.
 
-    private func modifyUserRelationship(withUser userId: String, action: String, success: SuccessHandler<InstagramRelationship>? = nil, failure: FailureHandler? = nil) {
+    private func modifyUserRelationship(withUser userId: String, action: InstagramRelationshipAction, success: SuccessHandler<InstagramRelationship>? = nil, failure: FailureHandler? = nil) {
         var params = [String: String]()
 
-        params["action"] = action
+        params["action"] = action.rawValue
 
         let url = buildURL(for: "/users/\(userId)/relationship", withParams: params)
 
@@ -308,7 +308,7 @@ public class Instagram {
     /// - Important: It requires *relationships* scope.
 
     public func follow(user userId: String, success: SuccessHandler<InstagramRelationship>? = nil, failure: FailureHandler? = nil) {
-        modifyUserRelationship(withUser: userId, action: "follow", success: success, failure: failure)
+        modifyUserRelationship(withUser: userId, action: .follow, success: success, failure: failure)
     }
 
     /// Unfollows the target user.
@@ -320,7 +320,7 @@ public class Instagram {
     /// - Important: It requires *relationships* scope.
 
     public func unfollow(user userId: String, success: SuccessHandler<InstagramRelationship>? = nil, failure: FailureHandler? = nil) {
-        modifyUserRelationship(withUser: userId, action: "unfollow", success: success, failure: failure)
+        modifyUserRelationship(withUser: userId, action: .unfollow, success: success, failure: failure)
     }
 
     /// Approve the target user's request.
@@ -332,7 +332,7 @@ public class Instagram {
     /// - Important: It requires *relationships* scope.
 
     public func approveRequest(fromUser userId: String, success: SuccessHandler<InstagramRelationship>? = nil, failure: FailureHandler? = nil) {
-        modifyUserRelationship(withUser: userId, action: "approve", success: success, failure: failure)
+        modifyUserRelationship(withUser: userId, action: .approve, success: success, failure: failure)
     }
 
     /// Ignore the target user's request.
@@ -344,7 +344,7 @@ public class Instagram {
     /// - Important: It requires *relationships* scope.
 
     public func ignoreRequest(fromUser userId: String, success: SuccessHandler<InstagramRelationship>? = nil, failure: FailureHandler? = nil) {
-        modifyUserRelationship(withUser: userId, action: "ignore", success: success, failure: failure)
+        modifyUserRelationship(withUser: userId, action: .ignore, success: success, failure: failure)
     }
 
     // MARK: - Media Endpoints

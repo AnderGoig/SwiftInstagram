@@ -7,8 +7,10 @@
 //
 
 struct InstagramURL {
-
     static let api = "https://api.instagram.com/v1"
     static let oauth = "https://api.instagram.com"
+}
 
+enum InstagramRelationshipAction: String {
+    case follow, unfollow, approve, ignore
 }
