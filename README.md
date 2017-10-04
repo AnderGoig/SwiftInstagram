@@ -9,6 +9,10 @@
         <img src="https://img.shields.io/cocoapods/p/SwiftInstagram.svg"
              alt="Platforms">
     </a>
+    <a href="https://developer.apple.com/swift/" target="_blank">
+        <img src="https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat"
+             alt="Swift 4.0">
+    </a>
     <a href="https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/LICENSE">
         <img src="https://img.shields.io/cocoapods/l/SwiftInstagram.svg"
              alt="License">
