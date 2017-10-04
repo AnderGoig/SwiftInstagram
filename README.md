@@ -5,10 +5,6 @@
 </p>
 
 <p align="center">
-    <a href="https://travis-ci.org/AnderGoig/SwiftInstagram/branches">
-        <img src="https://img.shields.io/travis/AnderGoig/SwiftInstagram/master.svg"
-             alt="Travis">
-    </a>
     <a href="https://cocoapods.org/pods/SwiftInstagram">
         <img src="https://img.shields.io/cocoapods/p/SwiftInstagram.svg"
              alt="Platforms">
@@ -16,6 +12,10 @@
     <a href="https://developer.apple.com/swift" target="_blank">
         <img src="https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat"
              alt="Swift 4.0">
+    </a>
+    <a href="https://travis-ci.org/AnderGoig/SwiftInstagram/branches">
+        <img src="https://img.shields.io/travis/AnderGoig/SwiftInstagram/master.svg"
+             alt="Travis">
     </a>
     <a href="https://andergoig.github.io/SwiftInstagram/" target="_blank">
         <img src="https://img.shields.io/badge/Documentation-available-blue.svg"
