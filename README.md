@@ -278,7 +278,7 @@ api.searchLocation(lat: Double = default, lng: Double = default, distance: Int =
 ## Contributing
 
 If you have feature requests or bug reports, feel free to help out by sending pull requests or by [creating new issues](https://github.com/AnderGoig/IGAuth/issues/new). Please take a moment to
-review the [CONTRIBUTING](../blob/master/CONTRIBUTING) guidelines.
+review the [CONTRIBUTING](CONTRIBUTING.md) guidelines.
 
 ## Credits
 
@@ -290,7 +290,7 @@ SwiftInstagram uses [keychain-swift](https://github.com/evgenyneu/keychain-swift
 
 ## License
 
-SwiftInstagram is released under the MIT license. See [LICENSE](../blob/master/LICENSE) for details.
+SwiftInstagram is released under the MIT license. See [LICENSE](LICENSE.md) for details.
 
 ## Author
 
