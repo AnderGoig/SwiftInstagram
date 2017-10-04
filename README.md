@@ -5,18 +5,29 @@
 </p>
 
 <p align="center">
+    <a href="https://travis-ci.org/AnderGoig/SwiftInstagram/branches">
+        <img src="https://img.shields.io/travis/AnderGoig/SwiftInstagram/master.svg"
+             alt="Travis">
+    </a>
     <a href="https://cocoapods.org/pods/SwiftInstagram">
         <img src="https://img.shields.io/cocoapods/p/SwiftInstagram.svg"
              alt="Platforms">
     </a>
-    <a href="https://developer.apple.com/swift/" target="_blank">
+    <a href="https://developer.apple.com/swift" target="_blank">
         <img src="https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat"
              alt="Swift 4.0">
+    </a>
+    <a href="https://andergoig.github.io/SwiftInstagram/" target="_blank">
+        <img src="https://img.shields.io/badge/Documentation-available-blue.svg"
+             alt="Documentation">
     </a>
     <a href="https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/LICENSE">
         <img src="https://img.shields.io/cocoapods/l/SwiftInstagram.svg"
              alt="License">
     </a>
+</p>
+
+<p align="center">
     <a href="https://cocoapods.org/pods/SwiftInstagram">
         <img src="https://img.shields.io/cocoapods/v/SwiftInstagram.svg"
              alt="CocoaPods compatible">
@@ -28,10 +39,6 @@
     <a href="https://github.com/apple/swift-package-manager">
         <img src="https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg"
              alt="Swift Package Manager">
-    </a>
-    <a href="https://travis-ci.org/AnderGoig/SwiftInstagram/branches">
-        <img src="https://img.shields.io/travis/AnderGoig/SwiftInstagram/master.svg"
-             alt="Travis">
     </a>
 </p>
 
