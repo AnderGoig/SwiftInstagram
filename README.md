@@ -290,7 +290,7 @@ SwiftInstagram uses [keychain-swift](https://github.com/evgenyneu/keychain-swift
 
 ## License
 
-SwiftInstagram is released under the MIT license. See [LICENSE](LICENSE.md) for details.
+SwiftInstagram is released under the MIT license. See [LICENSE](LICENSE) for details.
 
 ## Author
 
