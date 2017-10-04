@@ -33,10 +33,6 @@
         <img src="https://img.shields.io/travis/AnderGoig/SwiftInstagram/master.svg"
              alt="Travis">
     </a>
-    <a href="http://github.com/JetpackSwift/Framework">
-        <img src="https://img.shields.io/badge/JetpackSwift-framework-red.svg"
-             alt="JetpackSwift">
-    </a>
 </p>
 
 ---
