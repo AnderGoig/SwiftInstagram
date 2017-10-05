@@ -47,12 +47,9 @@ public class Instagram {
     /// - Parameter redirectURI: Your Instagram API client redirection URI.
     /// - Parameter success: The callback called after a correct login.
     /// - Parameter failure: The callback called after an incorrect login.
-    ///
-    /// - Note: More information about the login permissions (scope)
-    ///   [here](https://www.instagram.com/developer/authorization/).
 
-    public func login(navController: UINavigationController, authScope: String = "basic", redirectURI: String, success: EmptySuccessHandler? = nil, failure: FailureHandler? = nil) {
-        let vc = InstagramLoginViewController(clientId: self.clientId!, authScope: authScope, redirectURI: redirectURI, success: { accessToken in
+    public func login(navController: UINavigationController, authScopes: [InstagramAuthScope] = [.basic], redirectURI: String, success: EmptySuccessHandler? = nil, failure: FailureHandler? = nil) {
+        let vc = InstagramLoginViewController(clientId: self.clientId!, authScopes: authScopes, redirectURI: redirectURI, success: { accessToken in
             if !self.keychain.set(accessToken, forKey: "accessToken") {
                 failure?(InstagramError(kind: .keychainError(code: self.keychain.lastResultCode), message: "Error storing access token into keychain."))
             } else {

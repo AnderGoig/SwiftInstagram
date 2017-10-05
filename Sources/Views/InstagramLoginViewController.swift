@@ -21,7 +21,7 @@ class InstagramLoginViewController: UIViewController {
     private var api = Instagram.shared
 
     private var clientId: String
-    private var authScope: String
+    private var authScopes: [InstagramAuthScope]
     private var redirectURI: String
     private var success: SuccessHandler?
     private var failure: FailureHandler?
@@ -41,9 +41,9 @@ class InstagramLoginViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public init(clientId: String, authScope: String, redirectURI: String, success: SuccessHandler? = nil, failure: FailureHandler? = nil) {
+    public init(clientId: String, authScopes: [InstagramAuthScope], redirectURI: String, success: SuccessHandler? = nil, failure: FailureHandler? = nil) {
         self.clientId = clientId
-        self.authScope = authScope
+        self.authScopes = authScopes
         self.redirectURI = redirectURI
         self.success = success
         self.failure = failure
@@ -124,7 +124,7 @@ class InstagramLoginViewController: UIViewController {
             URLQueryItem(name: "client_id", value: self.clientId),
             URLQueryItem(name: "redirect_uri", value: self.redirectURI),
             URLQueryItem(name: "response_type", value: "token"),
-            URLQueryItem(name: "scope", value: self.authScope)
+            URLQueryItem(name: "scope", value: self.authScopes.map({ "\($0)" }).joined(separator: "+"))
         ]
 
         let request = URLRequest(url: components.url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)
