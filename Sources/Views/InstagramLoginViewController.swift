@@ -124,7 +124,7 @@ class InstagramLoginViewController: UIViewController {
             URLQueryItem(name: "client_id", value: self.clientId),
             URLQueryItem(name: "redirect_uri", value: self.redirectURI),
             URLQueryItem(name: "response_type", value: "token"),
-            URLQueryItem(name: "scope", value: self.authScopes.map({ "\($0)" }).joined(separator: "+"))
+            URLQueryItem(name: "scope", value: self.authScopes.map({ "\($0.rawValue)" }).joined(separator: "+"))
         ]
 
         let request = URLRequest(url: components.url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)
