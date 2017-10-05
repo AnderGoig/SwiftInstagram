@@ -12,7 +12,7 @@ env:
     - IOS_FRAMEWORK_SCHEME="SwiftInstagram-iOS"
     - IOS_SDK=iphonesimulator11.0
   matrix:
-    - DESTINATION="OS=11.0,name=iPhone 7 Plus"  SCHEME="$IOS_FRAMEWORK_SCHEME"      SDK="$IOS_SDK"      RUN_TESTS="YES"     RELEASE_READY="YES"     POD_LINT="YES"
+    - DESTINATION="OS=11.0,name=iPhone 7 Plus"  SCHEME="$IOS_FRAMEWORK_SCHEME"      SDK="$IOS_SDK"      RUN_TESTS="YES"     RELEASE_READY="NO"      POD_LINT="NO"
     - DESTINATION="OS=10.3.1,name=iPhone 7"     SCHEME="$IOS_FRAMEWORK_SCHEME"      SDK="$IOS_SDK"      RUN_TESTS="YES"     RELEASE_READY="NO"      POD_LINT="NO"
     - DESTINATION="OS=9.0,name=iPhone 6s"       SCHEME="$IOS_FRAMEWORK_SCHEME"      SDK="$IOS_SDK"      RUN_TESTS="YES"     RELEASE_READY="NO"      POD_LINT="NO"
 
@@ -31,16 +31,16 @@ script:
 
   # Build Framework in Debug and Run Tests if specified
   - if [ $RUN_TESTS == "YES" ]; then
-      xcodebuild -quiet -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -configuration Debug ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty -c;
+      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -configuration Debug ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty -c;
     else
-      xcodebuild -quiet -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
+      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
     fi
 
   # Build Framework in Release and Run Tests if specified
   - if [ $RUN_TESTS == "YES" ]; then
-      xcodebuild -quiet -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -configuration Release ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty -c;
+      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -configuration Release ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty -c;
     else
-      xcodebuild -quiet -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -configuration Release ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
+      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -configuration Release ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
     fi
 
   # Run `pod lib lint` if specified
