@@ -197,7 +197,7 @@ api.login(navController: navigationController!, redirectURI: "YOUR REDIRECTION U
 let _ = api.isSessionValid()
 
 // Logout
-let _ = api.logout()
+api.logout()
 ```
 
 You can also specify the [login permissions](https://www.instagram.com/developer/authorization/) with the optional parameter `authScope`, by default, it is set to basic access. To request multiple scopes at once, simply separate the scopes by a "+".

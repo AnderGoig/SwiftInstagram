@@ -72,6 +72,7 @@ public class Instagram {
     ///
     /// - Returns: True if the user was successfully logged out, false otherwise.
 
+    @discardableResult
     public func logout() -> Bool {
         return self.keychain.delete("accessToken")
     }
