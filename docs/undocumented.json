@@ -2,7 +2,7 @@
   "warnings": [
     {
       "file": "/Users/AnderGoig/Desarrollo/Xcode/SwiftInstagram/Sources/Instagram.swift",
-      "line": 28,
+      "line": 33,
       "symbol": "Instagram.shared",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
@@ -44,21 +44,21 @@
     },
     {
       "file": "/Users/AnderGoig/Desarrollo/Xcode/SwiftInstagram/Sources/Models/InstagramError.swift",
-      "line": 30,
+      "line": 33,
       "symbol": "InstagramError.kind",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/AnderGoig/Desarrollo/Xcode/SwiftInstagram/Sources/Models/InstagramError.swift",
-      "line": 31,
+      "line": 34,
       "symbol": "InstagramError.message",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/AnderGoig/Desarrollo/Xcode/SwiftInstagram/Sources/Models/InstagramError.swift",
-      "line": 33,
+      "line": 36,
       "symbol": "InstagramError.localizedDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
@@ -341,13 +341,6 @@
       "line": 22,
       "symbol": "InstagramUser.Counts",
       "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/AnderGoig/Desarrollo/Xcode/SwiftInstagram/Sources/Views/InstagramLoginViewController.swift",
-      "line": null,
-      "symbol": "InstagramLoginViewController",
-      "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     }
   ],

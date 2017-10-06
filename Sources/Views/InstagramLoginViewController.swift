@@ -21,7 +21,7 @@ class InstagramLoginViewController: UIViewController {
     private var api = Instagram.shared
 
     private var clientId: String
-    private var authScope: String
+    private var scopes: [InstagramAuthScope]
     private var redirectURI: String
     private var success: SuccessHandler?
     private var failure: FailureHandler?
@@ -41,9 +41,9 @@ class InstagramLoginViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public init(clientId: String, authScope: String, redirectURI: String, success: SuccessHandler? = nil, failure: FailureHandler? = nil) {
+    public init(clientId: String, scopes: [InstagramAuthScope], redirectURI: String, success: SuccessHandler? = nil, failure: FailureHandler? = nil) {
         self.clientId = clientId
-        self.authScope = authScope
+        self.scopes = scopes
         self.redirectURI = redirectURI
         self.success = success
         self.failure = failure
@@ -53,7 +53,7 @@ class InstagramLoginViewController: UIViewController {
 
     // MARK: - View Lifecycle
 
-    override public func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
 
         if self.customTitle != nil {
@@ -108,7 +108,7 @@ class InstagramLoginViewController: UIViewController {
         loadAuthorizationURL()
     }
 
-    override public func viewWillDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
         progressView.removeFromSuperview()
@@ -117,18 +117,19 @@ class InstagramLoginViewController: UIViewController {
 
     // MARK: -
 
-    private func loadAuthorizationURL() {
-        let authorizationURL = URL(string: InstagramURL.oauth + "/oauth/authorize/")
+    func loadAuthorizationURL() {
+        let authorizationURL = URL(string: "https://api.instagram.com/oauth/authorize/")
+
         var components = URLComponents(url: authorizationURL!, resolvingAgainstBaseURL: false)!
         components.queryItems = [
             URLQueryItem(name: "client_id", value: self.clientId),
             URLQueryItem(name: "redirect_uri", value: self.redirectURI),
             URLQueryItem(name: "response_type", value: "token"),
-            URLQueryItem(name: "scope", value: self.authScope)
+            URLQueryItem(name: "scope", value: self.scopes.map({ "\($0.rawValue)" }).joined(separator: "+"))
         ]
 
         let request = URLRequest(url: components.url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)
-        webView.load(request)
+        self.webView.load(request)
     }
 
 }
@@ -137,23 +138,40 @@ class InstagramLoginViewController: UIViewController {
 
 extension InstagramLoginViewController: WKNavigationDelegate {
 
-    public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         if self.customTitle == nil {
             self.navigationItem.title = webView.title
         }
     }
 
-    public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         let urlString = navigationAction.request.url!.absoluteString
 
         if let range = urlString.range(of: "#access_token=") {
             let location = range.upperBound
             let accessToken = urlString[location...]
+            decisionHandler(.cancel)
             DispatchQueue.main.async {
                 self.success?(String(accessToken))
             }
-            decisionHandler(.cancel)
             return
+        }
+
+        decisionHandler(.allow)
+    }
+
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+        if let httpResponse = navigationResponse.response as? HTTPURLResponse {
+            switch httpResponse.statusCode {
+            case 400:
+                decisionHandler(.cancel)
+                DispatchQueue.main.async {
+                    self.failure?(InstagramError(kind: .invalidRequest, message: "Invalid request"))
+                }
+                return
+            default:
+                break
+            }
         }
 
         decisionHandler(.allow)
