@@ -100,7 +100,7 @@
             
             <p align="center">
     <a href="https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html">
-        <img src="https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/Images/SwiftInstagram-logo.png" alt="SwiftInstagram Logo" width="578" height="190">
+        <img src="images/SwiftInstagram-Logo.png" alt="SwiftInstagram Logo" width="700" height="200">
     </a>
 </p>
 
@@ -276,14 +276,13 @@
 <p>Also, copy the <strong>Client ID</strong> from your client and paste it inside your <code>Info.plist</code> file with <code>InstagramClientId</code> as the key.</p>
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/Images/Info.plist-file.png" alt="Info.plist" width="585" height="21">
+    <img src="images/Info.plist-File.png" alt="Info.plist" width="735" height="40">
 </p>
 <h3 id='authentication-a-href-https-andergoig-github-io-swiftinstagram-classes-instagram-html-authentication-swiftinstagram-docs-a' class='heading'>Authentication - <a href="https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html#/Authentication">SwiftInstagram docs</a></h3>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">api</span> <span class="o">=</span> <span class="kt">Instagram</span><span class="o">.</span><span class="n">shared</span>
 
 <span class="c1">// Login</span>
 <span class="n">api</span><span class="o">.</span><span class="nf">login</span><span class="p">(</span><span class="nv">navController</span><span class="p">:</span> <span class="n">navigationController</span><span class="o">!</span><span class="p">,</span> <span class="nv">redirectURI</span><span class="p">:</span> <span class="s">"YOUR REDIRECTION URI GOES HERE"</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="p">{</span>
-    <span class="k">self</span><span class="o">.</span><span class="n">navigationController</span><span class="p">?</span><span class="o">.</span><span class="nf">popViewController</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
     <span class="c1">// Do your stuff here ...</span>
 <span class="p">},</span> <span class="nv">failure</span><span class="p">:</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span>
     <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
@@ -293,11 +292,11 @@
 <span class="k">let</span> <span class="nv">_</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="nf">isSessionValid</span><span class="p">()</span>
 
 <span class="c1">// Logout</span>
-<span class="k">let</span> <span class="nv">_</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="nf">logout</span><span class="p">()</span>
+<span class="n">api</span><span class="o">.</span><span class="nf">logout</span><span class="p">()</span>
 </code></pre>
 
-<p>You can also specify the <a href="https://www.instagram.com/developer/authorization/">login permissions</a> with the optional parameter <code>authScope</code>, by default, it is set to basic access. To request multiple scopes at once, simply separate the scopes by a <q>+</q>.</p>
-<pre class="highlight swift"><code><span class="n">api</span><span class="o">.</span><span class="nf">login</span><span class="p">(</span><span class="nv">navController</span><span class="p">:</span> <span class="o">...</span><span class="p">,</span> <span class="nv">authScopes</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="n">likes</span><span class="p">,</span> <span class="o">.</span><span class="n">comments</span><span class="p">],</span> <span class="nv">redirectURI</span><span class="p">:</span> <span class="o">...</span> <span class="p">)</span>
+<p>You can also specify the <a href="https://www.instagram.com/developer/authorization/">login permissions</a> with the optional parameter <code>scopes</code>, by default, it is set to basic access. To request multiple scopes at once:</p>
+<pre class="highlight swift"><code><span class="n">api</span><span class="o">.</span><span class="nf">login</span><span class="p">(</span><span class="nv">navController</span><span class="p">:</span> <span class="o">...</span><span class="p">,</span> <span class="nv">scopes</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="n">likes</span><span class="p">,</span> <span class="o">.</span><span class="n">comments</span><span class="p">],</span> <span class="nv">redirectURI</span><span class="p">:</span> <span class="o">...</span> <span class="p">)</span>
 </code></pre>
 <h3 id='data-retrieval' class='heading'>Data retrieval</h3>
 
@@ -377,7 +376,7 @@ review the <a href=".github/CONTRIBUTING.md">CONTRIBUTING</a> guidelines.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2017 <a class="link" href="https://github.com/AnderGoig/SwiftInstagram" target="_blank" rel="external">Ander Goig</a>. All rights reserved. (Last updated: 2017-10-05)</p>
+      <p>&copy; 2017 <a class="link" href="https://github.com/AnderGoig/SwiftInstagram" target="_blank" rel="external">Ander Goig</a>. All rights reserved. (Last updated: 2017-10-07)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
