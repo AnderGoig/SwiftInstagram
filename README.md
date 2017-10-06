@@ -187,7 +187,6 @@ let api = Instagram.shared
 
 // Login
 api.login(navController: navigationController!, redirectURI: "YOUR REDIRECTION URI GOES HERE", success: {
-    self.navigationController?.popViewController(animated: true)
     // Do your stuff here ...
 }, failure: { error in
     print(error)
@@ -200,10 +199,10 @@ let _ = api.isSessionValid()
 api.logout()
 ```
 
-You can also specify the [login permissions](https://www.instagram.com/developer/authorization/) with the optional parameter `authScope`, by default, it is set to basic access. To request multiple scopes at once, simply separate the scopes by a "+".
+You can also specify the [login permissions](https://www.instagram.com/developer/authorization/) with the optional parameter `scopes`, by default, it is set to basic access. To request multiple scopes at once:
 
 ```swift
-api.login(navController: ..., authScopes: [.likes, .comments], redirectURI: ... )
+api.login(navController: ..., scopes: [.likes, .comments], redirectURI: ... )
 ```
 
 ### Data retrieval

@@ -33,10 +33,10 @@ public class Instagram {
     public static let shared = Instagram()
 
     private init() {
-        if let path = Bundle.main.path(forResource: "Info", ofType: "plist"), let dict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
-            if let clientId = dict["InstagramClientId"] as? String {
-                self.clientId = clientId
-            }
+        let bundlePath = Bundle.main.path(forResource: "Info", ofType: "plist")
+
+        if let path = bundlePath, let dict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
+            self.clientId = dict["InstagramClientId"] as? String
         }
     }
 
@@ -47,21 +47,26 @@ public class Instagram {
     /// Shows a custom `UIViewController` with Intagram's login page.
     ///
     /// - Parameter navController: Your current `UINavigationController`.
-    /// - Parameter authScope: The scope of the access you are requesting from the user. Basic access by default.
+    /// - Parameter scopes: The scope of the access you are requesting from the user. Basic access by default.
     /// - Parameter redirectURI: Your Instagram API client redirection URI.
     /// - Parameter success: The callback called after a correct login.
     /// - Parameter failure: The callback called after an incorrect login.
 
-    public func login(navController: UINavigationController, authScopes: [InstagramAuthScope] = [.basic], redirectURI: String, success: EmptySuccessHandler? = nil, failure: FailureHandler? = nil) {
-        let vc = InstagramLoginViewController(clientId: self.clientId!, authScopes: authScopes, redirectURI: redirectURI, success: { accessToken in
-            if !self.keychain.set(accessToken, forKey: "accessToken") {
-                failure?(InstagramError(kind: .keychainError(code: self.keychain.lastResultCode), message: "Error storing access token into keychain."))
-            } else {
-                success?()
-            }
-        }, failure: failure)
+    public func login(navController: UINavigationController, scopes: [InstagramAuthScope] = [.basic], redirectURI: String, success: EmptySuccessHandler? = nil, failure: FailureHandler? = nil) {
+        if let clientId = self.clientId {
+            let vc = InstagramLoginViewController(clientId: clientId, scopes: scopes, redirectURI: redirectURI, success: { accessToken in
+                if !self.keychain.set(accessToken, forKey: "accessToken") {
+                    failure?(InstagramError(kind: .keychainError(code: self.keychain.lastResultCode), message: "Error storing access token into keychain."))
+                } else {
+                    navController.popViewController(animated: true)
+                    success?()
+                }
+            }, failure: failure)
 
-        navController.show(vc, sender: nil)
+            navController.show(vc, sender: nil)
+        } else {
+            failure?(InstagramError(kind: .missingClientId, message: "Instagram Client ID not provided."))
+        }
     }
 
     /// Returns whether a session is currently available or not.
@@ -118,7 +123,7 @@ public class Instagram {
     }
 
     private func buildURL(for endpoint: String, withParameters parameters: Parameters? = nil) -> URL {
-        var urlComps = URLComponents(string: InstagramURL.api + endpoint)
+        var urlComps = URLComponents(string: "https://api.instagram.com/v1" + endpoint)
 
         var items = [URLQueryItem]()
 
@@ -252,7 +257,8 @@ public class Instagram {
     ///
     /// - Important: It requires *follower_list* scope.
 
-    public func userRelationship(withUser userId: String, success: SuccessHandler<InstagramRelationship>? = nil, failure: FailureHandler? = nil) {
+    public func userRelationship(withUser userId: String, success: SuccessHandler<InstagramRelationship>? = nil,
+                                 failure: FailureHandler? = nil) {
         request("/users/\(userId)/relationship", success: success, failure: failure)
     }
 
@@ -449,7 +455,8 @@ public class Instagram {
     ///   to your own user.
 
     public func like(media mediaId: String, failure: FailureHandler? = nil) {
-        request("/media/\(mediaId)/likes", method: .post, success: { (_: InstagramResponse<Any?>) in return }, failure: failure)
+        request("/media/\(mediaId)/likes", method: .post, success: { (_: InstagramResponse<Any?>) in return },
+                failure: failure)
     }
 
     /// Remove a like on this media by the currently authenticated user.
