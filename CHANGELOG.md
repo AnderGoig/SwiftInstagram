@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.0.2] - 2017-10-07
+### Added
+- `InstagramLoginViewController` hides automatically when concludes.
+- `@discardableResult` to `logout()` method.
+### Changed
+- Better code organization, especially for networking.
+### Fixed
+- Authorization process errors are now correctly captured.
+- Travis CI build error.
+
 ## [1.0.1] - 2017-10-03
 ### Added
 - Use of `DispatchQueue` for parsing JSON and calling callback functions.
@@ -19,5 +29,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Initial release.
 
-[Unreleased]: https://github.com/AnderGoig/SwiftInstagram/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/AnderGoig/SwiftInstagram/compare/v1.0.2...develop
+[1.0.2]: https://github.com/AnderGoig/SwiftInstagram/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/AnderGoig/SwiftInstagram/compare/v1.0.0...v1.0.1

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
  s.name         = 'SwiftInstagram'
- s.version      = '1.0.1'
+ s.version      = '1.0.2'
  s.license      = { :type => "MIT", :file => "LICENSE" }
  s.summary      = 'A Swift wrapper for the Instagram API'
  s.homepage     = 'https://github.com/AnderGoig/SwiftInstagram'
