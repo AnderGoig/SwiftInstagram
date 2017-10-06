@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html">
-        <img src="https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/Images/SwiftInstagram-Logo.png" alt="SwiftInstagram Logo" width="853.5" height="192">
+        <img src="https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/develop/Images/SwiftInstagram-Logo.png" alt="SwiftInstagram Logo" width="853.5" height="192">
     </a>
 </p>
 
@@ -177,7 +177,7 @@ SwiftInstagram uses client side (implicit) authentication, so you must **uncheck
 Also, copy the **Client ID** from your client and paste it inside your `Info.plist` file with `InstagramClientId` as the key.
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/Images/Info.plist-File.png" alt="Info.plist" width="585" height="21">
+    <img src="https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/develop/Images/Info.plist-File.png" alt="Info.plist" width="585" height="21">
 </p>
 
 ### Authentication - [SwiftInstagram docs](https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html#/Authentication)
