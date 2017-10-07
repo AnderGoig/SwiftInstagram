@@ -1,13 +1,6 @@
 {
   "warnings": [
     {
-      "file": "/Users/AnderGoig/Desarrollo/Xcode/SwiftInstagram/Sources/Instagram.swift",
-      "line": 33,
-      "symbol": "Instagram.shared",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/AnderGoig/Desarrollo/Xcode/SwiftInstagram/Sources/Models/InstagramComment.swift",
       "line": 13,
       "symbol": "InstagramComment.id",

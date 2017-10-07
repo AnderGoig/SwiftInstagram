@@ -13,8 +13,8 @@ class InstagramLoginViewController: UIViewController {
 
     // MARK: - Types
 
-    public typealias SuccessHandler = (_ accesToken: String) -> Void
-    public typealias FailureHandler = (_ error: Error) -> Void
+    typealias SuccessHandler = (_ accesToken: String) -> Void
+    typealias FailureHandler = (_ error: Error) -> Void
 
     // MARK: - Properties
 
@@ -30,18 +30,13 @@ class InstagramLoginViewController: UIViewController {
     private var progressView: UIProgressView!
     private var webViewObservation: NSKeyValueObservation!
 
-    // MARK: - Customizable Properties
-
-    public var customTitle: String?
-    public var progressViewTintColor = UIColor(red: 0.88, green: 0.19, blue: 0.42, alpha: 1.0)
-
     // MARK: - Initializers
 
-    required public init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public init(clientId: String, scopes: [InstagramScope], redirectURI: String, success: SuccessHandler? = nil, failure: FailureHandler? = nil) {
+    init(clientId: String, scopes: [InstagramScope], redirectURI: String, success: SuccessHandler? = nil, failure: FailureHandler? = nil) {
         self.clientId = clientId
         self.scopes = scopes
         self.redirectURI = redirectURI
@@ -56,10 +51,6 @@ class InstagramLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if self.customTitle != nil {
-            self.navigationItem.title = self.customTitle
-        }
-
         if #available(iOS 11.0, *) {
             self.navigationItem.largeTitleDisplayMode = .never
         }
@@ -69,7 +60,7 @@ class InstagramLoginViewController: UIViewController {
         // Initializes progress view
         progressView = UIProgressView(progressViewStyle: .bar)
         progressView.progress = 0.0
-        progressView.tintColor = self.progressViewTintColor
+        progressView.tintColor = UIColor(red: 0.88, green: 0.19, blue: 0.42, alpha: 1.0)
         progressView.translatesAutoresizingMaskIntoConstraints = false
 
         navBar.addSubview(progressView)
@@ -139,9 +130,7 @@ class InstagramLoginViewController: UIViewController {
 extension InstagramLoginViewController: WKNavigationDelegate {
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        if self.customTitle == nil {
-            self.navigationItem.title = webView.title
-        }
+        self.navigationItem.title = webView.title
     }
 
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
