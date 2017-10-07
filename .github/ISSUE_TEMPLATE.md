@@ -1,9 +1,9 @@
 ## Checklist
 
-- [ ] I have the [latest update](https://github.com/AnderGoig/SwiftInstagram/releases) of Swiftinstagram.
-- [ ] I have searched for [existing GitHub issues](https://github.com/AnderGoig/SwiftInstagram/issues).
-- [ ] I have read the [documentation](https://andergoig.github.io/SwiftInstagram/index.html).
-- [ ] I have read the [contibution guidelines](CONTRIBUTING.md).
+- [ ] I've the [latest update](https://github.com/AnderGoig/SwiftInstagram/releases) of Swiftinstagram.
+- [ ] I've searched for [existing GitHub issues](https://github.com/AnderGoig/SwiftInstagram/issues).
+- [ ] I've read the [documentation](https://andergoig.github.io/SwiftInstagram/index.html).
+- [ ] I've read the [contibution guidelines](CONTRIBUTING.md).
 
 ## Expected Behavior
 
