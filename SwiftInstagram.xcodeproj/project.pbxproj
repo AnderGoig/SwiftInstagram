@@ -23,7 +23,7 @@
 		778AF5F21F6E7F35005AC284 /* InstagramUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778AF5D61F6E7F35005AC284 /* InstagramUser.swift */; };
 		778AF5F61F6E7F35005AC284 /* InstagramTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778AF5D71F6E7F35005AC284 /* InstagramTag.swift */; };
 		778AF5FA1F6E7F35005AC284 /* InstagramMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778AF5D81F6E7F35005AC284 /* InstagramMedia.swift */; };
-		77B8E4181F869EBE0035C229 /* InstagramAuthScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B8E4171F869EBE0035C229 /* InstagramAuthScope.swift */; };
+		77B8E4181F869EBE0035C229 /* InstagramScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B8E4171F869EBE0035C229 /* InstagramScope.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -210,7 +210,7 @@
 		778AF5D71F6E7F35005AC284 /* InstagramTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramTag.swift; sourceTree = "<group>"; };
 		778AF5D81F6E7F35005AC284 /* InstagramMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramMedia.swift; sourceTree = "<group>"; };
 		778AF6511F6ED417005AC284 /* OnePasswordExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OnePasswordExtension.framework; path = Carthage/Build/iOS/OnePasswordExtension.framework; sourceTree = "<group>"; };
-		77B8E4171F869EBE0035C229 /* InstagramAuthScope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramAuthScope.swift; sourceTree = "<group>"; };
+		77B8E4171F869EBE0035C229 /* InstagramScope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramScope.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -422,7 +422,7 @@
 		77B8E4161F869E8A0035C229 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				77B8E4171F869EBE0035C229 /* InstagramAuthScope.swift */,
+				77B8E4171F869EBE0035C229 /* InstagramScope.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -720,7 +720,7 @@
 				778AF5DE1F6E7F35005AC284 /* InstagramError.swift in Sources */,
 				778AF5FA1F6E7F35005AC284 /* InstagramMedia.swift in Sources */,
 				778AF5F21F6E7F35005AC284 /* InstagramUser.swift in Sources */,
-				77B8E4181F869EBE0035C229 /* InstagramAuthScope.swift in Sources */,
+				77B8E4181F869EBE0035C229 /* InstagramScope.swift in Sources */,
 				778744581F772D2700FDE161 /* KeychainSwiftDistrib.swift in Sources */,
 				778AF5C01F6E7D10005AC284 /* Instagram.swift in Sources */,
 				778AF5BF1F6E7D10005AC284 /* InstagramLoginViewController.swift in Sources */,

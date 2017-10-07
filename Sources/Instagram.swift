@@ -52,7 +52,7 @@ public class Instagram {
     /// - Parameter success: The callback called after a correct login.
     /// - Parameter failure: The callback called after an incorrect login.
 
-    public func login(navController: UINavigationController, scopes: [InstagramAuthScope] = [.basic], redirectURI: String, success: EmptySuccessHandler? = nil, failure: FailureHandler? = nil) {
+    public func login(navController: UINavigationController, scopes: [InstagramScope] = [.basic], redirectURI: String, success: EmptySuccessHandler? = nil, failure: FailureHandler? = nil) {
         if let clientId = self.clientId {
             let vc = InstagramLoginViewController(clientId: clientId, scopes: scopes, redirectURI: redirectURI, success: { accessToken in
                 if !self.keychain.set(accessToken, forKey: "accessToken") {

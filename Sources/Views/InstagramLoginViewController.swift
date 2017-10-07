@@ -21,7 +21,7 @@ class InstagramLoginViewController: UIViewController {
     private var api = Instagram.shared
 
     private var clientId: String
-    private var scopes: [InstagramAuthScope]
+    private var scopes: [InstagramScope]
     private var redirectURI: String
     private var success: SuccessHandler?
     private var failure: FailureHandler?
@@ -41,7 +41,7 @@ class InstagramLoginViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public init(clientId: String, scopes: [InstagramAuthScope], redirectURI: String, success: SuccessHandler? = nil, failure: FailureHandler? = nil) {
+    public init(clientId: String, scopes: [InstagramScope], redirectURI: String, success: SuccessHandler? = nil, failure: FailureHandler? = nil) {
         self.clientId = clientId
         self.scopes = scopes
         self.redirectURI = redirectURI
