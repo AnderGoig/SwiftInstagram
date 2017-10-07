@@ -199,7 +199,7 @@ let _ = api.isSessionValid()
 api.logout()
 ```
 
-You can also specify the [login permissions](https://www.instagram.com/developer/authorization/) with the optional parameter `scopes`, by default, it is set to basic access. To request multiple scopes at once:
+You can also specify the [login permissions](https://www.instagram.com/developer/authorization/) with the optional `scopes` parameter. By default, it is set to basic access, however, you can request multiple scopes at once:
 
 ```swift
 api.login(navController: ..., scopes: [.likes, .comments], redirectURI: ... )
