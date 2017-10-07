@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html">
+    <a href="https://andergoig.github.io/SwiftInstagram">
         <img src="https://rawgit.com/AnderGoig/SwiftInstagram/master/images/SwiftInstagram-Logo.png" alt="SwiftInstagram Logo" width="700" height="200">
     </a>
 </p>
@@ -17,7 +17,7 @@
         <img src="https://img.shields.io/travis/AnderGoig/SwiftInstagram/master.svg"
              alt="Travis">
     </a>
-    <a href="https://andergoig.github.io/SwiftInstagram/" target="_blank">
+    <a href="https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html" target="_blank">
         <img src="https://img.shields.io/badge/Documentation-available-blue.svg"
              alt="Documentation">
     </a>
