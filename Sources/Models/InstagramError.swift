@@ -14,7 +14,7 @@ public struct InstagramError: Error {
         case invalidRequest
         case jsonParseError
         case keychainError(code: OSStatus)
-        case missingClientId
+        case missingClient
 
         public var description: String {
             switch self {
@@ -24,8 +24,8 @@ public struct InstagramError: Error {
                 return "jsonParseError"
             case .keychainError(let code):
                 return "keychainError(code: \(code)"
-            case .missingClientId:
-                return "missingClientId"
+            case .missingClient:
+                return "missingClient"
             }
         }
     }

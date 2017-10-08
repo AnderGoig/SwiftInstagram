@@ -18,15 +18,10 @@ class InstagramLoginViewController: UIViewController {
 
     // MARK: - Properties
 
-    private var api = Instagram.shared
-
-    private var clientId: String
-    private var scopes: [InstagramScope]
-    private var redirectURI: String
+    private var client: InstagramClient
     private var success: SuccessHandler?
     private var failure: FailureHandler?
 
-    private var webView: WKWebView!
     private var progressView: UIProgressView!
     private var webViewObservation: NSKeyValueObservation!
 
@@ -36,10 +31,8 @@ class InstagramLoginViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    init(clientId: String, scopes: [InstagramScope], redirectURI: String, success: SuccessHandler? = nil, failure: FailureHandler? = nil) {
-        self.clientId = clientId
-        self.scopes = scopes
-        self.redirectURI = redirectURI
+    init(client: InstagramClient, success: SuccessHandler? = nil, failure: FailureHandler? = nil) {
+        self.client = client
         self.success = success
         self.failure = failure
 
@@ -52,12 +45,31 @@ class InstagramLoginViewController: UIViewController {
         super.viewDidLoad()
 
         if #available(iOS 11.0, *) {
-            self.navigationItem.largeTitleDisplayMode = .never
+            navigationItem.largeTitleDisplayMode = .never
         }
 
+        // Initializes progress view
+        setupProgressView()
+
+        // Initializes web view
+        let webView = setupWebView()
+
+        // Starts authorization
+        loadAuthorizationURL(webView: webView)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        progressView.removeFromSuperview()
+        webViewObservation.invalidate()
+    }
+
+    // MARK: -
+
+    func setupProgressView() {
         let navBar = navigationController!.navigationBar
 
-        // Initializes progress view
         progressView = UIProgressView(progressViewStyle: .bar)
         progressView.progress = 0.0
         progressView.tintColor = UIColor(red: 0.88, green: 0.19, blue: 0.42, alpha: 1.0)
@@ -73,11 +85,13 @@ class InstagramLoginViewController: UIViewController {
                                                  toItem: progressView, attribute: .trailing, multiplier: 1, constant: 0)
 
         navigationController!.view.addConstraints([bottomConstraint, leftConstraint, rightConstraint])
+    }
 
-        // Initializes web view
+    func setupWebView() -> WKWebView {
         let webConfiguration = WKWebViewConfiguration()
         webConfiguration.websiteDataStore = .nonPersistent()
-        webView = WKWebView(frame: self.view.frame, configuration: webConfiguration)
+
+        let webView = WKWebView(frame: view.frame, configuration: webConfiguration)
         webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         webView.navigationDelegate = self
 
@@ -93,34 +107,26 @@ class InstagramLoginViewController: UIViewController {
             }
         }
 
-        self.view.addSubview(webView)
+        view.addSubview(webView)
 
-        // Start authorization
-        loadAuthorizationURL()
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-
-        progressView.removeFromSuperview()
-        webViewObservation.invalidate()
+        return webView
     }
 
     // MARK: -
 
-    func loadAuthorizationURL() {
+    func loadAuthorizationURL(webView: WKWebView) {
         let authorizationURL = URL(string: "https://api.instagram.com/oauth/authorize/")
 
         var components = URLComponents(url: authorizationURL!, resolvingAgainstBaseURL: false)!
         components.queryItems = [
-            URLQueryItem(name: "client_id", value: self.clientId),
-            URLQueryItem(name: "redirect_uri", value: self.redirectURI),
+            URLQueryItem(name: "client_id", value: client.clientId),
+            URLQueryItem(name: "redirect_uri", value: client.redirectURI),
             URLQueryItem(name: "response_type", value: "token"),
-            URLQueryItem(name: "scope", value: self.scopes.map({ "\($0.rawValue)" }).joined(separator: "+"))
+            URLQueryItem(name: "scope", value: client.scopes.map({ "\($0.rawValue)" }).joined(separator: "+"))
         ]
 
         let request = URLRequest(url: components.url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)
-        self.webView.load(request)
+        webView.load(request)
     }
 
 }
@@ -130,10 +136,11 @@ class InstagramLoginViewController: UIViewController {
 extension InstagramLoginViewController: WKNavigationDelegate {
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        self.navigationItem.title = webView.title
+        navigationItem.title = webView.title
     }
 
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction,
+                 decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         let urlString = navigationAction.request.url!.absoluteString
 
         if let range = urlString.range(of: "#access_token=") {
@@ -149,7 +156,8 @@ extension InstagramLoginViewController: WKNavigationDelegate {
         decisionHandler(.allow)
     }
 
-    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse,
+                 decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         if let httpResponse = navigationResponse.response as? HTTPURLResponse {
             switch httpResponse.statusCode {
             case 400:
