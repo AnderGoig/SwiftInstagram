@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           SwiftInstagram Docs
         </a>
-         (47% documented)
+         (48% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -62,7 +62,7 @@
             <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Enums/InstagramAuthScope.html">InstagramAuthScope</a>
+                <a class="nav-group-task-link" href="../Enums/InstagramScope.html">InstagramScope</a>
               </li>
             </ul>
           </li>
@@ -114,6 +114,44 @@
           <div class="section-content">
             <div class="task-group">
               <div class="task-name-container">
+                <a name="/Initializers"></a>
+                <a name="//apple_ref/swift/Section/Initializers" class="dashAnchor"></a>
+                <a href="#/Initializers">
+                  <h3 class="section-name">Initializers</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C6sharedACvZ"></a>
+                    <a name="//apple_ref/swift/Variable/shared" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C6sharedACvZ">shared</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Shared instance of Instagram (singleton)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">shared</span> <span class="o">=</span> <span class="kt">Instagram</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
                 <a name="/Authentication"></a>
                 <a name="//apple_ref/swift/Section/Authentication" class="dashAnchor"></a>
                 <a href="#/Authentication">
@@ -124,9 +162,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C5loginySo22UINavigationControllerC03navE0_SayAA0B9AuthScopeOG6scopesSS11redirectURIyycSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C5loginySo22UINavigationControllerC03navE0_SayAA0B5ScopeOG6scopesSS11redirectURIyycSg7successys5Error_pcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/login(navController:scopes:redirectURI:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C5loginySo22UINavigationControllerC03navE0_SayAA0B9AuthScopeOG6scopesSS11redirectURIyycSg7successys5Error_pcSg7failuretF">login(navController:scopes:redirectURI:success:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C5loginySo22UINavigationControllerC03navE0_SayAA0B5ScopeOG6scopesSS11redirectURIyycSg7successys5Error_pcSg7failuretF">login(navController:scopes:redirectURI:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -143,7 +181,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">login</span><span class="p">(</span><span class="nv">navController</span><span class="p">:</span> <span class="kt">UINavigationController</span><span class="p">,</span> <span class="nv">scopes</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/InstagramAuthScope.html">InstagramAuthScope</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">basic</span><span class="p">],</span> <span class="nv">redirectURI</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">EmptySuccessHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">login</span><span class="p">(</span><span class="nv">navController</span><span class="p">:</span> <span class="kt">UINavigationController</span><span class="p">,</span> <span class="nv">scopes</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/InstagramScope.html">InstagramScope</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">basic</span><span class="p">],</span> <span class="nv">redirectURI</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">EmptySuccessHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -309,11 +347,6 @@
     <p>It requires <em>public_content</em> scope when getting information about a user other than yours.</p>
 
 </div>
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    <p>Use <code>&quot;self&quot;</code> in the <code>userId</code> parameter in order to get information about your own user.</p>
-
-</div>
 
                       </div>
                       <div class="declaration">
@@ -336,7 +369,8 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>User identifier or <code>&quot;self&quot;</code>.</p>
+                                  <p>The ID of the user whose information to retrieve, or <q>self</q> to reference the currently
+logged-in user.</p>
                                 </div>
                               </td>
                             </tr>
@@ -389,11 +423,6 @@
     <p>It requires <em>public_content</em> scope when getting recent media published by a user other than yours.</p>
 
 </div>
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    <p>Use <em><q>self</q></em> in the <em>userId</em> parameter in order to get the most recent media published by your own user.</p>
-
-</div>
 
                       </div>
                       <div class="declaration">
@@ -416,7 +445,8 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>User identifier.</p>
+                                  <p>The ID of the user whose recent media to retrieve, or <q>self</q> to reference the currently
+logged-in user.</p>
                                 </div>
                               </td>
                             </tr>
@@ -885,8 +915,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userRelationship</span><span class="p">(</span><span class="n">withUser</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-                                 <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userRelationship</span><span class="p">(</span><span class="n">withUser</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="kt"><a href="../Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a></span><span class="o">&gt;</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -902,7 +931,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>User identifier.</p>
+                                  <p>The ID of the user to reference.</p>
                                 </div>
                               </td>
                             </tr>
@@ -977,7 +1006,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>User identifier.</p>
+                                  <p>The ID of the user to reference.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1052,7 +1081,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>User identifier.</p>
+                                  <p>The ID of the user to reference.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1127,7 +1156,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>User identifier.</p>
+                                  <p>The ID of the user to reference.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1202,7 +1231,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>User identifier.</p>
+                                  <p>The ID of the user to reference.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1288,7 +1317,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>Media identifier.</p>
+                                  <p>The ID of the media object to reference.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1369,7 +1398,7 @@ An example shortlink is <a href="http://instagram.com/p/tsxp1hhQTG/">http://inst
                               </td>
                               <td>
                                 <div>
-                                  <p>Media shortcode.</p>
+                                  <p>The shortcode of the media object to reference.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1630,7 +1659,7 @@ belong to your own user.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>Media identifier.</p>
+                                  <p>The ID of the media object to reference.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1706,7 +1735,7 @@ belong to your own user.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>Comment identifier.</p>
+                                  <p>The ID of the comment to delete.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1718,7 +1747,7 @@ belong to your own user.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>Media identifier.</p>
+                                  <p>The ID of the media object to reference.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1792,7 +1821,7 @@ belong to your own user.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>Media identifier.</p>
+                                  <p>The ID of the media object to reference.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1868,7 +1897,7 @@ to your own user.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>Media identifier.</p>
+                                  <p>The ID of the media object to reference.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1994,7 +2023,7 @@ to your own user.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>Tag name.</p>
+                                  <p>The name of the tag to reference.</p>
                                 </div>
                               </td>
                             </tr>
@@ -2069,7 +2098,7 @@ to your own user.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>Tag name.</p>
+                                  <p>The name of the tag to reference.</p>
                                 </div>
                               </td>
                             </tr>
@@ -2261,6 +2290,18 @@ to your own user.</p>
                             <tr>
                               <td>
                                 <code>
+                                <em>locationId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ID of the location to reference.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
                                 <em>success</em>
                                 </code>
                               </td>
@@ -2329,7 +2370,7 @@ to your own user.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>Location identifier.</p>
+                                  <p>The ID of the location to reference.</p>
                                 </div>
                               </td>
                             </tr>
@@ -2507,7 +2548,7 @@ If used, <code>lat</code> and <code>lng</code> are not required.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2017 <a class="link" href="https://github.com/AnderGoig/SwiftInstagram" target="_blank" rel="external">Ander Goig</a>. All rights reserved. (Last updated: 2017-10-07)</p>
+      <p>&copy; 2017 <a class="link" href="https://github.com/AnderGoig/SwiftInstagram" target="_blank" rel="external">Ander Goig</a>. All rights reserved. (Last updated: 2017-10-08)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

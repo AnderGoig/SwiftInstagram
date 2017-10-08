@@ -30,6 +30,7 @@ public class Instagram {
 
     // MARK: - Initializers
 
+    /// Shared instance of Instagram (singleton)
     public static let shared = Instagram()
 
     private init() {
@@ -52,7 +53,7 @@ public class Instagram {
     /// - Parameter success: The callback called after a correct login.
     /// - Parameter failure: The callback called after an incorrect login.
 
-    public func login(navController: UINavigationController, scopes: [InstagramAuthScope] = [.basic], redirectURI: String, success: EmptySuccessHandler? = nil, failure: FailureHandler? = nil) {
+    public func login(navController: UINavigationController, scopes: [InstagramScope] = [.basic], redirectURI: String, success: EmptySuccessHandler? = nil, failure: FailureHandler? = nil) {
         if let clientId = self.clientId {
             let vc = InstagramLoginViewController(clientId: clientId, scopes: scopes, redirectURI: redirectURI, success: { accessToken in
                 if !self.keychain.set(accessToken, forKey: "accessToken") {
@@ -143,13 +144,12 @@ public class Instagram {
 
     /// Get information about a user.
     ///
-    /// - Parameter userId: User identifier or `"self"`.
+    /// - Parameter userId: The ID of the user whose information to retrieve, or "self" to reference the currently
+    ///   logged-in user.
     /// - Parameter success: The callback called after a correct retrieval.
     /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - Important: It requires *public_content* scope when getting information about a user other than yours.
-    ///
-    /// - Note: Use `"self"` in the `userId` parameter in order to get information about your own user.
 
     public func user(_ userId: String, success: SuccessHandler<InstagramUser>? = nil, failure: FailureHandler? = nil) {
         request("/users/\(userId)", success: success, failure: failure)
@@ -157,7 +157,8 @@ public class Instagram {
 
     /// Get the most recent media published by a user.
     ///
-    /// - Parameter userId: User identifier.
+    /// - Parameter userId: The ID of the user whose recent media to retrieve, or "self" to reference the currently
+    ///   logged-in user.
     /// - Parameter maxId: Return media earlier than this `maxId`.
     /// - Parameter minId: Return media later than this `minId`.
     /// - Parameter count: Count of media to return.
@@ -165,8 +166,6 @@ public class Instagram {
     /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - Important: It requires *public_content* scope when getting recent media published by a user other than yours.
-    ///
-    /// - Note: Use *"self"* in the *userId* parameter in order to get the most recent media published by your own user.
 
     public func recentMedia(fromUser userId: String, maxId: String = "", minId: String = "", count: Int = 0, success: SuccessHandler<[InstagramMedia]>? = nil, failure: FailureHandler? = nil) {
         var parameters = Parameters()
@@ -251,14 +250,13 @@ public class Instagram {
 
     /// Get information about a relationship to another user.
     ///
-    /// - Parameter userId: User identifier.
+    /// - Parameter userId: The ID of the user to reference.
     /// - Parameter success: The callback called after a correct retrieval.
     /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - Important: It requires *follower_list* scope.
 
-    public func userRelationship(withUser userId: String, success: SuccessHandler<InstagramRelationship>? = nil,
-                                 failure: FailureHandler? = nil) {
+    public func userRelationship(withUser userId: String, success: SuccessHandler<InstagramRelationship>? = nil, failure: FailureHandler? = nil) {
         request("/users/\(userId)/relationship", success: success, failure: failure)
     }
 
@@ -270,7 +268,7 @@ public class Instagram {
 
     /// Modify the relationship between the current user and the target user.
     ///
-    /// - Parameter userId: User identifier.
+    /// - Parameter userId: The ID of the user to reference.
     /// - Parameter action: Follow, unfollow, approve or ignore.
     /// - Parameter success: The callback called after a correct modification.
     /// - Parameter failure: The callback called after an incorrect modification.
@@ -287,7 +285,7 @@ public class Instagram {
 
     /// Follows the target user.
     ///
-    /// - Parameter userId: User identifier.
+    /// - Parameter userId: The ID of the user to reference.
     /// - Parameter success: The callback called after a correct follow.
     /// - Parameter failure: The callback called after an incorrect follow.
     ///
@@ -299,7 +297,7 @@ public class Instagram {
 
     /// Unfollows the target user.
     ///
-    /// - Parameter userId: User identifier.
+    /// - Parameter userId: The ID of the user to reference.
     /// - Parameter success: The callback called after a correct unfollow.
     /// - Parameter failure: The callback called after an incorrect unfollow.
     ///
@@ -311,7 +309,7 @@ public class Instagram {
 
     /// Approve the target user's request.
     ///
-    /// - Parameter userId: User identifier.
+    /// - Parameter userId: The ID of the user to reference.
     /// - Parameter success: The callback called after a correct approve.
     /// - Parameter failure: The callback called after an incorrect approve.
     ///
@@ -323,7 +321,7 @@ public class Instagram {
 
     /// Ignore the target user's request.
     ///
-    /// - Parameter userId: User identifier.
+    /// - Parameter userId: The ID of the user to reference.
     /// - Parameter success: The callback called after a correct ignore.
     /// - Parameter failure: The callback called after an incorrect ignore.
     ///
@@ -337,7 +335,7 @@ public class Instagram {
 
     /// Get information about a media object.
     ///
-    /// - Parameter id: Media identifier.
+    /// - Parameter id: The ID of the media object to reference.
     /// - Parameter success: The callback called after a correct retrieval.
     /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
@@ -349,7 +347,7 @@ public class Instagram {
 
     /// Get information about a media object.
     ///
-    /// - Parameter shortcode: Media shortcode.
+    /// - Parameter shortcode: The shortcode of the media object to reference.
     /// - Parameter success: The callback called after a correct retrieval.
     /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
@@ -386,7 +384,7 @@ public class Instagram {
 
     /// Get a list of recent comments on a media object.
     ///
-    /// - Parameter Parameter mediaId: Media identifier.
+    /// - Parameter Parameter mediaId: The ID of the media object to reference.
     /// - Parameter success: The callback called after a correct retrieval.
     /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
@@ -398,7 +396,7 @@ public class Instagram {
 
     /// Create a comment on a media object.
     ///
-    /// - Parameter mediaId: Media identifier.
+    /// - Parameter mediaId: The ID of the media object to reference.
     /// - Parameter text: Text to post as a comment on the media object as specified in `mediaId`.
     /// - Parameter failure: The callback called after an incorrect creation.
     ///
@@ -421,8 +419,8 @@ public class Instagram {
 
     /// Remove a comment either on the authenticated user's media object or authored by the authenticated user.
     ///
-    /// - Parameter commentId: Comment identifier.
-    /// - Parameter mediaId: Media identifier.
+    /// - Parameter commentId: The ID of the comment to delete.
+    /// - Parameter mediaId: The ID of the media object to reference.
     /// - Parameter failure: The callback called after an incorrect deletion.
     ///
     /// - Important: It requires *comments* scope. Also, *public_content* scope is required for media that does not
@@ -436,7 +434,7 @@ public class Instagram {
 
     /// Get a list of users who have liked this media.
     ///
-    /// - Parameter mediaId: Media identifier.
+    /// - Parameter mediaId: The ID of the media object to reference.
     /// - Parameter success: The callback called after a correct retrieval.
     /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
@@ -448,7 +446,7 @@ public class Instagram {
 
     /// Set a like on this media by the currently authenticated user.
     ///
-    /// - Parameter mediaId: Media identifier.
+    /// - Parameter mediaId: The ID of the media object to reference.
     /// - Parameter failure: The callback called after an incorrect like.
     ///
     /// - Important: It requires *likes* scope. Also, *public_content* scope is required for media that does not belong
@@ -461,7 +459,7 @@ public class Instagram {
 
     /// Remove a like on this media by the currently authenticated user.
     ///
-    /// - Parameter Parameter mediaId: Media identifier.
+    /// - Parameter Parameter mediaId: The ID of the media object to reference.
     /// - Parameter failure: The callback called after an incorrect deletion.
     ///
     /// - Important: It requires *likes* scope. Also, *public_content* scope is required for media that does not belong
@@ -475,7 +473,7 @@ public class Instagram {
 
     /// Get information about a tag object.
     ///
-    /// - Parameter tagName: Tag name.
+    /// - Parameter tagName: The name of the tag to reference.
     /// - Parameter success: The callback called after a correct retrieval.
     /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
@@ -487,7 +485,7 @@ public class Instagram {
 
     /// Get a list of recently tagged media.
     ///
-    /// - Parameter tagName: Tag name.
+    /// - Parameter tagName: The name of the tag to reference.
     /// - Parameter maxTagId: Return media after this `maxTagId`.
     /// - Parameter minTagId: Return media before this `minTagId`.
     /// - Parameter count: Count of tagged media to return.
@@ -526,7 +524,7 @@ public class Instagram {
 
     /// Get information about a location.
     ///
-    /// - Parameter Parameter locationId: Location identifier.
+    /// - Parameter locationId: The ID of the location to reference.
     /// - Parameter success: The callback called after a correct retrieval.
     /// - Parameter failure: The callback called after an incorrect retrieval.
     ///
@@ -538,7 +536,7 @@ public class Instagram {
 
     /// Get a list of recent media objects from a given location.
     ///
-    /// - Parameter locationId: Location identifier.
+    /// - Parameter locationId: The ID of the location to reference.
     /// - Parameter maxId: Return media after this `maxId`.
     /// - Parameter minId: Return media before this `mindId`.
     /// - Parameter success: The callback called after a correct retrieval.

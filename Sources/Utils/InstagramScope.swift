@@ -8,7 +8,7 @@
 
 /// Login permissions ([scopes](https://www.instagram.com/developer/authorization/)) currently supported by Instagram.
 
-public enum InstagramAuthScope: String {
+public enum InstagramScope: String {
 
     /// To read a user’s profile info and media.
     case basic
