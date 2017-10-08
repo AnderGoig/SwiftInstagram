@@ -59,8 +59,8 @@
 
 ### Coming features
 - [ ] [SwiftInstagram 2.0.0](https://github.com/AnderGoig/SwiftInstagram/projects/1)
-    - [Instagram Business API](https://developers.facebook.com/docs/instagram-api/v2.10) support
     - Multiple users login
+    - [Instagram Business API](https://developers.facebook.com/docs/instagram-api/v2.10) support
     - And more ...
 
 ## Requirements
