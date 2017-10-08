@@ -57,11 +57,11 @@
 - [x] Secure access token storing, thanks to [keychain-swift](https://github.com/evgenyneu/keychain-swift).
 - [x] Up-to-date with the latest Apple technologies (Swift 4, Xcode 9, etc).
 
-### Coming features
-- [ ] [SwiftInstagram 2.0.0](https://github.com/AnderGoig/SwiftInstagram/projects/1)
-    - Multiple users login
-    - [Instagram Business API](https://developers.facebook.com/docs/instagram-api/v2.10) support
-    - And more ...
+### Coming features - [SwiftInstagram 2.0.0](https://github.com/AnderGoig/SwiftInstagram/projects/1)
+
+- [ ] Multiple users login
+- [ ] [Instagram Business API](https://developers.facebook.com/docs/instagram-api/v2.10) support
+- [ ] And more ...
 
 ## Requirements
 
