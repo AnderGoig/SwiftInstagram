@@ -76,7 +76,7 @@ public class Instagram {
     /// - Returns: True if a session is currently available, false otherwise.
 
     public func isSessionValid() -> Bool {
-        return self.keychain.get("accessToken") != nil
+        return keychain.get("accessToken") != nil
     }
 
     /// Ends the current session.
@@ -85,7 +85,7 @@ public class Instagram {
 
     @discardableResult
     public func logout() -> Bool {
-        return self.keychain.delete("accessToken")
+        return keychain.delete("accessToken")
     }
 
     // MARK: -
@@ -100,7 +100,7 @@ public class Instagram {
         var urlRequest = URLRequest(url: buildURL(for: endpoint, withParameters: parameters))
         urlRequest.httpMethod = method.rawValue
 
-        self.urlSession.dataTask(with: urlRequest) { (data, _, error) in
+        urlSession.dataTask(with: urlRequest) { (data, _, error) in
             if let data = data {
                 DispatchQueue.global(qos: .utility).async {
                     do {
@@ -129,7 +129,7 @@ public class Instagram {
 
         var items = [URLQueryItem]()
 
-        let accessToken = self.keychain.get("accessToken")
+        let accessToken = keychain.get("accessToken")
         items.append(URLQueryItem(name: "access_token", value: accessToken ?? ""))
 
         parameters?.forEach({ parameter in
