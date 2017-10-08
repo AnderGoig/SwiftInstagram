@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [1.0.3] - 2017-10-08
 ### Changed
 - Improved documentation.
-- InstagramAuthScope renamed to InstagramScope.
+- `InstagramAuthScope` renamed to `InstagramScope`.
 
 ## [1.0.2] - 2017-10-07
 ### Added
