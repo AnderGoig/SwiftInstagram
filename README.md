@@ -49,7 +49,7 @@
 
 **SwiftInstagram** is a **wrapper** for the **Instagram API** written in **Swift**. It allows you to authenticate users and request data from Instagram effortlessly.
 
-## Features
+## Features
 
 - [x] Effortless and straightforward use of Instagram API.
 - [x] Up-to-date with the latest of [Instagram API](https://www.instagram.com/developer/).
