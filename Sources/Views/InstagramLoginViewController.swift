@@ -14,7 +14,7 @@ class InstagramLoginViewController: UIViewController {
     // MARK: - Types
 
     typealias SuccessHandler = (_ accesToken: String) -> Void
-    typealias FailureHandler = (_ error: Error) -> Void
+    typealias FailureHandler = (_ error: InstagramError) -> Void
 
     // MARK: - Properties
 
