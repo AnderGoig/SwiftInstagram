@@ -67,7 +67,7 @@ class InstagramLoginViewController: UIViewController {
 
     // MARK: -
 
-    func setupProgressView() {
+    private func setupProgressView() {
         let navBar = navigationController!.navigationBar
 
         progressView = UIProgressView(progressViewStyle: .bar)
@@ -87,7 +87,7 @@ class InstagramLoginViewController: UIViewController {
         navigationController!.view.addConstraints([bottomConstraint, leftConstraint, rightConstraint])
     }
 
-    func setupWebView() -> WKWebView {
+    private func setupWebView() -> WKWebView {
         let webConfiguration = WKWebViewConfiguration()
         webConfiguration.websiteDataStore = .nonPersistent()
 

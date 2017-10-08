@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           SwiftInstagram Docs
         </a>
-         (48% documented)
+         (51% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -73,7 +73,7 @@
                 <a class="nav-group-task-link" href="../Structs.html#/s:14SwiftInstagram0B7CommentV">InstagramComment</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a>
+                <a class="nav-group-task-link" href="../Structs/InstagramError.html">InstagramError</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs.html#/s:14SwiftInstagram0B8LocationV">InstagramLocation</a>
@@ -134,7 +134,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Shared instance of Instagram (singleton)</p>
+                        <p>Returns a shared instance of Instagram.</p>
 
                       </div>
                       <div class="declaration">
@@ -162,9 +162,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C5loginySo22UINavigationControllerC03navE0_SayAA0B5ScopeOG6scopesSS11redirectURIyycSg7successys5Error_pcSg7failuretF"></a>
-                    <a name="//apple_ref/swift/Method/login(navController:scopes:redirectURI:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C5loginySo22UINavigationControllerC03navE0_SayAA0B5ScopeOG6scopesSS11redirectURIyycSg7successys5Error_pcSg7failuretF">login(navController:scopes:redirectURI:success:failure:)</a>
+                    <a name="/s:14SwiftInstagram0B0C5loginySo22UINavigationControllerC03navE0_SayAA0B5ScopeOG6scopesyycSg7successyAA0B5ErrorVcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/login(navController:scopes:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C5loginySo22UINavigationControllerC03navE0_SayAA0B5ScopeOG6scopesyycSg7successyAA0B5ErrorVcSg7failuretF">login(navController:scopes:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -181,7 +181,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">login</span><span class="p">(</span><span class="nv">navController</span><span class="p">:</span> <span class="kt">UINavigationController</span><span class="p">,</span> <span class="nv">scopes</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/InstagramScope.html">InstagramScope</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">basic</span><span class="p">],</span> <span class="nv">redirectURI</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">EmptySuccessHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">login</span><span class="p">(</span><span class="nv">navController</span><span class="p">:</span> <span class="kt">UINavigationController</span><span class="p">,</span> <span class="nv">scopes</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/InstagramScope.html">InstagramScope</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">basic</span><span class="p">],</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">EmptySuccessHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -210,18 +210,6 @@
                               <td>
                                 <div>
                                   <p>The scope of the access you are requesting from the user. Basic access by default.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>redirectURI</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Your Instagram API client redirection URI.</p>
                                 </div>
                               </td>
                             </tr>
@@ -331,9 +319,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C4userySS_yAA0B4UserVcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C4userySS_yAA0B4UserVcSg7successyAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/user(_:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C4userySS_yAA0B4UserVcSg7successys5Error_pcSg7failuretF">user(_:success:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C4userySS_yAA0B4UserVcSg7successyAA0B5ErrorVcSg7failuretF">user(_:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -407,9 +395,9 @@ logged-in user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C11recentMediaySS8fromUser_SS5maxIdSS03minH0Si5countySayAA0bD0VGcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C11recentMediaySS8fromUser_SS5maxIdSS03minH0Si5countySayAA0bD0VGcSg7successyAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/recentMedia(fromUser:maxId:minId:count:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C11recentMediaySS8fromUser_SS5maxIdSS03minH0Si5countySayAA0bD0VGcSg7successys5Error_pcSg7failuretF">recentMedia(fromUser:maxId:minId:count:success:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C11recentMediaySS8fromUser_SS5maxIdSS03minH0Si5countySayAA0bD0VGcSg7successyAA0B5ErrorVcSg7failuretF">recentMedia(fromUser:maxId:minId:count:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -519,9 +507,9 @@ logged-in user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C14userLikedMediaySS9maxLikeId_Si5countySayAA0bE0VGcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C14userLikedMediaySS9maxLikeId_Si5countySayAA0bE0VGcSg7successyAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/userLikedMedia(maxLikeId:count:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C14userLikedMediaySS9maxLikeId_Si5countySayAA0bE0VGcSg7successys5Error_pcSg7failuretF">userLikedMedia(maxLikeId:count:success:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C14userLikedMediaySS9maxLikeId_Si5countySayAA0bE0VGcSg7successyAA0B5ErrorVcSg7failuretF">userLikedMedia(maxLikeId:count:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -606,9 +594,9 @@ logged-in user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C6searchySS4user_Si5countySayAA0B4UserVGcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C6searchySS4user_Si5countySayAA0B4UserVGcSg7successyAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/search(user:count:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C6searchySS4user_Si5countySayAA0B4UserVGcSg7successys5Error_pcSg7failuretF">search(user:count:success:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C6searchySS4user_Si5countySayAA0B4UserVGcSg7successyAA0B5ErrorVcSg7failuretF">search(user:count:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -704,9 +692,9 @@ logged-in user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C11userFollowsyySayAA0B4UserVGcSg7success_ys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C11userFollowsyySayAA0B4UserVGcSg7success_yAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/userFollows(success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C11userFollowsyySayAA0B4UserVGcSg7success_ys5Error_pcSg7failuretF">userFollows(success:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C11userFollowsyySayAA0B4UserVGcSg7success_yAA0B5ErrorVcSg7failuretF">userFollows(success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -767,9 +755,9 @@ logged-in user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C13userFollowersyySayAA0B4UserVGcSg7success_ys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C13userFollowersyySayAA0B4UserVGcSg7success_yAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/userFollowers(success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C13userFollowersyySayAA0B4UserVGcSg7success_ys5Error_pcSg7failuretF">userFollowers(success:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C13userFollowersyySayAA0B4UserVGcSg7success_yAA0B5ErrorVcSg7failuretF">userFollowers(success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -830,9 +818,9 @@ logged-in user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C15userRequestedByyySayAA0B4UserVGcSg7success_ys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C15userRequestedByyySayAA0B4UserVGcSg7success_yAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/userRequestedBy(success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C15userRequestedByyySayAA0B4UserVGcSg7success_ys5Error_pcSg7failuretF">userRequestedBy(success:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C15userRequestedByyySayAA0B4UserVGcSg7success_yAA0B5ErrorVcSg7failuretF">userRequestedBy(success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -893,9 +881,9 @@ logged-in user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C16userRelationshipySS8withUser_yAA0bD0VcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C16userRelationshipySS8withUser_yAA0bD0VcSg7successyAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/userRelationship(withUser:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C16userRelationshipySS8withUser_yAA0bD0VcSg7successys5Error_pcSg7failuretF">userRelationship(withUser:success:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C16userRelationshipySS8withUser_yAA0bD0VcSg7successyAA0B5ErrorVcSg7failuretF">userRelationship(withUser:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -968,9 +956,9 @@ logged-in user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C6followySS4user_yAA0B12RelationshipVcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C6followySS4user_yAA0B12RelationshipVcSg7successyAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/follow(user:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C6followySS4user_yAA0B12RelationshipVcSg7successys5Error_pcSg7failuretF">follow(user:success:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C6followySS4user_yAA0B12RelationshipVcSg7successyAA0B5ErrorVcSg7failuretF">follow(user:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1043,9 +1031,9 @@ logged-in user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C8unfollowySS4user_yAA0B12RelationshipVcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C8unfollowySS4user_yAA0B12RelationshipVcSg7successyAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/unfollow(user:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C8unfollowySS4user_yAA0B12RelationshipVcSg7successys5Error_pcSg7failuretF">unfollow(user:success:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C8unfollowySS4user_yAA0B12RelationshipVcSg7successyAA0B5ErrorVcSg7failuretF">unfollow(user:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1118,9 +1106,9 @@ logged-in user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C14approveRequestySS8fromUser_yAA0B12RelationshipVcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C14approveRequestySS8fromUser_yAA0B12RelationshipVcSg7successyAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/approveRequest(fromUser:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C14approveRequestySS8fromUser_yAA0B12RelationshipVcSg7successys5Error_pcSg7failuretF">approveRequest(fromUser:success:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C14approveRequestySS8fromUser_yAA0B12RelationshipVcSg7successyAA0B5ErrorVcSg7failuretF">approveRequest(fromUser:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1193,9 +1181,9 @@ logged-in user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C13ignoreRequestySS8fromUser_yAA0B12RelationshipVcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C13ignoreRequestySS8fromUser_yAA0B12RelationshipVcSg7successyAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/ignoreRequest(fromUser:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C13ignoreRequestySS8fromUser_yAA0B12RelationshipVcSg7successys5Error_pcSg7failuretF">ignoreRequest(fromUser:success:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C13ignoreRequestySS8fromUser_yAA0B12RelationshipVcSg7successyAA0B5ErrorVcSg7failuretF">ignoreRequest(fromUser:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1279,9 +1267,9 @@ logged-in user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C5mediaySS6withId_yAA0B5MediaVcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C5mediaySS6withId_yAA0B5MediaVcSg7successyAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/media(withId:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C5mediaySS6withId_yAA0B5MediaVcSg7successys5Error_pcSg7failuretF">media(withId:success:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C5mediaySS6withId_yAA0B5MediaVcSg7successyAA0B5ErrorVcSg7failuretF">media(withId:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1354,9 +1342,9 @@ logged-in user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C5mediaySS13withShortcode_yAA0B5MediaVcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C5mediaySS13withShortcode_yAA0B5MediaVcSg7successyAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/media(withShortcode:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C5mediaySS13withShortcode_yAA0B5MediaVcSg7successys5Error_pcSg7failuretF">media(withShortcode:success:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C5mediaySS13withShortcode_yAA0B5MediaVcSg7successyAA0B5ErrorVcSg7failuretF">media(withShortcode:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1435,9 +1423,9 @@ An example shortlink is <a href="http://instagram.com/p/tsxp1hhQTG/">http://inst
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C11searchMediaySd3lat_Sd3lngSi8distanceySayAA0bD0VGcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C11searchMediaySd3lat_Sd3lngSi8distanceySayAA0bD0VGcSg7successyAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/searchMedia(lat:lng:distance:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C11searchMediaySd3lat_Sd3lngSi8distanceySayAA0bD0VGcSg7successys5Error_pcSg7failuretF">searchMedia(lat:lng:distance:success:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C11searchMediaySd3lat_Sd3lngSi8distanceySayAA0bD0VGcSg7successyAA0B5ErrorVcSg7failuretF">searchMedia(lat:lng:distance:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1545,9 +1533,9 @@ An example shortlink is <a href="http://instagram.com/p/tsxp1hhQTG/">http://inst
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C8commentsySS9fromMedia_ySayAA0B7CommentVGcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C8commentsySS9fromMedia_ySayAA0B7CommentVGcSg7successyAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/comments(fromMedia:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C8commentsySS9fromMedia_ySayAA0B7CommentVGcSg7successys5Error_pcSg7failuretF">comments(fromMedia:success:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C8commentsySS9fromMedia_ySayAA0B7CommentVGcSg7successyAA0B5ErrorVcSg7failuretF">comments(fromMedia:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1608,9 +1596,9 @@ An example shortlink is <a href="http://instagram.com/p/tsxp1hhQTG/">http://inst
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C13createCommentySS7onMedia_SS4textys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C13createCommentySS7onMedia_SS4textyAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/createComment(onMedia:text:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C13createCommentySS7onMedia_SS4textys5Error_pcSg7failuretF">createComment(onMedia:text:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C13createCommentySS7onMedia_SS4textyAA0B5ErrorVcSg7failuretF">createComment(onMedia:text:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1696,9 +1684,9 @@ belong to your own user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C13deleteCommentySS_SS7onMediays5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C13deleteCommentySS_SS7onMediayAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/deleteComment(_:onMedia:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C13deleteCommentySS_SS7onMediays5Error_pcSg7failuretF">deleteComment(_:onMedia:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C13deleteCommentySS_SS7onMediayAA0B5ErrorVcSg7failuretF">deleteComment(_:onMedia:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1783,9 +1771,9 @@ belong to your own user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C5likesySS7inMedia_ySayAA0B4UserVGcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C5likesySS7inMedia_ySayAA0B4UserVGcSg7successyAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/likes(inMedia:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C5likesySS7inMedia_ySayAA0B4UserVGcSg7successys5Error_pcSg7failuretF">likes(inMedia:success:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C5likesySS7inMedia_ySayAA0B4UserVGcSg7successyAA0B5ErrorVcSg7failuretF">likes(inMedia:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1858,9 +1846,9 @@ belong to your own user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C4likeySS5media_ys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C4likeySS5media_yAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/like(media:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C4likeySS5media_ys5Error_pcSg7failuretF">like(media:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C4likeySS5media_yAA0B5ErrorVcSg7failuretF">like(media:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1922,9 +1910,9 @@ to your own user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C6unlikeySS5media_ys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C6unlikeySS5media_yAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/unlike(media:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C6unlikeySS5media_ys5Error_pcSg7failuretF">unlike(media:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C6unlikeySS5media_yAA0B5ErrorVcSg7failuretF">unlike(media:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1985,9 +1973,9 @@ to your own user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C3tagySS_yAA0B3TagVcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C3tagySS_yAA0B3TagVcSg7successyAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/tag(_:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C3tagySS_yAA0B3TagVcSg7successys5Error_pcSg7failuretF">tag(_:success:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C3tagySS_yAA0B3TagVcSg7successyAA0B5ErrorVcSg7failuretF">tag(_:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -2060,9 +2048,9 @@ to your own user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C11recentMediaySS7withTag_SS03maxF2IdSS03minfH0Si5countySayAA0bD0VGcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C11recentMediaySS7withTag_SS03maxF2IdSS03minfH0Si5countySayAA0bD0VGcSg7successyAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/recentMedia(withTag:maxTagId:minTagId:count:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C11recentMediaySS7withTag_SS03maxF2IdSS03minfH0Si5countySayAA0bD0VGcSg7successys5Error_pcSg7failuretF">recentMedia(withTag:maxTagId:minTagId:count:success:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C11recentMediaySS7withTag_SS03maxF2IdSS03minfH0Si5countySayAA0bD0VGcSg7successyAA0B5ErrorVcSg7failuretF">recentMedia(withTag:maxTagId:minTagId:count:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -2171,9 +2159,9 @@ to your own user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C6searchySS3tag_ySayAA0B3TagVGcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C6searchySS3tag_ySayAA0B3TagVGcSg7successyAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/search(tag:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C6searchySS3tag_ySayAA0B3TagVGcSg7successys5Error_pcSg7failuretF">search(tag:success:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C6searchySS3tag_ySayAA0B3TagVGcSg7successyAA0B5ErrorVcSg7failuretF">search(tag:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -2257,9 +2245,9 @@ to your own user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C8locationySS_yAA0B8LocationVcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C8locationySS_yAA0B8LocationVcSg7successyAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/location(_:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C8locationySS_yAA0B8LocationVcSg7successys5Error_pcSg7failuretF">location(_:success:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C8locationySS_yAA0B8LocationVcSg7successyAA0B5ErrorVcSg7failuretF">location(_:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -2332,9 +2320,9 @@ to your own user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C11recentMediaySS11forLocation_SS5maxIdSS03minH0ySayAA0bD0VGcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C11recentMediaySS11forLocation_SS5maxIdSS03minH0ySayAA0bD0VGcSg7successyAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/recentMedia(forLocation:maxId:minId:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C11recentMediaySS11forLocation_SS5maxIdSS03minH0ySayAA0bD0VGcSg7successys5Error_pcSg7failuretF">recentMedia(forLocation:maxId:minId:success:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C11recentMediaySS11forLocation_SS5maxIdSS03minH0ySayAA0bD0VGcSg7successyAA0B5ErrorVcSg7failuretF">recentMedia(forLocation:maxId:minId:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -2431,9 +2419,9 @@ to your own user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C14searchLocationySd3lat_Sd3lngSi8distanceSS16facebookPlacesIdySayAA0bD0VGcSg7successys5Error_pcSg7failuretF"></a>
+                    <a name="/s:14SwiftInstagram0B0C14searchLocationySd3lat_Sd3lngSi8distanceSS16facebookPlacesIdySayAA0bD0VGcSg7successyAA0B5ErrorVcSg7failuretF"></a>
                     <a name="//apple_ref/swift/Method/searchLocation(lat:lng:distance:facebookPlacesId:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C14searchLocationySd3lat_Sd3lngSi8distanceSS16facebookPlacesIdySayAA0bD0VGcSg7successys5Error_pcSg7failuretF">searchLocation(lat:lng:distance:facebookPlacesId:success:failure:)</a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C14searchLocationySd3lat_Sd3lngSi8distanceSS16facebookPlacesIdySayAA0bD0VGcSg7successyAA0B5ErrorVcSg7failuretF">searchLocation(lat:lng:distance:facebookPlacesId:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">

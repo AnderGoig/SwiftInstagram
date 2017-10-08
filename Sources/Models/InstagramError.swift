@@ -6,7 +6,7 @@
 //  Copyright © 2017 Ander Goig. All rights reserved.
 //
 
-/// The struct containing an Instagram error.
+/// A type representing an error value that can be thrown.
 
 public struct InstagramError: Error {
 
@@ -33,6 +33,7 @@ public struct InstagramError: Error {
     let kind: ErrorKind
     let message: String
 
+    /// Retrieve the localized description for this error.
     public var localizedDescription: String {
         return "[\(kind.description)] - \(message)"
     }

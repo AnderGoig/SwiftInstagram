@@ -30,7 +30,7 @@ public class Instagram {
 
     // MARK: - Initializers
 
-    /// Shared instance of Instagram (singleton)
+    /// Returns a shared instance of Instagram.
     public static let shared = Instagram()
 
     private init() {

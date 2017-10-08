@@ -29,34 +29,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/AnderGoig/Desarrollo/Xcode/SwiftInstagram/Sources/Models/InstagramError.swift",
-      "line": 13,
-      "symbol": "InstagramError.ErrorKind",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/AnderGoig/Desarrollo/Xcode/SwiftInstagram/Sources/Models/InstagramError.swift",
-      "line": 33,
-      "symbol": "InstagramError.kind",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/AnderGoig/Desarrollo/Xcode/SwiftInstagram/Sources/Models/InstagramError.swift",
-      "line": 34,
-      "symbol": "InstagramError.message",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/AnderGoig/Desarrollo/Xcode/SwiftInstagram/Sources/Models/InstagramError.swift",
-      "line": 36,
-      "symbol": "InstagramError.localizedDescription",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/AnderGoig/Desarrollo/Xcode/SwiftInstagram/Sources/Models/InstagramLocation.swift",
       "line": 17,
       "symbol": "InstagramLocation.id",
