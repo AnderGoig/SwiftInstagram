@@ -1,4 +1,4 @@
-## Checklist
+## Checklist
 
 - [ ] I've the [latest update](https://github.com/AnderGoig/SwiftInstagram/releases) of Swiftinstagram.
 - [ ] I've searched for [existing GitHub issues](https://github.com/AnderGoig/SwiftInstagram/issues).
