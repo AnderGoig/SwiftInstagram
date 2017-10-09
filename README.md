@@ -9,7 +9,7 @@
         <img src="https://img.shields.io/cocoapods/p/SwiftInstagram.svg"
              alt="Platforms">
     </a>
-    <a href="https://developer.apple.com/swift" target="_blank">
+    <a href="https://developer.apple.com/swift">
         <img src="https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat"
              alt="Swift 4.0">
     </a>
@@ -18,10 +18,10 @@
              alt="Travis">
     </a>
     <a href="https://codebeat.co/projects/github-com-andergoig-swiftinstagram-master">
-        <img alt="codebeat badge" src="https://codebeat.co/badges/e5274943-8feb-4e51-a937-43552205f62e" />
+        <img src="https://codebeat.co/badges/e5274943-8feb-4e51-a937-43552205f62e" alt="Codebeat">
     </a>
-    <a href="https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html" target="_blank">
-        <img src="https://img.shields.io/badge/Documentation-available-blue.svg"
+    <a href="https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html">
+        <img src="docs/badge.svg"
              alt="Documentation">
     </a>
     <a href="https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/LICENSE">
