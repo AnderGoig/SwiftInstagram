@@ -18,7 +18,8 @@
              alt="Travis">
     </a>
     <a href="https://codebeat.co/projects/github-com-andergoig-swiftinstagram-master">
-        <img src="https://codebeat.co/badges/e5274943-8feb-4e51-a937-43552205f62e" alt="Codebeat">
+        <img src="https://codebeat.co/badges/e5274943-8feb-4e51-a937-43552205f62e"
+             alt="Codebeat">
     </a>
     <a href="https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html">
         <img src="docs/badge.svg"
