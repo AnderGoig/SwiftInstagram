@@ -454,8 +454,7 @@ public class Instagram {
     ///   to your own user.
 
     public func like(media mediaId: String, failure: FailureHandler? = nil) {
-        request("/media/\(mediaId)/likes", method: .post, success: { (_: InstagramResponse<Any?>) in return },
-                failure: failure)
+        request("/media/\(mediaId)/likes", method: .post, success: { (_: InstagramResponse<Any?>) in return }, failure: failure)
     }
 
     /// Remove a like on this media by the currently authenticated user.
