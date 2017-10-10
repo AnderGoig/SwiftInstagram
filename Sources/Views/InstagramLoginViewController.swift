@@ -77,14 +77,11 @@ class InstagramLoginViewController: UIViewController {
 
         navBar.addSubview(progressView)
 
-        let bottomConstraint = NSLayoutConstraint(item: navBar, attribute: .bottom, relatedBy: .equal,
-                                                  toItem: progressView, attribute: .bottom, multiplier: 1, constant: 1)
-        let leftConstraint = NSLayoutConstraint(item: navBar, attribute: .leading, relatedBy: .equal,
-                                                toItem: progressView, attribute: .leading, multiplier: 1, constant: 0)
-        let rightConstraint = NSLayoutConstraint(item: navBar, attribute: .trailing, relatedBy: .equal,
-                                                 toItem: progressView, attribute: .trailing, multiplier: 1, constant: 0)
+        let bottomConstraint = navBar.bottomAnchor.constraint(equalTo: progressView.bottomAnchor, constant: 1)
+        let leftConstraint = navBar.leadingAnchor.constraint(equalTo: progressView.leadingAnchor)
+        let rightConstraint = navBar.trailingAnchor.constraint(equalTo: progressView.trailingAnchor)
 
-        navigationController!.view.addConstraints([bottomConstraint, leftConstraint, rightConstraint])
+        NSLayoutConstraint.activate([bottomConstraint, leftConstraint, rightConstraint])
     }
 
     private func setupWebView() -> WKWebView {
