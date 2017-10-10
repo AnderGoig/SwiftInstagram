@@ -20,7 +20,7 @@ public struct InstagramComment: Decodable {
     public let from: InstagramUser
 
     /// The date and time when the comment was created.
-    public var created: Date {
+    public var createdDate: Date {
         return Date(timeIntervalSince1970: Double(createdTime)!)
     }
 

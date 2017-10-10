@@ -20,7 +20,7 @@ public struct InstagramMedia: Decodable {
     public let images: Images
 
     /// The date and time when the media was created.
-    public var created: Date {
+    public var createdDate: Date {
         return Date(timeIntervalSince1970: Double(createdTime)!)
     }
 
