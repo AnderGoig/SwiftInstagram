@@ -12,18 +12,25 @@ import CoreLocation
 
 public struct InstagramLocation: Codable {
 
-    let latitude: Double
-    let longitude: Double
+    /// The location identifier.
     public let id: String
+
+    /// The location name.
     public let name: String
+
+    /// The location address.
     public let streetAddress: String?
 
+    /// The location coordinates (latitude and logitude).
     public var coordinates: CLLocationCoordinate2D {
-        return CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude)
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
 
+    private let latitude: Double
+    private let longitude: Double
+
     private enum CodingKeys: String, CodingKey {
-        case latitude, longitude, id, name
+        case id, name, latitude, longitude
         case streetAddress = "street_address"
     }
 

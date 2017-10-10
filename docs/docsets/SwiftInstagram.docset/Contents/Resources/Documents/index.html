@@ -22,7 +22,7 @@
         <a class="header-link" href="index.html">
           SwiftInstagram Docs
         </a>
-         (48% documented)
+         (100% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -69,25 +69,46 @@
             <a class="nav-group-name-link" href="Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs.html#/s:14SwiftInstagram0B7CommentV">InstagramComment</a>
+                <a class="nav-group-task-link" href="Structs/InstagramComment.html">InstagramComment</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs.html#/s:14SwiftInstagram0B5ErrorV">InstagramError</a>
+                <a class="nav-group-task-link" href="Structs/InstagramError.html">InstagramError</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs.html#/s:14SwiftInstagram0B8LocationV">InstagramLocation</a>
+                <a class="nav-group-task-link" href="Structs/InstagramLocation.html">InstagramLocation</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs.html#/s:14SwiftInstagram0B5MediaV">InstagramMedia</a>
+                <a class="nav-group-task-link" href="Structs/InstagramMedia.html">InstagramMedia</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs.html#/s:14SwiftInstagram0B12RelationshipV">InstagramRelationship</a>
+                <a class="nav-group-task-link" href="Structs/InstagramMedia/Count.html">– Count</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs.html#/s:14SwiftInstagram0B3TagV">InstagramTag</a>
+                <a class="nav-group-task-link" href="Structs/InstagramMedia/Resolution.html">– Resolution</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs.html#/s:14SwiftInstagram0B4UserV">InstagramUser</a>
+                <a class="nav-group-task-link" href="Structs/InstagramMedia/Images.html">– Images</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/InstagramMedia/Videos.html">– Videos</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/InstagramMedia/UserInPhoto.html">– UserInPhoto</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/InstagramMedia/CarouselMedia.html">– CarouselMedia</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/InstagramRelationship.html">InstagramRelationship</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/InstagramTag.html">InstagramTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/InstagramUser.html">InstagramUser</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/InstagramUser/Counts.html">– Counts</a>
               </li>
             </ul>
           </li>
@@ -109,7 +130,7 @@
         <img src="https://img.shields.io/cocoapods/p/SwiftInstagram.svg"
              alt="Platforms">
     </a>
-    <a href="https://developer.apple.com/swift" target="_blank">
+    <a href="https://developer.apple.com/swift">
         <img src="https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat"
              alt="Swift 4.0">
     </a>
@@ -117,8 +138,11 @@
         <img src="https://img.shields.io/travis/AnderGoig/SwiftInstagram/master.svg"
              alt="Travis">
     </a>
-    <a href="https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html" target="_blank">
-        <img src="https://img.shields.io/badge/Documentation-available-blue.svg"
+    <a href="https://codebeat.co/projects/github-com-andergoig-swiftinstagram-master">
+        <img src="https://codebeat.co/badges/e5274943-8feb-4e51-a937-43552205f62e" alt="Codebeat">
+    </a>
+    <a href="https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html">
+        <img src="docs/badge.svg"
              alt="Documentation">
     </a>
     <a href="https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/LICENSE">
@@ -145,14 +169,21 @@
 <hr>
 
 <p><strong>SwiftInstagram</strong> is a <strong>wrapper</strong> for the <strong>Instagram API</strong> written in <strong>Swift</strong>. It allows you to authenticate users and request data from Instagram effortlessly.</p>
+<h2 id='features' class='heading'>Features</h2>
 
 <ul>
-<li><a href="#requirements">Requirements</a></li>
-<li><a href="#usage">Usage</a></li>
-<li><a href="#contributing">Contributing</a></li>
-<li><a href="#credits">Credits</a></li>
-<li><a href="#license">License</a></li>
-<li><a href="#author">Author</a></li>
+<li>[x] Effortless and straightforward use of Instagram API.</li>
+<li>[x] Up-to-date with the latest of <a href="https://www.instagram.com/developer/">Instagram API</a>.</li>
+<li>[x] Client-Side authentication.</li>
+<li>[x] Secure access token storing, thanks to <a href="https://github.com/evgenyneu/keychain-swift">keychain-swift</a>.</li>
+<li>[x] Up-to-date with the latest Apple technologies (Swift 4, Xcode 9, etc).</li>
+</ul>
+<h3 id='coming-features-a-href-https-github-com-andergoig-swiftinstagram-projects-1-swiftinstagram-2-0-0-a' class='heading'>Coming features - <a href="https://github.com/AnderGoig/SwiftInstagram/projects/1">SwiftInstagram 2.0.0</a></h3>
+
+<ul>
+<li>[ ] Multiple users login</li>
+<li>[ ] <a href="https://developers.facebook.com/docs/instagram-api/v2.10">Instagram Business API</a> support</li>
+<li>[ ] And more &hellip;</li>
 </ul>
 <h2 id='requirements' class='heading'>Requirements</h2>
 
@@ -196,7 +227,7 @@ review the <a href=".github/CONTRIBUTING.md">CONTRIBUTING</a> guidelines.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2017 <a class="link" href="https://github.com/AnderGoig/SwiftInstagram" target="_blank" rel="external">Ander Goig</a>. All rights reserved. (Last updated: 2017-10-08)</p>
+      <p>&copy; 2017 <a class="link" href="https://github.com/AnderGoig/SwiftInstagram" target="_blank" rel="external">Ander Goig</a>. All rights reserved. (Last updated: 2017-10-10)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

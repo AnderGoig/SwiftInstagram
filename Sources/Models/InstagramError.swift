@@ -6,17 +6,17 @@
 //  Copyright © 2017 Ander Goig. All rights reserved.
 //
 
-/// The struct containing an Instagram error.
+/// A type representing an error value that can be thrown.
 
 public struct InstagramError: Error {
 
-    public enum ErrorKind: CustomStringConvertible {
+    enum ErrorKind: CustomStringConvertible {
         case invalidRequest
         case jsonParseError
         case keychainError(code: OSStatus)
-        case missingClientId
+        case missingClient
 
-        public var description: String {
+        var description: String {
             switch self {
             case .invalidRequest:
                 return "invalidRequest"
@@ -24,15 +24,16 @@ public struct InstagramError: Error {
                 return "jsonParseError"
             case .keychainError(let code):
                 return "keychainError(code: \(code)"
-            case .missingClientId:
-                return "missingClientId"
+            case .missingClient:
+                return "missingClient"
             }
         }
     }
 
-    public let kind: ErrorKind
-    public let message: String
+    let kind: ErrorKind
+    let message: String
 
+    /// Retrieve the localized description for this error.
     public var localizedDescription: String {
         return "[\(kind.description)] - \(message)"
     }

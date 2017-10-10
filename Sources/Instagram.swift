@@ -18,7 +18,7 @@ public class Instagram {
 
     public typealias EmptySuccessHandler = () -> Void
     public typealias SuccessHandler<T> = (_ data: T) -> Void
-    public typealias FailureHandler = (_ error: Error) -> Void
+    public typealias FailureHandler = (_ error: InstagramError) -> Void
 
     // MARK: - Properties
 
@@ -26,18 +26,18 @@ public class Instagram {
     private let keychain = KeychainSwift()
     private let decoder = JSONDecoder()
 
-    private var clientId: String?
+    private var client: InstagramClient?
 
     // MARK: - Initializers
 
-    /// Shared instance of Instagram (singleton)
+    /// Returns a shared instance of Instagram.
     public static let shared = Instagram()
 
     private init() {
-        let bundlePath = Bundle.main.path(forResource: "Info", ofType: "plist")
-
-        if let path = bundlePath, let dict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
-            self.clientId = dict["InstagramClientId"] as? String
+        if client == nil, let path = Bundle.main.path(forResource: "Info", ofType: "plist"), let dict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
+            let clientId = dict["InstagramClientId"] as? String
+            let redirectURI = dict["InstagramRedirectURI"] as? String
+            client = InstagramClient(clientId: clientId, redirectURI: redirectURI)
         }
     }
 
@@ -49,13 +49,14 @@ public class Instagram {
     ///
     /// - Parameter navController: Your current `UINavigationController`.
     /// - Parameter scopes: The scope of the access you are requesting from the user. Basic access by default.
-    /// - Parameter redirectURI: Your Instagram API client redirection URI.
     /// - Parameter success: The callback called after a correct login.
     /// - Parameter failure: The callback called after an incorrect login.
 
-    public func login(navController: UINavigationController, scopes: [InstagramScope] = [.basic], redirectURI: String, success: EmptySuccessHandler? = nil, failure: FailureHandler? = nil) {
-        if let clientId = self.clientId {
-            let vc = InstagramLoginViewController(clientId: clientId, scopes: scopes, redirectURI: redirectURI, success: { accessToken in
+    public func login(navController: UINavigationController, scopes: [InstagramScope] = [.basic], success: EmptySuccessHandler? = nil, failure: FailureHandler? = nil) {
+        client?.scopes = scopes
+
+        if let client = client {
+            let vc = InstagramLoginViewController(client: client, success: { accessToken in
                 if !self.keychain.set(accessToken, forKey: "accessToken") {
                     failure?(InstagramError(kind: .keychainError(code: self.keychain.lastResultCode), message: "Error storing access token into keychain."))
                 } else {
@@ -66,7 +67,7 @@ public class Instagram {
 
             navController.show(vc, sender: nil)
         } else {
-            failure?(InstagramError(kind: .missingClientId, message: "Instagram Client ID not provided."))
+            failure?(InstagramError(kind: .missingClient, message: "Instagram Client not provided."))
         }
     }
 
@@ -75,7 +76,7 @@ public class Instagram {
     /// - Returns: True if a session is currently available, false otherwise.
 
     public func isSessionValid() -> Bool {
-        return self.keychain.get("accessToken") != nil
+        return keychain.get("accessToken") != nil
     }
 
     /// Ends the current session.
@@ -84,7 +85,7 @@ public class Instagram {
 
     @discardableResult
     public func logout() -> Bool {
-        return self.keychain.delete("accessToken")
+        return keychain.delete("accessToken")
     }
 
     // MARK: -
@@ -99,7 +100,7 @@ public class Instagram {
         var urlRequest = URLRequest(url: buildURL(for: endpoint, withParameters: parameters))
         urlRequest.httpMethod = method.rawValue
 
-        self.urlSession.dataTask(with: urlRequest) { (data, _, error) in
+        urlSession.dataTask(with: urlRequest) { (data, _, error) in
             if let data = data {
                 DispatchQueue.global(qos: .utility).async {
                     do {
@@ -128,7 +129,7 @@ public class Instagram {
 
         var items = [URLQueryItem]()
 
-        let accessToken = self.keychain.get("accessToken")
+        let accessToken = keychain.get("accessToken")
         items.append(URLQueryItem(name: "access_token", value: accessToken ?? ""))
 
         parameters?.forEach({ parameter in
@@ -453,8 +454,7 @@ public class Instagram {
     ///   to your own user.
 
     public func like(media mediaId: String, failure: FailureHandler? = nil) {
-        request("/media/\(mediaId)/likes", method: .post, success: { (_: InstagramResponse<Any?>) in return },
-                failure: failure)
+        request("/media/\(mediaId)/likes", method: .post, success: { (_: InstagramResponse<Any?>) in return }, failure: failure)
     }
 
     /// Remove a like on this media by the currently authenticated user.

@@ -10,8 +10,11 @@
 
 public struct InstagramTag: Decodable {
 
-    public let mediaCount: Int
+    /// The tag name.
     public let name: String
+
+    /// The number of media in which the tag appears.
+    public let mediaCount: Int
 
     private enum CodingKeys: String, CodingKey {
         case mediaCount = "media_count"

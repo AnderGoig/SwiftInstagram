@@ -9,7 +9,7 @@
         <img src="https://img.shields.io/cocoapods/p/SwiftInstagram.svg"
              alt="Platforms">
     </a>
-    <a href="https://developer.apple.com/swift" target="_blank">
+    <a href="https://developer.apple.com/swift">
         <img src="https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat"
              alt="Swift 4.0">
     </a>
@@ -17,8 +17,11 @@
         <img src="https://img.shields.io/travis/AnderGoig/SwiftInstagram/master.svg"
              alt="Travis">
     </a>
-    <a href="https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html" target="_blank">
-        <img src="https://img.shields.io/badge/Documentation-available-blue.svg"
+    <a href="https://codebeat.co/projects/github-com-andergoig-swiftinstagram-master">
+        <img src="https://codebeat.co/badges/e5274943-8feb-4e51-a937-43552205f62e" alt="Codebeat">
+    </a>
+    <a href="https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html">
+        <img src="docs/badge.svg"
              alt="Documentation">
     </a>
     <a href="https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/LICENSE">
@@ -46,12 +49,19 @@
 
 **SwiftInstagram** is a **wrapper** for the **Instagram API** written in **Swift**. It allows you to authenticate users and request data from Instagram effortlessly.
 
-- [Requirements](#requirements)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [Credits](#credits)
-- [License](#license)
-- [Author](#author)
+## Features
+
+- [x] Effortless and straightforward use of Instagram API.
+- [x] Up-to-date with the latest of [Instagram API](https://www.instagram.com/developer/).
+- [x] Client-Side authentication.
+- [x] Secure access token storing, thanks to [keychain-swift](https://github.com/evgenyneu/keychain-swift).
+- [x] Up-to-date with the latest Apple technologies (Swift 4, Xcode 9, etc).
+
+### Coming features - [SwiftInstagram 2.0.0](https://github.com/AnderGoig/SwiftInstagram/projects/1)
+
+- [ ] Multiple users login
+- [ ] [Instagram Business API](https://developers.facebook.com/docs/instagram-api/v2.10) support
+- [ ] And more ...
 
 ## Requirements
 
