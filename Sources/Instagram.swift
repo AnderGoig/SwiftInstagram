@@ -14,7 +14,7 @@ public class Instagram {
 
     // MARK: - Types
 
-    private typealias Parameters = [String: String]
+    private typealias Parameters = [String: Any]
 
     public typealias EmptySuccessHandler = () -> Void
     public typealias SuccessHandler<T> = (_ data: T) -> Void
@@ -133,7 +133,7 @@ public class Instagram {
         items.append(URLQueryItem(name: "access_token", value: accessToken ?? ""))
 
         parameters?.forEach({ parameter in
-            items.append(URLQueryItem(name: parameter.key, value: parameter.value))
+            items.append(URLQueryItem(name: parameter.key, value: "\(parameter.value)"))
         })
 
         urlComps!.queryItems = items
@@ -152,7 +152,7 @@ public class Instagram {
     ///
     /// - Important: It requires *public_content* scope when getting information about a user other than yours.
 
-    public func user(_ userId: String, success: SuccessHandler<InstagramUser>? = nil, failure: FailureHandler? = nil) {
+    public func user(_ userId: String, success: SuccessHandler<InstagramUser>?, failure: FailureHandler?) {
         request("/users/\(userId)", success: success, failure: failure)
     }
 
@@ -168,12 +168,12 @@ public class Instagram {
     ///
     /// - Important: It requires *public_content* scope when getting recent media published by a user other than yours.
 
-    public func recentMedia(fromUser userId: String, maxId: String = "", minId: String = "", count: Int = 0, success: SuccessHandler<[InstagramMedia]>? = nil, failure: FailureHandler? = nil) {
+    public func recentMedia(fromUser userId: String, maxId: String? = nil, minId: String? = nil, count: Int? = nil, success: SuccessHandler<[InstagramMedia]>?, failure: FailureHandler?) {
         var parameters = Parameters()
 
-        if !maxId.isEmpty { parameters["max_id"] = maxId }
-        if !minId.isEmpty { parameters["min_id"] = minId }
-        if count != 0 { parameters["count"] = String(count) }
+        parameters["max_id"] ??= maxId
+        parameters["min_id"] ??= minId
+        parameters["count"] ??= count
 
         request("/users/\(userId)/media/recent", parameters: parameters, success: success, failure: failure)
     }
@@ -187,11 +187,11 @@ public class Instagram {
     ///
     /// - Important: It requires *public_content* scope.
 
-    public func userLikedMedia(maxLikeId: String = "", count: Int = 0, success: SuccessHandler<[InstagramMedia]>? = nil, failure: FailureHandler? = nil) {
+    public func userLikedMedia(maxLikeId: String? = nil, count: Int? = nil, success: SuccessHandler<[InstagramMedia]>?, failure: FailureHandler?) {
         var parameters = Parameters()
 
-        if !maxLikeId.isEmpty { parameters["max_like_id"] = maxLikeId }
-        if count != 0 { parameters["count"] = String(count) }
+        parameters["max_like_id"] ??= maxLikeId
+        parameters["count"] ??= count
 
         request("/users/self/media/liked", parameters: parameters, success: success, failure: failure)
     }
@@ -205,11 +205,11 @@ public class Instagram {
     ///
     /// - Important: It requires *public_content* scope.
 
-    public func search(user query: String, count: Int = 0, success: SuccessHandler<[InstagramUser]>? = nil, failure: FailureHandler? = nil) {
+    public func search(user query: String, count: Int? = nil, success: SuccessHandler<[InstagramUser]>?, failure: FailureHandler?) {
         var parameters = Parameters()
 
         parameters["q"] = query
-        if count != 0 { parameters["count"] = String(count) }
+        parameters["count"] ??= count
 
         request("/users/search", parameters: parameters, success: success, failure: failure)
     }
@@ -223,7 +223,7 @@ public class Instagram {
     ///
     /// - Important: It requires *follower_list* scope.
 
-    public func userFollows(success: SuccessHandler<[InstagramUser]>? = nil, failure: FailureHandler? = nil) {
+    public func userFollows(success: SuccessHandler<[InstagramUser]>?, failure: FailureHandler?) {
         request("/users/self/follows", success: success, failure: failure)
     }
 
@@ -234,7 +234,7 @@ public class Instagram {
     ///
     /// - Important: It requires *follower_list* scope.
 
-    public func userFollowers(success: SuccessHandler<[InstagramUser]>? = nil, failure: FailureHandler? = nil) {
+    public func userFollowers(success: SuccessHandler<[InstagramUser]>?, failure: FailureHandler?) {
         request("/users/self/followed-by", success: success, failure: failure)
     }
 
@@ -245,7 +245,7 @@ public class Instagram {
     ///
     /// - Important: It requires *follower_list* scope.
 
-    public func userRequestedBy(success: SuccessHandler<[InstagramUser]>? = nil, failure: FailureHandler? = nil) {
+    public func userRequestedBy(success: SuccessHandler<[InstagramUser]>?, failure: FailureHandler?) {
         request("/users/self/requested-by", success: success, failure: failure)
     }
 
@@ -257,7 +257,7 @@ public class Instagram {
     ///
     /// - Important: It requires *follower_list* scope.
 
-    public func userRelationship(withUser userId: String, success: SuccessHandler<InstagramRelationship>? = nil, failure: FailureHandler? = nil) {
+    public func userRelationship(withUser userId: String, success: SuccessHandler<InstagramRelationship>?, failure: FailureHandler?) {
         request("/users/\(userId)/relationship", success: success, failure: failure)
     }
 
@@ -276,7 +276,7 @@ public class Instagram {
     ///
     /// - Important: It requires *relationships* scope.
 
-    private func modifyUserRelationship(withUser userId: String, action: RelationshipAction, success: SuccessHandler<InstagramRelationship>? = nil, failure: FailureHandler? = nil) {
+    private func modifyUserRelationship(withUser userId: String, action: RelationshipAction, success: SuccessHandler<InstagramRelationship>?, failure: FailureHandler?) {
         var parameters = Parameters()
 
         parameters["action"] = action.rawValue
@@ -292,7 +292,7 @@ public class Instagram {
     ///
     /// - Important: It requires *relationships* scope.
 
-    public func follow(user userId: String, success: SuccessHandler<InstagramRelationship>? = nil, failure: FailureHandler? = nil) {
+    public func follow(user userId: String, success: SuccessHandler<InstagramRelationship>?, failure: FailureHandler?) {
         modifyUserRelationship(withUser: userId, action: .follow, success: success, failure: failure)
     }
 
@@ -304,7 +304,7 @@ public class Instagram {
     ///
     /// - Important: It requires *relationships* scope.
 
-    public func unfollow(user userId: String, success: SuccessHandler<InstagramRelationship>? = nil, failure: FailureHandler? = nil) {
+    public func unfollow(user userId: String, success: SuccessHandler<InstagramRelationship>?, failure: FailureHandler?) {
         modifyUserRelationship(withUser: userId, action: .unfollow, success: success, failure: failure)
     }
 
@@ -316,7 +316,7 @@ public class Instagram {
     ///
     /// - Important: It requires *relationships* scope.
 
-    public func approveRequest(fromUser userId: String, success: SuccessHandler<InstagramRelationship>? = nil, failure: FailureHandler? = nil) {
+    public func approveRequest(fromUser userId: String, success: SuccessHandler<InstagramRelationship>?, failure: FailureHandler?) {
         modifyUserRelationship(withUser: userId, action: .approve, success: success, failure: failure)
     }
 
@@ -328,7 +328,7 @@ public class Instagram {
     ///
     /// - Important: It requires *relationships* scope.
 
-    public func ignoreRequest(fromUser userId: String, success: SuccessHandler<InstagramRelationship>? = nil, failure: FailureHandler? = nil) {
+    public func ignoreRequest(fromUser userId: String, success: SuccessHandler<InstagramRelationship>?, failure: FailureHandler?) {
         modifyUserRelationship(withUser: userId, action: .ignore, success: success, failure: failure)
     }
 
@@ -342,7 +342,7 @@ public class Instagram {
     ///
     /// - Important: It requires *public_content* scope.
 
-    public func media(withId id: String, success: SuccessHandler<InstagramMedia>? = nil, failure: FailureHandler? = nil) {
+    public func media(withId id: String, success: SuccessHandler<InstagramMedia>?, failure: FailureHandler?) {
         request("/media/\(id)", success: success, failure: failure)
     }
 
@@ -357,7 +357,7 @@ public class Instagram {
     /// - Note: A media object's shortcode can be found in its shortlink URL.
     ///   An example shortlink is http://instagram.com/p/tsxp1hhQTG/. Its corresponding shortcode is tsxp1hhQTG.
 
-    public func media(withShortcode shortcode: String, success: SuccessHandler<InstagramMedia>? = nil, failure: FailureHandler? = nil) {
+    public func media(withShortcode shortcode: String, success: SuccessHandler<InstagramMedia>?, failure: FailureHandler?) {
         request("/media/shortcode/\(shortcode)", success: success, failure: failure)
     }
 
@@ -371,12 +371,12 @@ public class Instagram {
     ///
     /// - Important: It requires *public_content* scope.
 
-    public func searchMedia(lat: Double = 0, lng: Double = 0, distance: Int = 0, success: SuccessHandler<[InstagramMedia]>? = nil, failure: FailureHandler? = nil) {
+    public func searchMedia(lat: Double? = nil, lng: Double? = nil, distance: Int? = nil, success: SuccessHandler<[InstagramMedia]>?, failure: FailureHandler?) {
         var parameters = Parameters()
 
-        if lat != 0 { parameters["lat"] = String(lat) }
-        if lng != 0 { parameters["lng"] = String(lng) }
-        if distance != 0 { parameters["distance"] = String(distance) }
+        parameters["lat"] ??= lat
+        parameters["lng"] ??= lng
+        parameters["distance"] ??= distance
 
         request("/media/search", parameters: parameters, success: success, failure: failure)
     }
@@ -391,7 +391,7 @@ public class Instagram {
     ///
     /// - Important: It requires *public_content* scope for media that does not belong to your own user.
 
-    public func comments(fromMedia mediaId: String, success: SuccessHandler<[InstagramComment]>? = nil, failure: FailureHandler? = nil) {
+    public func comments(fromMedia mediaId: String, success: SuccessHandler<[InstagramComment]>?, failure: FailureHandler?) {
         request("/media/\(mediaId)/comments", success: success, failure: failure)
     }
 
@@ -410,7 +410,7 @@ public class Instagram {
     ///     - The comment cannot contain more than 1 URL.
     ///     - The comment cannot consist of all capital letters.
 
-    public func createComment(onMedia mediaId: String, text: String, failure: FailureHandler? = nil) {
+    public func createComment(onMedia mediaId: String, text: String, failure: FailureHandler?) {
         var parameters = Parameters()
 
         parameters["text"] = text
@@ -427,7 +427,7 @@ public class Instagram {
     /// - Important: It requires *comments* scope. Also, *public_content* scope is required for media that does not
     ///   belong to your own user.
 
-    public func deleteComment(_ commentId: String, onMedia mediaId: String, failure: FailureHandler? = nil) {
+    public func deleteComment(_ commentId: String, onMedia mediaId: String, failure: FailureHandler?) {
         request("/media/\(mediaId)/comments/\(commentId)", method: .delete, success: { (_: InstagramResponse<Any?>) in return }, failure: failure)
     }
 
@@ -441,7 +441,7 @@ public class Instagram {
     ///
     /// - Important: It requires *public_content* scope for media that does not belong to your own user.
 
-    public func likes(inMedia mediaId: String, success: SuccessHandler<[InstagramUser]>? = nil, failure: FailureHandler? = nil) {
+    public func likes(inMedia mediaId: String, success: SuccessHandler<[InstagramUser]>?, failure: FailureHandler?) {
         request("/media/\(mediaId)/likes", success: success, failure: failure)
     }
 
@@ -453,7 +453,7 @@ public class Instagram {
     /// - Important: It requires *likes* scope. Also, *public_content* scope is required for media that does not belong
     ///   to your own user.
 
-    public func like(media mediaId: String, failure: FailureHandler? = nil) {
+    public func like(media mediaId: String, failure: FailureHandler?) {
         request("/media/\(mediaId)/likes", method: .post, success: { (_: InstagramResponse<Any?>) in return }, failure: failure)
     }
 
@@ -465,7 +465,7 @@ public class Instagram {
     /// - Important: It requires *likes* scope. Also, *public_content* scope is required for media that does not belong
     ///   to your own user.
 
-    public func unlike(media mediaId: String, failure: FailureHandler? = nil) {
+    public func unlike(media mediaId: String, failure: FailureHandler?) {
         request("/media/\(mediaId)/likes", method: .delete, success: { (_: InstagramResponse<Any?>) in return }, failure: failure)
     }
 
@@ -479,7 +479,7 @@ public class Instagram {
     ///
     /// - Important: It requires *public_content* scope.
 
-    public func tag(_ tagName: String, success: SuccessHandler<InstagramTag>? = nil, failure: FailureHandler? = nil) {
+    public func tag(_ tagName: String, success: SuccessHandler<InstagramTag>?, failure: FailureHandler?) {
         request("/tags/\(tagName)", success: success, failure: failure)
     }
 
@@ -494,12 +494,12 @@ public class Instagram {
     ///
     /// - Important: It requires *public_content* scope.
 
-    public func recentMedia(withTag tagName: String, maxTagId: String = "", minTagId: String = "", count: Int = 0, success: SuccessHandler<[InstagramMedia]>? = nil, failure: FailureHandler? = nil) {
+    public func recentMedia(withTag tagName: String, maxTagId: String? = nil, minTagId: String? = nil, count: Int? = nil, success: SuccessHandler<[InstagramMedia]>?, failure: FailureHandler?) {
         var parameters = Parameters()
 
-        if !maxTagId.isEmpty { parameters["max_tag_id"] = maxTagId }
-        if !minTagId.isEmpty { parameters["min_tag_id"] = minTagId }
-        if count != 0 { parameters["count"] = String(count) }
+        parameters["max_tag_id"] ??= maxTagId
+        parameters["min_tag_id"] ??= minTagId
+        parameters["count"] ??= count
 
         request("/tags/\(tagName)/media/recent", parameters: parameters, success: success, failure: failure)
     }
@@ -512,7 +512,7 @@ public class Instagram {
     ///
     /// - Important: It requires *public_content* scope.
 
-    public func search(tag query: String, success: SuccessHandler<[InstagramTag]>? = nil, failure: FailureHandler? = nil) {
+    public func search(tag query: String, success: SuccessHandler<[InstagramTag]>?, failure: FailureHandler?) {
         var parameters = Parameters()
 
         parameters["q"] = query
@@ -530,7 +530,7 @@ public class Instagram {
     ///
     /// - Important: It requires *public_content* scope.
 
-    public func location(_ locationId: String, success: SuccessHandler<InstagramLocation>? = nil, failure: FailureHandler? = nil) {
+    public func location(_ locationId: String, success: SuccessHandler<InstagramLocation>?, failure: FailureHandler?) {
         request("/locations/\(locationId)", success: success, failure: failure)
     }
 
@@ -544,11 +544,11 @@ public class Instagram {
     ///
     /// - Important: It requires *public_content* scope.
 
-    public func recentMedia(forLocation locationId: String, maxId: String = "", minId: String = "", success: SuccessHandler<[InstagramMedia]>? = nil, failure: FailureHandler? = nil) {
+    public func recentMedia(forLocation locationId: String, maxId: String? = nil, minId: String? = nil, success: SuccessHandler<[InstagramMedia]>?, failure: FailureHandler?) {
         var parameters = Parameters()
 
-        if !maxId.isEmpty { parameters["max_id"] = maxId }
-        if !minId.isEmpty { parameters["min_id"] = minId }
+        parameters["max_id"] ??= maxId
+        parameters["min_id"] ??= minId
 
         request("/locations/\(locationId)/media/recent", parameters: parameters, success: success, failure: failure)
     }
@@ -565,13 +565,13 @@ public class Instagram {
     ///
     /// - Important: It requires *public_content* scope.
 
-    public func searchLocation(lat: Double = 0, lng: Double = 0, distance: Int = 0, facebookPlacesId: String = "", success: SuccessHandler<[InstagramLocation]>? = nil, failure: FailureHandler? = nil) {
+    public func searchLocation(lat: Double? = nil, lng: Double? = nil, distance: Int? = nil, facebookPlacesId: String? = nil, success: SuccessHandler<[InstagramLocation]>?, failure: FailureHandler?) {
         var parameters = Parameters()
 
-        if lat != 0 { parameters["lat"] = String(lat) }
-        if lng != 0 { parameters["lng"] = String(lng) }
-        if distance != 0 { parameters["distance"] = String(distance) }
-        if !facebookPlacesId.isEmpty { parameters["facebook_places_id"] = facebookPlacesId }
+        parameters["lat"] ??= lat
+        parameters["lng"] ??= lng
+        parameters["distance"] ??= distance
+        parameters["facebook_places_id"] ??= facebookPlacesId
 
         request("/locations/search", parameters: parameters, success: success, failure: failure)
     }
