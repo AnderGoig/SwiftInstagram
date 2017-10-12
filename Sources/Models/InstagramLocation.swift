@@ -13,7 +13,7 @@ import CoreLocation
 public struct InstagramLocation: Codable {
 
     /// The location identifier.
-    public let id: String
+    public let id: Int
 
     /// The location name.
     public let name: String
