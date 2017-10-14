@@ -1,7 +1,7 @@
 # Run jazzy from the current directory to generate documentation
 
 module: SwiftInstagram
-module_version: 1.0.0
+module_version: 1.0.4
 author: Ander Goig
 github_url: https://github.com/AnderGoig/SwiftInstagram
 exclude:
