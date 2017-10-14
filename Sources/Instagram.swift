@@ -52,7 +52,7 @@ public class Instagram {
     /// - Parameter success: The callback called after a correct login.
     /// - Parameter failure: The callback called after an incorrect login.
 
-    public func login(navController: UINavigationController, scopes: [InstagramScope] = [.basic], success: EmptySuccessHandler? = nil, failure: FailureHandler? = nil) {
+    public func login(navController: UINavigationController, scopes: [InstagramScope] = [.basic], success: EmptySuccessHandler?, failure: FailureHandler?) {
         client?.scopes = scopes
 
         if let client = client {
@@ -96,7 +96,7 @@ public class Instagram {
         case delete = "DELETE"
     }
 
-    private func request<T: Decodable>(_ endpoint: String, method: HTTPMethod = .get, parameters: Parameters? = nil, success: SuccessHandler<T>? = nil, failure: FailureHandler? = nil) {
+    private func request<T: Decodable>(_ endpoint: String, method: HTTPMethod = .get, parameters: Parameters? = nil, success: SuccessHandler<T>?, failure: FailureHandler?) {
         var urlRequest = URLRequest(url: buildURL(for: endpoint, withParameters: parameters))
         urlRequest.httpMethod = method.rawValue
 

@@ -31,7 +31,7 @@ class InstagramLoginViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    init(client: InstagramClient, success: SuccessHandler? = nil, failure: FailureHandler? = nil) {
+    init(client: InstagramClient, success: SuccessHandler?, failure: FailureHandler?) {
         self.client = client
         self.success = success
         self.failure = failure
