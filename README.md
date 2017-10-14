@@ -80,7 +80,7 @@ I've prepared a [wiki page](https://github.com/AnderGoig/SwiftInstagram/wiki) wh
 
 ## Contributing
 
-If you have feature requests or bug reports, feel free to help out by sending pull requests or by [creating new issues](https://github.com/AnderGoig/IGAuth/issues/new). Please take a moment to
+If you have feature requests or bug reports, feel free to help out by sending pull requests or by [creating new issues](https://github.com/AnderGoig/SwiftInstagram/issues/new). Please take a moment to
 review the [CONTRIBUTING](.github/CONTRIBUTING.md) guidelines.
 
 ## Credits
