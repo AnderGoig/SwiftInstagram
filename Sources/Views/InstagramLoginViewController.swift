@@ -31,7 +31,7 @@ class InstagramLoginViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    init(client: InstagramClient, success: SuccessHandler? = nil, failure: FailureHandler? = nil) {
+    init(client: InstagramClient, success: SuccessHandler?, failure: FailureHandler?) {
         self.client = client
         self.success = success
         self.failure = failure
@@ -92,38 +92,38 @@ class InstagramLoginViewController: UIViewController {
         webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         webView.navigationDelegate = self
 
-        webViewObservation = webView.observe(\.estimatedProgress) { (view, _ change) in
-            self.progressView.alpha = 1.0
-            self.progressView.setProgress(Float(view.estimatedProgress), animated: true)
-            if view.estimatedProgress >= 1.0 {
-                UIView.animate(withDuration: 0.3, delay: 0.1, options: .curveEaseInOut, animations: {
-                    self.progressView.alpha = 0.0
-                }, completion: { (_ finished) in
-                    self.progressView.progress = 0
-                })
-            }
-        }
+        webViewObservation = webView.observe(\.estimatedProgress, changeHandler: progressViewChangeHandler)
 
         view.addSubview(webView)
 
         return webView
     }
 
+    private func progressViewChangeHandler<Value>(webView: WKWebView, change: NSKeyValueObservedChange<Value>) {
+        progressView.alpha = 1.0
+        progressView.setProgress(Float(webView.estimatedProgress), animated: true)
+
+        if webView.estimatedProgress >= 1.0 {
+            UIView.animate(withDuration: 0.3, delay: 0.1, options: .curveEaseInOut, animations: {
+                self.progressView.alpha = 0.0
+            }, completion: { (_ finished) in
+                self.progressView.progress = 0
+            })
+        }
+    }
+
     // MARK: -
 
     func loadAuthorizationURL(webView: WKWebView) {
-        let authorizationURL = URL(string: "https://api.instagram.com/oauth/authorize/")
-
-        var components = URLComponents(url: authorizationURL!, resolvingAgainstBaseURL: false)!
+        var components = URLComponents(string: "https://api.instagram.com/oauth/authorize/")!
         components.queryItems = [
             URLQueryItem(name: "client_id", value: client.clientId),
             URLQueryItem(name: "redirect_uri", value: client.redirectURI),
             URLQueryItem(name: "response_type", value: "token"),
-            URLQueryItem(name: "scope", value: client.scopes.map({ "\($0.rawValue)" }).joined(separator: "+"))
+            URLQueryItem(name: "scope", value: client.stringScopes)
         ]
 
-        let request = URLRequest(url: components.url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)
-        webView.load(request)
+        webView.load(URLRequest(url: components.url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData))
     }
 
 }
@@ -141,8 +141,7 @@ extension InstagramLoginViewController: WKNavigationDelegate {
         let urlString = navigationAction.request.url!.absoluteString
 
         if let range = urlString.range(of: "#access_token=") {
-            let location = range.upperBound
-            let accessToken = urlString[location...]
+            let accessToken = urlString[range.upperBound...]
             decisionHandler(.cancel)
             DispatchQueue.main.async {
                 self.success?(String(accessToken))

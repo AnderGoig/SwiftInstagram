@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.0.5] - 2017-10-18
+### Changed
+- The `Success` and `Failure` handlers, for all the API endpoints, are no longer nullable.
+### Fixed
+- Fixed the bug parsing `InstagramMedia` objects with a `location` property (#7).
+
 ## [1.0.4] - 2017-10-10
 ### Added
 - 100% documented code.
@@ -44,7 +50,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Initial release.
 
-[Unreleased]: https://github.com/AnderGoig/SwiftInstagram/compare/v1.0.4...develop
+[Unreleased]: https://github.com/AnderGoig/SwiftInstagram/compare/v1.0.5...develop
+[1.0.5]: https://github.com/AnderGoig/SwiftInstagram/compare/v1.0.4...v1.0.5
 [1.0.4]: https://github.com/AnderGoig/SwiftInstagram/compare/v1.0.3...v1.0.4
 [1.0.3]: https://github.com/AnderGoig/SwiftInstagram/compare/v1.0.2...v1.0.3
 [1.0.2]: https://github.com/AnderGoig/SwiftInstagram/compare/v1.0.1...v1.0.2

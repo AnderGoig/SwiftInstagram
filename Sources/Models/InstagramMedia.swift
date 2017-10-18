@@ -6,6 +6,8 @@
 //  Copyright © 2017 Ander Goig. All rights reserved.
 //
 
+import CoreLocation
+
 /// The struct containing an Instagram media.
 
 public struct InstagramMedia: Decodable {
@@ -51,7 +53,7 @@ public struct InstagramMedia: Decodable {
     public let link: String
 
     /// The location of the media.
-    public let location: InstagramLocation?
+    public let location: MediaLocation?
 
     /// A list of users and their position on the image.
     public let usersInPhoto: [UserInPhoto]
@@ -120,6 +122,28 @@ public struct InstagramMedia: Decodable {
             case lowResolution = "low_resolution"
             case standardResolution = "standard_resolution"
             case lowBandwidth = "low_bandwidth"
+        }
+    }
+
+    /// A struct containing the location of the media.
+    public struct MediaLocation: Codable {
+
+        /// The location identifier.
+        public let id: Int
+
+        /// The location name.
+        public let name: String
+
+        /// The location coordinates (latitude and logitude).
+        public var coordinates: CLLocationCoordinate2D {
+            return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        }
+
+        private let latitude: Double
+        private let longitude: Double
+
+        private enum CodingKeys: String, CodingKey {
+            case id, name, latitude, longitude
         }
     }
 
