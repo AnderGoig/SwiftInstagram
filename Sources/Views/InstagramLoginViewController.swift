@@ -112,18 +112,15 @@ class InstagramLoginViewController: UIViewController {
     // MARK: -
 
     func loadAuthorizationURL(webView: WKWebView) {
-        let authorizationURL = URL(string: "https://api.instagram.com/oauth/authorize/")
-
-        var components = URLComponents(url: authorizationURL!, resolvingAgainstBaseURL: false)!
+        var components = URLComponents(string: "https://api.instagram.com/oauth/authorize/")!
         components.queryItems = [
             URLQueryItem(name: "client_id", value: client.clientId),
             URLQueryItem(name: "redirect_uri", value: client.redirectURI),
             URLQueryItem(name: "response_type", value: "token"),
-            URLQueryItem(name: "scope", value: client.scopes.map({ "\($0.rawValue)" }).joined(separator: "+"))
+            URLQueryItem(name: "scope", value: client.stringScopes)
         ]
 
-        let request = URLRequest(url: components.url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)
-        webView.load(request)
+        webView.load(URLRequest(url: components.url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData))
     }
 
 }
