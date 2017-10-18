@@ -92,21 +92,24 @@ class InstagramLoginViewController: UIViewController {
         webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         webView.navigationDelegate = self
 
-        webViewObservation = webView.observe(\.estimatedProgress) { (view, _ change) in
-            self.progressView.alpha = 1.0
-            self.progressView.setProgress(Float(view.estimatedProgress), animated: true)
-            if view.estimatedProgress >= 1.0 {
-                UIView.animate(withDuration: 0.3, delay: 0.1, options: .curveEaseInOut, animations: {
-                    self.progressView.alpha = 0.0
-                }, completion: { (_ finished) in
-                    self.progressView.progress = 0
-                })
-            }
-        }
+        webViewObservation = webView.observe(\.estimatedProgress, changeHandler: progressViewChangeHandler)
 
         view.addSubview(webView)
 
         return webView
+    }
+
+    private func progressViewChangeHandler<Value>(webView: WKWebView, change: NSKeyValueObservedChange<Value>) {
+        progressView.alpha = 1.0
+        progressView.setProgress(Float(webView.estimatedProgress), animated: true)
+
+        if webView.estimatedProgress >= 1.0 {
+            UIView.animate(withDuration: 0.3, delay: 0.1, options: .curveEaseInOut, animations: {
+                self.progressView.alpha = 0.0
+            }, completion: { (_ finished) in
+                self.progressView.progress = 0
+            })
+        }
     }
 
     // MARK: -
@@ -138,8 +141,7 @@ extension InstagramLoginViewController: WKNavigationDelegate {
         let urlString = navigationAction.request.url!.absoluteString
 
         if let range = urlString.range(of: "#access_token=") {
-            let location = range.upperBound
-            let accessToken = urlString[location...]
+            let accessToken = urlString[range.upperBound...]
             decisionHandler(.cancel)
             DispatchQueue.main.async {
                 self.success?(String(accessToken))
