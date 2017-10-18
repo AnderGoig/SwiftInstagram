@@ -134,7 +134,7 @@ public struct InstagramMedia: Decodable {
         /// The location name.
         public let name: String
 
-        /// The location coordinates (latitude and logitude).
+        /// The location coordinates (latitude and longitude).
         public var coordinates: CLLocationCoordinate2D {
             return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         }
