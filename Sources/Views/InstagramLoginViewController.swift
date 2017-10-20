@@ -18,9 +18,9 @@ class InstagramLoginViewController: UIViewController {
 
     // MARK: - Properties
 
-    private var client: InstagramClient
-    private var success: SuccessHandler?
-    private var failure: FailureHandler?
+    private var authURL: URL
+    private var success: SuccessHandler
+    private var failure: FailureHandler
 
     private var progressView: UIProgressView!
     private var webViewObservation: NSKeyValueObservation!
@@ -31,8 +31,8 @@ class InstagramLoginViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    init(client: InstagramClient, success: SuccessHandler?, failure: FailureHandler?) {
-        self.client = client
+    init(authURL: URL, success: @escaping SuccessHandler, failure: @escaping FailureHandler) {
+        self.authURL = authURL
         self.success = success
         self.failure = failure
 
@@ -44,7 +44,7 @@ class InstagramLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if #available(iOS 11.0, *) {
+        if #available(iOSApplicationExtension 11.0, *) {
             navigationItem.largeTitleDisplayMode = .never
         }
 
@@ -55,7 +55,7 @@ class InstagramLoginViewController: UIViewController {
         let webView = setupWebView()
 
         // Starts authorization
-        loadAuthorizationURL(webView: webView)
+        webView.load(URLRequest(url: authURL, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData))
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -112,20 +112,6 @@ class InstagramLoginViewController: UIViewController {
         }
     }
 
-    // MARK: -
-
-    func loadAuthorizationURL(webView: WKWebView) {
-        var components = URLComponents(string: "https://api.instagram.com/oauth/authorize/")!
-        components.queryItems = [
-            URLQueryItem(name: "client_id", value: client.clientId),
-            URLQueryItem(name: "redirect_uri", value: client.redirectURI),
-            URLQueryItem(name: "response_type", value: "token"),
-            URLQueryItem(name: "scope", value: client.stringScopes)
-        ]
-
-        webView.load(URLRequest(url: components.url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData))
-    }
-
 }
 
 // MARK: - WKNavigationDelegate
@@ -144,7 +130,7 @@ extension InstagramLoginViewController: WKNavigationDelegate {
             let accessToken = urlString[range.upperBound...]
             decisionHandler(.cancel)
             DispatchQueue.main.async {
-                self.success?(String(accessToken))
+                self.success(String(accessToken))
             }
             return
         }
@@ -159,7 +145,7 @@ extension InstagramLoginViewController: WKNavigationDelegate {
             case 400:
                 decisionHandler(.cancel)
                 DispatchQueue.main.async {
-                    self.failure?(InstagramError(kind: .invalidRequest, message: "Invalid request"))
+                    self.failure(InstagramError(kind: .invalidRequest, message: "Invalid request"))
                 }
                 return
             default:

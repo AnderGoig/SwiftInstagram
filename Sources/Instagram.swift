@@ -20,6 +20,15 @@ public class Instagram {
     public typealias SuccessHandler<T> = (_ data: T) -> Void
     public typealias FailureHandler = (_ error: InstagramError) -> Void
 
+    private enum API {
+        static let authURL = "https://api.instagram.com/oauth/authorize"
+        static let baseURL = "https://api.instagram.com/v1"
+    }
+
+    private enum Keychain {
+        static let key = "accessToken"
+    }
+
     // MARK: - Properties
 
     private let urlSession = URLSession(configuration: .default)
@@ -34,7 +43,7 @@ public class Instagram {
     public static let shared = Instagram()
 
     private init() {
-        if client == nil, let path = Bundle.main.path(forResource: "Info", ofType: "plist"), let dict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
+        if let path = Bundle.main.path(forResource: "Info", ofType: "plist"), let dict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
             let clientId = dict["InstagramClientId"] as? String
             let redirectURI = dict["InstagramRedirectURI"] as? String
             client = InstagramClient(clientId: clientId, redirectURI: redirectURI)
@@ -47,27 +56,33 @@ public class Instagram {
     ///
     /// Shows a custom `UIViewController` with Intagram's login page.
     ///
-    /// - Parameter navController: Your current `UINavigationController`.
+    /// - Parameter controller: The `UINavigationController` from which the `InstagramLoginViewController` will be showed.
     /// - Parameter scopes: The scope of the access you are requesting from the user. Basic access by default.
     /// - Parameter success: The callback called after a correct login.
     /// - Parameter failure: The callback called after an incorrect login.
 
-    public func login(navController: UINavigationController, scopes: [InstagramScope] = [.basic], success: EmptySuccessHandler?, failure: FailureHandler?) {
-        client?.scopes = scopes
-
+    public func login(from controller: UINavigationController, withScopes scopes: [InstagramScope] = [.basic], success: @escaping EmptySuccessHandler, failure: @escaping FailureHandler) {
         if let client = client {
-            let vc = InstagramLoginViewController(client: client, success: { accessToken in
-                if !self.keychain.set(accessToken, forKey: "accessToken") {
-                    failure?(InstagramError(kind: .keychainError(code: self.keychain.lastResultCode), message: "Error storing access token into keychain."))
+            var components = URLComponents(string: API.authURL)!
+            components.queryItems = [
+                URLQueryItem(name: "client_id", value: client.clientId),
+                URLQueryItem(name: "redirect_uri", value: client.redirectURI),
+                URLQueryItem(name: "response_type", value: "token"),
+                URLQueryItem(name: "scope", value: scopes.map({ "\($0.rawValue)" }).joined(separator: "+"))
+            ]
+
+            let vc = InstagramLoginViewController(authURL: components.url!, success: { accessToken in
+                if !self.keychain.set(accessToken, forKey: Keychain.key) {
+                    failure(InstagramError(kind: .keychainError(code: self.keychain.lastResultCode), message: "Error storing access token into keychain."))
                 } else {
-                    navController.popViewController(animated: true)
-                    success?()
+                    controller.popViewController(animated: true)
+                    success()
                 }
             }, failure: failure)
 
-            navController.show(vc, sender: nil)
+            controller.show(vc, sender: nil)
         } else {
-            failure?(InstagramError(kind: .missingClient, message: "Instagram Client not provided."))
+            failure(InstagramError(kind: .missingClient, message: "Error while reading from your Info.plist file."))
         }
     }
 
@@ -76,7 +91,7 @@ public class Instagram {
     /// - Returns: True if a session is currently available, false otherwise.
 
     public func isSessionValid() -> Bool {
-        return keychain.get("accessToken") != nil
+        return keychain.get(Keychain.key) != nil
     }
 
     /// Ends the current session.
@@ -85,7 +100,7 @@ public class Instagram {
 
     @discardableResult
     public func logout() -> Bool {
-        return keychain.delete("accessToken")
+        return keychain.delete(Keychain.key)
     }
 
     // MARK: -
@@ -125,11 +140,11 @@ public class Instagram {
     }
 
     private func buildURL(for endpoint: String, withParameters parameters: Parameters? = nil) -> URL {
-        var urlComps = URLComponents(string: "https://api.instagram.com/v1" + endpoint)
+        var urlComps = URLComponents(string: API.baseURL + endpoint)
 
         var items = [URLQueryItem]()
 
-        let accessToken = keychain.get("accessToken")
+        let accessToken = keychain.get(Keychain.key)
         items.append(URLQueryItem(name: "access_token", value: accessToken ?? ""))
 
         parameters?.forEach({ parameter in

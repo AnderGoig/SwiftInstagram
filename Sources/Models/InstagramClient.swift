@@ -10,11 +10,6 @@ struct InstagramClient {
 
     let clientId: String?
     let redirectURI: String?
-    var scopes: [InstagramScope] = [.basic]
-
-    var stringScopes: String {
-        return scopes.map({ "\($0.rawValue)" }).joined(separator: "+")
-    }
 
     init(clientId: String?, redirectURI: String?) {
         self.clientId = clientId
