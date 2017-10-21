@@ -17,7 +17,7 @@ public struct InstagramUser: Decodable {
     public let username: String
 
     /// The URL of the user's profile picture.
-    public let profilePicture: String
+    public let profilePicture: URL
 
     /// The user's full name.
     public let fullName: String

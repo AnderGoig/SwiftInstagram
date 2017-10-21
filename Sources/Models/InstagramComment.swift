@@ -20,15 +20,21 @@ public struct InstagramComment: Decodable {
     public let from: InstagramUser
 
     /// The date and time when the comment was created.
-    public var createdDate: Date {
-        return Date(timeIntervalSince1970: Double(createdTime)!)
-    }
-
-    private let createdTime: String
+    public let createdDate: Date
 
     private enum CodingKeys: String, CodingKey {
         case id, text, from
         case createdTime = "created_time"
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        id = try container.decode(String.self, forKey: .id)
+        text = try container.decode(String.self, forKey: .text)
+        from = try container.decode(InstagramUser.self, forKey: .from)
+        let createdTime = try container.decode(String.self, forKey: .createdTime)
+        createdDate = Date(timeIntervalSince1970: Double(createdTime)!)
     }
 
 }

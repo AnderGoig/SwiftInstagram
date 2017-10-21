@@ -12,27 +12,31 @@ import CoreLocation
 
 public struct InstagramMedia: Decodable {
 
+    // MARK: - Properties
+
     /// The media identifier.
     public let id: String
 
     /// The owner of the media.
     public let user: InstagramUser
 
+    /// The date and time when the media was created.
+    public let createdDate: Date
+
+    /// The type of media. It can be "image" or "video".
+    public let type: String
+
     /// The thumbnail, low and standard resolution images of the media.
     public let images: Images
 
-    /// The date and time when the media was created.
-    public var createdDate: Date {
-        return Date(timeIntervalSince1970: Double(createdTime)!)
-    }
-
-    private let createdTime: String
+    /// The low and standard resolution videos of the media.
+    public let videos: Videos?
 
     /// The headline of the media.
     public let caption: InstagramComment?
 
-    /// A Boolean value that indicates whether the current logged-in user has liked the media.
-    public let userHasLiked: Bool
+    /// A Count object that contains the number of comments on the media.
+    public let comments: Count
 
     /// A Count object that contains the number of likes on the media.
     public let likes: Count
@@ -40,32 +44,28 @@ public struct InstagramMedia: Decodable {
     /// A list of tags used in the media.
     public let tags: [String]
 
+    /// A Boolean value that indicates whether the current logged-in user has liked the media.
+    public let userHasLiked: Bool
+
     /// The image filter used by the media.
     public let filter: String
 
-    /// A Count object that contains the number of comments on the media.
-    public let comments: Count
-
-    /// The type of media. It can be "image" or "video".
-    public let type: String
-
-    /// The link of the media.
-    public let link: String
+    /// The URL link of the media.
+    public let link: URL
 
     /// The location of the media.
-    public let location: MediaLocation?
+    public let location: InstagramLocation<Int>?
 
     /// A list of users and their position on the image.
-    public let usersInPhoto: [UserInPhoto]
-
-    /// The low and standard resolution videos of the media.
-    public let videos: Videos?
+    public let usersInPhoto: [UserInPhoto]?
 
     /// If the media is a carousel, this object contains all the images or videos inside it.
     public let carouselMedia: [CarouselMedia]?
 
     /// The distance to the location of media when it has been searched by location.
     public let distance: Double?
+
+    // MARK: - Types
 
     /// A struct cointaing the number of elements.
     public struct Count: Decodable {
@@ -84,7 +84,7 @@ public struct InstagramMedia: Decodable {
         public let height: Int
 
         /// The URL to download the media.
-        public let url: String
+        public let url: URL
     }
 
     /// A struct cointaining the thumbnail, low and high resolution images of the media.
@@ -122,28 +122,6 @@ public struct InstagramMedia: Decodable {
             case lowResolution = "low_resolution"
             case standardResolution = "standard_resolution"
             case lowBandwidth = "low_bandwidth"
-        }
-    }
-
-    /// A struct containing the location of the media.
-    public struct MediaLocation: Codable {
-
-        /// The location identifier.
-        public let id: Int
-
-        /// The location name.
-        public let name: String
-
-        /// The location coordinates (latitude and longitude).
-        public var coordinates: CLLocationCoordinate2D {
-            return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        }
-
-        private let latitude: Double
-        private let longitude: Double
-
-        private enum CodingKeys: String, CodingKey {
-            case id, name, latitude, longitude
         }
     }
 
@@ -189,11 +167,36 @@ public struct InstagramMedia: Decodable {
     }
 
     private enum CodingKeys: String, CodingKey {
-        case id, user, images, caption, likes, tags, filter, comments, type, link, location, videos, distance
+        case id, user, type, images, videos, caption, comments, likes, tags, filter, link, location, distance
         case createdTime = "created_time"
         case userHasLiked = "user_has_liked"
         case usersInPhoto = "users_in_photo"
         case carouselMedia = "carousel_media"
+    }
+
+    // MARK: - Initializer
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        id = try container.decode(String.self, forKey: .id)
+        user = try container.decode(InstagramUser.self, forKey: .user)
+        let createdTime = try container.decode(String.self, forKey: .createdTime)
+        createdDate = Date(timeIntervalSince1970: Double(createdTime)!)
+        type = try container.decode(String.self, forKey: .type)
+        images = try container.decode(Images.self, forKey: .images)
+        videos = try container.decodeIfPresent(Videos.self, forKey: .videos)
+        caption = try container.decodeIfPresent(InstagramComment.self, forKey: .caption)
+        comments = try container.decode(Count.self, forKey: .comments)
+        likes = try container.decode(Count.self, forKey: .likes)
+        tags = try container.decode([String].self, forKey: .tags)
+        userHasLiked = try container.decode(Bool.self, forKey: .userHasLiked)
+        filter = try container.decode(String.self, forKey: .filter)
+        link = try container.decode(URL.self, forKey: .link)
+        location = try container.decodeIfPresent(InstagramLocation<Int>.self, forKey: .location)
+        usersInPhoto = try container.decodeIfPresent([UserInPhoto].self, forKey: .usersInPhoto)
+        carouselMedia = try container.decodeIfPresent([CarouselMedia].self, forKey: .carouselMedia)
+        distance = try container.decodeIfPresent(Double.self, forKey: .distance)
     }
 
 }

@@ -61,7 +61,7 @@ public class Instagram {
     /// - Parameter success: The callback called after a correct login.
     /// - Parameter failure: The callback called after an incorrect login.
 
-    public func login(from controller: UINavigationController, withScopes scopes: [InstagramScope] = [.basic], success: @escaping EmptySuccessHandler, failure: @escaping FailureHandler) {
+    public func login(from controller: UINavigationController, withScopes scopes: [InstagramScope] = [.basic], success: EmptySuccessHandler?, failure: FailureHandler?) {
         if let client = client {
             var components = URLComponents(string: API.authURL)!
             components.queryItems = [
@@ -73,16 +73,16 @@ public class Instagram {
 
             let vc = InstagramLoginViewController(authURL: components.url!, success: { accessToken in
                 if !self.keychain.set(accessToken, forKey: Keychain.key) {
-                    failure(InstagramError(kind: .keychainError(code: self.keychain.lastResultCode), message: "Error storing access token into keychain."))
+                    failure?(InstagramError(kind: .keychainError(code: self.keychain.lastResultCode), message: "Error storing access token into keychain."))
                 } else {
                     controller.popViewController(animated: true)
-                    success()
+                    success?()
                 }
             }, failure: failure)
 
             controller.show(vc, sender: nil)
         } else {
-            failure(InstagramError(kind: .missingClient, message: "Error while reading from your Info.plist file."))
+            failure?(InstagramError(kind: .missingClient, message: "Error while reading from your Info.plist file."))
         }
     }
 
@@ -545,7 +545,7 @@ public class Instagram {
     ///
     /// - Important: It requires *public_content* scope.
 
-    public func location(_ locationId: String, success: SuccessHandler<InstagramLocation>?, failure: FailureHandler?) {
+    public func location(_ locationId: String, success: SuccessHandler<InstagramLocation<String>>?, failure: FailureHandler?) {
         request("/locations/\(locationId)", success: success, failure: failure)
     }
 
@@ -580,7 +580,7 @@ public class Instagram {
     ///
     /// - Important: It requires *public_content* scope.
 
-    public func searchLocation(lat: Double? = nil, lng: Double? = nil, distance: Int? = nil, facebookPlacesId: String? = nil, success: SuccessHandler<[InstagramLocation]>?, failure: FailureHandler?) {
+    public func searchLocation(lat: Double? = nil, lng: Double? = nil, distance: Int? = nil, facebookPlacesId: String? = nil, success: SuccessHandler<[InstagramLocation<String>]>?, failure: FailureHandler?) {
         var parameters = Parameters()
 
         parameters["lat"] ??= lat

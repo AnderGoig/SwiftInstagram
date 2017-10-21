@@ -19,8 +19,8 @@ class InstagramLoginViewController: UIViewController {
     // MARK: - Properties
 
     private var authURL: URL
-    private var success: SuccessHandler
-    private var failure: FailureHandler
+    private var success: SuccessHandler?
+    private var failure: FailureHandler?
 
     private var progressView: UIProgressView!
     private var webViewObservation: NSKeyValueObservation!
@@ -31,7 +31,7 @@ class InstagramLoginViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    init(authURL: URL, success: @escaping SuccessHandler, failure: @escaping FailureHandler) {
+    init(authURL: URL, success: SuccessHandler?, failure: FailureHandler?) {
         self.authURL = authURL
         self.success = success
         self.failure = failure
@@ -130,7 +130,7 @@ extension InstagramLoginViewController: WKNavigationDelegate {
             let accessToken = urlString[range.upperBound...]
             decisionHandler(.cancel)
             DispatchQueue.main.async {
-                self.success(String(accessToken))
+                self.success?(String(accessToken))
             }
             return
         }
@@ -145,7 +145,7 @@ extension InstagramLoginViewController: WKNavigationDelegate {
             case 400:
                 decisionHandler(.cancel)
                 DispatchQueue.main.async {
-                    self.failure(InstagramError(kind: .invalidRequest, message: "Invalid request"))
+                    self.failure?(InstagramError(kind: .invalidRequest, message: "Invalid request"))
                 }
                 return
             default:

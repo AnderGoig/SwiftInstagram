@@ -17,8 +17,8 @@ public struct InstagramTag: Decodable {
     public let mediaCount: Int
 
     private enum CodingKeys: String, CodingKey {
-        case mediaCount = "media_count"
         case name
+        case mediaCount = "media_count"
     }
 
 }
