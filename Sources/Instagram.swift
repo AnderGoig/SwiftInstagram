@@ -85,7 +85,7 @@ public class Instagram {
                 URLQueryItem(name: "client_id", value: client.clientId),
                 URLQueryItem(name: "redirect_uri", value: client.redirectURI),
                 URLQueryItem(name: "response_type", value: "token"),
-                URLQueryItem(name: "scope", value: scopes.map({ "\($0.rawValue)" }).joined(separator: "+"))
+                URLQueryItem(name: "scope", value: scopes.joined(separator: "+"))
             ]
             return components.url
         }
