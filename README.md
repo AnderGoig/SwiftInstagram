@@ -52,10 +52,11 @@
 
 ## Features
 
-- [x] Effortless and straightforward use of Instagram API.
-- [x] Up-to-date with the latest of [Instagram API](https://www.instagram.com/developer/).
-- [x] Client-Side authentication.
+- [x] Effortless and straightforward use.
+- [x] Up-to-date with the latest [Instagram API](https://www.instagram.com/developer/) features.
 - [x] Secure access token storing, thanks to [keychain-swift](https://github.com/evgenyneu/keychain-swift).
+- [x] Client-Side authentication.
+- [x] 100% documented code.
 - [x] Up-to-date with the latest Apple technologies (Swift 4, Xcode 9, etc).
 
 ### [Upcoming features](https://github.com/AnderGoig/SwiftInstagram/projects/1)
