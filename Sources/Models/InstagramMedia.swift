@@ -174,7 +174,7 @@ public struct InstagramMedia: Decodable {
         case carouselMedia = "carousel_media"
     }
 
-    // MARK: - Initializer
+    // MARK: - Initializers
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)

@@ -8,9 +8,13 @@
 
 struct InstagramResponse<T: Decodable>: Decodable {
 
+    // MARK: - Properties
+
     let data: T?
     let meta: Meta
     let pagination: Pagination?
+
+    // MARK: - Types
 
     struct Meta: Decodable {
         let code: Int

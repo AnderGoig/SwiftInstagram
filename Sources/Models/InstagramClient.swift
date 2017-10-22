@@ -8,8 +8,12 @@
 
 struct InstagramClient {
 
+    // MARK: - Properties
+
     let clientId: String?
     let redirectURI: String?
+
+    // MARK: - Initializers
 
     init(clientId: String?, redirectURI: String?) {
         self.clientId = clientId
