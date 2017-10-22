@@ -3,9 +3,10 @@
 module: SwiftInstagram
 module_version: 1.0.5
 author: Ander Goig
+author_url: https://github.com/AnderGoig
 github_url: https://github.com/AnderGoig/SwiftInstagram
 exclude:
-    - "Sources/Helpers/KeychainSwiftDistrib.swift"
+    - "**/KeychainSwiftDistrib.swift"
 
 swift_version: 4.0
 
@@ -13,4 +14,25 @@ clean: true
 skip_undocumented: true
 
 theme: fullwidth
-output: docs
+
+custom_categories:
+    - name: API
+      children:
+      - Instagram
+
+    - name: Authentication
+      children:
+      - InstagramScope
+
+    - name: Models
+      children:
+      - InstagramUser
+      - InstagramRelationship
+      - InstagramMedia
+      - InstagramComment
+      - InstagramTag
+      - InstagramLocation
+
+    - name: Errors
+      children:
+      - InstagramError

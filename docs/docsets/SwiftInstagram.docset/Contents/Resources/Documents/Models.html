@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Structures  Reference</title>
+    <title>Models  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset="utf-8">
@@ -15,7 +15,7 @@
   <body>
 
 
-    <a title="Structures  Reference"></a>
+    <a title="Models  Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -43,14 +43,14 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="index.html">SwiftInstagram Reference</a>
       <img class="carat" src="img/carat.png" />
-      Structures  Reference
+      Models  Reference
     </p>
 
     <div class="content-wrapper">
       <nav class="navigation">
         <ul class="nav-groups">
           <li class="nav-group-name">
-            <a class="nav-group-name-link" href="Classes.html">Classes</a>
+            <a class="nav-group-name-link" href="API.html">API</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/Instagram.html">Instagram</a>
@@ -58,7 +58,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a class="nav-group-name-link" href="Enums.html">Enumerations</a>
+            <a class="nav-group-name-link" href="Authentication.html">Authentication</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Enums/InstagramScope.html">InstagramScope</a>
@@ -66,16 +66,16 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a class="nav-group-name-link" href="Structs.html">Structures</a>
+            <a class="nav-group-name-link" href="Models.html">Models</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs/InstagramComment.html">InstagramComment</a>
+                <a class="nav-group-task-link" href="Structs/InstagramUser.html">InstagramUser</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs/InstagramError.html">InstagramError</a>
+                <a class="nav-group-task-link" href="Structs/InstagramUser/Counts.html">– Counts</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs/InstagramLocation.html">InstagramLocation</a>
+                <a class="nav-group-task-link" href="Structs/InstagramRelationship.html">InstagramRelationship</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/InstagramMedia.html">InstagramMedia</a>
@@ -93,25 +93,27 @@
                 <a class="nav-group-task-link" href="Structs/InstagramMedia/Videos.html">– Videos</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs/InstagramMedia/MediaLocation.html">– MediaLocation</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/InstagramMedia/UserInPhoto.html">– UserInPhoto</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/InstagramMedia/CarouselMedia.html">– CarouselMedia</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs/InstagramRelationship.html">InstagramRelationship</a>
+                <a class="nav-group-task-link" href="Structs/InstagramComment.html">InstagramComment</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/InstagramTag.html">InstagramTag</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs/InstagramUser.html">InstagramUser</a>
+                <a class="nav-group-task-link" href="Structs/InstagramLocation.html">InstagramLocation</a>
               </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Errors.html">Errors</a>
+            <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs/InstagramUser/Counts.html">– Counts</a>
+                <a class="nav-group-task-link" href="Structs/InstagramError.html">InstagramError</a>
               </li>
             </ul>
           </li>
@@ -121,14 +123,45 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>Structures</h1>
-            <p>The following structures are available globally.</p>
-
+            <h1>Models</h1>
+            
           </div>
         </section>
 
         <section class="section">
           <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B4UserV"></a>
+                    <a name="//apple_ref/swift/Struct/InstagramUser" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B4UserV">InstagramUser</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The struct containing an Instagram user.</p>
+
+                        <a href="Structs/InstagramUser.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">InstagramUser</span><span class="p">:</span> <span class="kt">Decodable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
             <div class="task-group">
               <ul class="item-container">
                 <li class="item">
@@ -153,134 +186,6 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">InstagramRelationship</span><span class="p">:</span> <span class="kt">Decodable</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SwiftInstagram0B8LocationV"></a>
-                    <a name="//apple_ref/swift/Struct/InstagramLocation" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B8LocationV">InstagramLocation</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The struct containing an Instagram location.</p>
-
-                        <a href="Structs/InstagramLocation.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">InstagramLocation</span><span class="p">:</span> <span class="kt">Codable</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SwiftInstagram0B3TagV"></a>
-                    <a name="//apple_ref/swift/Struct/InstagramTag" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B3TagV">InstagramTag</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The struct containing an Instagram tag.</p>
-
-                        <a href="Structs/InstagramTag.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">InstagramTag</span><span class="p">:</span> <span class="kt">Decodable</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SwiftInstagram0B7CommentV"></a>
-                    <a name="//apple_ref/swift/Struct/InstagramComment" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B7CommentV">InstagramComment</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The struct containing an Instagram comment.</p>
-
-                        <a href="Structs/InstagramComment.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">InstagramComment</span><span class="p">:</span> <span class="kt">Decodable</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SwiftInstagram0B5ErrorV"></a>
-                    <a name="//apple_ref/swift/Struct/InstagramError" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B5ErrorV">InstagramError</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A type representing an error value that can be thrown.</p>
-
-                        <a href="Structs/InstagramError.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">InstagramError</span><span class="p">:</span> <span class="kt">Error</span></code></pre>
 
                         </div>
                       </div>
@@ -326,9 +231,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B4UserV"></a>
-                    <a name="//apple_ref/swift/Struct/InstagramUser" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B4UserV">InstagramUser</a>
+                    <a name="/s:14SwiftInstagram0B7CommentV"></a>
+                    <a name="//apple_ref/swift/Struct/InstagramComment" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B7CommentV">InstagramComment</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -336,15 +241,79 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The struct containing an Instagram user.</p>
+                        <p>The struct containing an Instagram comment.</p>
 
-                        <a href="Structs/InstagramUser.html" class="slightly-smaller">See more</a>
+                        <a href="Structs/InstagramComment.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">InstagramUser</span><span class="p">:</span> <span class="kt">Decodable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">InstagramComment</span><span class="p">:</span> <span class="kt">Decodable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B3TagV"></a>
+                    <a name="//apple_ref/swift/Struct/InstagramTag" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B3TagV">InstagramTag</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The struct containing an Instagram tag.</p>
+
+                        <a href="Structs/InstagramTag.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">InstagramTag</span><span class="p">:</span> <span class="kt">Decodable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B8LocationV"></a>
+                    <a name="//apple_ref/swift/Struct/InstagramLocation" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B8LocationV">InstagramLocation</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The struct containing an Instagram location.</p>
+
+                        <a href="Structs/InstagramLocation.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">InstagramLocation</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt">Decodable</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">Decodable</span></code></pre>
 
                         </div>
                       </div>
@@ -359,7 +328,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2017 <a class="link" href="https://github.com/AnderGoig/SwiftInstagram" target="_blank" rel="external">Ander Goig</a>. All rights reserved. (Last updated: 2017-10-18)</p>
+      <p>&copy; 2017 <a class="link" href="https://github.com/AnderGoig" target="_blank" rel="external">Ander Goig</a>. All rights reserved. (Last updated: 2017-10-22)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

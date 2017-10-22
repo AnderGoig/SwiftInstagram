@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://andergoig.github.io/SwiftInstagram">
-        <img src="https://rawgit.com/AnderGoig/SwiftInstagram/develop/.assets/SwiftInstagram-Logo.png" alt="SwiftInstagram Logo" width="700" height="200">
+        <img src="https://rawgit.com/AnderGoig/SwiftInstagram/master/.assets/SwiftInstagram-Logo.png" alt="SwiftInstagram Logo" width="700" height="200">
     </a>
 </p>
 
@@ -21,8 +21,8 @@
         <img src="https://codebeat.co/badges/e5274943-8feb-4e51-a937-43552205f62e"
              alt="Codebeat">
     </a>
-    <a href="https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html">
-        <img src="docs/badge.svg"
+    <a href="https://andergoig.github.io/SwiftInstagram">
+        <img src="https://rawgit.com/AnderGoig/SwiftInstagram/master/docs/badge.svg"
              alt="Documentation">
     </a>
     <a href="https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/LICENSE">
