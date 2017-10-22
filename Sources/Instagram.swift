@@ -62,16 +62,8 @@ public class Instagram {
     /// - Parameter failure: The callback called after an incorrect login.
 
     public func login(from controller: UINavigationController, withScopes scopes: [InstagramScope] = [.basic], success: EmptySuccessHandler?, failure: FailureHandler?) {
-        if let client = client {
-            var components = URLComponents(string: API.authURL)!
-            components.queryItems = [
-                URLQueryItem(name: "client_id", value: client.clientId),
-                URLQueryItem(name: "redirect_uri", value: client.redirectURI),
-                URLQueryItem(name: "response_type", value: "token"),
-                URLQueryItem(name: "scope", value: scopes.map({ "\($0.rawValue)" }).joined(separator: "+"))
-            ]
-
-            let vc = InstagramLoginViewController(authURL: components.url!, success: { accessToken in
+        if let authURL = buildAuthURL(scopes: scopes) {
+            let vc = InstagramLoginViewController(authURL: authURL, success: { accessToken in
                 if !self.keychain.set(accessToken, forKey: Keychain.key) {
                     failure?(InstagramError(kind: .keychainError(code: self.keychain.lastResultCode), message: "Error storing access token into keychain."))
                 } else {
@@ -82,8 +74,23 @@ public class Instagram {
 
             controller.show(vc, sender: nil)
         } else {
-            failure?(InstagramError(kind: .missingClient, message: "Error while reading from your Info.plist file."))
+            failure?(InstagramError(kind: .missingClient, message: "Error while reading your Info.plist file settings."))
         }
+    }
+
+    private func buildAuthURL(scopes: [InstagramScope]) -> URL? {
+        if let client = client {
+            var components = URLComponents(string: API.authURL)!
+            components.queryItems = [
+                URLQueryItem(name: "client_id", value: client.clientId),
+                URLQueryItem(name: "redirect_uri", value: client.redirectURI),
+                URLQueryItem(name: "response_type", value: "token"),
+                URLQueryItem(name: "scope", value: scopes.map({ "\($0.rawValue)" }).joined(separator: "+"))
+            ]
+            return components.url
+        }
+
+        return nil
     }
 
     /// Returns whether a session is currently available or not.

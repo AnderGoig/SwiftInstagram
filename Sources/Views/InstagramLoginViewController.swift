@@ -58,9 +58,7 @@ class InstagramLoginViewController: UIViewController {
         webView.load(URLRequest(url: authURL, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData))
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-
+    deinit {
         progressView.removeFromSuperview()
         webViewObservation.invalidate()
     }
