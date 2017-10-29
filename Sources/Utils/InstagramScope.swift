@@ -1,5 +1,5 @@
 //
-//  InstagramAuthScope.swift
+//  InstagramScope.swift
 //  SwiftInstagram
 //
 //  Created by Ander Goig on 5/10/17.
