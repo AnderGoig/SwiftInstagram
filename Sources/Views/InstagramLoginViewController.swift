@@ -44,10 +44,6 @@ class InstagramLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if #available(iOSApplicationExtension 11.0, *) {
-            navigationItem.largeTitleDisplayMode = .never
-        }
-
         // Initializes progress view
         setupProgressView()
 

@@ -1,71 +1,70 @@
 language: objective-c
 osx_image: xcode9
-
 git:
   submodules: false
-
 env:
   global:
-    - LC_CTYPE=en_US.UTF-8
-    - LANG=en_US.UTF-8
-    - WORKSPACE=SwiftInstagram.xcworkspace
-    - IOS_FRAMEWORK_SCHEME="SwiftInstagram-iOS"
-    - IOS_SDK=iphonesimulator11.0
+  - LC_CTYPE=en_US.UTF-8
+  - LANG=en_US.UTF-8
+  - WORKSPACE=SwiftInstagram.xcworkspace
+  - SCHEME="SwiftInstagram-iOS"
+  - SDK=iphonesimulator11.0
   matrix:
-    - DESTINATION="OS=11.0,name=iPhone 7 Plus"  SCHEME="$IOS_FRAMEWORK_SCHEME"      SDK="$IOS_SDK"      RUN_TESTS="YES"     RELEASE_READY="NO"      POD_LINT="NO"
-    - DESTINATION="OS=10.3.1,name=iPhone 7"     SCHEME="$IOS_FRAMEWORK_SCHEME"      SDK="$IOS_SDK"      RUN_TESTS="YES"     RELEASE_READY="NO"      POD_LINT="NO"
-    - DESTINATION="OS=9.0,name=iPhone 6s"       SCHEME="$IOS_FRAMEWORK_SCHEME"      SDK="$IOS_SDK"      RUN_TESTS="YES"     RELEASE_READY="NO"      POD_LINT="NO"
-
+  - TEST_TYPE=iOS
+  - TEST_TYPE=Lint
+  - TEST_TYPE=Carthage
+  - TEST_TYPE=CocoaPods
 before_install:
-  - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
-  - brew update
-  - brew outdated carthage || brew upgrade carthage
-
+- |
+  if [ "$TEST_TYPE" = CocoaPods ]; then
+    gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
+  fi
+  if [ "$TEST_TYPE" = Lint ] || [ "$TEST_TYPE" = Carthage ]; then
+    brew update
+  fi
+  if [ "$TEST_TYPE" = Carthage ]; then
+    brew outdated carthage || brew upgrade carthage
+  fi
+install:
+- |
+  gem update --system --no-document
+  bundle install
+  if [ "$TEST_TYPE" = Lint ]; then
+    brew install swiftlint || brew upgrade swiftlint
+  elif [ "$TEST_TYPE" = CocoaPods ]; then
+    pod repo update --silent
+  fi
 before_script:
-  - sh scripts/bootstrap
-
+- |
+  if [ "$TEST_TYPE" = Carthage ]; then
+    carthage update --no-use-binaries --use-submodules
+  fi
 script:
-  - set -o pipefail
-  - xcodebuild -version
-  - xcodebuild -showsdks
-
-  # Build Framework in Debug and Run Tests if specified
-  - if [ $RUN_TESTS == "YES" ]; then
-      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -configuration Debug ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty -c;
-    else
-      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
-    fi
-
-  # Build Framework in Release and Run Tests if specified
-  - if [ $RUN_TESTS == "YES" ]; then
-      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -configuration Release ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty -c;
-    else
-      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -configuration Release ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
-    fi
-
-  # Run `pod lib lint` if specified
-  - if [ $POD_LINT == "YES" ]; then
-      pod lib lint;
-    fi
-
+- |
+  if [ "$TEST_TYPE" = iOS ]; then
+    set -o pipefail
+    xcodebuild -version
+    xcodebuild -showsdks
+    xcodebuild build -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -configuration Debug -destination "platform=iOS Simulator,name=iPhone 5" -destination "platform=iOS Simulator,name=iPhone 7 Plus" | xcpretty -c
+  elif [ "$TEST_TYPE" = Lint ]; then
+    swiftlint lint
+  elif [ "$TEST_TYPE" = CocoaPods ]; then
+    pod lib lint
+  fi
 before_deploy:
-  - carthage build --no-skip-current
-  - carthage archive SwiftInstagram
-
+- carthage build --no-skip-current
+- carthage archive SwiftInstagram
 deploy:
-  - provider: releases
-    api_key:
-      secure:
-    file:
-      - SwiftInstagram.framework.zip
-    skip_cleanup: true
-    overwrite: true
-    on:
-      repo: AnderGoig/SwiftInstagram
-      tags: true
-      condition: $RELEASE_READY = YES
-  - provider: script
-    script: pod trunk push
-    on:
-      tags: true
-      condition: $RELEASE_READY = YES
+- provider: releases
+  api_key:
+    secure: jYpv6cXD6AIuTONSVvjQHGUeYDs/J/mID0pIMaFLIh3cBo3EPeM29zmYKVeBjePr9BlUUmMJqcif8oddADYyeXQkDjWr2pBLARQmryMMi1dVNMvuBq4Tb/PV7BEwkDigIb9Qcpcm4HFdYigMRFp20bntBlnGb/tjwdq3XEe5766QuM7H22g41V8S9e7Na8K5gpRmew25mMASDkwSvZHuMA5+P6Q4nam5R0kA53uBIySWYW340EZ3B23oQdtdob2vk35Eu3bR+FFAsE1idw+sddua7eFGi5DVgTlXcwb3f7hG0JKKA9IUXcCSyd5AgLYGv5h+nFBmlRIeA84sQI9xcK+f0kBnHpakm/Xp8+a9NYodxfpyr8k/ZlVal16B6/p+BC6x3TAp6SgDeymuFMNxc6/Eyz/IGrCiJ+4tMmy+385jf8/+Gv6dVGg5fos329QWUzOxcKvCk/w9d5Nz5GCQlMvgH4N/YvTmSnPaRUIBeaN7VV+Kkr4ovUb9SeOlrrG+36GU60aBriv6ZqQ6BhndEraIXKsCItfSHqxcJspliAWzTqPOpg8SqBTBIWAcrVOtcpmo9TI5ndiS8R8EwuOcAJtrl7yaNJ70iUv2IewSdNbl1ZZV9CMnu83vAEwELszssmbJ1SbTLi4GfoECEw4CHpOKyk6Fh4WXBFcSLGgvce8=
+  file: SwiftInstagram.framework.zip
+  skip_cleanup: true
+  overwrite: true
+  on:
+    repo: AnderGoig/SwiftInstagram
+    tags: true
+- provider: script
+  script: pod trunk push
+  on:
+    tags: true
