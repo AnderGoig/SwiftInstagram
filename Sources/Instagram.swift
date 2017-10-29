@@ -40,7 +40,7 @@ public class Instagram {
     private let urlSession = URLSession(configuration: .default)
     private let keychain = KeychainSwift(keyPrefix: "SwiftInstagram")
 
-    private var client: InstagramClient?
+    private var client: (id: String?, redirectURI: String?)?
 
     // MARK: - Initializers
 
@@ -51,7 +51,7 @@ public class Instagram {
         if let path = Bundle.main.path(forResource: "Info", ofType: "plist"), let dict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
             let clientId = dict["InstagramClientId"] as? String
             let redirectURI = dict["InstagramRedirectURI"] as? String
-            client = InstagramClient(clientId: clientId, redirectURI: redirectURI)
+            client = (clientId, redirectURI)
         }
     }
 
@@ -96,7 +96,7 @@ public class Instagram {
         var components = URLComponents(string: API.authURL)!
 
         components.queryItems = [
-            URLQueryItem(name: "client_id", value: client.clientId),
+            URLQueryItem(name: "client_id", value: client.id),
             URLQueryItem(name: "redirect_uri", value: client.redirectURI),
             URLQueryItem(name: "response_type", value: "token"),
             URLQueryItem(name: "scope", value: scopes.joined(separator: "+"))
