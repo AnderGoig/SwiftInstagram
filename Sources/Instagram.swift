@@ -26,13 +26,13 @@ public class Instagram {
     }
 
     private enum Keychain {
-        static let key = "accessToken"
+        static let accessTokenKey = "AccessToken"
     }
 
     // MARK: - Properties
 
     private let urlSession = URLSession(configuration: .default)
-    private let keychain = KeychainSwift()
+    private let keychain = KeychainSwift(keyPrefix: "SwiftInstagram")
     private let decoder = JSONDecoder()
 
     private var client: InstagramClient?
@@ -64,7 +64,7 @@ public class Instagram {
     public func login(from controller: UINavigationController, withScopes scopes: [InstagramScope] = [.basic], success: EmptySuccessHandler?, failure: FailureHandler?) {
         if let authURL = buildAuthURL(scopes: scopes) {
             let vc = InstagramLoginViewController(authURL: authURL, success: { accessToken in
-                if !self.keychain.set(accessToken, forKey: Keychain.key) {
+                if !self.storeAccessToken(accessToken) {
                     failure?(InstagramError(kind: .keychainError(code: self.keychain.lastResultCode), message: "Error storing access token into keychain."))
                 } else {
                     controller.popViewController(animated: true)
@@ -98,7 +98,7 @@ public class Instagram {
     /// - Returns: True if a session is currently available, false otherwise.
 
     public func isSessionValid() -> Bool {
-        return keychain.get(Keychain.key) != nil
+        return retrieveAccessToken() != nil
     }
 
     /// Ends the current session.
@@ -107,7 +107,21 @@ public class Instagram {
 
     @discardableResult
     public func logout() -> Bool {
-        return keychain.delete(Keychain.key)
+        return deleteAccessToken()
+    }
+
+    // MARK: - Access Token
+
+    func storeAccessToken(_ accessToken: String) -> Bool {
+        return keychain.set(accessToken, forKey: Keychain.accessTokenKey)
+    }
+
+    func retrieveAccessToken() -> String? {
+        return keychain.get(Keychain.accessTokenKey)
+    }
+
+    func deleteAccessToken() -> Bool {
+        return keychain.delete(Keychain.accessTokenKey)
     }
 
     // MARK: -
@@ -151,8 +165,7 @@ public class Instagram {
 
         var items = [URLQueryItem]()
 
-        let accessToken = keychain.get(Keychain.key)
-        items.append(URLQueryItem(name: "access_token", value: accessToken ?? ""))
+        items.append(URLQueryItem(name: "access_token", value: retrieveAccessToken() ?? ""))
 
         parameters?.forEach({ parameter in
             items.append(URLQueryItem(name: parameter.key, value: "\(parameter.value)"))
