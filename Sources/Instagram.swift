@@ -105,14 +105,6 @@ public class Instagram {
         return components.url
     }
 
-    /// Returns whether a session is currently available or not.
-    ///
-    /// - returns: True if a session is currently available, false otherwise.
-
-    public func isSessionValid() -> Bool {
-        return retrieveAccessToken() != nil
-    }
-
     /// Ends the current session.
     ///
     /// - returns: True if the user was successfully logged out, false otherwise.
@@ -120,6 +112,12 @@ public class Instagram {
     @discardableResult
     public func logout() -> Bool {
         return deleteAccessToken()
+    }
+
+    /// Returns whether a user is currently authenticated or not.
+
+    public var isAuthenticated: Bool {
+        return retrieveAccessToken() != nil
     }
 
     // MARK: - Access Token
