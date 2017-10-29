@@ -30,7 +30,11 @@ extension Instagram {
     ///
     /// - Important: It requires *public_content* scope.
 
-    public func recentMedia(forLocation locationId: String, maxId: String? = nil, minId: String? = nil, success: SuccessHandler<[InstagramMedia]>?, failure: FailureHandler?) {
+    public func recentMedia(forLocation locationId: String,
+                            maxId: String? = nil,
+                            minId: String? = nil,
+                            success: SuccessHandler<[InstagramMedia]>?,
+                            failure: FailureHandler?) {
         var parameters = Parameters()
 
         parameters["max_id"] ??= maxId
@@ -51,7 +55,12 @@ extension Instagram {
     ///
     /// - Important: It requires *public_content* scope.
 
-    public func searchLocation(lat: Double? = nil, lng: Double? = nil, distance: Int? = nil, facebookPlacesId: String? = nil, success: SuccessHandler<[InstagramLocation<String>]>?, failure: FailureHandler?) {
+    public func searchLocation(lat: Double? = nil,
+                               lng: Double? = nil,
+                               distance: Int? = nil,
+                               facebookPlacesId: String? = nil,
+                               success: SuccessHandler<[InstagramLocation<String>]>?,
+                               failure: FailureHandler?) {
         var parameters = Parameters()
 
         parameters["lat"] ??= lat

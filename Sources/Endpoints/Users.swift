@@ -33,7 +33,12 @@ extension Instagram {
     ///
     /// - Important: It requires *public_content* scope when getting recent media published by a user other than yours.
 
-    public func recentMedia(fromUser userId: String, maxId: String? = nil, minId: String? = nil, count: Int? = nil, success: SuccessHandler<[InstagramMedia]>?, failure: FailureHandler?) {
+    public func recentMedia(fromUser userId: String,
+                            maxId: String? = nil,
+                            minId: String? = nil,
+                            count: Int? = nil,
+                            success: SuccessHandler<[InstagramMedia]>?,
+                            failure: FailureHandler?) {
         var parameters = Parameters()
 
         parameters["max_id"] ??= maxId

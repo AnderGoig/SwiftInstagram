@@ -1,5 +1,4 @@
 disabled_rules:
-  - line_length
   - file_length
   - nesting
 opt_in_rules:
@@ -33,6 +32,8 @@ included:
 excluded:
   - Carthage
   - Sources/Helpers/KeychainSwiftDistrib.swift
+
+line_length: 160
 
 file_header:
   required_pattern: |

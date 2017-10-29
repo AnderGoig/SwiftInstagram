@@ -68,7 +68,10 @@ extension Instagram {
     ///
     /// - Important: It requires *relationships* scope.
 
-    private func modifyUserRelationship(withUser userId: String, action: RelationshipAction, success: SuccessHandler<InstagramRelationship>?, failure: FailureHandler?) {
+    private func modifyUserRelationship(withUser userId: String,
+                                        action: RelationshipAction,
+                                        success: SuccessHandler<InstagramRelationship>?,
+                                        failure: FailureHandler?) {
         var parameters = Parameters()
 
         parameters["action"] = action.rawValue

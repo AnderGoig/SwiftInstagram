@@ -45,7 +45,11 @@ extension Instagram {
     ///
     /// - Important: It requires *public_content* scope.
 
-    public func searchMedia(lat: Double? = nil, lng: Double? = nil, distance: Int? = nil, success: SuccessHandler<[InstagramMedia]>?, failure: FailureHandler?) {
+    public func searchMedia(lat: Double? = nil,
+                            lng: Double? = nil,
+                            distance: Int? = nil,
+                            success: SuccessHandler<[InstagramMedia]>?,
+                            failure: FailureHandler?) {
         var parameters = Parameters()
 
         parameters["lat"] ??= lat

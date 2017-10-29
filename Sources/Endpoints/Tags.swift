@@ -31,7 +31,12 @@ extension Instagram {
     ///
     /// - Important: It requires *public_content* scope.
 
-    public func recentMedia(withTag tagName: String, maxTagId: String? = nil, minTagId: String? = nil, count: Int? = nil, success: SuccessHandler<[InstagramMedia]>?, failure: FailureHandler?) {
+    public func recentMedia(withTag tagName: String,
+                            maxTagId: String? = nil,
+                            minTagId: String? = nil,
+                            count: Int? = nil,
+                            success: SuccessHandler<[InstagramMedia]>?,
+                            failure: FailureHandler?) {
         var parameters = Parameters()
 
         parameters["max_tag_id"] ??= maxTagId

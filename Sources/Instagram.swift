@@ -18,7 +18,7 @@ public class Instagram {
     public typealias SuccessHandler<T> = (_ data: T) -> Void
     public typealias FailureHandler = (_ error: InstagramError) -> Void
 
-    internal typealias Parameters = [String: Any]
+    typealias Parameters = [String: Any]
 
     private enum API {
         static let authURL = "https://api.instagram.com/oauth/authorize"
@@ -29,7 +29,7 @@ public class Instagram {
         static let accessTokenKey = "AccessToken"
     }
 
-    internal enum HTTPMethod: String {
+    enum HTTPMethod: String {
         case get = "GET"
         case post = "POST"
         case delete = "DELETE"
@@ -66,7 +66,10 @@ public class Instagram {
     /// - Parameter success: The callback called after a correct login.
     /// - Parameter failure: The callback called after an incorrect login.
 
-    public func login(from controller: UINavigationController, withScopes scopes: [InstagramScope] = [.basic], success: EmptySuccessHandler?, failure: FailureHandler?) {
+    public func login(from controller: UINavigationController,
+                      withScopes scopes: [InstagramScope] = [.basic],
+                      success: EmptySuccessHandler?,
+                      failure: FailureHandler?) {
         guard let authURL = buildAuthURL(scopes: scopes) else {
             failure?(InstagramError(kind: .missingClient, message: "Error while reading your Info.plist file settings."))
             return
@@ -121,21 +124,25 @@ public class Instagram {
 
     // MARK: - Access Token
 
-    func storeAccessToken(_ accessToken: String) -> Bool {
+    private func storeAccessToken(_ accessToken: String) -> Bool {
         return keychain.set(accessToken, forKey: Keychain.accessTokenKey)
     }
 
-    func retrieveAccessToken() -> String? {
+    private func retrieveAccessToken() -> String? {
         return keychain.get(Keychain.accessTokenKey)
     }
 
-    func deleteAccessToken() -> Bool {
+    private func deleteAccessToken() -> Bool {
         return keychain.delete(Keychain.accessTokenKey)
     }
 
     // MARK: -
 
-    internal func request<T: Decodable>(_ endpoint: String, method: HTTPMethod = .get, parameters: Parameters? = nil, success: SuccessHandler<T>?, failure: FailureHandler?) {
+    func request<T: Decodable>(_ endpoint: String,
+                               method: HTTPMethod = .get,
+                               parameters: Parameters? = nil,
+                               success: SuccessHandler<T>?,
+                               failure: FailureHandler?) {
         var urlRequest = URLRequest(url: buildURL(for: endpoint, withParameters: parameters))
         urlRequest.httpMethod = method.rawValue
 

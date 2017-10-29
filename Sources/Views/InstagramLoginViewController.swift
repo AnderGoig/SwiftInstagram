@@ -120,23 +120,25 @@ extension InstagramLoginViewController: WKNavigationDelegate {
         navigationItem.title = webView.title
     }
 
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction,
+    func webView(_ webView: WKWebView,
+                 decidePolicyFor navigationAction: WKNavigationAction,
                  decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         let urlString = navigationAction.request.url!.absoluteString
 
-        if let range = urlString.range(of: "#access_token=") {
-            let accessToken = urlString[range.upperBound...]
-            decisionHandler(.cancel)
-            DispatchQueue.main.async {
-                self.success?(String(accessToken))
-            }
+        guard let range = urlString.range(of: "#access_token=") else {
+            decisionHandler(.allow)
             return
         }
 
-        decisionHandler(.allow)
+        decisionHandler(.cancel)
+
+        DispatchQueue.main.async {
+            self.success?(String(urlString[range.upperBound...]))
+        }
     }
 
-    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse,
+    func webView(_ webView: WKWebView,
+                 decidePolicyFor navigationResponse: WKNavigationResponse,
                  decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         if let httpResponse = navigationResponse.response as? HTTPURLResponse {
             switch httpResponse.statusCode {
