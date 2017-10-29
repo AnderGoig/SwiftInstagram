@@ -302,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				778AF5BC1F6E7D0F005AC284 /* Instagram.swift */,
+				77B8E4171F869EBE0035C229 /* InstagramScope.swift */,
 				778AB3591FA6038F00728064 /* Endpoints */,
 				77EF1C451F7FCA8F00C90E32 /* Views */,
 				778AF5FD1F6E7F3F005AC284 /* Models */,
@@ -455,7 +456,6 @@
 		77B8E4161F869E8A0035C229 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				77B8E4171F869EBE0035C229 /* InstagramScope.swift */,
 				778CCC0A1F9CC73F0011399B /* Array++.swift */,
 				77DF0B6B1F8FEB6600BE7F66 /* Operator++.swift */,
 			);
