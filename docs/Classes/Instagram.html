@@ -207,7 +207,10 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">login</span><span class="p">(</span><span class="n">from</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UINavigationController</span><span class="p">,</span> <span class="n">withScopes</span> <span class="nv">scopes</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/InstagramScope.html">InstagramScope</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">basic</span><span class="p">],</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">EmptySuccessHandler</span><span class="p">?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">login</span><span class="p">(</span><span class="n">from</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UINavigationController</span><span class="p">,</span>
+                      <span class="n">withScopes</span> <span class="nv">scopes</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/InstagramScope.html">InstagramScope</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">basic</span><span class="p">],</span>
+                      <span class="nv">success</span><span class="p">:</span> <span class="kt">EmptySuccessHandler</span><span class="p">?,</span>
+                      <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
 
                         </div>
                       </div>
@@ -334,13 +337,507 @@
               </ul>
             </div>
             <div class="task-group">
-              <div class="task-name-container">
-                <a name="/User%20Endpoints"></a>
-                <a name="//apple_ref/swift/Section/User Endpoints" class="dashAnchor"></a>
-                <a href="#/User%20Endpoints">
-                  <h3 class="section-name">User Endpoints</h3>
-                </a>
-              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C8commentsySS9fromMedia_ySayAA0B7CommentVGcSg7successyAA0B5ErrorVcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/comments(fromMedia:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C8commentsySS9fromMedia_ySayAA0B7CommentVGcSg7successyAA0B5ErrorVcSg7failuretF">comments(fromMedia:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get a list of recent comments on a media object.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>public_content</em> scope for media that does not belong to your own user.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">comments</span><span class="p">(</span><span class="n">fromMedia</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/InstagramComment.html">InstagramComment</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after a correct retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after an incorrect retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C13createCommentySS7onMedia_SS4textyAA0B5ErrorVcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/createComment(onMedia:text:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C13createCommentySS7onMedia_SS4textyAA0B5ErrorVcSg7failuretF">createComment(onMedia:text:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a comment on a media object.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>comments</em> scope. Also, <em>public_content</em> scope is required for media that does not
+belong to your own user.</p>
+
+</div>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>note:</p>
+
+<ul>
+<li>The total length of the comment cannot exceed 300 characters.</li>
+<li>The comment cannot contain more than 4 hashtags.</li>
+<li>The comment cannot contain more than 1 URL.</li>
+<li>The comment cannot consist of all capital letters.</li>
+</ul>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">createComment</span><span class="p">(</span><span class="n">onMedia</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mediaId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ID of the media object to reference.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>text</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Text to post as a comment on the media object as specified in <code>mediaId</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after an incorrect creation.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C13deleteCommentySS_SS7onMediayAA0B5ErrorVcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/deleteComment(_:onMedia:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C13deleteCommentySS_SS7onMediayAA0B5ErrorVcSg7failuretF">deleteComment(_:onMedia:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Remove a comment either on the authenticated user&rsquo;s media object or authored by the authenticated user.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>comments</em> scope. Also, <em>public_content</em> scope is required for media that does not
+belong to your own user.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">deleteComment</span><span class="p">(</span><span class="n">_</span> <span class="nv">commentId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">onMedia</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>commentId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ID of the comment to delete.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mediaId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ID of the media object to reference.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after an incorrect deletion.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C3tagySS_yAA0B3TagVcSg7successyAA0B5ErrorVcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/tag(_:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C3tagySS_yAA0B3TagVcSg7successyAA0B5ErrorVcSg7failuretF">tag(_:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get information about a tag object.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>public_content</em> scope.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">tag</span><span class="p">(</span><span class="n">_</span> <span class="nv">tagName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/InstagramTag.html">InstagramTag</a></span><span class="o">&gt;</span><span class="p">?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tagName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the tag to reference.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after a correct retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after an incorrect retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C11recentMediaySS7withTag_SSSg03maxF2IdAF03minfH0SiSg5countySayAA0bD0VGcSg7successyAA0B5ErrorVcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/recentMedia(withTag:maxTagId:minTagId:count:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C11recentMediaySS7withTag_SSSg03maxF2IdAF03minfH0SiSg5countySayAA0bD0VGcSg7successyAA0B5ErrorVcSg7failuretF">recentMedia(withTag:maxTagId:minTagId:count:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get a list of recently tagged media.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>public_content</em> scope.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">recentMedia</span><span class="p">(</span><span class="n">withTag</span> <span class="nv">tagName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                            <span class="nv">maxTagId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                            <span class="nv">minTagId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                            <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                            <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/InstagramMedia.html">InstagramMedia</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?,</span>
+                            <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tagName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the tag to reference.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>maxTagId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Return media after this <code>maxTagId</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>minTagId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Return media before this <code>minTagId</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>count</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Count of tagged media to return.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after a correct retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after an incorrect retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C6searchySS3tag_ySayAA0B3TagVGcSg7successyAA0B5ErrorVcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/search(tag:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C6searchySS3tag_ySayAA0B3TagVGcSg7successyAA0B5ErrorVcSg7failuretF">search(tag:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Search for tags by name.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>public_content</em> scope.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">search</span><span class="p">(</span><span class="n">tag</span> <span class="nv">query</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/InstagramTag.html">InstagramTag</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>query</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A valid tag name without a leading #. (eg. snowy, nofilter)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after a correct retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after an incorrect retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
               <ul class="item-container">
                 <li class="item">
                   <div>
@@ -443,7 +940,12 @@ logged-in user.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">recentMedia</span><span class="p">(</span><span class="n">fromUser</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">maxId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">minId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/InstagramMedia.html">InstagramMedia</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">recentMedia</span><span class="p">(</span><span class="n">fromUser</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                            <span class="nv">maxId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                            <span class="nv">minId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                            <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                            <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/InstagramMedia.html">InstagramMedia</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?,</span>
+                            <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
 
                         </div>
                       </div>
@@ -707,13 +1209,464 @@ logged-in user.</p>
               </ul>
             </div>
             <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Relationship%20Endpoints"></a>
-                <a name="//apple_ref/swift/Section/Relationship Endpoints" class="dashAnchor"></a>
-                <a href="#/Relationship%20Endpoints">
-                  <h3 class="section-name">Relationship Endpoints</h3>
-                </a>
-              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C5likesySS7inMedia_ySayAA0B4UserVGcSg7successyAA0B5ErrorVcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/likes(inMedia:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C5likesySS7inMedia_ySayAA0B4UserVGcSg7successyAA0B5ErrorVcSg7failuretF">likes(inMedia:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get a list of users who have liked this media.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>public_content</em> scope for media that does not belong to your own user.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">likes</span><span class="p">(</span><span class="n">inMedia</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/InstagramUser.html">InstagramUser</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mediaId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ID of the media object to reference.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after a correct retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after an incorrect retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C4likeySS5media_yAA0B5ErrorVcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/like(media:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C4likeySS5media_yAA0B5ErrorVcSg7failuretF">like(media:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set a like on this media by the currently authenticated user.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>likes</em> scope. Also, <em>public_content</em> scope is required for media that does not belong
+to your own user.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">like</span><span class="p">(</span><span class="n">media</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mediaId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ID of the media object to reference.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after an incorrect like.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C6unlikeySS5media_yAA0B5ErrorVcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/unlike(media:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C6unlikeySS5media_yAA0B5ErrorVcSg7failuretF">unlike(media:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Remove a like on this media by the currently authenticated user.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>likes</em> scope. Also, <em>public_content</em> scope is required for media that does not belong
+to your own user.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">unlike</span><span class="p">(</span><span class="n">media</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after an incorrect deletion.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C5mediaySS6withId_yAA0B5MediaVcSg7successyAA0B5ErrorVcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/media(withId:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C5mediaySS6withId_yAA0B5MediaVcSg7successyAA0B5ErrorVcSg7failuretF">media(withId:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get information about a media object.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>public_content</em> scope.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">media</span><span class="p">(</span><span class="n">withId</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/InstagramMedia.html">InstagramMedia</a></span><span class="o">&gt;</span><span class="p">?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>id</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ID of the media object to reference.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after a correct retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after an incorrect retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C5mediaySS13withShortcode_yAA0B5MediaVcSg7successyAA0B5ErrorVcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/media(withShortcode:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C5mediaySS13withShortcode_yAA0B5MediaVcSg7successyAA0B5ErrorVcSg7failuretF">media(withShortcode:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get information about a media object.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>public_content</em> scope.</p>
+
+</div>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>A media object&rsquo;s shortcode can be found in its shortlink URL.
+An example shortlink is <a href="http://instagram.com/p/tsxp1hhQTG/">http://instagram.com/p/tsxp1hhQTG/</a>. Its corresponding shortcode is tsxp1hhQTG.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">media</span><span class="p">(</span><span class="n">withShortcode</span> <span class="nv">shortcode</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/InstagramMedia.html">InstagramMedia</a></span><span class="o">&gt;</span><span class="p">?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>shortcode</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The shortcode of the media object to reference.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after a correct retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after an incorrect retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C11searchMediaySdSg3lat_AE3lngSiSg8distanceySayAA0bD0VGcSg7successyAA0B5ErrorVcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/searchMedia(lat:lng:distance:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C11searchMediaySdSg3lat_AE3lngSiSg8distanceySayAA0bD0VGcSg7successyAA0B5ErrorVcSg7failuretF">searchMedia(lat:lng:distance:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Search for recent media in a given area.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <p>It requires <em>public_content</em> scope.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">searchMedia</span><span class="p">(</span><span class="nv">lat</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                            <span class="nv">lng</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                            <span class="nv">distance</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                            <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/InstagramMedia.html">InstagramMedia</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?,</span>
+                            <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lat</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Latitude of the center search coordinate. If used, <code>lng</code> is required.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lng</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Longitude of the center search coordinate. If used, <code>lat</code> is required.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>distance</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Default is 1km (1000m), max distance is 5km.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after a correct retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback called after an incorrect retrieval.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
               <ul class="item-container">
                 <li class="item">
                   <div>
@@ -1282,991 +2235,6 @@ logged-in user.</p>
               </ul>
             </div>
             <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Media%20Endpoints"></a>
-                <a name="//apple_ref/swift/Section/Media Endpoints" class="dashAnchor"></a>
-                <a href="#/Media%20Endpoints">
-                  <h3 class="section-name">Media Endpoints</h3>
-                </a>
-              </div>
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SwiftInstagram0B0C5mediaySS6withId_yAA0B5MediaVcSg7successyAA0B5ErrorVcSg7failuretF"></a>
-                    <a name="//apple_ref/swift/Method/media(withId:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C5mediaySS6withId_yAA0B5MediaVcSg7successyAA0B5ErrorVcSg7failuretF">media(withId:success:failure:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Get information about a media object.</p>
-<div class="aside aside-important">
-    <p class="aside-title">Important</p>
-    <p>It requires <em>public_content</em> scope.</p>
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">media</span><span class="p">(</span><span class="n">withId</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/InstagramMedia.html">InstagramMedia</a></span><span class="o">&gt;</span><span class="p">?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>id</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The ID of the media object to reference.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>success</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The callback called after a correct retrieval.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>failure</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The callback called after an incorrect retrieval.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SwiftInstagram0B0C5mediaySS13withShortcode_yAA0B5MediaVcSg7successyAA0B5ErrorVcSg7failuretF"></a>
-                    <a name="//apple_ref/swift/Method/media(withShortcode:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C5mediaySS13withShortcode_yAA0B5MediaVcSg7successyAA0B5ErrorVcSg7failuretF">media(withShortcode:success:failure:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Get information about a media object.</p>
-<div class="aside aside-important">
-    <p class="aside-title">Important</p>
-    <p>It requires <em>public_content</em> scope.</p>
-
-</div>
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    <p>A media object&rsquo;s shortcode can be found in its shortlink URL.
-An example shortlink is <a href="http://instagram.com/p/tsxp1hhQTG/">http://instagram.com/p/tsxp1hhQTG/</a>. Its corresponding shortcode is tsxp1hhQTG.</p>
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">media</span><span class="p">(</span><span class="n">withShortcode</span> <span class="nv">shortcode</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/InstagramMedia.html">InstagramMedia</a></span><span class="o">&gt;</span><span class="p">?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>shortcode</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The shortcode of the media object to reference.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>success</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The callback called after a correct retrieval.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>failure</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The callback called after an incorrect retrieval.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SwiftInstagram0B0C11searchMediaySdSg3lat_AE3lngSiSg8distanceySayAA0bD0VGcSg7successyAA0B5ErrorVcSg7failuretF"></a>
-                    <a name="//apple_ref/swift/Method/searchMedia(lat:lng:distance:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C11searchMediaySdSg3lat_AE3lngSiSg8distanceySayAA0bD0VGcSg7successyAA0B5ErrorVcSg7failuretF">searchMedia(lat:lng:distance:success:failure:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Search for recent media in a given area.</p>
-<div class="aside aside-important">
-    <p class="aside-title">Important</p>
-    <p>It requires <em>public_content</em> scope.</p>
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">searchMedia</span><span class="p">(</span><span class="nv">lat</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">lng</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">distance</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/InstagramMedia.html">InstagramMedia</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>lat</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Latitude of the center search coordinate. If used, <code>lng</code> is required.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>lng</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Longitude of the center search coordinate. If used, <code>lat</code> is required.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>distance</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Default is 1km (1000m), max distance is 5km.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>success</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The callback called after a correct retrieval.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>failure</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The callback called after an incorrect retrieval.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Comment%20Endpoints"></a>
-                <a name="//apple_ref/swift/Section/Comment Endpoints" class="dashAnchor"></a>
-                <a href="#/Comment%20Endpoints">
-                  <h3 class="section-name">Comment Endpoints</h3>
-                </a>
-              </div>
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SwiftInstagram0B0C8commentsySS9fromMedia_ySayAA0B7CommentVGcSg7successyAA0B5ErrorVcSg7failuretF"></a>
-                    <a name="//apple_ref/swift/Method/comments(fromMedia:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C8commentsySS9fromMedia_ySayAA0B7CommentVGcSg7successyAA0B5ErrorVcSg7failuretF">comments(fromMedia:success:failure:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Get a list of recent comments on a media object.</p>
-<div class="aside aside-important">
-    <p class="aside-title">Important</p>
-    <p>It requires <em>public_content</em> scope for media that does not belong to your own user.</p>
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">comments</span><span class="p">(</span><span class="n">fromMedia</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/InstagramComment.html">InstagramComment</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>success</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The callback called after a correct retrieval.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>failure</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The callback called after an incorrect retrieval.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SwiftInstagram0B0C13createCommentySS7onMedia_SS4textyAA0B5ErrorVcSg7failuretF"></a>
-                    <a name="//apple_ref/swift/Method/createComment(onMedia:text:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C13createCommentySS7onMedia_SS4textyAA0B5ErrorVcSg7failuretF">createComment(onMedia:text:failure:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Create a comment on a media object.</p>
-<div class="aside aside-important">
-    <p class="aside-title">Important</p>
-    <p>It requires <em>comments</em> scope. Also, <em>public_content</em> scope is required for media that does not
-belong to your own user.</p>
-
-</div>
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    <p>Note:</p>
-
-<ul>
-<li>The total length of the comment cannot exceed 300 characters.</li>
-<li>The comment cannot contain more than 4 hashtags.</li>
-<li>The comment cannot contain more than 1 URL.</li>
-<li>The comment cannot consist of all capital letters.</li>
-</ul>
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">createComment</span><span class="p">(</span><span class="n">onMedia</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>mediaId</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The ID of the media object to reference.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>text</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Text to post as a comment on the media object as specified in <code>mediaId</code>.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>failure</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The callback called after an incorrect creation.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SwiftInstagram0B0C13deleteCommentySS_SS7onMediayAA0B5ErrorVcSg7failuretF"></a>
-                    <a name="//apple_ref/swift/Method/deleteComment(_:onMedia:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C13deleteCommentySS_SS7onMediayAA0B5ErrorVcSg7failuretF">deleteComment(_:onMedia:failure:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Remove a comment either on the authenticated user&rsquo;s media object or authored by the authenticated user.</p>
-<div class="aside aside-important">
-    <p class="aside-title">Important</p>
-    <p>It requires <em>comments</em> scope. Also, <em>public_content</em> scope is required for media that does not
-belong to your own user.</p>
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">deleteComment</span><span class="p">(</span><span class="n">_</span> <span class="nv">commentId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">onMedia</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>commentId</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The ID of the comment to delete.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>mediaId</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The ID of the media object to reference.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>failure</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The callback called after an incorrect deletion.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Like%20Endpoints"></a>
-                <a name="//apple_ref/swift/Section/Like Endpoints" class="dashAnchor"></a>
-                <a href="#/Like%20Endpoints">
-                  <h3 class="section-name">Like Endpoints</h3>
-                </a>
-              </div>
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SwiftInstagram0B0C5likesySS7inMedia_ySayAA0B4UserVGcSg7successyAA0B5ErrorVcSg7failuretF"></a>
-                    <a name="//apple_ref/swift/Method/likes(inMedia:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C5likesySS7inMedia_ySayAA0B4UserVGcSg7successyAA0B5ErrorVcSg7failuretF">likes(inMedia:success:failure:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Get a list of users who have liked this media.</p>
-<div class="aside aside-important">
-    <p class="aside-title">Important</p>
-    <p>It requires <em>public_content</em> scope for media that does not belong to your own user.</p>
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">likes</span><span class="p">(</span><span class="n">inMedia</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/InstagramUser.html">InstagramUser</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>mediaId</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The ID of the media object to reference.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>success</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The callback called after a correct retrieval.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>failure</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The callback called after an incorrect retrieval.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SwiftInstagram0B0C4likeySS5media_yAA0B5ErrorVcSg7failuretF"></a>
-                    <a name="//apple_ref/swift/Method/like(media:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C4likeySS5media_yAA0B5ErrorVcSg7failuretF">like(media:failure:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Set a like on this media by the currently authenticated user.</p>
-<div class="aside aside-important">
-    <p class="aside-title">Important</p>
-    <p>It requires <em>likes</em> scope. Also, <em>public_content</em> scope is required for media that does not belong
-to your own user.</p>
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">like</span><span class="p">(</span><span class="n">media</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>mediaId</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The ID of the media object to reference.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>failure</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The callback called after an incorrect like.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SwiftInstagram0B0C6unlikeySS5media_yAA0B5ErrorVcSg7failuretF"></a>
-                    <a name="//apple_ref/swift/Method/unlike(media:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C6unlikeySS5media_yAA0B5ErrorVcSg7failuretF">unlike(media:failure:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Remove a like on this media by the currently authenticated user.</p>
-<div class="aside aside-important">
-    <p class="aside-title">Important</p>
-    <p>It requires <em>likes</em> scope. Also, <em>public_content</em> scope is required for media that does not belong
-to your own user.</p>
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">unlike</span><span class="p">(</span><span class="n">media</span> <span class="nv">mediaId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>failure</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The callback called after an incorrect deletion.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Tag%20Endpoints"></a>
-                <a name="//apple_ref/swift/Section/Tag Endpoints" class="dashAnchor"></a>
-                <a href="#/Tag%20Endpoints">
-                  <h3 class="section-name">Tag Endpoints</h3>
-                </a>
-              </div>
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SwiftInstagram0B0C3tagySS_yAA0B3TagVcSg7successyAA0B5ErrorVcSg7failuretF"></a>
-                    <a name="//apple_ref/swift/Method/tag(_:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C3tagySS_yAA0B3TagVcSg7successyAA0B5ErrorVcSg7failuretF">tag(_:success:failure:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Get information about a tag object.</p>
-<div class="aside aside-important">
-    <p class="aside-title">Important</p>
-    <p>It requires <em>public_content</em> scope.</p>
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">tag</span><span class="p">(</span><span class="n">_</span> <span class="nv">tagName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/InstagramTag.html">InstagramTag</a></span><span class="o">&gt;</span><span class="p">?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>tagName</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The name of the tag to reference.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>success</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The callback called after a correct retrieval.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>failure</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The callback called after an incorrect retrieval.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SwiftInstagram0B0C11recentMediaySS7withTag_SSSg03maxF2IdAF03minfH0SiSg5countySayAA0bD0VGcSg7successyAA0B5ErrorVcSg7failuretF"></a>
-                    <a name="//apple_ref/swift/Method/recentMedia(withTag:maxTagId:minTagId:count:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C11recentMediaySS7withTag_SSSg03maxF2IdAF03minfH0SiSg5countySayAA0bD0VGcSg7successyAA0B5ErrorVcSg7failuretF">recentMedia(withTag:maxTagId:minTagId:count:success:failure:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Get a list of recently tagged media.</p>
-<div class="aside aside-important">
-    <p class="aside-title">Important</p>
-    <p>It requires <em>public_content</em> scope.</p>
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">recentMedia</span><span class="p">(</span><span class="n">withTag</span> <span class="nv">tagName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">maxTagId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">minTagId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/InstagramMedia.html">InstagramMedia</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>tagName</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The name of the tag to reference.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>maxTagId</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Return media after this <code>maxTagId</code>.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>minTagId</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Return media before this <code>minTagId</code>.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>count</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Count of tagged media to return.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>success</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The callback called after a correct retrieval.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>failure</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The callback called after an incorrect retrieval.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14SwiftInstagram0B0C6searchySS3tag_ySayAA0B3TagVGcSg7successyAA0B5ErrorVcSg7failuretF"></a>
-                    <a name="//apple_ref/swift/Method/search(tag:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C6searchySS3tag_ySayAA0B3TagVGcSg7successyAA0B5ErrorVcSg7failuretF">search(tag:success:failure:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Search for tags by name.</p>
-<div class="aside aside-important">
-    <p class="aside-title">Important</p>
-    <p>It requires <em>public_content</em> scope.</p>
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">search</span><span class="p">(</span><span class="n">tag</span> <span class="nv">query</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/InstagramTag.html">InstagramTag</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>query</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>A valid tag name without a leading #. (eg. snowy, nofilter)</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>success</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The callback called after a correct retrieval.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>failure</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The callback called after an incorrect retrieval.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Location%20Endpoints"></a>
-                <a name="//apple_ref/swift/Section/Location Endpoints" class="dashAnchor"></a>
-                <a href="#/Location%20Endpoints">
-                  <h3 class="section-name">Location Endpoints</h3>
-                </a>
-              </div>
               <ul class="item-container">
                 <li class="item">
                   <div>
@@ -2368,7 +2336,11 @@ to your own user.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">recentMedia</span><span class="p">(</span><span class="n">forLocation</span> <span class="nv">locationId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">maxId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">minId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/InstagramMedia.html">InstagramMedia</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">recentMedia</span><span class="p">(</span><span class="n">forLocation</span> <span class="nv">locationId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                            <span class="nv">maxId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                            <span class="nv">minId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                            <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/InstagramMedia.html">InstagramMedia</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">?,</span>
+                            <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
 
                         </div>
                       </div>
@@ -2467,7 +2439,12 @@ to your own user.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">searchLocation</span><span class="p">(</span><span class="nv">lat</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">lng</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">distance</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">facebookPlacesId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/InstagramLocation.html">InstagramLocation</a></span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span><span class="p">?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">searchLocation</span><span class="p">(</span><span class="nv">lat</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                               <span class="nv">lng</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                               <span class="nv">distance</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                               <span class="nv">facebookPlacesId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                               <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/InstagramLocation.html">InstagramLocation</a></span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span><span class="p">?,</span>
+                               <span class="nv">failure</span><span class="p">:</span> <span class="kt">FailureHandler</span><span class="p">?)</span></code></pre>
 
                         </div>
                       </div>
@@ -2562,7 +2539,7 @@ If used, <code>lat</code> and <code>lng</code> are not required.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2017 <a class="link" href="https://github.com/AnderGoig" target="_blank" rel="external">Ander Goig</a>. All rights reserved. (Last updated: 2017-10-22)</p>
+      <p>&copy; 2017 <a class="link" href="https://github.com/AnderGoig" target="_blank" rel="external">Ander Goig</a>. All rights reserved. (Last updated: 2017-10-29)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

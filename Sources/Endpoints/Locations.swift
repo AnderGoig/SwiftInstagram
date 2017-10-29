@@ -10,11 +10,11 @@ extension Instagram {
 
     /// Get information about a location.
     ///
-    /// - Parameter locationId: The ID of the location to reference.
-    /// - Parameter success: The callback called after a correct retrieval.
-    /// - Parameter failure: The callback called after an incorrect retrieval.
+    /// - parameter locationId: The ID of the location to reference.
+    /// - parameter success: The callback called after a correct retrieval.
+    /// - parameter failure: The callback called after an incorrect retrieval.
     ///
-    /// - Important: It requires *public_content* scope.
+    /// - important: It requires *public_content* scope.
 
     public func location(_ locationId: String, success: SuccessHandler<InstagramLocation<String>>?, failure: FailureHandler?) {
         request("/locations/\(locationId)", success: success, failure: failure)
@@ -22,13 +22,13 @@ extension Instagram {
 
     /// Get a list of recent media objects from a given location.
     ///
-    /// - Parameter locationId: The ID of the location to reference.
-    /// - Parameter maxId: Return media after this `maxId`.
-    /// - Parameter minId: Return media before this `mindId`.
-    /// - Parameter success: The callback called after a correct retrieval.
-    /// - Parameter failure: The callback called after an incorrect retrieval.
+    /// - parameter locationId: The ID of the location to reference.
+    /// - parameter maxId: Return media after this `maxId`.
+    /// - parameter minId: Return media before this `mindId`.
+    /// - parameter success: The callback called after a correct retrieval.
+    /// - parameter failure: The callback called after an incorrect retrieval.
     ///
-    /// - Important: It requires *public_content* scope.
+    /// - important: It requires *public_content* scope.
 
     public func recentMedia(forLocation locationId: String,
                             maxId: String? = nil,
@@ -45,15 +45,15 @@ extension Instagram {
 
     /// Search for a location by geographic coordinate.
     ///
-    /// - Parameter lat: Latitude of the center search coordinate. If used, `lng` is required.
-    /// - Parameter lng: Longitude of the center search coordinate. If used, `lat` is required.
-    /// - Parameter distance: Default is 500m, max distance is 750.
-    /// - Parameter facebookPlacesId: Returns a location mapped off of a Facebook places id.
+    /// - parameter lat: Latitude of the center search coordinate. If used, `lng` is required.
+    /// - parameter lng: Longitude of the center search coordinate. If used, `lat` is required.
+    /// - parameter distance: Default is 500m, max distance is 750.
+    /// - parameter facebookPlacesId: Returns a location mapped off of a Facebook places id.
     ///   If used, `lat` and `lng` are not required.
-    /// - Parameter success: The callback called after a correct retrieval.
-    /// - Parameter failure: The callback called after an incorrect retrieval.
+    /// - parameter success: The callback called after a correct retrieval.
+    /// - parameter failure: The callback called after an incorrect retrieval.
     ///
-    /// - Important: It requires *public_content* scope.
+    /// - important: It requires *public_content* scope.
 
     public func searchLocation(lat: Double? = nil,
                                lng: Double? = nil,

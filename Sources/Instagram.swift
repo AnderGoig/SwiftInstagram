@@ -38,7 +38,7 @@ public class Instagram {
     // MARK: - Properties
 
     private let urlSession = URLSession(configuration: .default)
-    private let keychain = KeychainSwift(keyPrefix: "SwiftInstagram")
+    private let keychain = KeychainSwift(keyPrefix: "SwiftInstagram_")
 
     private var client: (id: String?, redirectURI: String?)?
 
@@ -61,10 +61,10 @@ public class Instagram {
     ///
     /// Shows a custom `UIViewController` with Intagram's login page.
     ///
-    /// - Parameter controller: The `UINavigationController` from which the `InstagramLoginViewController` will be showed.
-    /// - Parameter scopes: The scope of the access you are requesting from the user. Basic access by default.
-    /// - Parameter success: The callback called after a correct login.
-    /// - Parameter failure: The callback called after an incorrect login.
+    /// - parameter controller: The `UINavigationController` from which the `InstagramLoginViewController` will be showed.
+    /// - parameter scopes: The scope of the access you are requesting from the user. Basic access by default.
+    /// - parameter success: The callback called after a correct login.
+    /// - parameter failure: The callback called after an incorrect login.
 
     public func login(from controller: UINavigationController,
                       withScopes scopes: [InstagramScope] = [.basic],
@@ -107,7 +107,7 @@ public class Instagram {
 
     /// Returns whether a session is currently available or not.
     ///
-    /// - Returns: True if a session is currently available, false otherwise.
+    /// - returns: True if a session is currently available, false otherwise.
 
     public func isSessionValid() -> Bool {
         return retrieveAccessToken() != nil
@@ -115,7 +115,7 @@ public class Instagram {
 
     /// Ends the current session.
     ///
-    /// - Returns: True if the user was successfully logged out, false otherwise.
+    /// - returns: True if the user was successfully logged out, false otherwise.
 
     @discardableResult
     public func logout() -> Bool {

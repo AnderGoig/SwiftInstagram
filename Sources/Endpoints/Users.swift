@@ -10,12 +10,12 @@ extension Instagram {
 
     /// Get information about a user.
     ///
-    /// - Parameter userId: The ID of the user whose information to retrieve, or "self" to reference the currently
+    /// - parameter userId: The ID of the user whose information to retrieve, or "self" to reference the currently
     ///   logged-in user.
-    /// - Parameter success: The callback called after a correct retrieval.
-    /// - Parameter failure: The callback called after an incorrect retrieval.
+    /// - parameter success: The callback called after a correct retrieval.
+    /// - parameter failure: The callback called after an incorrect retrieval.
     ///
-    /// - Important: It requires *public_content* scope when getting information about a user other than yours.
+    /// - important: It requires *public_content* scope when getting information about a user other than yours.
 
     public func user(_ userId: String, success: SuccessHandler<InstagramUser>?, failure: FailureHandler?) {
         request("/users/\(userId)", success: success, failure: failure)
@@ -23,15 +23,15 @@ extension Instagram {
 
     /// Get the most recent media published by a user.
     ///
-    /// - Parameter userId: The ID of the user whose recent media to retrieve, or "self" to reference the currently
+    /// - parameter userId: The ID of the user whose recent media to retrieve, or "self" to reference the currently
     ///   logged-in user.
-    /// - Parameter maxId: Return media earlier than this `maxId`.
-    /// - Parameter minId: Return media later than this `minId`.
-    /// - Parameter count: Count of media to return.
-    /// - Parameter success: The callback called after a correct retrieval.
-    /// - Parameter failure: The callback called after an incorrect retrieval.
+    /// - parameter maxId: Return media earlier than this `maxId`.
+    /// - parameter minId: Return media later than this `minId`.
+    /// - parameter count: Count of media to return.
+    /// - parameter success: The callback called after a correct retrieval.
+    /// - parameter failure: The callback called after an incorrect retrieval.
     ///
-    /// - Important: It requires *public_content* scope when getting recent media published by a user other than yours.
+    /// - important: It requires *public_content* scope when getting recent media published by a user other than yours.
 
     public func recentMedia(fromUser userId: String,
                             maxId: String? = nil,
@@ -50,12 +50,12 @@ extension Instagram {
 
     /// Get the list of recent media liked by your own user.
     ///
-    /// - Parameter maxLikeId: Return media liked before this id.
-    /// - Parameter count: Count of media to return.
-    /// - Parameter success: The callback called after a correct retrieval.
-    /// - Parameter failure: The callback called after an incorrect retrieval.
+    /// - parameter maxLikeId: Return media liked before this id.
+    /// - parameter count: Count of media to return.
+    /// - parameter success: The callback called after a correct retrieval.
+    /// - parameter failure: The callback called after an incorrect retrieval.
     ///
-    /// - Important: It requires *public_content* scope.
+    /// - important: It requires *public_content* scope.
 
     public func userLikedMedia(maxLikeId: String? = nil, count: Int? = nil, success: SuccessHandler<[InstagramMedia]>?, failure: FailureHandler?) {
         var parameters = Parameters()
@@ -68,12 +68,12 @@ extension Instagram {
 
     /// Get a list of users matching the query.
     ///
-    /// - Parameter query: A query string.
-    /// - Parameter count: Number of users to return.
-    /// - Parameter success: The callback called after a correct retrieval.
-    /// - Parameter failure: The callback called after an incorrect retrieval.
+    /// - parameter query: A query string.
+    /// - parameter count: Number of users to return.
+    /// - parameter success: The callback called after a correct retrieval.
+    /// - parameter failure: The callback called after an incorrect retrieval.
     ///
-    /// - Important: It requires *public_content* scope.
+    /// - important: It requires *public_content* scope.
 
     public func search(user query: String, count: Int? = nil, success: SuccessHandler<[InstagramUser]>?, failure: FailureHandler?) {
         var parameters = Parameters()
