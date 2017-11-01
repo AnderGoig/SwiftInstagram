@@ -6,6 +6,8 @@
 //  Copyright © 2017 Ander Goig. All rights reserved.
 //
 
+import CoreLocation
+
 extension Instagram {
 
     /// Get information about a location.
@@ -45,26 +47,23 @@ extension Instagram {
 
     /// Search for a location by geographic coordinate.
     ///
-    /// - parameter lat: Latitude of the center search coordinate. If used, `lng` is required.
-    /// - parameter lng: Longitude of the center search coordinate. If used, `lat` is required.
+    /// - parameter coordinates: Latitude and longitude of the center search coordinates.
     /// - parameter distance: Default is 500m, max distance is 750.
-    /// - parameter facebookPlacesId: Returns a location mapped off of a Facebook places id.
-    ///   If used, `lat` and `lng` are not required.
+    /// - parameter facebookPlacesId: Returns a location mapped off of a Facebook places id. If used, `coordinates` is not required.
     /// - parameter success: The callback called after a correct retrieval.
     /// - parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - important: It requires *public_content* scope.
 
-    public func searchLocation(lat: Double? = nil,
-                               lng: Double? = nil,
+    public func searchLocation(coordinates: CLLocationCoordinate2D? = nil,
                                distance: Int? = nil,
                                facebookPlacesId: String? = nil,
                                success: SuccessHandler<[InstagramLocation<String>]>?,
                                failure: FailureHandler?) {
         var parameters = Parameters()
 
-        parameters["lat"] ??= lat
-        parameters["lng"] ??= lng
+        parameters["lat"] ??= coordinates?.latitude
+        parameters["lng"] ??= coordinates?.longitude
         parameters["distance"] ??= distance
         parameters["facebook_places_id"] ??= facebookPlacesId
 
