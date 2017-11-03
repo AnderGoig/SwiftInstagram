@@ -8,6 +8,8 @@
 
 extension Instagram {
 
+    // MARK: - Like Endpoints
+
     /// Get a list of users who have liked this media.
     ///
     /// - parameter mediaId: The ID of the media object to reference.

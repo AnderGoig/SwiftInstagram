@@ -10,6 +10,8 @@ import CoreLocation
 
 extension Instagram {
 
+    // MARK: - Location Endpoints
+
     /// Get information about a location.
     ///
     /// - parameter locationId: The ID of the location to reference.

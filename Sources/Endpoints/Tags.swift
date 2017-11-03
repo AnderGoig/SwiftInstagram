@@ -8,6 +8,8 @@
 
 extension Instagram {
 
+    // MARK: - Tag Endpoints
+
     /// Get information about a tag object.
     ///
     /// - parameter tagName: The name of the tag to reference.
