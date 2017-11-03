@@ -140,20 +140,20 @@ extension InstagramLoginViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView,
                  decidePolicyFor navigationResponse: WKNavigationResponse,
                  decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
-        if let httpResponse = navigationResponse.response as? HTTPURLResponse {
-            switch httpResponse.statusCode {
-            case 400:
-                decisionHandler(.cancel)
-                DispatchQueue.main.async {
-                    self.failure?(InstagramError(kind: .invalidRequest, message: "Invalid request"))
-                }
-                return
-            default:
-                break
-            }
+        guard let httpResponse = navigationResponse.response as? HTTPURLResponse else {
+            decisionHandler(.allow)
+            return
         }
 
-        decisionHandler(.allow)
+        switch httpResponse.statusCode {
+        case 400:
+            decisionHandler(.cancel)
+            DispatchQueue.main.async {
+                self.failure?(InstagramError(kind: .invalidRequest, message: "Invalid request"))
+            }
+        default:
+            decisionHandler(.allow)
+        }
     }
 
 }
