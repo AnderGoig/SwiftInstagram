@@ -275,37 +275,6 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C14isSessionValidSbyF"></a>
-                    <a name="//apple_ref/swift/Method/isSessionValid()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C14isSessionValidSbyF">isSessionValid()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Returns whether a session is currently available or not.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">isSessionValid</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>True if a session is currently available, false otherwise.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/s:14SwiftInstagram0B0C6logoutSbyF"></a>
                     <a name="//apple_ref/swift/Method/logout()" class="dashAnchor"></a>
                     <a class="token" href="#/s:14SwiftInstagram0B0C6logoutSbyF">logout()</a>
@@ -330,6 +299,33 @@
                       <div>
                         <h4>Return Value</h4>
                         <p>True if the user was successfully logged out, false otherwise.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftInstagram0B0C15isAuthenticatedSbv"></a>
+                    <a name="//apple_ref/swift/Property/isAuthenticated" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C15isAuthenticatedSbv">isAuthenticated</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns whether a user is currently authenticated or not.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isAuthenticated</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -2417,9 +2413,9 @@ An example shortlink is <a href="http://instagram.com/p/tsxp1hhQTG/">http://inst
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14SwiftInstagram0B0C14searchLocationySdSg3lat_AE3lngSiSg8distanceSSSg16facebookPlacesIdySayAA0bD0VySSGGcSg7successyAA0B5ErrorVcSg7failuretF"></a>
-                    <a name="//apple_ref/swift/Method/searchLocation(lat:lng:distance:facebookPlacesId:success:failure:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14SwiftInstagram0B0C14searchLocationySdSg3lat_AE3lngSiSg8distanceSSSg16facebookPlacesIdySayAA0bD0VySSGGcSg7successyAA0B5ErrorVcSg7failuretF">searchLocation(lat:lng:distance:facebookPlacesId:success:failure:)</a>
+                    <a name="/s:14SwiftInstagram0B0C14searchLocationySC22CLLocationCoordinate2DVSg11coordinates_SiSg8distanceSSSg16facebookPlacesIdySayAA0bD0VySSGGcSg7successyAA0B5ErrorVcSg7failuretF"></a>
+                    <a name="//apple_ref/swift/Method/searchLocation(coordinates:distance:facebookPlacesId:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftInstagram0B0C14searchLocationySC22CLLocationCoordinate2DVSg11coordinates_SiSg8distanceSSSg16facebookPlacesIdySayAA0bD0VySSGGcSg7successyAA0B5ErrorVcSg7failuretF">searchLocation(coordinates:distance:facebookPlacesId:success:failure:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -2439,8 +2435,7 @@ An example shortlink is <a href="http://instagram.com/p/tsxp1hhQTG/">http://inst
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">searchLocation</span><span class="p">(</span><span class="nv">lat</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-                               <span class="nv">lng</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">searchLocation</span><span class="p">(</span><span class="nv">coordinates</span><span class="p">:</span> <span class="kt">CLLocationCoordinate2D</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
                                <span class="nv">distance</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
                                <span class="nv">facebookPlacesId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
                                <span class="nv">success</span><span class="p">:</span> <span class="kt">SuccessHandler</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/InstagramLocation.html">InstagramLocation</a></span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span><span class="p">?,</span>
@@ -2455,24 +2450,12 @@ An example shortlink is <a href="http://instagram.com/p/tsxp1hhQTG/">http://inst
                             <tr>
                               <td>
                                 <code>
-                                <em>lat</em>
+                                <em>coordinates</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>Latitude of the center search coordinate. If used, <code>lng</code> is required.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>lng</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Longitude of the center search coordinate. If used, <code>lat</code> is required.</p>
+                                  <p>Latitude and longitude of the center search coordinates.</p>
                                 </div>
                               </td>
                             </tr>
@@ -2496,8 +2479,7 @@ An example shortlink is <a href="http://instagram.com/p/tsxp1hhQTG/">http://inst
                               </td>
                               <td>
                                 <div>
-                                  <p>Returns a location mapped off of a Facebook places id.
-If used, <code>lat</code> and <code>lng</code> are not required.</p>
+                                  <p>Returns a location mapped off of a Facebook places id. If used, <code>coordinates</code> is not required.</p>
                                 </div>
                               </td>
                             </tr>
@@ -2539,7 +2521,7 @@ If used, <code>lat</code> and <code>lng</code> are not required.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2017 <a class="link" href="https://github.com/AnderGoig" target="_blank" rel="external">Ander Goig</a>. All rights reserved. (Last updated: 2017-10-29)</p>
+      <p>&copy; 2017 <a class="link" href="https://github.com/AnderGoig" target="_blank" rel="external">Ander Goig</a>. All rights reserved. (Last updated: 2017-11-03)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
