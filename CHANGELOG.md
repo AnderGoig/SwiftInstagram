@@ -2,6 +2,17 @@
 
 ## [Unreleased]
 
+## [1.0.6] (2017-11-03)
+[Full Changelog](https://github.com/AnderGoig/SwiftInstagram/compare/v1.0.5...v1.0.6)
+### Added
+- JSON parser improvements.
+- General source code improvements.
+### Changed
+- `searchLocation()` method attributes `lat` and `lng` have been replaced by `coordinates`.
+- `isSessionValid()` method has been renamed to `isAuthenticated` (property).
+- Change key for keychain (#11).
+- Better handling of #7 bug.
+
 ## [1.0.5] (2017-10-18)
 [Full Changelog](https://github.com/AnderGoig/SwiftInstagram/compare/v1.0.4...v1.0.5)
 ### Changed
@@ -51,7 +62,8 @@
 ### Added
 - Initial release.
 
-[Unreleased]: https://github.com/AnderGoig/SwiftInstagram/compare/v1.0.5...develop
+[Unreleased]: https://github.com/AnderGoig/SwiftInstagram/compare/v1.0.6...develop
+[1.0.6]: https://github.com/AnderGoig/SwiftInstagram/tree/v1.0.6
 [1.0.5]: https://github.com/AnderGoig/SwiftInstagram/tree/v1.0.5
 [1.0.4]: https://github.com/AnderGoig/SwiftInstagram/tree/v1.0.4
 [1.0.3]: https://github.com/AnderGoig/SwiftInstagram/tree/v1.0.3
