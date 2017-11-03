@@ -8,6 +8,8 @@
 
 extension Instagram {
 
+    // MARK: - User Endpoints
+
     /// Get information about a user.
     ///
     /// - parameter userId: The ID of the user whose information to retrieve, or "self" to reference the currently

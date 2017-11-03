@@ -8,6 +8,8 @@
 
 extension Instagram {
 
+    // MARK: - Comment Endpoints
+
     /// Get a list of recent comments on a media object.
     ///
     /// - parameter Parameter mediaId: The ID of the media object to reference.

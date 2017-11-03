@@ -8,6 +8,8 @@
 
 extension Instagram {
 
+    // MARK: - Relationship Endpoints
+
     /// Relationship actions currently supported by Instagram.
 
     private enum RelationshipAction: String {

@@ -8,6 +8,8 @@
 
 extension Instagram {
 
+    // MARK: - Media Endpoints
+
     /// Get information about a media object.
     ///
     /// - parameter id: The ID of the media object to reference.
