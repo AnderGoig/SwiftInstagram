@@ -10,6 +10,18 @@
 
 public struct InstagramError: Error {
 
+    // MARK: - Properties
+
+    let kind: ErrorKind
+    let message: String
+
+    /// Retrieve the localized description for this error.
+    public var localizedDescription: String {
+        return "[\(kind.description)] - \(message)"
+    }
+
+    // MARK: - Types
+
     enum ErrorKind: CustomStringConvertible {
         case invalidRequest
         case jsonParseError
@@ -28,14 +40,6 @@ public struct InstagramError: Error {
                 return "missingClient"
             }
         }
-    }
-
-    let kind: ErrorKind
-    let message: String
-
-    /// Retrieve the localized description for this error.
-    public var localizedDescription: String {
-        return "[\(kind.description)] - \(message)"
     }
 
 }

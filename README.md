@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://andergoig.github.io/SwiftInstagram">
-        <img src="https://rawgit.com/AnderGoig/SwiftInstagram/develop/.assets/SwiftInstagram-Logo.png" alt="SwiftInstagram Logo" width="700" height="200">
+        <img src="https://rawgit.com/AnderGoig/SwiftInstagram/master/.assets/SwiftInstagram-Logo.png" alt="SwiftInstagram Logo" width="700" height="200">
     </a>
 </p>
 
@@ -21,8 +21,8 @@
         <img src="https://codebeat.co/badges/e5274943-8feb-4e51-a937-43552205f62e"
              alt="Codebeat">
     </a>
-    <a href="https://andergoig.github.io/SwiftInstagram/Classes/Instagram.html">
-        <img src="docs/badge.svg"
+    <a href="https://andergoig.github.io/SwiftInstagram">
+        <img src="https://rawgit.com/AnderGoig/SwiftInstagram/master/docs/badge.svg"
              alt="Documentation">
     </a>
     <a href="https://raw.githubusercontent.com/AnderGoig/SwiftInstagram/master/LICENSE">
@@ -52,10 +52,11 @@
 
 ## Features
 
-- [x] Effortless and straightforward use of Instagram API.
-- [x] Up-to-date with the latest of [Instagram API](https://www.instagram.com/developer/).
-- [x] Client-Side authentication.
+- [x] Effortless and straightforward use.
+- [x] Up-to-date with the latest [Instagram API](https://www.instagram.com/developer/) features.
 - [x] Secure access token storing, thanks to [keychain-swift](https://github.com/evgenyneu/keychain-swift).
+- [x] Client-Side authentication.
+- [x] 100% documented code.
 - [x] Up-to-date with the latest Apple technologies (Swift 4, Xcode 9, etc).
 
 ### [Upcoming features](https://github.com/AnderGoig/SwiftInstagram/projects/1)

@@ -18,7 +18,7 @@ class InstagramLoginViewController: UIViewController {
 
     // MARK: - Properties
 
-    private var client: InstagramClient
+    private var authURL: URL
     private var success: SuccessHandler?
     private var failure: FailureHandler?
 
@@ -31,8 +31,8 @@ class InstagramLoginViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    init(client: InstagramClient, success: SuccessHandler?, failure: FailureHandler?) {
-        self.client = client
+    init(authURL: URL, success: SuccessHandler?, failure: FailureHandler?) {
+        self.authURL = authURL
         self.success = success
         self.failure = failure
 
@@ -55,12 +55,10 @@ class InstagramLoginViewController: UIViewController {
         let webView = setupWebView()
 
         // Starts authorization
-        loadAuthorizationURL(webView: webView)
+        webView.load(URLRequest(url: authURL, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData))
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-
+    deinit {
         progressView.removeFromSuperview()
         webViewObservation.invalidate()
     }
@@ -112,20 +110,6 @@ class InstagramLoginViewController: UIViewController {
         }
     }
 
-    // MARK: -
-
-    func loadAuthorizationURL(webView: WKWebView) {
-        var components = URLComponents(string: "https://api.instagram.com/oauth/authorize/")!
-        components.queryItems = [
-            URLQueryItem(name: "client_id", value: client.clientId),
-            URLQueryItem(name: "redirect_uri", value: client.redirectURI),
-            URLQueryItem(name: "response_type", value: "token"),
-            URLQueryItem(name: "scope", value: client.stringScopes)
-        ]
-
-        webView.load(URLRequest(url: components.url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData))
-    }
-
 }
 
 // MARK: - WKNavigationDelegate
@@ -136,38 +120,40 @@ extension InstagramLoginViewController: WKNavigationDelegate {
         navigationItem.title = webView.title
     }
 
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction,
+    func webView(_ webView: WKWebView,
+                 decidePolicyFor navigationAction: WKNavigationAction,
                  decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         let urlString = navigationAction.request.url!.absoluteString
 
-        if let range = urlString.range(of: "#access_token=") {
-            let accessToken = urlString[range.upperBound...]
-            decisionHandler(.cancel)
-            DispatchQueue.main.async {
-                self.success?(String(accessToken))
-            }
+        guard let range = urlString.range(of: "#access_token=") else {
+            decisionHandler(.allow)
             return
         }
 
-        decisionHandler(.allow)
+        decisionHandler(.cancel)
+
+        DispatchQueue.main.async {
+            self.success?(String(urlString[range.upperBound...]))
+        }
     }
 
-    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse,
+    func webView(_ webView: WKWebView,
+                 decidePolicyFor navigationResponse: WKNavigationResponse,
                  decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
-        if let httpResponse = navigationResponse.response as? HTTPURLResponse {
-            switch httpResponse.statusCode {
-            case 400:
-                decisionHandler(.cancel)
-                DispatchQueue.main.async {
-                    self.failure?(InstagramError(kind: .invalidRequest, message: "Invalid request"))
-                }
-                return
-            default:
-                break
-            }
+        guard let httpResponse = navigationResponse.response as? HTTPURLResponse else {
+            decisionHandler(.allow)
+            return
         }
 
-        decisionHandler(.allow)
+        switch httpResponse.statusCode {
+        case 400:
+            decisionHandler(.cancel)
+            DispatchQueue.main.async {
+                self.failure?(InstagramError(kind: .invalidRequest, message: "Invalid request"))
+            }
+        default:
+            decisionHandler(.allow)
+        }
     }
 
 }
