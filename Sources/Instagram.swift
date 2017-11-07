@@ -176,9 +176,9 @@ public class Instagram {
         // Every request needs the access token
         items.append(URLQueryItem(name: "access_token", value: retrieveAccessToken() ?? ""))
 
-        parameters?.forEach({ parameter in
+        parameters?.forEach { parameter in
             items.append(URLQueryItem(name: parameter.key, value: "\(parameter.value)"))
-        })
+        }
 
         urlComps!.queryItems = items
 
