@@ -126,7 +126,7 @@ public class Instagram {
         return keychain.set(accessToken, forKey: Keychain.accessTokenKey)
     }
 
-    private func retrieveAccessToken() -> String? {
+    public func retrieveAccessToken() -> String? {
         return keychain.get(Keychain.accessTokenKey)
     }
 
