@@ -122,7 +122,7 @@ public class Instagram {
 
     // MARK: - Access Token
 
-    private func storeAccessToken(_ accessToken: String) -> Bool {
+    public func storeAccessToken(_ accessToken: String) -> Bool {
         return keychain.set(accessToken, forKey: Keychain.accessTokenKey)
     }
 
