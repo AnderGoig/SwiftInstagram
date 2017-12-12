@@ -61,10 +61,6 @@
 
 ### [Upcoming features](https://github.com/AnderGoig/SwiftInstagram/projects/1)
 
-- [ ] Multiple users login
-- [ ] [Instagram Business API](https://developers.facebook.com/docs/instagram-api/v2.10) support
-- [ ] And more ...
-
 ## Requirements
 
 - iOS 9.0+
