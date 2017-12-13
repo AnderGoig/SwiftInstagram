@@ -12,8 +12,7 @@ extension Instagram {
 
     /// Get information about a user.
     ///
-    /// - parameter userId: The ID of the user whose information to retrieve, or "self" to reference the currently
-    ///   logged-in user.
+    /// - parameter userId: The ID of the user whose information to retrieve, or "self" to reference the currently authenticated user.
     /// - parameter success: The callback called after a correct retrieval.
     /// - parameter failure: The callback called after an incorrect retrieval.
     ///
@@ -25,8 +24,7 @@ extension Instagram {
 
     /// Get the most recent media published by a user.
     ///
-    /// - parameter userId: The ID of the user whose recent media to retrieve, or "self" to reference the currently
-    ///   logged-in user.
+    /// - parameter userId: The ID of the user whose recent media to retrieve, or "self" to reference the currently authenticated user.
     /// - parameter maxId: Return media earlier than this `maxId`.
     /// - parameter minId: Return media later than this `minId`.
     /// - parameter count: Count of media to return.
@@ -50,7 +48,7 @@ extension Instagram {
         request("/users/\(userId)/media/recent", parameters: parameters, success: success, failure: failure)
     }
 
-    /// Get the list of recent media liked by your own user.
+    /// Get the list of recent media liked by the currently authenticated user.
     ///
     /// - parameter maxLikeId: Return media liked before this id.
     /// - parameter count: Count of media to return.

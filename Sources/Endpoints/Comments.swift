@@ -28,8 +28,7 @@ extension Instagram {
     /// - parameter text: Text to post as a comment on the media object as specified in `mediaId`.
     /// - parameter failure: The callback called after an incorrect creation.
     ///
-    /// - important: It requires *comments* scope. Also, *public_content* scope is required for media that does not
-    ///   belong to your own user.
+    /// - important: It requires *comments* scope. Also, *public_content* scope is required for media that does not belong to your own user.
     ///
     /// - note:
     ///     - The total length of the comment cannot exceed 300 characters.
@@ -51,8 +50,7 @@ extension Instagram {
     /// - parameter mediaId: The ID of the media object to reference.
     /// - parameter failure: The callback called after an incorrect deletion.
     ///
-    /// - important: It requires *comments* scope. Also, *public_content* scope is required for media that does not
-    ///   belong to your own user.
+    /// - important: It requires *comments* scope. Also, *public_content* scope is required for media that does not belong to your own user.
 
     public func deleteComment(_ commentId: String, onMedia mediaId: String, failure: FailureHandler?) {
         request("/media/\(mediaId)/comments/\(commentId)", method: .delete, success: { (_: InstagramResponse<Any?>) in return }, failure: failure)
