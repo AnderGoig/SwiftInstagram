@@ -28,4 +28,7 @@ public enum InstagramScope: String {
     /// To like and unlike media on a user’s behalf.
     case likes
 
+    /// To get all permissions.
+    case all = "basic+public_content+follower_list+comments+relationships+likes"
+
 }
