@@ -13,9 +13,7 @@ extension Optional {
     /// Asigns an optional value to a variable only if the value is not nil.
 
     static func ??= (lhs: inout Optional, rhs: Optional) {
-        guard let rhs = rhs else {
-            return
-        }
+        guard let rhs = rhs else { return }
         lhs = rhs
     }
 
