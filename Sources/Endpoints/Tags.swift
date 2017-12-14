@@ -43,7 +43,7 @@ extension Instagram {
 
         parameters["max_tag_id"] ??= maxTagId
         parameters["min_tag_id"] ??= minTagId
-        parameters["count"] ??= count
+        parameters["count"] ??= String(count)
 
         request("/tags/\(tagName)/media/recent", parameters: parameters, success: success, failure: failure)
     }

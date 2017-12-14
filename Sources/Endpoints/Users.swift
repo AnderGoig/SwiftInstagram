@@ -43,7 +43,7 @@ extension Instagram {
 
         parameters["max_id"] ??= maxId
         parameters["min_id"] ??= minId
-        parameters["count"] ??= count
+        parameters["count"] ??= String(count)
 
         request("/users/\(userId)/media/recent", parameters: parameters, success: success, failure: failure)
     }
@@ -61,7 +61,7 @@ extension Instagram {
         var parameters = Parameters()
 
         parameters["max_like_id"] ??= maxLikeId
-        parameters["count"] ??= count
+        parameters["count"] ??= String(count)
 
         request("/users/self/media/liked", parameters: parameters, success: success, failure: failure)
     }
@@ -79,7 +79,7 @@ extension Instagram {
         var parameters = Parameters()
 
         parameters["q"] = query
-        parameters["count"] ??= count
+        parameters["count"] ??= String(count)
 
         request("/users/search", parameters: parameters, success: success, failure: failure)
     }

@@ -18,8 +18,6 @@ public class Instagram {
     public typealias SuccessHandler<T> = (_ data: T) -> Void
     public typealias FailureHandler = (_ error: InstagramError) -> Void
 
-    typealias Parameters = [String: Any]
-
     private enum API {
         static let authURL = "https://api.instagram.com/oauth/authorize"
         static let baseURL = "https://api.instagram.com/v1"
@@ -141,7 +139,9 @@ public class Instagram {
                                parameters: Parameters? = nil,
                                success: SuccessHandler<T>?,
                                failure: FailureHandler?) {
-        var urlRequest = URLRequest(url: buildURL(for: endpoint, withParameters: parameters))
+
+        let url = URL(string: API.baseURL + endpoint)!
+        var urlRequest = URLRequest(url: url.appendingQueryParameters((parameters ?? [:]) + ["access_token": retrieveAccessToken() ?? ""]))
         urlRequest.httpMethod = method.rawValue
 
         urlSession.dataTask(with: urlRequest) { (data, _, error) in
@@ -166,23 +166,6 @@ public class Instagram {
                 }
             }
         }.resume()
-    }
-
-    private func buildURL(for endpoint: String, withParameters parameters: Parameters? = nil) -> URL {
-        var urlComps = URLComponents(string: API.baseURL + endpoint)
-
-        var items = [URLQueryItem]()
-
-        // Every request needs the access token
-        items.append(URLQueryItem(name: "access_token", value: retrieveAccessToken() ?? ""))
-
-        parameters?.forEach { parameter in
-            items.append(URLQueryItem(name: parameter.key, value: "\(parameter.value)"))
-        }
-
-        urlComps!.queryItems = items
-
-        return urlComps!.url!
     }
 
 }

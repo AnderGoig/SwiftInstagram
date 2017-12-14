@@ -6,6 +6,8 @@
 //  Copyright © 2017 Ander Goig. All rights reserved.
 //
 
+import CoreLocation
+
 extension Instagram {
 
     // MARK: - Media Endpoints
@@ -39,26 +41,43 @@ extension Instagram {
 
     /// Search for recent media in a given area.
     ///
-    /// - parameter lat: Latitude of the center search coordinate. If used, `lng` is required.
-    /// - parameter lng: Longitude of the center search coordinate. If used, `lat` is required.
+    /// - parameter latitude: Latitude of the center search coordinate. If used, `longitude` is required.
+    /// - parameter longitude: Longitude of the center search coordinate. If used, `latitude` is required.
     /// - parameter distance: Default is 1km (1000m), max distance is 5km.
     /// - parameter success: The callback called after a correct retrieval.
     /// - parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - important: It requires *public_content* scope.
 
-    public func searchMedia(lat: Double? = nil,
-                            lng: Double? = nil,
+    public func searchMedia(latitude: Double? = nil,
+                            longitude: Double? = nil,
                             distance: Int? = nil,
                             success: SuccessHandler<[InstagramMedia]>?,
                             failure: FailureHandler?) {
         var parameters = Parameters()
 
-        parameters["lat"] ??= lat
-        parameters["lng"] ??= lng
-        parameters["distance"] ??= distance
+        parameters["lat"] ??= String(latitude)
+        parameters["lng"] ??= String(longitude)
+        parameters["distance"] ??= String(distance)
 
         request("/media/search", parameters: parameters, success: success, failure: failure)
+    }
+
+    /// Search for recent media in a given area.
+    ///
+    /// - parameter coordinates: Latitude and longitude of the center search coordinates.
+    /// - parameter distance: Default is 1km (1000m), max distance is 5km.
+    /// - parameter success: The callback called after a correct retrieval.
+    /// - parameter failure: The callback called after an incorrect retrieval.
+    ///
+    /// - important: It requires *public_content* scope.
+
+    public func searchMedia(coordinates: CLLocationCoordinate2D? = nil,
+                            distance: Int? = nil,
+                            success: SuccessHandler<[InstagramMedia]>?,
+                            failure: FailureHandler?) {
+
+        searchMedia(latitude: coordinates?.latitude, longitude: coordinates?.longitude, distance: distance, success: success, failure: failure)
     }
 
 }

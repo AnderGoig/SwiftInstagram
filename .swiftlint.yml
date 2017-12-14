@@ -5,7 +5,6 @@ opt_in_rules:
   - attributes
   - closure_end_indentation
   - closure_spacing
-  - conditional_returns_on_newline
   - contains_over_first_not_nil
   - explicit_init
   - fatal_error_message
