@@ -89,7 +89,6 @@ extension Instagram {
                                facebookPlacesId: String? = nil,
                                success: SuccessHandler<[InstagramLocation<String>]>?,
                                failure: FailureHandler?) {
-
         searchLocation(latitude: coordinates?.latitude, longitude: coordinates?.longitude,
                        distance: distance, facebookPlacesId: facebookPlacesId, success: success, failure: failure)
     }

@@ -76,7 +76,6 @@ extension Instagram {
                             distance: Int? = nil,
                             success: SuccessHandler<[InstagramMedia]>?,
                             failure: FailureHandler?) {
-
         searchMedia(latitude: coordinates?.latitude, longitude: coordinates?.longitude, distance: distance, success: success, failure: failure)
     }
 

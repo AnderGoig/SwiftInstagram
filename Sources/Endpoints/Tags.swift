@@ -57,11 +57,7 @@ extension Instagram {
     /// - important: It requires *public_content* scope.
 
     public func search(tag query: String, success: SuccessHandler<[InstagramTag]>?, failure: FailureHandler?) {
-        var parameters = Parameters()
-
-        parameters["q"] = query
-
-        request("/tags/search", parameters: parameters, success: success, failure: failure)
+        request("/tags/search", parameters: ["q": query], success: success, failure: failure)
     }
 
 }

@@ -74,11 +74,7 @@ extension Instagram {
                                         action: RelationshipAction,
                                         success: SuccessHandler<InstagramRelationship>?,
                                         failure: FailureHandler?) {
-        var parameters = Parameters()
-
-        parameters["action"] = action.rawValue
-
-        request("/users/\(userId)/relationship", method: .post, parameters: parameters, success: success, failure: failure)
+        request("/users/\(userId)/relationship", method: .post, parameters: ["action": action.rawValue], success: success, failure: failure)
     }
 
     /// Follows the target user.

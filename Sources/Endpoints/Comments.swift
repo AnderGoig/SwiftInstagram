@@ -37,11 +37,7 @@ extension Instagram {
     ///     - The comment cannot consist of all capital letters.
 
     public func createComment(onMedia mediaId: String, text: String, failure: FailureHandler?) {
-        var parameters = Parameters()
-
-        parameters["text"] = text
-
-        request("/media/\(mediaId)/comments", method: .post, parameters: parameters, success: { (_: InstagramResponse<Any?>) in return }, failure: failure)
+        request("/media/\(mediaId)/comments", method: .post, parameters: ["text": text], success: { (_: InstagramResponse<Any?>) in return }, failure: failure)
     }
 
     /// Remove a comment either on the authenticated user's media object or authored by the authenticated user.
