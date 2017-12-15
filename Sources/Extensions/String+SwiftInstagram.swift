@@ -8,14 +8,11 @@
 
 extension String {
 
-    init?(_ integer: Int?) {
-        guard let integer = integer else { return nil }
-        self.init(integer)
-    }
+    /// Creates a string from the given numeric.
 
-    init?(_ double: Double?) {
-        guard let double = double else { return nil }
-        self.init(double)
+    init?<T: Numeric>(_ numeric: T?) {
+        guard let numeric = numeric else { return nil }
+        self.init(numeric)
     }
 
 }
