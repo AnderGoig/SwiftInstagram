@@ -7,7 +7,6 @@
 //
 
 /// A type representing an error value that can be thrown.
-
 public struct InstagramError: Error {
 
     // MARK: - Properties
@@ -41,5 +40,4 @@ public struct InstagramError: Error {
             }
         }
     }
-
 }

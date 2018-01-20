@@ -17,7 +17,6 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - important: It requires *public_content* scope when getting information about a user other than yours.
-
     public func user(_ userId: String, success: SuccessHandler<InstagramUser>?, failure: FailureHandler?) {
         request("/users/\(userId)", success: success, failure: failure)
     }
@@ -32,7 +31,6 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - important: It requires *public_content* scope when getting recent media published by a user other than yours.
-
     public func recentMedia(fromUser userId: String,
                             maxId: String? = nil,
                             minId: String? = nil,
@@ -56,7 +54,6 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - important: It requires *public_content* scope.
-
     public func userLikedMedia(maxLikeId: String? = nil, count: Int? = nil, success: SuccessHandler<[InstagramMedia]>?, failure: FailureHandler?) {
         var parameters = Parameters()
 
@@ -74,7 +71,6 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - important: It requires *public_content* scope.
-
     public func search(user query: String, count: Int? = nil, success: SuccessHandler<[InstagramUser]>?, failure: FailureHandler?) {
         var parameters = Parameters()
 
@@ -83,5 +79,4 @@ extension Instagram {
 
         request("/users/search", parameters: parameters, success: success, failure: failure)
     }
-
 }

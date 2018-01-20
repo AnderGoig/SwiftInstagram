@@ -11,7 +11,6 @@ extension Instagram {
     // MARK: - Relationship Endpoints
 
     /// Relationship actions currently supported by Instagram.
-
     private enum RelationshipAction: String {
         case follow, unfollow, approve, ignore
     }
@@ -22,7 +21,6 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - important: It requires *follower_list* scope.
-
     public func userFollows(success: SuccessHandler<[InstagramUser]>?, failure: FailureHandler?) {
         request("/users/self/follows", success: success, failure: failure)
     }
@@ -33,7 +31,6 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - important: It requires *follower_list* scope.
-
     public func userFollowers(success: SuccessHandler<[InstagramUser]>?, failure: FailureHandler?) {
         request("/users/self/followed-by", success: success, failure: failure)
     }
@@ -44,7 +41,6 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - important: It requires *follower_list* scope.
-
     public func userRequestedBy(success: SuccessHandler<[InstagramUser]>?, failure: FailureHandler?) {
         request("/users/self/requested-by", success: success, failure: failure)
     }
@@ -56,7 +52,6 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - important: It requires *follower_list* scope.
-
     public func userRelationship(withUser userId: String, success: SuccessHandler<InstagramRelationship>?, failure: FailureHandler?) {
         request("/users/\(userId)/relationship", success: success, failure: failure)
     }
@@ -69,7 +64,6 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect modification.
     ///
     /// - important: It requires *relationships* scope.
-
     private func modifyUserRelationship(withUser userId: String,
                                         action: RelationshipAction,
                                         success: SuccessHandler<InstagramRelationship>?,
@@ -84,7 +78,6 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect follow.
     ///
     /// - important: It requires *relationships* scope.
-
     public func follow(user userId: String, success: SuccessHandler<InstagramRelationship>?, failure: FailureHandler?) {
         modifyUserRelationship(withUser: userId, action: .follow, success: success, failure: failure)
     }
@@ -96,7 +89,6 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect unfollow.
     ///
     /// - important: It requires *relationships* scope.
-
     public func unfollow(user userId: String, success: SuccessHandler<InstagramRelationship>?, failure: FailureHandler?) {
         modifyUserRelationship(withUser: userId, action: .unfollow, success: success, failure: failure)
     }
@@ -108,7 +100,6 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect approve.
     ///
     /// - important: It requires *relationships* scope.
-
     public func approveRequest(fromUser userId: String, success: SuccessHandler<InstagramRelationship>?, failure: FailureHandler?) {
         modifyUserRelationship(withUser: userId, action: .approve, success: success, failure: failure)
     }
@@ -120,9 +111,7 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect ignore.
     ///
     /// - important: It requires *relationships* scope.
-
     public func ignoreRequest(fromUser userId: String, success: SuccessHandler<InstagramRelationship>?, failure: FailureHandler?) {
         modifyUserRelationship(withUser: userId, action: .ignore, success: success, failure: failure)
     }
-
 }

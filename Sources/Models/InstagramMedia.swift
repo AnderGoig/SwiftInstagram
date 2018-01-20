@@ -9,7 +9,6 @@
 import CoreLocation
 
 /// The struct containing an Instagram media.
-
 public struct InstagramMedia: Decodable {
 
     // MARK: - Properties
@@ -198,5 +197,4 @@ public struct InstagramMedia: Decodable {
         carouselMedia = try container.decodeIfPresent([CarouselMedia].self, forKey: .carouselMedia)
         distance = try container.decodeIfPresent(Double.self, forKey: .distance)
     }
-
 }

@@ -19,7 +19,6 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - important: It requires *public_content* scope.
-
     public func location(_ locationId: String, success: SuccessHandler<InstagramLocation<String>>?, failure: FailureHandler?) {
         request("/locations/\(locationId)", success: success, failure: failure)
     }
@@ -33,7 +32,6 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - important: It requires *public_content* scope.
-
     public func recentMedia(forLocation locationId: String,
                             maxId: String? = nil,
                             minId: String? = nil,
@@ -57,7 +55,6 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - important: It requires *public_content* scope.
-
     public func searchLocation(latitude: Double? = nil,
                                longitude: Double? = nil,
                                distance: Int? = nil,
@@ -83,7 +80,6 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - important: It requires *public_content* scope.
-
     public func searchLocation(coordinates: CLLocationCoordinate2D? = nil,
                                distance: Int? = nil,
                                facebookPlacesId: String? = nil,
@@ -92,5 +88,4 @@ extension Instagram {
         searchLocation(latitude: coordinates?.latitude, longitude: coordinates?.longitude,
                        distance: distance, facebookPlacesId: facebookPlacesId, success: success, failure: failure)
     }
-
 }

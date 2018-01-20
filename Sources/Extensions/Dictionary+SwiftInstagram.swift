@@ -9,11 +9,9 @@
 extension Dictionary {
 
     /// Returns a dictionary constructed by adding both dictionaries.
-
     static func + (lhs: [Key: Value], rhs: [Key: Value]) -> [Key: Value] {
         var result = lhs
         rhs.forEach { result[$0] = $1 }
         return result
     }
-
 }

@@ -9,7 +9,6 @@
 import CoreLocation
 
 /// The struct containing an Instagram location.
-
 public struct InstagramLocation<T: Decodable>: Decodable {
 
     // MARK: - Properties
@@ -45,5 +44,4 @@ public struct InstagramLocation<T: Decodable>: Decodable {
         let longitude = try container.decode(Double.self, forKey: .longitude)
         coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
-
 }

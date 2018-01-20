@@ -19,7 +19,6 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - important: It requires *public_content* scope.
-
     public func media(withId id: String, success: SuccessHandler<InstagramMedia>?, failure: FailureHandler?) {
         request("/media/\(id)", success: success, failure: failure)
     }
@@ -34,7 +33,6 @@ extension Instagram {
     ///
     /// - note: A media object's shortcode can be found in its shortlink URL.
     ///   An example shortlink is http://instagram.com/p/tsxp1hhQTG/. Its corresponding shortcode is tsxp1hhQTG.
-
     public func media(withShortcode shortcode: String, success: SuccessHandler<InstagramMedia>?, failure: FailureHandler?) {
         request("/media/shortcode/\(shortcode)", success: success, failure: failure)
     }
@@ -48,7 +46,6 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - important: It requires *public_content* scope.
-
     public func searchMedia(latitude: Double? = nil,
                             longitude: Double? = nil,
                             distance: Int? = nil,
@@ -71,12 +68,10 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - important: It requires *public_content* scope.
-
     public func searchMedia(coordinates: CLLocationCoordinate2D? = nil,
                             distance: Int? = nil,
                             success: SuccessHandler<[InstagramMedia]>?,
                             failure: FailureHandler?) {
         searchMedia(latitude: coordinates?.latitude, longitude: coordinates?.longitude, distance: distance, success: success, failure: failure)
     }
-
 }

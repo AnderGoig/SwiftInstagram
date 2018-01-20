@@ -11,7 +11,6 @@ typealias Parameters = [String: String]
 extension URL {
 
     /// Returns a URL constructed by appending the given parameters to self.
-
     func appendingQueryParameters(_ parameters: Parameters) -> URL {
         var urlComponents = URLComponents(url: self, resolvingAgainstBaseURL: true)!
         var items = urlComponents.queryItems ?? []
@@ -21,7 +20,6 @@ extension URL {
     }
 
     /// Modifies the current URL by appending the given parameters.
-
     mutating func appendingQueryParameters(_ parameters: Parameters) {
         self = appendingQueryParameters(parameters)
     }

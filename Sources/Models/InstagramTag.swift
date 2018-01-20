@@ -7,7 +7,6 @@
 //
 
 /// The struct containing an Instagram tag.
-
 public struct InstagramTag: Decodable {
 
     // MARK: - Properties
@@ -24,5 +23,4 @@ public struct InstagramTag: Decodable {
         case name
         case mediaCount = "media_count"
     }
-
 }

@@ -17,7 +17,6 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - important: It requires *public_content* scope for media that does not belong to your own user.
-
     public func likes(inMedia mediaId: String, success: SuccessHandler<[InstagramUser]>?, failure: FailureHandler?) {
         request("/media/\(mediaId)/likes", success: success, failure: failure)
     }
@@ -28,7 +27,6 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect like.
     ///
     /// - important: It requires *likes* scope. Also, *public_content* scope is required for media that does not belong to your own user.
-
     public func like(media mediaId: String, failure: FailureHandler?) {
         request("/media/\(mediaId)/likes", method: .post, success: { (_: InstagramResponse<Any?>) in return }, failure: failure)
     }
@@ -39,9 +37,7 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect deletion.
     ///
     /// - important: It requires *likes* scope. Also, *public_content* scope is required for media that does not belong to your own user.
-
     public func unlike(media mediaId: String, failure: FailureHandler?) {
         request("/media/\(mediaId)/likes", method: .delete, success: { (_: InstagramResponse<Any?>) in return }, failure: failure)
     }
-
 }

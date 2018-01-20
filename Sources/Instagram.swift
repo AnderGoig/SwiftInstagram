@@ -9,7 +9,6 @@
 import UIKit
 
 /// A set of helper functions to make the Instagram API easier to use.
-
 public class Instagram {
 
     // MARK: - Types
@@ -63,7 +62,6 @@ public class Instagram {
     /// - parameter scopes: The scope of the access you are requesting from the user. Basic access by default.
     /// - parameter success: The callback called after a correct login.
     /// - parameter failure: The callback called after an incorrect login.
-
     public func login(from controller: UINavigationController,
                       withScopes scopes: [InstagramScope] = [.basic],
                       success: EmptySuccessHandler?,
@@ -106,14 +104,12 @@ public class Instagram {
     /// Ends the current session.
     ///
     /// - returns: True if the user was successfully logged out, false otherwise.
-
     @discardableResult
     public func logout() -> Bool {
         return deleteAccessToken()
     }
 
     /// Returns whether a user is currently authenticated or not.
-
     public var isAuthenticated: Bool {
         return retrieveAccessToken() != nil
     }
@@ -167,5 +163,4 @@ public class Instagram {
             }
         }.resume()
     }
-
 }

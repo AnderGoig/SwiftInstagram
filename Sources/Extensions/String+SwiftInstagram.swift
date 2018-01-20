@@ -9,10 +9,8 @@
 extension String {
 
     /// Creates a string from the given numeric.
-
     init?<T: Numeric>(_ numeric: T?) {
         guard let numeric = numeric else { return nil }
         self.init(numeric)
     }
-
 }

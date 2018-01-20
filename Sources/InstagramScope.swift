@@ -7,7 +7,6 @@
 //
 
 /// Login permissions ([scopes](https://www.instagram.com/developer/authorization/)) currently supported by Instagram.
-
 public enum InstagramScope: String {
 
     /// To read a user’s profile info and media.
@@ -30,5 +29,4 @@ public enum InstagramScope: String {
 
     /// To get all permissions.
     case all = "basic+public_content+follower_list+comments+relationships+likes"
-
 }

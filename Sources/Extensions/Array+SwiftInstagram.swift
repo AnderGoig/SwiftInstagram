@@ -9,9 +9,7 @@
 extension Array where Element == InstagramScope {
 
     /// Returns a String constructed by joining the array elements with the given `separator`.
-
     func joined(separator: String) -> String {
         return self.map({ "\($0.rawValue)" }).joined(separator: separator)
     }
-
 }

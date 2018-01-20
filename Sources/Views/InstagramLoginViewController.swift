@@ -155,5 +155,4 @@ extension InstagramLoginViewController: WKNavigationDelegate {
             decisionHandler(.allow)
         }
     }
-
 }
