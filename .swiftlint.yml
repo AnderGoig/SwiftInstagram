@@ -1,5 +1,6 @@
 disabled_rules:
   - file_length
+  - force_try
   - nesting
 opt_in_rules:
   - attributes

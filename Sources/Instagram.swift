@@ -66,6 +66,7 @@ public class Instagram {
                       withScopes scopes: [InstagramScope] = [.basic],
                       success: EmptySuccessHandler?,
                       failure: FailureHandler?) {
+
         guard let authURL = buildAuthURL(scopes: scopes) else {
             failure?(InstagramError(kind: .missingClient, message: "Error while reading your Info.plist file settings."))
             return
@@ -85,9 +86,7 @@ public class Instagram {
     }
 
     private func buildAuthURL(scopes: [InstagramScope]) -> URL? {
-        guard let client = client else {
-            return nil
-        }
+        guard let client = client else { return nil }
 
         var components = URLComponents(string: API.authURL)!
 
@@ -136,9 +135,17 @@ public class Instagram {
                                success: SuccessHandler<T>?,
                                failure: FailureHandler?) {
 
-        let url = URL(string: API.baseURL + endpoint)!
-        var urlRequest = URLRequest(url: url.appendingQueryParameters((parameters ?? [:]) + ["access_token": retrieveAccessToken() ?? ""]))
+        let url = URL(string: API.baseURL + endpoint)!.appendingQueryParameters(["access_token": retrieveAccessToken() ?? ""])
+
+        var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.rawValue
+
+        switch method {
+        case .get, .delete:
+            urlRequest.url?.appendQueryParameters(parameters ?? [:])
+        case .post:
+            urlRequest.httpBody?.appendQueryParameters(parameters ?? [:])
+        }
 
         urlSession.dataTask(with: urlRequest) { (data, _, error) in
             if let data = data {

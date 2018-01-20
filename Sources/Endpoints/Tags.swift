@@ -37,6 +37,7 @@ extension Instagram {
                             count: Int? = nil,
                             success: SuccessHandler<[InstagramMedia]>?,
                             failure: FailureHandler?) {
+
         var parameters = Parameters()
 
         parameters["max_tag_id"] ??= maxTagId

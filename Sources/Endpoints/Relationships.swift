@@ -68,6 +68,7 @@ extension Instagram {
                                         action: RelationshipAction,
                                         success: SuccessHandler<InstagramRelationship>?,
                                         failure: FailureHandler?) {
+
         request("/users/\(userId)/relationship", method: .post, parameters: ["action": action.rawValue], success: success, failure: failure)
     }
 

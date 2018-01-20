@@ -37,6 +37,7 @@ extension Instagram {
                             minId: String? = nil,
                             success: SuccessHandler<[InstagramMedia]>?,
                             failure: FailureHandler?) {
+
         var parameters = Parameters()
 
         parameters["max_id"] ??= maxId
@@ -61,6 +62,7 @@ extension Instagram {
                                facebookPlacesId: String? = nil,
                                success: SuccessHandler<[InstagramLocation<String>]>?,
                                failure: FailureHandler?) {
+
         var parameters = Parameters()
 
         parameters["lat"] ??= String(latitude)
@@ -85,6 +87,7 @@ extension Instagram {
                                facebookPlacesId: String? = nil,
                                success: SuccessHandler<[InstagramLocation<String>]>?,
                                failure: FailureHandler?) {
+
         searchLocation(latitude: coordinates?.latitude, longitude: coordinates?.longitude,
                        distance: distance, facebookPlacesId: facebookPlacesId, success: success, failure: failure)
     }

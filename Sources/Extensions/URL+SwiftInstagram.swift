@@ -20,7 +20,7 @@ extension URL {
     }
 
     /// Modifies the current URL by appending the given parameters.
-    mutating func appendingQueryParameters(_ parameters: Parameters) {
+    mutating func appendQueryParameters(_ parameters: Parameters) {
         self = appendingQueryParameters(parameters)
     }
 }
