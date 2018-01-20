@@ -22,7 +22,7 @@ extension Instagram {
     ///
     /// - important: It requires *follower_list* scope.
     public func userFollows(success: SuccessHandler<[InstagramUser]>?, failure: FailureHandler?) {
-        request("/users/self/follows", success: success, failure: failure)
+        request("/users/self/follows", success: { data in success?(data!) }, failure: failure)
     }
 
     /// Get the list of users this user is followed by.
@@ -32,7 +32,7 @@ extension Instagram {
     ///
     /// - important: It requires *follower_list* scope.
     public func userFollowers(success: SuccessHandler<[InstagramUser]>?, failure: FailureHandler?) {
-        request("/users/self/followed-by", success: success, failure: failure)
+        request("/users/self/followed-by", success: { data in success?(data!) }, failure: failure)
     }
 
     /// List the users who have requested this user's permission to follow.
@@ -42,7 +42,7 @@ extension Instagram {
     ///
     /// - important: It requires *follower_list* scope.
     public func userRequestedBy(success: SuccessHandler<[InstagramUser]>?, failure: FailureHandler?) {
-        request("/users/self/requested-by", success: success, failure: failure)
+        request("/users/self/requested-by", success: { data in success?(data!) }, failure: failure)
     }
 
     /// Get information about a relationship to another user.
@@ -53,7 +53,7 @@ extension Instagram {
     ///
     /// - important: It requires *follower_list* scope.
     public func userRelationship(withUser userId: String, success: SuccessHandler<InstagramRelationship>?, failure: FailureHandler?) {
-        request("/users/\(userId)/relationship", success: success, failure: failure)
+        request("/users/\(userId)/relationship", success: { data in success?(data!) }, failure: failure)
     }
 
     /// Modify the relationship between the current user and the target user.
@@ -69,7 +69,7 @@ extension Instagram {
                                         success: SuccessHandler<InstagramRelationship>?,
                                         failure: FailureHandler?) {
 
-        request("/users/\(userId)/relationship", method: .post, parameters: ["action": action.rawValue], success: success, failure: failure)
+        request("/users/\(userId)/relationship", method: .post, parameters: ["action": action.rawValue], success: { data in success?(data!) }, failure: failure)
     }
 
     /// Follows the target user.

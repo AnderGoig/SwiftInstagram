@@ -7,37 +7,10 @@
 //
 
 /// A type representing an error value that can be thrown.
-public struct InstagramError: Error {
-
-    // MARK: - Properties
-
-    let kind: ErrorKind
-    let message: String
-
-    /// Retrieve the localized description for this error.
-    public var localizedDescription: String {
-        return "[\(kind.description)] - \(message)"
-    }
-
-    // MARK: - Types
-
-    enum ErrorKind: CustomStringConvertible {
-        case invalidRequest
-        case jsonParseError
-        case keychainError(code: OSStatus)
-        case missingClient
-
-        var description: String {
-            switch self {
-            case .invalidRequest:
-                return "invalidRequest"
-            case .jsonParseError:
-                return "jsonParseError"
-            case .keychainError(let code):
-                return "keychainError(code: \(code)"
-            case .missingClient:
-                return "missingClient"
-            }
-        }
-    }
+public enum InstagramError: Error {
+    case badRequest
+    case decoding(message: String)
+    case invalidRequest(message: String)
+    case keychainError(code: OSStatus)
+    case missingClientIdOrRedirectURI
 }

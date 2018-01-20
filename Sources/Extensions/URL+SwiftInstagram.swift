@@ -6,7 +6,7 @@
 //  Copyright © 2017 Ander Goig. All rights reserved.
 //
 
-typealias Parameters = [String: String]
+typealias Parameters = [String: Any]
 
 extension URL {
 
@@ -14,7 +14,7 @@ extension URL {
     func appendingQueryParameters(_ parameters: Parameters) -> URL {
         var urlComponents = URLComponents(url: self, resolvingAgainstBaseURL: true)!
         var items = urlComponents.queryItems ?? []
-        items += parameters.map { URLQueryItem(name: $0, value: $1) }
+        items += parameters.map { URLQueryItem(name: $0, value: "\($1)") }
         urlComponents.queryItems = items
         return urlComponents.url!
     }

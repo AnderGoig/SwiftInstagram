@@ -34,7 +34,6 @@
 		778CCC0B1F9CC73F0011399B /* Array+SwiftInstagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778CCC0A1F9CC73F0011399B /* Array+SwiftInstagram.swift */; };
 		77B8E4181F869EBE0035C229 /* InstagramScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B8E4171F869EBE0035C229 /* InstagramScope.swift */; };
 		77BCF62C1FE2B3AA0072D47A /* URL+SwiftInstagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BCF62B1FE2B3AA0072D47A /* URL+SwiftInstagram.swift */; };
-		77BCF6401FE2CE9D0072D47A /* String+SwiftInstagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BCF63F1FE2CE9D0072D47A /* String+SwiftInstagram.swift */; };
 		77BCF6461FE2D8930072D47A /* Dictionary+SwiftInstagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BCF6451FE2D8930072D47A /* Dictionary+SwiftInstagram.swift */; };
 		77DF0B6C1F8FEB6600BE7F66 /* Optional+SwiftInstagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DF0B6B1F8FEB6600BE7F66 /* Optional+SwiftInstagram.swift */; };
 /* End PBXBuildFile section */
@@ -234,7 +233,6 @@
 		778CCC0A1F9CC73F0011399B /* Array+SwiftInstagram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SwiftInstagram.swift"; sourceTree = "<group>"; };
 		77B8E4171F869EBE0035C229 /* InstagramScope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramScope.swift; sourceTree = "<group>"; };
 		77BCF62B1FE2B3AA0072D47A /* URL+SwiftInstagram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+SwiftInstagram.swift"; sourceTree = "<group>"; };
-		77BCF63F1FE2CE9D0072D47A /* String+SwiftInstagram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+SwiftInstagram.swift"; sourceTree = "<group>"; };
 		77BCF6451FE2D8930072D47A /* Dictionary+SwiftInstagram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+SwiftInstagram.swift"; sourceTree = "<group>"; };
 		77DF0B6B1F8FEB6600BE7F66 /* Optional+SwiftInstagram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+SwiftInstagram.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -465,11 +463,10 @@
 			isa = PBXGroup;
 			children = (
 				778CCC0A1F9CC73F0011399B /* Array+SwiftInstagram.swift */,
+				777D90D52013A7D100309E5D /* Data+SwiftInstagram.swift */,
 				77BCF6451FE2D8930072D47A /* Dictionary+SwiftInstagram.swift */,
 				77DF0B6B1F8FEB6600BE7F66 /* Optional+SwiftInstagram.swift */,
-				77BCF63F1FE2CE9D0072D47A /* String+SwiftInstagram.swift */,
 				77BCF62B1FE2B3AA0072D47A /* URL+SwiftInstagram.swift */,
-				777D90D52013A7D100309E5D /* Data+SwiftInstagram.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -775,7 +772,6 @@
 				778AF5F21F6E7F35005AC284 /* InstagramUser.swift in Sources */,
 				778AB36E1FA603D300728064 /* Users.swift in Sources */,
 				778CCC0B1F9CC73F0011399B /* Array+SwiftInstagram.swift in Sources */,
-				77BCF6401FE2CE9D0072D47A /* String+SwiftInstagram.swift in Sources */,
 				77B8E4181F869EBE0035C229 /* InstagramScope.swift in Sources */,
 				778744581F772D2700FDE161 /* KeychainSwiftDistrib.swift in Sources */,
 				778AB3761FA606F500728064 /* Likes.swift in Sources */,

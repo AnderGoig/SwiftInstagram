@@ -123,6 +123,7 @@ extension InstagramLoginViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView,
                  decidePolicyFor navigationAction: WKNavigationAction,
                  decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+
         let urlString = navigationAction.request.url!.absoluteString
 
         guard let range = urlString.range(of: "#access_token=") else {
@@ -140,6 +141,7 @@ extension InstagramLoginViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView,
                  decidePolicyFor navigationResponse: WKNavigationResponse,
                  decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+
         guard let httpResponse = navigationResponse.response as? HTTPURLResponse else {
             decisionHandler(.allow)
             return
@@ -149,7 +151,7 @@ extension InstagramLoginViewController: WKNavigationDelegate {
         case 400:
             decisionHandler(.cancel)
             DispatchQueue.main.async {
-                self.failure?(InstagramError(kind: .invalidRequest, message: "Invalid request"))
+                self.failure?(InstagramError.badRequest)
             }
         default:
             decisionHandler(.allow)

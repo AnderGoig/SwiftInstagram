@@ -20,7 +20,7 @@ extension Instagram {
     ///
     /// - important: It requires *public_content* scope.
     public func location(_ locationId: String, success: SuccessHandler<InstagramLocation<String>>?, failure: FailureHandler?) {
-        request("/locations/\(locationId)", success: success, failure: failure)
+        request("/locations/\(locationId)", success: { data in success?(data!) }, failure: failure)
     }
 
     /// Get a list of recent media objects from a given location.
@@ -43,7 +43,7 @@ extension Instagram {
         parameters["max_id"] ??= maxId
         parameters["min_id"] ??= minId
 
-        request("/locations/\(locationId)/media/recent", parameters: parameters, success: success, failure: failure)
+        request("/locations/\(locationId)/media/recent", parameters: parameters, success: { data in success?(data!) }, failure: failure)
     }
 
     /// Search for a location by geographic coordinate.
@@ -65,12 +65,12 @@ extension Instagram {
 
         var parameters = Parameters()
 
-        parameters["lat"] ??= String(latitude)
-        parameters["lng"] ??= String(longitude)
-        parameters["distance"] ??= String(distance)
+        parameters["lat"] ??= latitude
+        parameters["lng"] ??= longitude
+        parameters["distance"] ??= distance
         parameters["facebook_places_id"] ??= facebookPlacesId
 
-        request("/locations/search", parameters: parameters, success: success, failure: failure)
+        request("/locations/search", parameters: parameters, success: { data in success?(data!) }, failure: failure)
     }
 
     /// Search for a location by geographic coordinate.

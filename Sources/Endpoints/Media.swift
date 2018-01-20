@@ -20,7 +20,7 @@ extension Instagram {
     ///
     /// - important: It requires *public_content* scope.
     public func media(withId id: String, success: SuccessHandler<InstagramMedia>?, failure: FailureHandler?) {
-        request("/media/\(id)", success: success, failure: failure)
+        request("/media/\(id)", success: { data in success?(data!) }, failure: failure)
     }
 
     /// Get information about a media object.
@@ -34,7 +34,7 @@ extension Instagram {
     /// - note: A media object's shortcode can be found in its shortlink URL.
     ///   An example shortlink is http://instagram.com/p/tsxp1hhQTG/. Its corresponding shortcode is tsxp1hhQTG.
     public func media(withShortcode shortcode: String, success: SuccessHandler<InstagramMedia>?, failure: FailureHandler?) {
-        request("/media/shortcode/\(shortcode)", success: success, failure: failure)
+        request("/media/shortcode/\(shortcode)", success: { data in success?(data!) }, failure: failure)
     }
 
     /// Search for recent media in a given area.
@@ -54,11 +54,11 @@ extension Instagram {
 
         var parameters = Parameters()
 
-        parameters["lat"] ??= String(latitude)
-        parameters["lng"] ??= String(longitude)
-        parameters["distance"] ??= String(distance)
+        parameters["lat"] ??= latitude
+        parameters["lng"] ??= longitude
+        parameters["distance"] ??= distance
 
-        request("/media/search", parameters: parameters, success: success, failure: failure)
+        request("/media/search", parameters: parameters, success: { data in success?(data!) }, failure: failure)
     }
 
     /// Search for recent media in a given area.

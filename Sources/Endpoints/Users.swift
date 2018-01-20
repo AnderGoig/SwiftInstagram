@@ -18,7 +18,7 @@ extension Instagram {
     ///
     /// - important: It requires *public_content* scope when getting information about a user other than yours.
     public func user(_ userId: String, success: SuccessHandler<InstagramUser>?, failure: FailureHandler?) {
-        request("/users/\(userId)", success: success, failure: failure)
+        request("/users/\(userId)", success: { data in success?(data!) }, failure: failure)
     }
 
     /// Get the most recent media published by a user.
@@ -42,9 +42,9 @@ extension Instagram {
 
         parameters["max_id"] ??= maxId
         parameters["min_id"] ??= minId
-        parameters["count"] ??= String(count)
+        parameters["count"] ??= count
 
-        request("/users/\(userId)/media/recent", parameters: parameters, success: success, failure: failure)
+        request("/users/\(userId)/media/recent", parameters: parameters, success: { data in success?(data!) }, failure: failure)
     }
 
     /// Get the list of recent media liked by the currently authenticated user.
@@ -59,9 +59,9 @@ extension Instagram {
         var parameters = Parameters()
 
         parameters["max_like_id"] ??= maxLikeId
-        parameters["count"] ??= String(count)
+        parameters["count"] ??= count
 
-        request("/users/self/media/liked", parameters: parameters, success: success, failure: failure)
+        request("/users/self/media/liked", parameters: parameters, success: { data in success?(data!) }, failure: failure)
     }
 
     /// Get a list of users matching the query.
@@ -76,8 +76,8 @@ extension Instagram {
         var parameters = Parameters()
 
         parameters["q"] = query
-        parameters["count"] ??= String(count)
+        parameters["count"] ??= count
 
-        request("/users/search", parameters: parameters, success: success, failure: failure)
+        request("/users/search", parameters: parameters, success: { data in success?(data!) }, failure: failure)
     }
 }

@@ -15,7 +15,7 @@ public class Instagram {
 
     public typealias EmptySuccessHandler = () -> Void
     public typealias SuccessHandler<T> = (_ data: T) -> Void
-    public typealias FailureHandler = (_ error: InstagramError) -> Void
+    public typealias FailureHandler = (_ error: Error) -> Void
 
     private enum API {
         static let authURL = "https://api.instagram.com/oauth/authorize"
@@ -27,9 +27,7 @@ public class Instagram {
     }
 
     enum HTTPMethod: String {
-        case get = "GET"
-        case post = "POST"
-        case delete = "DELETE"
+        case get = "GET", post = "POST", delete = "DELETE"
     }
 
     // MARK: - Properties
@@ -68,13 +66,13 @@ public class Instagram {
                       failure: FailureHandler?) {
 
         guard let authURL = buildAuthURL(scopes: scopes) else {
-            failure?(InstagramError(kind: .missingClient, message: "Error while reading your Info.plist file settings."))
+            failure?(InstagramError.missingClientIdOrRedirectURI)
             return
         }
 
         let vc = InstagramLoginViewController(authURL: authURL, success: { accessToken in
             guard self.storeAccessToken(accessToken) else {
-                failure?(InstagramError(kind: .keychainError(code: self.keychain.lastResultCode), message: "Error storing access token into keychain."))
+                failure?(InstagramError.keychainError(code: self.keychain.lastResultCode))
                 return
             }
 
@@ -131,10 +129,44 @@ public class Instagram {
 
     func request<T: Decodable>(_ endpoint: String,
                                method: HTTPMethod = .get,
-                               parameters: Parameters? = nil,
-                               success: SuccessHandler<T>?,
+                               parameters: Parameters = [:],
+                               success: ((_ data: T?) -> Void)?,
                                failure: FailureHandler?) {
 
+        let urlRequest = buildURLRequest(endpoint, method: method, parameters: parameters)
+
+        urlSession.dataTask(with: urlRequest) { (data, _, error) in
+            if let data = data {
+                DispatchQueue.global(qos: .utility).async {
+                    do {
+                        let object = try JSONDecoder().decode(InstagramResponse<T>.self, from: data)
+
+                        if let data = object.data {
+                            DispatchQueue.main.async {
+                                success?(data)
+                            }
+                        } else if let message = object.meta.errorMessage {
+                            DispatchQueue.main.async {
+                                failure?(InstagramError.invalidRequest(message: message))
+                            }
+                        } else {
+                            DispatchQueue.main.async {
+                                success?(nil)
+                            }
+                        }
+                    } catch let error {
+                        DispatchQueue.main.async {
+                            failure?(InstagramError.decoding(message: error.localizedDescription))
+                        }
+                    }
+                }
+            } else if let error = error {
+                failure?(error)
+            }
+        }.resume()
+    }
+
+    private func buildURLRequest(_ endpoint: String, method: HTTPMethod, parameters: Parameters) -> URLRequest {
         let url = URL(string: API.baseURL + endpoint)!.appendingQueryParameters(["access_token": retrieveAccessToken() ?? ""])
 
         var urlRequest = URLRequest(url: url)
@@ -142,32 +174,11 @@ public class Instagram {
 
         switch method {
         case .get, .delete:
-            urlRequest.url?.appendQueryParameters(parameters ?? [:])
+            urlRequest.url?.appendQueryParameters(parameters)
         case .post:
-            urlRequest.httpBody?.appendQueryParameters(parameters ?? [:])
+            urlRequest.httpBody = Data(parameters: parameters)
         }
 
-        urlSession.dataTask(with: urlRequest) { (data, _, error) in
-            if let data = data {
-                DispatchQueue.global(qos: .utility).async {
-                    do {
-                        let object = try JSONDecoder().decode(InstagramResponse<T>.self, from: data)
-                        if let errorMessage = object.meta.errorMessage {
-                            DispatchQueue.main.async {
-                                failure?(InstagramError(kind: .invalidRequest, message: errorMessage))
-                            }
-                        } else {
-                            DispatchQueue.main.async {
-                                success?(object.data!)
-                            }
-                        }
-                    } catch {
-                        DispatchQueue.main.async {
-                            failure?(InstagramError(kind: .jsonParseError, message: error.localizedDescription))
-                        }
-                    }
-                }
-            }
-        }.resume()
+        return urlRequest
     }
 }

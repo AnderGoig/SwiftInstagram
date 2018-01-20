@@ -38,3 +38,5 @@ struct InstagramResponse<T: Decodable>: Decodable {
         }
     }
 }
+
+public struct InstagramEmptyResponse: Decodable { }

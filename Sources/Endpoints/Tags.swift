@@ -18,7 +18,7 @@ extension Instagram {
     ///
     /// - important: It requires *public_content* scope.
     public func tag(_ tagName: String, success: SuccessHandler<InstagramTag>?, failure: FailureHandler?) {
-        request("/tags/\(tagName)", success: success, failure: failure)
+        request("/tags/\(tagName)", success: { data in success?(data!) }, failure: failure)
     }
 
     /// Get a list of recently tagged media.
@@ -42,9 +42,9 @@ extension Instagram {
 
         parameters["max_tag_id"] ??= maxTagId
         parameters["min_tag_id"] ??= minTagId
-        parameters["count"] ??= String(count)
+        parameters["count"] ??= count
 
-        request("/tags/\(tagName)/media/recent", parameters: parameters, success: success, failure: failure)
+        request("/tags/\(tagName)/media/recent", parameters: parameters, success: { data in success?(data!) }, failure: failure)
     }
 
     /// Search for tags by name.
@@ -55,6 +55,6 @@ extension Instagram {
     ///
     /// - important: It requires *public_content* scope.
     public func search(tag query: String, success: SuccessHandler<[InstagramTag]>?, failure: FailureHandler?) {
-        request("/tags/search", parameters: ["q": query], success: success, failure: failure)
+        request("/tags/search", parameters: ["q": query], success: { data in success?(data!) }, failure: failure)
     }
 }
