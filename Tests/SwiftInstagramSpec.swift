@@ -19,7 +19,5 @@ class SwiftInstagramSpec: QuickSpec {
                 expect("SwiftInstagram") == "SwiftInstagram"
             }
         }
-
     }
-
 }
