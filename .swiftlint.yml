@@ -21,7 +21,6 @@ opt_in_rules:
   - prohibited_super_call
   - redundant_nil_coalescing
   - statement_position
-  - switch_case_on_newline
   - unneeded_parentheses_in_closure_argument
   - vertical_parameter_alignment
   - vertical_parameter_alignment_on_call
