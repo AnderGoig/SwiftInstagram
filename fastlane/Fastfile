@@ -11,11 +11,14 @@
 
 default_platform(:ios)
 
+before_each do
+  ensure_git_status_clean
+end
+
 platform :ios do
 
   desc "Bump version number"
   lane :bump_version do |options|
-    ensure_git_status_clean
     version = options[:version_number]
     increment_version_number(
       version_number: version,
@@ -25,9 +28,27 @@ platform :ios do
       path: "SwiftInstagram.podspec",
       version_number: version
     )
-    git_add
     git_commit(
-        message: "Version bump to #{version}"
+      path: ".",
+      message: "Version bump to #{version}"
+    )
+  end
+
+  desc "Update docs"
+  lane :update_docs do
+    jazzy(
+      config: ".jazzy.yaml"
+    )
+    git_commit(
+      path: ".",
+      message: "Update docs"
+    )
+  end
+
+  desc "Deploy pod"
+  lane :deploy_pod do
+    pod_push(
+      path: "SwiftInstagram.podspec"
     )
   end
 
