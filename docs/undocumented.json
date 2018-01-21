@@ -1,61 +1,6 @@
 {
   "warnings": [
-    {
-      "file": "/Users/AnderGoig/Desarrollo/Xcode/SwiftInstagram/Sources/Instagram.swift",
-      "line": 113,
-      "symbol": "Instagram.storeAccessToken(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/AnderGoig/Desarrollo/Xcode/SwiftInstagram/Sources/Instagram.swift",
-      "line": 117,
-      "symbol": "Instagram.retrieveAccessToken()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/AnderGoig/Desarrollo/Xcode/SwiftInstagram/Sources/Models/InstagramError.swift",
-      "line": 11,
-      "symbol": "InstagramError.badRequest",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/AnderGoig/Desarrollo/Xcode/SwiftInstagram/Sources/Models/InstagramError.swift",
-      "line": 12,
-      "symbol": "InstagramError.decoding",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/AnderGoig/Desarrollo/Xcode/SwiftInstagram/Sources/Models/InstagramError.swift",
-      "line": 13,
-      "symbol": "InstagramError.invalidRequest",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/AnderGoig/Desarrollo/Xcode/SwiftInstagram/Sources/Models/InstagramError.swift",
-      "line": 14,
-      "symbol": "InstagramError.keychainError",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/AnderGoig/Desarrollo/Xcode/SwiftInstagram/Sources/Models/InstagramError.swift",
-      "line": 15,
-      "symbol": "InstagramError.missingClientIdOrRedirectURI",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/AnderGoig/Desarrollo/Xcode/SwiftInstagram/Sources/Models/InstagramResponse.swift",
-      "line": 42,
-      "symbol": "InstagramEmptyResponse",
-      "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    }
+
   ],
   "source_directory": "/Users/AnderGoig/Desarrollo/Xcode/SwiftInstagram"
 }

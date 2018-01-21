@@ -39,4 +39,5 @@ struct InstagramResponse<T: Decodable>: Decodable {
     }
 }
 
+/// Dummy struct used for empty Instagram API data responses
 public struct InstagramEmptyResponse: Decodable { }

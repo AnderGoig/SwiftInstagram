@@ -110,10 +110,12 @@ public class Instagram {
 
     // MARK: - Access Token
 
+    /// Store your own authenticated access token so you don't have to use the included login authentication.
     public func storeAccessToken(_ accessToken: String) -> Bool {
         return keychain.set(accessToken, forKey: Keychain.accessTokenKey)
     }
 
+    /// Returns the current access token.
     public func retrieveAccessToken() -> String? {
         return keychain.get(Keychain.accessTokenKey)
     }
