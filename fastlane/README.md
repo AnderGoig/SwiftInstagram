@@ -21,6 +21,16 @@ or alternatively using `brew cask install fastlane`
 fastlane ios bump_version
 ```
 Bump version number
+### ios update_docs
+```
+fastlane ios update_docs
+```
+Update docs
+### ios deploy_pod
+```
+fastlane ios deploy_pod
+```
+Deploy pod
 
 ----
 
