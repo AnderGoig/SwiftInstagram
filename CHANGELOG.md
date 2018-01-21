@@ -5,6 +5,7 @@
 ## [1.1.0] (2017-01-21)
 [Full Changelog](https://github.com/AnderGoig/SwiftInstagram/compare/v1.0.6...v1.1.0)
 ### Added
+- Success handler on `createComment()` `deleteComment()` `like(media: ...)` and `unlike(media: ...)`
 - Search media and location by latitude and longitude:
     - `func searchMedia(latitude: Double? = nil, longitude: Double? = nil, ...)`
     - `func searchLocation(latitude: Double? = nil, longitude: Double? = nil, ...)`
