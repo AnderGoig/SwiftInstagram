@@ -65,10 +65,9 @@ public class Instagram {
                       success: EmptySuccessHandler?,
                       failure: FailureHandler?) {
 
-        guard let authURL = buildAuthURL(scopes: scopes) else {
-            failure?(InstagramError.missingClientIdOrRedirectURI)
-            return
-        }
+        guard client != nil else { failure?(InstagramError.missingClientIdOrRedirectURI); return }
+
+        let authURL = buildAuthURL(scopes: scopes)
 
         let vc = InstagramLoginViewController(authURL: authURL, success: { accessToken in
             guard self.storeAccessToken(accessToken) else {
@@ -83,19 +82,17 @@ public class Instagram {
         controller.show(vc, sender: nil)
     }
 
-    private func buildAuthURL(scopes: [InstagramScope]) -> URL? {
-        guard let client = client else { return nil }
-
+    private func buildAuthURL(scopes: [InstagramScope]) -> URL {
         var components = URLComponents(string: API.authURL)!
 
         components.queryItems = [
-            URLQueryItem(name: "client_id", value: client.id),
-            URLQueryItem(name: "redirect_uri", value: client.redirectURI),
+            URLQueryItem(name: "client_id", value: client!.id),
+            URLQueryItem(name: "redirect_uri", value: client!.redirectURI),
             URLQueryItem(name: "response_type", value: "token"),
             URLQueryItem(name: "scope", value: scopes.joined(separator: "+"))
         ]
 
-        return components.url
+        return components.url!
     }
 
     /// Ends the current session.
