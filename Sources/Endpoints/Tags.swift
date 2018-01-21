@@ -17,9 +17,8 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - important: It requires *public_content* scope.
-
     public func tag(_ tagName: String, success: SuccessHandler<InstagramTag>?, failure: FailureHandler?) {
-        request("/tags/\(tagName)", success: success, failure: failure)
+        request("/tags/\(tagName)", success: { data in success?(data!) }, failure: failure)
     }
 
     /// Get a list of recently tagged media.
@@ -32,20 +31,20 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - important: It requires *public_content* scope.
-
     public func recentMedia(withTag tagName: String,
                             maxTagId: String? = nil,
                             minTagId: String? = nil,
                             count: Int? = nil,
                             success: SuccessHandler<[InstagramMedia]>?,
                             failure: FailureHandler?) {
+
         var parameters = Parameters()
 
         parameters["max_tag_id"] ??= maxTagId
         parameters["min_tag_id"] ??= minTagId
         parameters["count"] ??= count
 
-        request("/tags/\(tagName)/media/recent", parameters: parameters, success: success, failure: failure)
+        request("/tags/\(tagName)/media/recent", parameters: parameters, success: { data in success?(data!) }, failure: failure)
     }
 
     /// Search for tags by name.
@@ -55,13 +54,7 @@ extension Instagram {
     /// - parameter failure: The callback called after an incorrect retrieval.
     ///
     /// - important: It requires *public_content* scope.
-
     public func search(tag query: String, success: SuccessHandler<[InstagramTag]>?, failure: FailureHandler?) {
-        var parameters = Parameters()
-
-        parameters["q"] = query
-
-        request("/tags/search", parameters: parameters, success: success, failure: failure)
+        request("/tags/search", parameters: ["q": query], success: { data in success?(data!) }, failure: failure)
     }
-
 }

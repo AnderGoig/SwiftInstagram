@@ -1,12 +1,14 @@
 disabled_rules:
   - file_length
+  - force_try
   - nesting
 opt_in_rules:
+  - array_init
   - attributes
   - closure_end_indentation
   - closure_spacing
-  - conditional_returns_on_newline
   - contains_over_first_not_nil
+  - empty_count
   - explicit_init
   - fatal_error_message
   - file_header
@@ -14,18 +16,20 @@ opt_in_rules:
   - implicit_return
   - joined_default_parameter
   - let_var_whitespace
+  - literal_expression_end_indentation
   - number_separator
   - operator_usage_whitespace
   - overridden_super_call
   - pattern_matching_keywords
+  - private_action
   - private_outlet
   - prohibited_super_call
   - redundant_nil_coalescing
-  - statement_position
-  - switch_case_on_newline
+  - sorted_first_last
+  - trailing_closure
   - unneeded_parentheses_in_closure_argument
-  - vertical_parameter_alignment
   - vertical_parameter_alignment_on_call
+  - yoda_condition
 included:
   - Sources
   - Tests

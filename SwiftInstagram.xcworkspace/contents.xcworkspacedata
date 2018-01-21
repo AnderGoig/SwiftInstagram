@@ -5,9 +5,6 @@
       location = "group:SwiftInstagram.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:scripts">
-   </FileRef>
-   <FileRef
       location = "group:Cartfile">
    </FileRef>
    <FileRef

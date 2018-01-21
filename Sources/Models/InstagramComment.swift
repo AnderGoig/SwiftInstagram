@@ -7,7 +7,6 @@
 //
 
 /// The struct containing an Instagram comment.
-
 public struct InstagramComment: Decodable {
 
     // MARK: - Properties
@@ -42,5 +41,4 @@ public struct InstagramComment: Decodable {
         let createdTime = try container.decode(String.self, forKey: .createdTime)
         createdDate = Date(timeIntervalSince1970: Double(createdTime)!)
     }
-
 }

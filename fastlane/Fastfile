@@ -1,0 +1,55 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+before_each do
+  ensure_git_status_clean
+end
+
+platform :ios do
+
+  desc "Bump version number"
+  lane :bump_version do |options|
+    version = options[:version_number]
+    increment_version_number(
+      version_number: version,
+      xcodeproj: "SwiftInstagram.xcodeproj"
+    )
+    version_bump_podspec(
+      path: "SwiftInstagram.podspec",
+      version_number: version
+    )
+    git_commit(
+      path: ".",
+      message: "Version bump to #{version}"
+    )
+  end
+
+  desc "Update docs"
+  lane :update_docs do
+    jazzy(
+      config: ".jazzy.yaml"
+    )
+    git_commit(
+      path: ".",
+      message: "Update docs"
+    )
+  end
+
+  desc "Deploy pod"
+  lane :deploy_pod do
+    pod_push(
+      path: "SwiftInstagram.podspec"
+    )
+  end
+
+end

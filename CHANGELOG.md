@@ -2,6 +2,19 @@
 
 ## [Unreleased]
 
+## [1.1.0] (2017-01-21)
+[Full Changelog](https://github.com/AnderGoig/SwiftInstagram/compare/v1.0.6...v1.1.0)
+### Added
+- Search media and location by latitude and longitude:
+    - `func searchMedia(latitude: Double? = nil, longitude: Double? = nil, ...)`
+    - `func searchLocation(latitude: Double? = nil, longitude: Double? = nil, ...)`
+- New option to get all the permissions on `login(..., withScopes: [.all], ...)` method.
+### Changed
+- `retrieveAccessToken()` method is now public (#15).
+- `storeAccessToken()` is also public (#17).
+### Fixed
+- Problem with all the POST requests (e.g. #20).
+
 ## [1.0.6] (2017-11-03)
 [Full Changelog](https://github.com/AnderGoig/SwiftInstagram/compare/v1.0.5...v1.0.6)
 ### Added
@@ -62,7 +75,8 @@
 ### Added
 - Initial release.
 
-[Unreleased]: https://github.com/AnderGoig/SwiftInstagram/compare/v1.0.6...develop
+[Unreleased]: https://github.com/AnderGoig/SwiftInstagram/compare/v1.1.0...develop
+[1.1.0]: https://github.com/AnderGoig/SwiftInstagram/tree/v1.1.0
 [1.0.6]: https://github.com/AnderGoig/SwiftInstagram/tree/v1.0.6
 [1.0.5]: https://github.com/AnderGoig/SwiftInstagram/tree/v1.0.5
 [1.0.4]: https://github.com/AnderGoig/SwiftInstagram/tree/v1.0.4

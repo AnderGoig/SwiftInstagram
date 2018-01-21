@@ -1,5 +1,5 @@
 //
-//  Array++.swift
+//  Array+SwiftInstagram.swift
 //  SwiftInstagram
 //
 //  Created by Ander Goig on 22/10/17.
@@ -8,8 +8,8 @@
 
 extension Array where Element == InstagramScope {
 
+    /// Returns a String constructed by joining the array elements with the given `separator`.
     func joined(separator: String) -> String {
-        return self.map({ "\($0.rawValue)" }).joined(separator: separator)
+        return self.map { "\($0.rawValue)" }.joined(separator: separator)
     }
-
 }

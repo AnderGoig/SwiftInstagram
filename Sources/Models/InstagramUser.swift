@@ -7,7 +7,6 @@
 //
 
 /// The struct containing an Instagram user.
-
 public struct InstagramUser: Decodable {
 
     // MARK: - Properties
@@ -62,5 +61,4 @@ public struct InstagramUser: Decodable {
         case fullName = "full_name"
         case isBusiness = "is_business"
     }
-
 }

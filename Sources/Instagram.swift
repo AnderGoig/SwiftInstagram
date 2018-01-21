@@ -9,16 +9,13 @@
 import UIKit
 
 /// A set of helper functions to make the Instagram API easier to use.
-
 public class Instagram {
 
     // MARK: - Types
 
     public typealias EmptySuccessHandler = () -> Void
     public typealias SuccessHandler<T> = (_ data: T) -> Void
-    public typealias FailureHandler = (_ error: InstagramError) -> Void
-
-    typealias Parameters = [String: Any]
+    public typealias FailureHandler = (_ error: Error) -> Void
 
     private enum API {
         static let authURL = "https://api.instagram.com/oauth/authorize"
@@ -30,9 +27,7 @@ public class Instagram {
     }
 
     enum HTTPMethod: String {
-        case get = "GET"
-        case post = "POST"
-        case delete = "DELETE"
+        case get = "GET", post = "POST", delete = "DELETE"
     }
 
     // MARK: - Properties
@@ -65,19 +60,18 @@ public class Instagram {
     /// - parameter scopes: The scope of the access you are requesting from the user. Basic access by default.
     /// - parameter success: The callback called after a correct login.
     /// - parameter failure: The callback called after an incorrect login.
-
     public func login(from controller: UINavigationController,
                       withScopes scopes: [InstagramScope] = [.basic],
                       success: EmptySuccessHandler?,
                       failure: FailureHandler?) {
-        guard let authURL = buildAuthURL(scopes: scopes) else {
-            failure?(InstagramError(kind: .missingClient, message: "Error while reading your Info.plist file settings."))
-            return
-        }
+
+        guard client != nil else { failure?(InstagramError.missingClientIdOrRedirectURI); return }
+
+        let authURL = buildAuthURL(scopes: scopes)
 
         let vc = InstagramLoginViewController(authURL: authURL, success: { accessToken in
             guard self.storeAccessToken(accessToken) else {
-                failure?(InstagramError(kind: .keychainError(code: self.keychain.lastResultCode), message: "Error storing access token into keychain."))
+                failure?(InstagramError.keychainError(code: self.keychain.lastResultCode))
                 return
             }
 
@@ -88,34 +82,28 @@ public class Instagram {
         controller.show(vc, sender: nil)
     }
 
-    private func buildAuthURL(scopes: [InstagramScope]) -> URL? {
-        guard let client = client else {
-            return nil
-        }
-
+    private func buildAuthURL(scopes: [InstagramScope]) -> URL {
         var components = URLComponents(string: API.authURL)!
 
         components.queryItems = [
-            URLQueryItem(name: "client_id", value: client.id),
-            URLQueryItem(name: "redirect_uri", value: client.redirectURI),
+            URLQueryItem(name: "client_id", value: client!.id),
+            URLQueryItem(name: "redirect_uri", value: client!.redirectURI),
             URLQueryItem(name: "response_type", value: "token"),
             URLQueryItem(name: "scope", value: scopes.joined(separator: "+"))
         ]
 
-        return components.url
+        return components.url!
     }
 
     /// Ends the current session.
     ///
     /// - returns: True if the user was successfully logged out, false otherwise.
-
     @discardableResult
     public func logout() -> Bool {
         return deleteAccessToken()
     }
 
     /// Returns whether a user is currently authenticated or not.
-
     public var isAuthenticated: Bool {
         return retrieveAccessToken() != nil
     }
@@ -138,51 +126,56 @@ public class Instagram {
 
     func request<T: Decodable>(_ endpoint: String,
                                method: HTTPMethod = .get,
-                               parameters: Parameters? = nil,
-                               success: SuccessHandler<T>?,
+                               parameters: Parameters = [:],
+                               success: ((_ data: T?) -> Void)?,
                                failure: FailureHandler?) {
-        var urlRequest = URLRequest(url: buildURL(for: endpoint, withParameters: parameters))
-        urlRequest.httpMethod = method.rawValue
+
+        let urlRequest = buildURLRequest(endpoint, method: method, parameters: parameters)
 
         urlSession.dataTask(with: urlRequest) { (data, _, error) in
             if let data = data {
                 DispatchQueue.global(qos: .utility).async {
                     do {
                         let object = try JSONDecoder().decode(InstagramResponse<T>.self, from: data)
-                        if let errorMessage = object.meta.errorMessage {
+
+                        if let data = object.data {
                             DispatchQueue.main.async {
-                                failure?(InstagramError(kind: .invalidRequest, message: errorMessage))
+                                success?(data)
+                            }
+                        } else if let message = object.meta.errorMessage {
+                            DispatchQueue.main.async {
+                                failure?(InstagramError.invalidRequest(message: message))
                             }
                         } else {
                             DispatchQueue.main.async {
-                                success?(object.data!)
+                                success?(nil)
                             }
                         }
-                    } catch {
+                    } catch let error {
                         DispatchQueue.main.async {
-                            failure?(InstagramError(kind: .jsonParseError, message: error.localizedDescription))
+                            failure?(InstagramError.decoding(message: error.localizedDescription))
                         }
                     }
                 }
+            } else if let error = error {
+                failure?(error)
             }
         }.resume()
     }
 
-    private func buildURL(for endpoint: String, withParameters parameters: Parameters? = nil) -> URL {
-        var urlComps = URLComponents(string: API.baseURL + endpoint)
+    private func buildURLRequest(_ endpoint: String, method: HTTPMethod, parameters: Parameters) -> URLRequest {
+        let url = URL(string: API.baseURL + endpoint)!.appendingQueryParameters(["access_token": retrieveAccessToken() ?? ""])
 
-        var items = [URLQueryItem]()
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = method.rawValue
 
-        // Every request needs the access token
-        items.append(URLQueryItem(name: "access_token", value: retrieveAccessToken() ?? ""))
+        switch method {
+        case .get, .delete:
+            urlRequest.url?.appendQueryParameters(parameters)
+        case .post:
+            urlRequest.httpBody = Data(parameters: parameters)
+        }
 
-        parameters?.forEach({ parameter in
-            items.append(URLQueryItem(name: parameter.key, value: "\(parameter.value)"))
-        })
-
-        urlComps!.queryItems = items
-
-        return urlComps!.url!
+        return urlRequest
     }
-
 }
