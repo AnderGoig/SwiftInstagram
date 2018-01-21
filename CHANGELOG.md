@@ -3,7 +3,8 @@
 ## [Unreleased]
 
 ## [1.1.0] (2017-01-21)
-[Full Changelog](https://github.com/AnderGoig/SwiftInstagram/compare/v1.0.6...v1.1.### Added
+[Full Changelog](https://github.com/AnderGoig/SwiftInstagram/compare/v1.0.6...v1.1.0)
+### Added
 - You can now use your own authentication method ([Read more](https://github.com/AnderGoig/SwiftInstagram/wiki/Authentication)).
 - New success handlers on:
     - `createComment()`
