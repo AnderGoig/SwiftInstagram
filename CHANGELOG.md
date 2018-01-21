@@ -3,18 +3,23 @@
 ## [Unreleased]
 
 ## [1.1.0] (2017-01-21)
-[Full Changelog](https://github.com/AnderGoig/SwiftInstagram/compare/v1.0.6...v1.1.0)
-### Added
-- Success handler on `createComment()` `deleteComment()` `like(media: ...)` and `unlike(media: ...)`
+[Full Changelog](https://github.com/AnderGoig/SwiftInstagram/compare/v1.0.6...v1.1.### Added
+- You can now use your own authentication method ([Read more](https://github.com/AnderGoig/SwiftInstagram/wiki/Authentication)).
+- New success handlers on:
+    - `createComment()`
+    - `deleteComment()`
+    - `like(media: ...)`
+    - `unlike(media: ...)`
 - Search media and location by latitude and longitude:
     - `func searchMedia(latitude: Double? = nil, longitude: Double? = nil, ...)`
     - `func searchLocation(latitude: Double? = nil, longitude: Double? = nil, ...)`
-- New option to get all the permissions on `login(..., withScopes: [.all], ...)` method.
+- New option to get all the permission scopes on login:
+    - `login(..., withScopes: [.all], ...)`
 ### Changed
 - `retrieveAccessToken()` method is now public (#15).
 - `storeAccessToken()` is also public (#17).
 ### Fixed
-- Problem with all the POST requests (e.g. #20).
+- Problem with all the HTTP POST requests (e.g. #20).
 
 ## [1.0.6] (2017-11-03)
 [Full Changelog](https://github.com/AnderGoig/SwiftInstagram/compare/v1.0.5...v1.0.6)
