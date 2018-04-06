@@ -116,12 +116,19 @@ public struct InstagramMedia: Decodable {
     public struct UserInPhoto: Decodable {
 
         /// The user that appears in the image.
-        public let user: InstagramUser
+        public let user: UserInPhotoUsername
 
         /// The position in points of the user in the image.
         public let position: Position
 
-        /// A struct that containing the value of the coordinate axes, 'x' and 'y'.
+        /// A struct containing the username of the tagged user.
+        public struct UserInPhotoUsername: Decodable {
+
+            /// The value of the x-axis.
+            public let username: String
+        }
+
+        /// A struct containing the value of the coordinate axes, 'x' and 'y'.
         public struct Position: Decodable {
 
             /// The value of the x-axis.
