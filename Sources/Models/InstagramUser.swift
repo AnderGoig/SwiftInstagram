@@ -48,17 +48,5 @@ public struct InstagramUser: Decodable {
 
         /// The number of followers of the user.
         public let followedBy: Int
-
-        private enum CodingKeys: String, CodingKey {
-            case media, follows
-            case followedBy = "followed_by"
-        }
-    }
-
-    private enum CodingKeys: String, CodingKey {
-        case id, username, bio, website, counts
-        case profilePicture = "profile_picture"
-        case fullName = "full_name"
-        case isBusiness = "is_business"
     }
 }

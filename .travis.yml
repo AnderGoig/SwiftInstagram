@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode9
+osx_image: xcode9.3beta
 git:
   submodules: false
 env:
@@ -8,7 +8,7 @@ env:
   - LANG=en_US.UTF-8
   - WORKSPACE=SwiftInstagram.xcworkspace
   - SCHEME="SwiftInstagram-iOS"
-  - SDK=iphonesimulator11.0
+  - SDK=iphonesimulator11.3
   matrix:
   - TEST_TYPE=iOS
   - TEST_TYPE=Lint
@@ -45,7 +45,7 @@ script:
     set -o pipefail
     xcodebuild -version
     xcodebuild -showsdks
-    xcodebuild build -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -configuration Debug -destination "platform=iOS Simulator,name=iPhone 5" -destination "platform=iOS Simulator,name=iPhone 7 Plus" | xcpretty -c
+    xcodebuild build -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -configuration Debug -destination "platform=iOS Simulator,name=iPhone 8 Plus" | xcpretty -c
   elif [ "$TEST_TYPE" = Lint ]; then
     swiftlint lint
   elif [ "$TEST_TYPE" = CocoaPods ]; then
