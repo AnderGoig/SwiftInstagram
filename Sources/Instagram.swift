@@ -13,8 +13,13 @@ public class Instagram {
 
     // MARK: - Types
 
+    /// Empty success handler
     public typealias EmptySuccessHandler = () -> Void
+
+    /// Success handler
     public typealias SuccessHandler<T> = (_ data: T) -> Void
+
+    /// Failure handler
     public typealias FailureHandler = (_ error: Error) -> Void
 
     private enum API {
