@@ -136,7 +136,6 @@ public class Instagram {
 
         urlSession.dataTask(with: urlRequest) { (data, _, error) in
             if let data = data {
-                print(String.init(data: data, encoding: .utf8) ?? "")
                 DispatchQueue.global(qos: .utility).async {
                     do {
                         let jsonDecoder = JSONDecoder()
