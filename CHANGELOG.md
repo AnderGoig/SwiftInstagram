@@ -2,6 +2,13 @@
 
 ## [Unreleased]
 
+## [1.1.1] (2017-04-06)
+[Full Changelog](https://github.com/AnderGoig/SwiftInstagram/compare/v1.1.0...v1.1.1)
+### Added
+- Compatibility with Swift 4.1.
+### Fixed
+- Fix bug with media objects JSON decoding (#26).
+
 ## [1.1.0] (2017-01-21)
 [Full Changelog](https://github.com/AnderGoig/SwiftInstagram/compare/v1.0.6...v1.1.0)
 ### Added
@@ -82,7 +89,8 @@
 ### Added
 - Initial release.
 
-[Unreleased]: https://github.com/AnderGoig/SwiftInstagram/compare/v1.1.0...develop
+[Unreleased]: https://github.com/AnderGoig/SwiftInstagram/compare/v1.1.1...develop
+[1.1.1]: https://github.com/AnderGoig/SwiftInstagram/tree/v1.1.1
 [1.1.0]: https://github.com/AnderGoig/SwiftInstagram/tree/v1.1.0
 [1.0.6]: https://github.com/AnderGoig/SwiftInstagram/tree/v1.0.6
 [1.0.5]: https://github.com/AnderGoig/SwiftInstagram/tree/v1.0.5
