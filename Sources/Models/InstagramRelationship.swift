@@ -16,12 +16,4 @@ public struct InstagramRelationship: Decodable {
 
     /// A user's relationship to you. It can be "followed_by", "requested_by", "blocked_by_you" or "none".
     public let incomingStatus: String?
-
-    // MARK: - Types
-
-    private enum CodingKeys: String, CodingKey {
-        case outgoingStatus = "outgoing_status"
-        case incomingStatus = "incoming_status"
-    }
-
 }

@@ -97,12 +97,6 @@ public struct InstagramMedia: Decodable {
 
         /// A Resolution object that contains the width, height and URL of the standard resolution image.
         public let standardResolution: Resolution
-
-        private enum CodingKeys: String, CodingKey {
-            case thumbnail
-            case lowResolution = "low_resolution"
-            case standardResolution = "standard_resolution"
-        }
     }
 
     /// A struct cointaining the low and standard resolution videos of the media.
@@ -116,12 +110,6 @@ public struct InstagramMedia: Decodable {
 
         /// A Resolution object that contains the width, height and URL of the low bandwidth video.
         public let lowBandwidth: Resolution?
-
-        private enum CodingKeys: String, CodingKey {
-            case lowResolution = "low_resolution"
-            case standardResolution = "standard_resolution"
-            case lowBandwidth = "low_bandwidth"
-        }
     }
 
     /// A struct containing the user and its position on the image.
@@ -158,19 +146,11 @@ public struct InstagramMedia: Decodable {
 
         /// The type of media. It can be "image" or "video".
         public let type: String
-
-        private enum CodingKeys: String, CodingKey {
-            case images, videos, type
-            case usersInPhoto = "users_in_photo"
-        }
     }
 
     private enum CodingKeys: String, CodingKey {
-        case id, user, type, images, videos, caption, comments, likes, tags, filter, link, location, distance
-        case createdTime = "created_time"
-        case userHasLiked = "user_has_liked"
-        case usersInPhoto = "users_in_photo"
-        case carouselMedia = "carousel_media"
+        case id, user, createdTime, type, images, videos, caption, comments, likes, tags,
+        userHasLiked, filter, link, location, usersInPhoto, carouselMedia, distance
     }
 
     // MARK: - Initializers

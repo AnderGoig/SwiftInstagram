@@ -138,7 +138,9 @@ public class Instagram {
             if let data = data {
                 DispatchQueue.global(qos: .utility).async {
                     do {
-                        let object = try JSONDecoder().decode(InstagramResponse<T>.self, from: data)
+                        let jsonDecoder = JSONDecoder()
+                        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+                        let object = try jsonDecoder.decode(InstagramResponse<T>.self, from: data)
 
                         if let data = object.data {
                             DispatchQueue.main.async {

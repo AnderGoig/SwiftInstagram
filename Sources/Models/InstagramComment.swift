@@ -26,8 +26,7 @@ public struct InstagramComment: Decodable {
     // MARK: - Types
 
     private enum CodingKeys: String, CodingKey {
-        case id, text, from
-        case createdTime = "created_time"
+        case id, text, from, createdTime
     }
 
     // MARK: - Initializers

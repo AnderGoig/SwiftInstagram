@@ -28,8 +28,7 @@ public struct InstagramLocation<T: Decodable>: Decodable {
     // MARK: - Types
 
     private enum CodingKeys: String, CodingKey {
-        case id, name, latitude, longitude
-        case streetAddress = "street_address"
+        case id, name, streetAddress, latitude, longitude
     }
 
     // MARK: - Initializers
