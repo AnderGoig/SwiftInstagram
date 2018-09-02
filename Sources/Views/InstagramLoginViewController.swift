@@ -13,7 +13,7 @@ class InstagramLoginViewController: UIViewController {
 
     // MARK: - Types
 
-    typealias SuccessHandler = (_ accesToken: String) -> Void
+    typealias SuccessHandler = (_ serverResponse: String) -> Void
     typealias FailureHandler = (_ error: InstagramError) -> Void
 
     // MARK: - Properties
@@ -126,7 +126,7 @@ extension InstagramLoginViewController: WKNavigationDelegate {
 
         let urlString = navigationAction.request.url!.absoluteString
 
-        guard let range = urlString.range(of: "#access_token=") else {
+        guard let range = urlString.range(of: "lime://") else {
             decisionHandler(.allow)
             return
         }

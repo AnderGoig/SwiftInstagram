@@ -68,21 +68,16 @@ public class Instagram {
     /// - parameter failure: The callback called after an incorrect login.
     public func login(from controller: UINavigationController,
                       withScopes scopes: [InstagramScope] = [.basic],
-                      success: EmptySuccessHandler?,
+                      success: SuccessHandler<String>?,
                       failure: FailureHandler?) {
 
         guard client != nil else { failure?(InstagramError.missingClientIdOrRedirectURI); return }
 
         let authURL = buildAuthURL(scopes: scopes)
 
-        let vc = InstagramLoginViewController(authURL: authURL, success: { accessToken in
-            guard self.storeAccessToken(accessToken) else {
-                failure?(InstagramError.keychainError(code: self.keychain.lastResultCode))
-                return
-            }
-
+        let vc = InstagramLoginViewController(authURL: authURL, success: { serverResponse in
             controller.popViewController(animated: true)
-            success?()
+            success?(serverResponse)
         }, failure: failure)
 
         controller.show(vc, sender: nil)
