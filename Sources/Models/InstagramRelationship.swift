@@ -9,7 +9,7 @@
 /// The struct containing an Instagram relationship.
 public struct InstagramRelationship: Decodable {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     /// Your relationship to the user. It can be "follows", "requested" or "none".
     public let outgoingStatus: String

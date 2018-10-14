@@ -11,7 +11,7 @@ import CoreLocation
 /// The struct containing an Instagram media.
 public struct InstagramMedia: Decodable {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     /// The media identifier.
     public let id: String
@@ -64,7 +64,7 @@ public struct InstagramMedia: Decodable {
     /// The distance to the location of media when it has been searched by location.
     public let distance: Double?
 
-    // MARK: - Types
+    // MARK: Types
 
     /// A struct cointaing the number of elements.
     public struct Count: Decodable {
@@ -160,7 +160,7 @@ public struct InstagramMedia: Decodable {
         userHasLiked, filter, link, location, usersInPhoto, carouselMedia, distance
     }
 
-    // MARK: - Initializers
+    // MARK: Initializers
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)

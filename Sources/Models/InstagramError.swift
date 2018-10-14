@@ -9,18 +9,18 @@
 /// A type representing an error value that can be thrown.
 public enum InstagramError: Error {
 
-    /// Error 400 on login
+    /// Error 400 on login.
     case badRequest
 
-    /// Error decoding JSON
+    /// Error decoding JSON.
     case decoding(message: String)
 
-    /// Invalid API request
+    /// Invalid API request.
     case invalidRequest(message: String)
 
-    /// Keychain error
+    /// Keychain error.
     case keychainError(code: OSStatus)
 
-    /// The client id or the redirect URI is missing inside the Info.plist file
+    /// The client id or the redirect URI is missing inside the Info.plist file.
     case missingClientIdOrRedirectURI
 }

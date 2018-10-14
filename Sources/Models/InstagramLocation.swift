@@ -11,7 +11,7 @@ import CoreLocation
 /// The struct containing an Instagram location.
 public struct InstagramLocation<T: Decodable>: Decodable {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     /// The location identifier.
     public let id: T
@@ -25,13 +25,13 @@ public struct InstagramLocation<T: Decodable>: Decodable {
     /// The location coordinates (latitude and longitude).
     public let coordinates: CLLocationCoordinate2D
 
-    // MARK: - Types
+    // MARK: Types
 
     private enum CodingKeys: String, CodingKey {
         case id, name, streetAddress, latitude, longitude
     }
 
-    // MARK: - Initializers
+    // MARK: Initializers
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)

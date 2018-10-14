@@ -8,7 +8,7 @@
 
 extension Instagram {
 
-    // MARK: - Like Endpoints
+    // MARK: Like Endpoints
 
     /// Get a list of users who have liked this media.
     ///
@@ -18,7 +18,7 @@ extension Instagram {
     ///
     /// - important: It requires *public_content* scope for media that does not belong to your own user.
     public func likes(inMedia mediaId: String, success: SuccessHandler<[InstagramUser]>?, failure: FailureHandler?) {
-        request("/media/\(mediaId)/likes", success: { data in success?(data!) }, failure: failure)
+        request("/media/\(mediaId)/likes", success: success, failure: failure)
     }
 
     /// Set a like on this media by the currently authenticated user.

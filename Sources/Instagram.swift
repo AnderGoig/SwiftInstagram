@@ -11,15 +11,15 @@ import UIKit
 /// A set of helper functions to make the Instagram API easier to use.
 public class Instagram {
 
-    // MARK: - Types
+    // MARK: Types
 
-    /// Empty success handler
+    /// Empty success handler.
     public typealias EmptySuccessHandler = () -> Void
 
-    /// Success handler
+    /// Success handler.
     public typealias SuccessHandler<T> = (_ data: T) -> Void
 
-    /// Failure handler
+    /// Failure handler.
     public typealias FailureHandler = (_ error: Error) -> Void
 
     private enum API {
@@ -35,14 +35,14 @@ public class Instagram {
         case get = "GET", post = "POST", delete = "DELETE"
     }
 
-    // MARK: - Properties
+    // MARK: Properties
 
     private let urlSession = URLSession(configuration: .default)
     private let keychain = KeychainSwift(keyPrefix: "SwiftInstagram_")
 
     private var client: (id: String?, redirectURI: String?)?
 
-    // MARK: - Initializers
+    // MARK: Initializers
 
     /// Returns a shared instance of Instagram.
     public static let shared = Instagram()
@@ -55,7 +55,7 @@ public class Instagram {
         }
     }
 
-    // MARK: - Authentication
+    // MARK: Authentication
 
     /// Starts an authentication process.
     ///
@@ -113,7 +113,7 @@ public class Instagram {
         return retrieveAccessToken() != nil
     }
 
-    // MARK: - Access Token
+    // MARK: Access Token
 
     /// Store your own authenticated access token so you don't have to use the included login authentication.
     public func storeAccessToken(_ accessToken: String) -> Bool {
@@ -129,17 +129,17 @@ public class Instagram {
         return keychain.delete(Keychain.accessTokenKey)
     }
 
-    // MARK: -
+    // MARK: Request
 
     func request<T: Decodable>(_ endpoint: String,
                                method: HTTPMethod = .get,
                                parameters: Parameters = [:],
-                               success: ((_ data: T?) -> Void)?,
+                               success: SuccessHandler<T>?,
                                failure: FailureHandler?) {
 
         let urlRequest = buildURLRequest(endpoint, method: method, parameters: parameters)
 
-        urlSession.dataTask(with: urlRequest) { (data, _, error) in
+        urlSession.dataTask(with: urlRequest) { data, _, error in
             if let data = data {
                 DispatchQueue.global(qos: .utility).async {
                     do {
@@ -154,10 +154,6 @@ public class Instagram {
                         } else if let message = object.meta.errorMessage {
                             DispatchQueue.main.async {
                                 failure?(InstagramError.invalidRequest(message: message))
-                            }
-                        } else {
-                            DispatchQueue.main.async {
-                                success?(nil)
                             }
                         }
                     } catch let error {

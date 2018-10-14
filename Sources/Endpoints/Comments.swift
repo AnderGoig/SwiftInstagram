@@ -8,7 +8,7 @@
 
 extension Instagram {
 
-    // MARK: - Comment Endpoints
+    // MARK: Comment Endpoints
 
     /// Get a list of recent comments on a media object.
     ///
@@ -18,7 +18,7 @@ extension Instagram {
     ///
     /// - important: It requires *public_content* scope for media that does not belong to your own user.
     public func comments(fromMedia mediaId: String, success: SuccessHandler<[InstagramComment]>?, failure: FailureHandler?) {
-        request("/media/\(mediaId)/comments", success: { data in success?(data!) }, failure: failure)
+        request("/media/\(mediaId)/comments", success: success, failure: failure)
     }
 
     /// Create a comment on a media object.
@@ -35,7 +35,7 @@ extension Instagram {
     ///     - The comment cannot contain more than 1 URL.
     ///     - The comment cannot consist of all capital letters.
     public func createComment(onMedia mediaId: String, text: String, success: SuccessHandler<InstagramComment>?, failure: FailureHandler?) {
-        request("/media/\(mediaId)/comments", method: .post, parameters: ["text": text], success: { data in success?(data!) }, failure: failure)
+        request("/media/\(mediaId)/comments", method: .post, parameters: ["text": text], success: success, failure: failure)
     }
 
     /// Remove a comment either on the authenticated user's media object or authored by the authenticated user.
@@ -46,6 +46,6 @@ extension Instagram {
     ///
     /// - important: It requires *comments* scope. Also, *public_content* scope is required for media that does not belong to your own user.
     public func deleteComment(_ commentId: String, onMedia mediaId: String, success: EmptySuccessHandler?, failure: FailureHandler?) {
-        request("/media/\(mediaId)/comments/\(commentId)", method: .delete, success: { (_: InstagramEmptyResponse!) in success?() }, failure: failure)
+        request("/media/\(mediaId)/comments/\(commentId)", method: .delete, success: { (_: InstagramEmptyResponse) in success?() }, failure: failure)
     }
 }

@@ -9,7 +9,7 @@
 /// The struct containing an Instagram tag.
 public struct InstagramTag: Decodable {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     /// The tag name.
     public let name: String

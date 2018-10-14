@@ -11,12 +11,12 @@ import WebKit
 
 class InstagramLoginViewController: UIViewController {
 
-    // MARK: - Types
+    // MARK: Types
 
     typealias SuccessHandler = (_ accesToken: String) -> Void
     typealias FailureHandler = (_ error: InstagramError) -> Void
 
-    // MARK: - Properties
+    // MARK: Properties
 
     private var authURL: URL
     private var success: SuccessHandler?
@@ -25,7 +25,7 @@ class InstagramLoginViewController: UIViewController {
     private var progressView: UIProgressView!
     private var webViewObservation: NSKeyValueObservation!
 
-    // MARK: - Initializers
+    // MARK: Initializers
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -39,7 +39,7 @@ class InstagramLoginViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
 
-    // MARK: - View Lifecycle
+    // MARK: View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +52,7 @@ class InstagramLoginViewController: UIViewController {
         setupProgressView()
 
         // Initializes web view
-        let webView = setupWebView()
+        let webView = makeWebView()
 
         // Starts authorization
         webView.load(URLRequest(url: authURL, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData))
@@ -63,7 +63,7 @@ class InstagramLoginViewController: UIViewController {
         webViewObservation.invalidate()
     }
 
-    // MARK: -
+    // MARK: Setup
 
     private func setupProgressView() {
         let navBar = navigationController!.navigationBar
@@ -76,23 +76,38 @@ class InstagramLoginViewController: UIViewController {
         navBar.addSubview(progressView)
 
         let bottomConstraint = navBar.bottomAnchor.constraint(equalTo: progressView.bottomAnchor, constant: 1)
-        let leftConstraint = navBar.leadingAnchor.constraint(equalTo: progressView.leadingAnchor)
-        let rightConstraint = navBar.trailingAnchor.constraint(equalTo: progressView.trailingAnchor)
+        let leadingConstraint = navBar.leadingAnchor.constraint(equalTo: progressView.leadingAnchor)
+        let trailingConstraint = navBar.trailingAnchor.constraint(equalTo: progressView.trailingAnchor)
 
-        NSLayoutConstraint.activate([bottomConstraint, leftConstraint, rightConstraint])
+        NSLayoutConstraint.activate([bottomConstraint, leadingConstraint, trailingConstraint])
     }
 
-    private func setupWebView() -> WKWebView {
+    private func makeWebView() -> WKWebView {
         let webConfiguration = WKWebViewConfiguration()
         webConfiguration.websiteDataStore = .nonPersistent()
 
         let webView = WKWebView(frame: view.frame, configuration: webConfiguration)
-        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         webView.navigationDelegate = self
+        webView.translatesAutoresizingMaskIntoConstraints = false
 
         webViewObservation = webView.observe(\.estimatedProgress, changeHandler: progressViewChangeHandler)
 
         view.addSubview(webView)
+
+        var topAnchor = view.topAnchor
+        var bottomAnchor = view.bottomAnchor
+
+        if #available(iOS 11.0, *) {
+            topAnchor = view.safeAreaLayoutGuide.topAnchor
+            bottomAnchor = view.safeAreaLayoutGuide.bottomAnchor
+        }
+
+        let topConstraint = webView.topAnchor.constraint(equalTo: topAnchor)
+        let bottomConstraint = webView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        let leadingAnchor = webView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+        let trailingAnchor = webView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+
+        NSLayoutConstraint.activate([topConstraint, bottomConstraint, leadingAnchor, trailingAnchor])
 
         return webView
     }
@@ -104,7 +119,7 @@ class InstagramLoginViewController: UIViewController {
         if webView.estimatedProgress >= 1.0 {
             UIView.animate(withDuration: 0.3, delay: 0.1, options: .curveEaseInOut, animations: {
                 self.progressView.alpha = 0.0
-            }, completion: { (_ finished) in
+            }, completion: { _ in
                 self.progressView.progress = 0
             })
         }
