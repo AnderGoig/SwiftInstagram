@@ -9,7 +9,7 @@
 /// The struct containing an Instagram user.
 public struct InstagramUser: Decodable {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     /// The user identifier.
     public let id: String
@@ -35,7 +35,7 @@ public struct InstagramUser: Decodable {
     /// A Counts object that contains the number of followers, following and media of a user.
     public let counts: Counts?
 
-    // MARK: - Types
+    // MARK: Types
 
     /// The struct containing the number of followers, following and media of a user.
     public struct Counts: Decodable {

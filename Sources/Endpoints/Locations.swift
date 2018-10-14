@@ -10,7 +10,7 @@ import CoreLocation
 
 extension Instagram {
 
-    // MARK: - Location Endpoints
+    // MARK: Location Endpoints
 
     /// Get information about a location.
     ///
@@ -20,7 +20,7 @@ extension Instagram {
     ///
     /// - important: It requires *public_content* scope.
     public func location(_ locationId: String, success: SuccessHandler<InstagramLocation<String>>?, failure: FailureHandler?) {
-        request("/locations/\(locationId)", success: { data in success?(data!) }, failure: failure)
+        request("/locations/\(locationId)", success: success, failure: failure)
     }
 
     /// Get a list of recent media objects from a given location.
@@ -37,13 +37,12 @@ extension Instagram {
                             minId: String? = nil,
                             success: SuccessHandler<[InstagramMedia]>?,
                             failure: FailureHandler?) {
-
         var parameters = Parameters()
 
         parameters["max_id"] ??= maxId
         parameters["min_id"] ??= minId
 
-        request("/locations/\(locationId)/media/recent", parameters: parameters, success: { data in success?(data!) }, failure: failure)
+        request("/locations/\(locationId)/media/recent", parameters: parameters, success: success, failure: failure)
     }
 
     /// Search for a location by geographic coordinate.
@@ -62,7 +61,6 @@ extension Instagram {
                                facebookPlacesId: String? = nil,
                                success: SuccessHandler<[InstagramLocation<String>]>?,
                                failure: FailureHandler?) {
-
         var parameters = Parameters()
 
         parameters["lat"] ??= latitude
@@ -70,7 +68,7 @@ extension Instagram {
         parameters["distance"] ??= distance
         parameters["facebook_places_id"] ??= facebookPlacesId
 
-        request("/locations/search", parameters: parameters, success: { data in success?(data!) }, failure: failure)
+        request("/locations/search", parameters: parameters, success: success, failure: failure)
     }
 
     /// Search for a location by geographic coordinate.
@@ -87,8 +85,11 @@ extension Instagram {
                                facebookPlacesId: String? = nil,
                                success: SuccessHandler<[InstagramLocation<String>]>?,
                                failure: FailureHandler?) {
-
-        searchLocation(latitude: coordinates?.latitude, longitude: coordinates?.longitude,
-                       distance: distance, facebookPlacesId: facebookPlacesId, success: success, failure: failure)
+        searchLocation(latitude: coordinates?.latitude,
+                       longitude: coordinates?.longitude,
+                       distance: distance,
+                       facebookPlacesId: facebookPlacesId,
+                       success: success,
+                       failure: failure)
     }
 }

@@ -9,7 +9,7 @@
 /// The struct containing an Instagram comment.
 public struct InstagramComment: Decodable {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     /// The comment identifier.
     public let id: String
@@ -23,13 +23,13 @@ public struct InstagramComment: Decodable {
     /// The date and time when the comment was created.
     public let createdDate: Date
 
-    // MARK: - Types
+    // MARK: Types
 
     private enum CodingKeys: String, CodingKey {
         case id, text, from, createdTime
     }
 
-    // MARK: - Initializers
+    // MARK: Initializers
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)

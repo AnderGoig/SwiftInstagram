@@ -8,13 +8,13 @@
 
 struct InstagramResponse<T: Decodable>: Decodable {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     let data: T?
     let meta: Meta
     let pagination: Pagination?
 
-    // MARK: - Types
+    // MARK: Types
 
     struct Meta: Decodable {
         let code: Int
@@ -28,5 +28,5 @@ struct InstagramResponse<T: Decodable>: Decodable {
     }
 }
 
-/// Dummy struct used for empty Instagram API data responses
+/// Dummy struct used for empty Instagram API data responses.
 public struct InstagramEmptyResponse: Decodable { }
